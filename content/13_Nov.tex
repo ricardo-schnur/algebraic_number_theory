@@ -1,3 +1,5 @@
+\rhead{13 November 2017}
+
 \begin{Bem}[and Definition]
 	Suppose $K=\Q, A=\Z$, $L$ a number field and $B=\O_k$.
 	\begin{enumerate}[(i)]
@@ -6,7 +8,7 @@
 	\end{enumerate}
 \end{Bem}
 
-\begin{Bew}
+\begin{proof}
 	\enquote{(i)} Proposition 2.12
 	\enquote{(ii)} Let $w_1', \dots, w_n'$ be another integral basis. Then there exists a base change matrix $T \in \GL_n(\Z)$ with
 	\[ \begin{pmatrix}
@@ -28,7 +30,7 @@
 	\[ d(w_1', \dots, w_n') = {\underbrace{\det T}_{ \in \{ 1, -1\} } }^2 d(w_1, \dots, w_n)
 	= d_k.
 	\]
-\end{Bew}
+\end{proof}
 
 \begin{Bsp}
 	Let $L=\Q(\sqrt{D})$ with $D\in\Z$ square-free. By Proposition 2.14 we have:
@@ -103,7 +105,7 @@ Let $R$ be a commutative ring with $1$.
 \end{Prop}
 
 
-\begin{Bew}
+\begin{proof}
 	It is clear that $\O$ is an integral domain and integrally closed.
 	Furthermore, by Proposition 2.12 each $\Z$-submodule is finitely generated as a $\Z$-module, thus also as an $\O$-module. Hence $\O$ is Noetherian.
 	
@@ -114,7 +116,7 @@ Let $R$ be a commutative ring with $1$.
 	= \mathbb{F}_p (w_1', \dots, w_n'),
 	\]
 	where $w_i' \equiv w_i \mod I$. Thus $\O/ I$ is a field ad hence $I$ maximal.
-\end{Bew}
+\end{proof}
 
 \textbf{From now on:} Let $\O$ denote a Dedekind domain.
 
@@ -131,7 +133,7 @@ Let $R$ be a commutative ring with $1$.
 	\]
 \end{Lem}
 
-\begin{Bew}Set $M = \{ 0 \neq I \subset \O \text{ ideal; } I \text{ does not have such } P_i \}$ and suppose $M \neq \emptyset$. Then $M$ is partially ordered by inclusion and since $\O$ is Noetherian, every chain in $M$ has an upper bound.
+\begin{proof}Set $M = \{ 0 \neq I \subset \O \text{ ideal; } I \text{ does not have such } P_i \}$ and suppose $M \neq \emptyset$. Then $M$ is partially ordered by inclusion and since $\O$ is Noetherian, every chain in $M$ has an upper bound.
 	Thus, the Lemma of Zorn yields a maximal element $I_0 \in M$. Since $I_0$ cannot be prime there are $aa,b \in \O$ such that $ab \in I$ but $a,b \not \in I$.
 	Consider the ideals $I_1 = (a) +I_0$ and $I_2 =(b) + I_0$ which satisfy $I_0 \subsetneq I_1$, $I_0 \subsetneq I_2$ and $I_1I_2 \subset I_0$.
 	Since $I_0$ is a maximal ideal, we have $I_0 \not \in M$ such that we find 
@@ -139,7 +141,7 @@ Let $R$ be a commutative ring with $1$.
 	\[ P_1 \dots P_n \subset I_1 \text{ and } P_1' \dots P_m' \subset I_2.
 	\]
 	Finally, we conclude $  P_1 \dots P_nP_1' \dots P_m' = I_1I_2 \subset I_0$.
-\end{Bew}
+\end{proof}
 
 \begin{Lem}
 	Let $0 \neq P \subset \O$ be a prime ideal, $I \subset \O$ an ideal and $K=\Quot(\O)$. Then:
@@ -149,7 +151,7 @@ Let $R$ be a commutative ring with $1$.
 	\end{enumerate}
 \end{Lem}
 
-\begin{Bew}
+\begin{proof}
 	\enquote{(i)} Let $0 \neq a \in P$, $P_1 \cdots P_n \subset (a) \subset P$ as in Lemma 3.5 with $n$ minimal.
 	
 
@@ -179,10 +181,10 @@ Let $R$ be a commutative ring with $1$.
 	= 0.
 	\]
 	Since $A^\#A = \det A$ we conclude $\det A =0$ such that $x$ is a zero of the monic polynomial $\det \left(  XE_n - \left( a_{ij}\right)_{i,j} \right)$ over $\O$. But since $\O$ is integrally closed this implies $x \in \O$, a contradiction.
-\end{Bew}
+\end{proof}
 
 
-\begin{Bew}[of Theorem 3.4]
+\begin{proof}[of Theorem 3.4]
 	\textbf{Existence of a factorization:} Let
 	\[ M = \left\{  0 \neq I \subset \O \text{ ideal; $I$ has no factorization} \right\}
 	\]
@@ -201,7 +203,7 @@ Let $R$ be a commutative ring with $1$.
 	\[ P_2 \cdots P_n = P_1^{-1} I = Q_2 \cdots Q_m.
 	\]
 	The claim follows by induction.
-\end{Bew}
+\end{proof}
 
 
 

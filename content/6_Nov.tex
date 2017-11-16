@@ -1,3 +1,5 @@
+\rhead{6 November 2017}
+
 %\newpage
 %\textbf{Lecture 5, 6.11.2017}\\
 %HIER WIRD DIE NUMMERIERUNG VERÄNDERT!!!!!!!!!!!!!!!!
@@ -52,7 +54,7 @@
 	\end{itemize}
 \end{Bem}
 
-\begin{Bew}
+\begin{proof}
 	We begin by proving statement i). One computes
 	$$\det(A)^2=\det(A^t)\cdot\det(A)=\det(A^t\cdot A).$$
 	The following calculation proves the claim
@@ -102,7 +104,7 @@
 		.
 	\end{align*}
 	Ones sees that the polynomials on both sides of equality (\ref{eq vandermonde}) have degree $n$. Moreover, $\{\Theta_1,\cdots,\Theta_n\}$ is the set of zeros for both polynomials. Since the leading coefficient in both cases is $	V_n(\Theta_1,\dots,\Theta_n)$, the polynomials are equal. This proves the claim. 
-\end{Bew}
+\end{proof}
 
 \begin{Bsp}
 	Consider $L=\Q(\sqrt{D})$ for a square free integer $D$ different from $0$ and $1$. Then the following holds
@@ -142,7 +144,7 @@
 	\end{itemize}
 \end{Prop}
 
-\begin{Bew}
+\begin{proof}
 	For statement i), we choose a primitive element $\Theta$. Then $1, \Theta,\dots,\Theta^{n-1}$ is a $K$-basis of $L$. Let $B$ be the matrix representation of $h$ with respect to this basis. We find
 	\begin{align*}
 		\det(B)&\stackrel{(2.4)~i)}{=}d(1,\Theta,\dots,\Theta^{n-1})\\
@@ -151,7 +153,7 @@
 	Here $\Theta_i$ denotes $\sigma_i(\Theta)$. This shows that $h$ is non degenerate. We now prove statement ii). Observe that the matrix $M=(\TrL(\alpha_i\alpha_j))_{i,j}$ is the matrix representation of $h$ with respect to $\alpha_1,\dots,\alpha_n$. By Remark (2.4), we conclude
 	$$d(\alpha_1,\dots,\alpha_n)=\det(M).$$
 	Now, i) implies that $\det(M)$ is nonzero.
-\end{Bew}
+\end{proof}
 
 \begin{Bem}
 	Let $A\subseteq B$ be an integral ring extension with $B\subseteq L$ and $A=B\cap K\subseteq K$. Assuming that $\Hom_K(L,\overline{K})=\{\id=\sigma_1,\dots,\sigma_n \}$ the following holds
@@ -162,7 +164,7 @@
 		\end{itemize}
 \end{Bem}
 
-\begin{Bew}
+\begin{proof}
 	We start by proving i). Let $x$ in $B$. By Remark (2.1), we have that the minimal polynomial $f_x$ lies in $A[X]$. Since $\sigma(x)$ is also a zero of $f_x$, it is contained in $B$. This shows i). Now, statement ii) follows from i), Reminder (2.2) iv) and the fact that $A=B\cap K$. For iii), assume that $x$ is a unit in $B$, i.e., we find $y$ in $B$ with $xy=1$. Hence $$\NormL(x)\cdot\NormL(y)=\NormL(xy)=1.$$ Using ii), we deduce that $\NormL(x)$ lies in $A^*$. This proves one direction. For the other direction, assume that $\NormL(x)$ lies in $A^*$, i.e., we find $a\in A$ with 
 	\begin{align*}
 		1=&a\cdot\NormL(x)\\
@@ -170,13 +172,13 @@
 		=&a\cdot x\cdot\underbrace{\prod_{i=2}^{n}\sigma_i(x)}_{\in B, ~by~ i)}.
 	\end{align*}
 	Hence $x$ lies in $B^*$. This proves iii).
-\end{Bew}
+\end{proof}
 
 \begin{Prop}
 	Suppose $\alpha_1,\dots,\alpha_n\in B$ forms a $K$-basis of $L$. Let $d$ denote the discriminant $d(\alpha_1,\dots,\alpha_n)\in A$. Then $d\cdot B$ is contained in $A\alpha_1+\dots+A\alpha_n$.
 \end{Prop}
 
-\begin{Bew}
+\begin{proof}
 	Suppose $\alpha=\sum_{j=1}^{n} c_j\alpha_i\in B$ for $c_i\in K$. We want to solve for $(c_1,\dots,c_n)$. Applying the trace to the equalities
 	$$\alpha_i\alpha=\sum_{j=1}^{n} c_j\alpha_i\alpha_j,~1\le i\le n,$$
 	we obtain
@@ -186,7 +188,7 @@
 	By Reminder (1.3), we have 
 	$$\det(M)\cdot x=M^\#Mx=M^\#y\in A^n.$$
 	Using Remark (2.4), we know $\det(M)=d(\alpha_1,\dots,\alpha_n)=:d$. We conclude that $dc_i$ lies in $A$ for $1\le i\le n$, which proves the claim.
-\end{Bew}
+\end{proof}
 
 \begin{defi}[Ganzheitsbasis]
 	Suppose $\omega_1,\dots,\omega_n\in B$ forms a basis of $B$ over $A$, i.e., every $\alpha\in B$ can be written in a unique way as an $A$-linear combination $\sum_{i=1}^{n}c_i\omega_i$. Then $\omega_1,\dots,\omega_n$ is called an \textbf{integral basis} of $B$ over $A$.

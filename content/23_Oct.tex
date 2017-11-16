@@ -1,4 +1,7 @@
-\section*{Small prefix:}
+\rhead{23 October 2017}
+
+\chapter{Small prefix}
+
 \underline{Recall:}
 \begin{itemize}
 \item $L$ numberfield $:\iff$ $L$ is a finite extension of $\Q$\\
@@ -65,7 +68,7 @@ z = \pm(r^2+s^2)$.
 $(x,y,z) \in \Z^3$ with $x^2+y^2=z^2$ are called \emph{pythagorean triples}.
 \end{Bem*}
 
-\addtocounter{theorem}{-1}
+
 \begin{Prop}[$n=4$]
 The equation $x^4+y^4=z^2$ (and $x^4+y^4=z^4$) have no nontrivial integer solutions.
 \end{Prop}
@@ -121,7 +124,7 @@ For $x,y,z \in \Z$ we have $x^p+y^p=z^p \iff (x+y)(x+y\zeta)\dots(x+y \zeta^{p-1
 \section{The ring $\Z[\zeta]$}
 Suppose $\zeta$ is a primitive $n$-th root of unity
 
-\begin{remin}\ \vspace*{-\baselineskip}
+\begin{remin} 
 \begin{enumerate}[i)]
 \item $\Q(\zeta)/\Q$ is algebraic extension of degree $[\Q(\zeta) : \Q] = \varphi(n)$
 \item $\Q(\zeta)/\Q$ is a Galois extension. In particular:\\
@@ -138,7 +141,7 @@ We have for $\alpha = r(\zeta)$ ($r \in \Q[X]$ polynomial) with min. polynomial 
 \end{enumerate}
 \end{remin}
 
-\begin{remin}[and preview]\ \vspace*{- \baselineskip} 
+\begin{remin}[and preview]
 \begin{enumerate}[i)]
 \item $\O:=\Z[\zeta]:=\{ r(\zeta ) \ | \ r \in \Z [X]\}$
 \item $\Z[\zeta]=\{\alpha \in \Q(\zeta) \ | \ f_\alpha \in \Z[X]\}$ (proof later)
@@ -159,7 +162,7 @@ $\alpha = \varepsilon \pi_1 \cdot \ldots \cdot \pi_r$ with $\pi_i$ irreducible u
 \end{enumerate}
 \end{remin}
 
-\begin{Bem*}[and correction]\ \vspace*{-\baselineskip}
+\begin{Bem*}[and correction]
 \begin{enumerate}
 \item 
 Recall: $L/\Q$ field extensions:
@@ -302,98 +305,5 @@ Prop 2.9 $\Rightarrow \exists \ a \in \Z, \varepsilon= \zeta^a \cdot \bar{\varep
 Choose $s \in \Z$ with $2s \equiv a \mod p$\\
 $\Rightarrow \frac{\varepsilon}{\zeta^s} = \zeta^s \cdot \bar{\varepsilon} = \frac{\bar{\varepsilon}}{\zeta^{-s}} = \bar{\frac{\varepsilon}{\zeta^s}}=r \in \R$ and $\varepsilon = r\cdot \zeta^s$.
 \end{proof}
-\hrulefill\\
-Reminder: $x^p+y^p= (x+y)(x+\zeta y) \dots (x+\zeta^{p-1}y)$
-\begin{Lem}
-Suppose $x,y,m,n \in \Z$ with $m \not \equiv n \mod p$.
-$x+y\zeta^n$ and $x+y\zeta^m$ are relatively prime $\iff$ ($x$ and $y$ are relatively prime) and ($x+y$ not divisible by $p$)
-\end{Lem}
 
-\begin{proof}
-\glqq $\Rightarrow$\grqq: \begin{itemize}
-\item $d|x$ and $d|y \Rightarrow d|x+\zeta^ny$ and $d| x+\zeta^ny$ \Lightning
-\item \glqq $p| x+y$\grqq\ Recall: $p= \varepsilon (1-\zeta)^{p-1}$ with $\varepsilon \in O^\times\\
-\Rightarrow x+\zeta^my = \underbrace{x+y}_{\text{divisible by } p} +y\cdot\underbrace{(\zeta^m-1)}_{(\zeta-1)(1+\zeta+\zeta^2\dots + \zeta^{m-1})} \equiv 0 \mod 1-\zeta$\\
-same way $x+\zeta^ny \equiv 0 \mod 1- \zeta$ \Lightning
-\end{itemize}
-\glqq $\Leftarrow$\grqq: \underline{Idea:} show: $\exists \alpha_0, \beta_0 \in \O$ with:
-\[1= \alpha_0(x+\zeta^m y) + \beta (x+ \zeta^ny)\]
-Consider: $A:= \{\alpha (x+\zeta^my)+\beta(x+\zeta^ny) \ | \ \alpha,\beta \in \O \}$\\
-$A$ is an ideal in $\O$. We have:
-\begin{enumerate}
-\item $(x+\zeta^m y) - (x+\zeta^n y) = \zeta^m(1-\zeta^{n-m})y= \underbrace{\zeta^n\varepsilon_{n-m}}_{\in \O^\times} (1 - \zeta)y \Rightarrow (1 - \zeta)y \in A$
-\item $\zeta^n (x+ \zeta^my) - \zeta^m(x+\zeta^ny)=(\zeta^n-\zeta^m)x= \zeta^n\cdot(1-\zeta^{n-m})x=\underbrace{\zeta^n \varepsilon_{m-n}}_{\in \O^\times} \cdot (1- \zeta)x \Rightarrow (1- \zeta) x \in A$.
-\item $\gcd(x,y)=1 \Rightarrow \exists \ a,b \in \Z$ with $1=ax+by \Rightarrow (1-\zeta)xa +(1-\zeta)yb = 1-\zeta \stackrel{1.\& 2.}{\Rightarrow} 1- \zeta \in A$
-\item $x+y = \underbrace{x+ \zeta^ny}_{\in A} + \underbrace{(1- \zeta^n)y}_{\in A} \in A$
-\item $\gcd(p,x+y)=1 \Rightarrow \exists \bar{a}, \bar{b} \in \Z: 1= \underbrace{\bar{a}p}_{\in A}+\bar{b}\underbrace{(x+y)}_{\in A} \in A$.\\
-$\Rightarrow$ Hence $x+\zeta^ny$ and $x+ \zeta^my$ are coprime.
-\end{enumerate}
-\end{proof}
 
-\begin{Bem}
-Suppose $\alpha = a_0 + a_1 \zeta + \dots + a_{p-1}\zeta^{p-1} \in \O$ with $a_i \in \Z$ and at least one $a_j =0$.\\
-If $n \in \Z$ with $n$ divides $\alpha$ in $\O$, then $n$ divides all $a_i$
-\end{Bem}
-\begin{proof}
-Recall from 2.2 (preview): $1, \zeta, \zeta^2, \dots, \zeta^{p-2}$ is a basis of $\O$.\\
-Furthermore: $1+\zeta+\dots+\zeta^{p-1}=0$\\
-$\Rightarrow \{1, \zeta, \dots, \zeta^{p-1}\} \setminus \{\zeta^j\}$ is a basis $\Rightarrow$ claim.
-\end{proof}
-
-\section{First case of Fermat in case of $\Z[\zeta]$ is a UFD (unique factorization domain)}
-Reference: BOREVICH + SHAFEREVIC + WASHINGTON Chapter 1\\
-As before: $p$ odd prime, $\zeta= e^{\frac{2 \pi i}{p}} p$-th root of unity.
-
-\begin{theorem}
-Suppose that $\Z[\zeta]$ is a UFD, then $x^p+y^p=z^p$ has no non-trivial solutions $(x,y,z)$, such that neither $x,y$ nor $z$ is divisible by $p$.
-\end{theorem}
-
-\addtocounter{theorem}{-1}
-\begin{Satz}[$p=3$]
-Suppose $x,y,z \in \Z$ with $x^3+y^3=z^3 \mod 9 \Rightarrow 3$ divides $x,y$ or $z$.
-\end{Satz}
-\begin{proof}
-Recall: Little Fermat's theorem $x^p \equiv x, y^p \equiv y, z^p\equiv z \mod p$.
-\begin{align*}
-x^3+y^3=z^3 \mod 3 \Rightarrow x+y \equiv z \mod 3\\
-\Rightarrow z=x+y+3u \text{ with } u \in \Z\\
-\Rightarrow \underline{x^3+y^3} \equiv (x+y+3u)^3 \equiv \underline{x^3+y^3}+3xy^2+3x^2y \mod 9\\
-\Rightarrow 0 \equiv xy^3+x^2y \equiv xy(x+y) \equiv xyz \mod 3\\
-\Rightarrow x,y \text{ or } z \text{ is divisible by } 3
-\end{align*}
-\end{proof}
-
-\begin{Lem}
-Let $p \geq 5$. Suppose $x,y,z \in \Z$ with $x^p+y^p=z^p$. If $x\equiv y \equiv -z \mod p$, then $p | z$.
-\end{Lem}
-\begin{proof}
-$z \equiv z^p = x^p+y^p \equiv -2z^p \equiv -2z \mod p \Rightarrow 3z \equiv 0 \mod p \stackrel{p \neq 3}{\Longrightarrow} p | z$.
-\end{proof}
-
-\begin{Bem}
-It follows from Lemma 3.2 that in the first case of Fermat we may assume for $p \geq 5$ that $x \not\equiv y \mod p$ because we can replace $x^p + y^p = z^p $ by $x^p+(-z)^p=(-y)^p$ and $x \not\equiv -z \mod p$.
-\end{Bem}
-
-\begin{Bew}[of Thm. 1]
-$p=3 \Rightarrow $ claim follows from Prop 3.1.\\
-Now: $p \geq 5$. Suppose $x,y,z \in \Z$ with $p$ divides neither $x,y$ nor $z$, $x,y,z$ are pairwise coprime and $x \not\equiv y \mod p$. Suppose $z^p = x^p +y^p=(x+y)(x+\zeta y)\dots (x+\zeta^{p-1}y)$.\\
-Apply Lemma 2.11:
-\begin{itemize}
-\item $\gcd(x,y)=1$ \checkmark
-\item Little Fermat $\Rightarrow x+y \equiv x^p+y^p\equiv z^p \not \equiv 0 \mod p$
-\end{itemize}
-$\stackrel{2.11}{\Longrightarrow} x+y, x+\zeta y, \dots, x+\zeta^{p-1}y$ are pairwise coprime.\\
-$\stackrel{\Z[\zeta] \text{ UFD}}{\Longrightarrow}$ \glqq $x+\zeta^i y$ have to be $p$-power\grqq \ More precisely: $x+\zeta y = \varepsilon \alpha^p$ with $\varepsilon \in \O^\times, \alpha \in \O$, since they are coprime factors of a $p$-th power.
-\begin{enumerate}
-\item Cor. 2.10 $\Rightarrow \varepsilon = r \zeta^s$ with $r \in \R, s \in \Z$
-\item Example 2.8. iii) $\Rightarrow \exists a \in \Z$ with $\alpha^p \equiv a \mod p$.
-\begin{align*}
-x + \zeta y = r \zeta^s \alpha^p \equiv r \zeta^s a \mod p\\
-x+ \zeta^{-1} y = \overline{x+ \zeta y} \equiv r \zeta^{-s}a \mod p\\
-\Rightarrow \zeta^{-s}(x+\zeta y) \equiv ra \equiv \zeta^s(x+\zeta^{-1}y) \mod p\\
-\Rightarrow \underbrace{x+\zeta y - \zeta^{2s}x- \zeta^{2s-1}y}_{=x\cdot 1 + y \zeta -x \zeta^{2s} - y \zeta^{2s-1}} \equiv 0 \mod p\\
-\end{align*}
-Idea: Use Rem. 2.12\\
-\underline{Case 1:} $1, \zeta, \zeta^{2s-1}, \zeta^{2s}$ are distinct $\stackrel{p \geq 5, \text{ Rem 2.12}}{\Longrightarrow} p | x$ and $p | y$.  Contradiction to first case.
-\end{enumerate}
-\end{Bew}

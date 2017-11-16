@@ -1,5 +1,4 @@
-%\setcounter{section}{3}
-%\setcounter{theorem}{3}
+\rhead{30 October 2017}
 
 
 Recall: $L=\Q(\zeta)$, $\O = \Z[\zeta]$, where $\zeta$ is a $p$-th root of unity
@@ -56,34 +55,33 @@ $\Z[\zeta]$ is a UFD if and only if $p\leq 19$, $p$ prime.
 
 
 
-\clearpage
 
-\textbf{Chapter II: Ring of integers}
+\chapter{Ring of integers}
 
 In this chapter, all rings are assumed to be commutative with $1$.
 
-\setcounter{section}{0}
+
 \section{Integral ring extensions}
 
-\begin{definition}[\enquote{ganze Ringerweiterungen}]
+\begin{defi}[\enquote{ganze Ringerweiterungen}]
 	Let $A\subset B$ be a ring extension.
 \begin{enumerate}[(i)]
 \item $b \in B$ is \textbf{integral } over $A$ if there exists a monic polynomial
 $f(X)=X^n+a_{n-1}X^{n-1}+\dots + a_0 \in A[X]$ with $f(b)=0$.
 \item $B$ is \textbf{integral } over $A$ if all $b\in B$ are integral over $A$.
 \end{enumerate}
-\end{definition}
+\end{defi}
 
-\begin{prop}
+\begin{Prop}
 	Let $A\subset B$ be a ring extension and $b_1,\dots,b_n \in B$. Then
 	$b_1,\dots, b_n$ are integral over $A$ if and only if 
 	\[ A[b_1,\dots, b_n] = \{ f(b_1,\dots,b_n) \, | \, f \in A[X_1,\dots, X_n]
 	\}
 	\]
 	is a finitely generated $A$-module.
-\end{prop}
+\end{Prop}
 
-\begin{reminder}[\enquote{Adjunkte}]
+\begin{remin}[\enquote{Adjunkte}]
 Let $R$ be a ring and $A \in R^{n \times n}$
 \begin{enumerate}[(i)]
 \item $A^\# = (a_{i,j}^\#)$ with $a_{i,j}^\# = (-1)^{i+j} \det(A_{j,i})$,
@@ -91,7 +89,7 @@ Let $R$ be a ring and $A \in R^{n \times n}$
 \item We have $AA^\# = A^\#A = \det(A) I$.
 In particular, $Ax=0$ implies $A^\#Ax=0$ such that $\det(A)x = 0$.
 \end{enumerate}
-\end{reminder}
+\end{remin}
 
 \begin{proof}[Proof of Proposition 1.2]
 \enquote{$\Rightarrow$} If $n=1$ and $b$ is integral over $A$, then there is an $f \in A[X]$ with $f$ monic such that $f(b)=0$. Let $g \in A[X]$ be arbitrary. Then 
@@ -129,7 +127,7 @@ which is a polynomial over $b$ with leading coefficient $1$. Hence $b$ is integr
 \end{proof}
 
 
-\begin{cor}[And Definition]
+\begin{Kor}[And Definition]
 \begin{enumerate}[(i)]
 	\item If $A \subset B$ is an extension of rings then
 	\[ \overline{A} = \{ b \in B \, | \, b \text{ is integral over } A
@@ -141,7 +139,7 @@ which is a polynomial over $b$ with leading coefficient $1$. Hence $b$ is integr
 	\item The integral closure of $A$ in $B$ is integrally closed, i.e., 
 	$\overline{\overline{A}} = \overline{A}$.
 \end{enumerate}
-\end{cor}
+\end{Kor}
 
 
 \begin{proof}[Proof]
@@ -155,14 +153,14 @@ Hence, $R[c]$ is a finitely generated $A$ module such that $c$ is integral over 
 \bigskip \enquote{(iii)} Follows from (ii).
 \end{proof}
 
-\begin{definition}[\enquote{ganzer Abschluss und normaler Ring}]
+\begin{defi}[\enquote{ganzer Abschluss und normaler Ring}]
 If $A$ is an integral domain we call its integral closure $\overline{A}$ in $K = \Quot(A)$ the \textbf{normalization} or the \textbf{integral closure} of $A$. We say $A$ is \textbf{integrally closed} if $A$ is integrally closed in $K$.
-\end{definition}
+\end{defi}
 
 
-\begin{remark}
+\begin{Bem}
 	If $A$ is a UFD then $A$ is integrally closed.
-\end{remark}
+\end{Bem}
 
 \begin{proof}
 Suppose $b = \frac{a}{a'} \in \Quot(A)$ with $\gcd(a,a') =1$ is integral over $A$.
@@ -191,7 +189,7 @@ Hence we have $a' = \varepsilon \in A^\times$ such that $b \in A$.
 \item $B$ is the integral closure of $A$ in $L$. Observe: $B \cap K = A$
 \end{itemize}
 
-\begin{remark}
+\begin{Bem}
 \begin{enumerate}[(i)]
 	\item $B$ is integrally closed in $L$.
 	\item If $\beta \in L$ then there are $b \in B$ and $a \in A\bs \{0\}$ such that $\beta = \frac{b}{a}$. 
@@ -199,7 +197,7 @@ Hence we have $a' = \varepsilon \in A^\times$ such that $b \in A$.
 	In particular, $L=\Quot(B)$.
 	\item For $\beta\in L$ we have $\beta \in B$ if and only if $f_\beta \in A[X]$, where $f_\beta$ is the minimal polynomial of $\beta$ over $K$.
 \end{enumerate}
-\end{remark}
+\end{Bem}
 
 \begin{proof}\enquote{(i)} Follows from the transitivity in Corollary 1.4.
 	

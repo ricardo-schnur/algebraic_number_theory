@@ -1,3 +1,5 @@
+\rhead{6 November 2017}
+
 \begin{Bsp}
 Same situation as in Ex. 2.5. $\B_1=\{1, \sqrt{D}\} \subseteq B$. Consider:
 \begin{align*}
@@ -16,7 +18,7 @@ Let $D \in \Z$, $D$ square-free, $D \not = 0,1, B:= $ integral closure of $\Z$ i
 \end{enumerate}
 \end{Prop}
 
-\begin{Bew}
+\begin{proof}
 Consider $\alpha = a+b \sqrt{D} \in \Q(\sqrt{D})$ with $a,b, \in \Q$.\\
 $\Rightarrow f_\alpha = X^2-2aX+a^2-b^2D.$\\
 Rem 2.1: $\alpha \in B \iff f_\alpha \in \Z[X] \iff 2a \in \Z$ and $a^2-b^2D \in \Z$.
@@ -39,7 +41,7 @@ B= \begin{cases}
 For the second case observe that $\frac{a}{2} + \frac{b}{2} \sqrt{D} = \frac{a-b}{2} + \frac{b}{2} (1+ \sqrt{D}) \in \Z[\frac{1}{2}(1+ \sqrt{D}]$.\\
  This implies the claim.
 \end{enumerate}
-\end{Bew}
+\end{proof}
 
 \begin{Prop}
 Suppose $L/K$ separable and $A$ is a principal ideal domain. Let $M \not = 0$ be a finitely generated $B$-submodule of $L \Rightarrow M$ is a free $A$-module. In particular: $B$ is a free $A$-module of rank $n:=[L:K]$.
@@ -53,7 +55,7 @@ Suppose $A$ is a principal ideal domain and $M_0$ is a finitely generated free $
 \end{enumerate}
 \end{remin}
 
-\begin{Bew}[of Prop 2.12]
+\begin{proof}[of Prop 2.12]
 Let $\mu_1, \dots, \mu_r \in M \subseteq L$ be generators of $M$ as $B$-module and let $\alpha_1, \dots, \alpha_n$ be a basis of $L/K$ in $B$ and $d:=d(\alpha_1, \dots, \alpha_n) \in A$.\\
 Recall: $L = \{ \frac{b}{a} \ | \ b \in B, a \in A \setminus \{0\}\}$.
 \begin{enumerate}[(1)]
@@ -66,7 +68,7 @@ Reminder 2.13 $\Rightarrow adM$ is a free $A$-module $\Rightarrow M$ is a free $
 Suppose that $M = B$. So far we got that $B$ is a free $A$-module and $\rank(B) \leq n$.\\
 \underline{Show:} $\rank(B) \geq n$.\\
 Let $\mu_1, \dots \mu_r$ be a basis of $B$ as $A$-module. By $L=\{\frac{b}{a} \ | \ b \in B, a \in A \setminus \{0\}\}$ we have that $\mu_1, \dots, \mu_r$ generate $L$ over $K$.
-\end{Bew}
+\end{proof}
 
 Hence: if $A$ is a principal ideal domain, then $B$ has always an integral basis.
 
@@ -83,7 +85,7 @@ Suppose we are in the following situation:
 Then we have: $\{\omega_i \omega'_j \ | \ i \in \{1, \dots, n \}, j \in \{1, \dots, m \}\}$ is an integral basis and its discriminant  is $d^m (d')^n$.
 \end{Prop}
 
-\begin{Bew}
+\begin{proof}
 Recall: $L \cap L' =K \Rightarrow [LL' :K]=nm$ and $\{\omega_i\omega'_j\}$ is a basis of the field extension $LL' / K$.\\
 $\Gal(L/K)=\{\sigma_1, \dots, \sigma_n\}$ and $\Gal(L'/K) = \{\sigma'_1, \dots, \sigma'_m\}$\\
 $\Rightarrow$ obtain unique lifts $\hat{\sigma}_i \in \Gal(LL'/L')$ and $\hat{\sigma}'_j \in \Gal(LL'/L)$ and $\Gal(LL'/K)=\{\hat{\sigma}_i \hat{\sigma}'_j \ | \ i \in \{1, \dots, n \}, j \in \{1, \dots, m\}\}$.\\
@@ -141,4 +143,4 @@ Q' &0 &\dots &0\\
 \end{pmatrix}$ with $Q'=(\sigma'_l(\omega'_j))$ and $\det(Q')=d'$
 \end{enumerate}
 $\Rightarrow \det(M)^2=\det(Q)^{2m} \cdot \det(Q')^{2n} = d^m d'^n$.
-\end{Bew}
+\end{proof}

@@ -4,48 +4,21 @@
 %Einbinden eigener Befehle
 \input{system/commands.tex}
 
-\usepackage{transparent}
-\newenvironment{donotshow}{
-	\begin{minipage}[t][0cm]{0cm}
-	\renewcommand{\newpage}{ }
-	\transparent{0}}
-	{\end{minipage}}
+
 
 \begin{document}
 
 \pagestyle{fancy}
+\cfoot{\thepage \ / \pageref{LastPage}}
+\lhead{WS 17/18}
+\chead{Algebraic Number Theory}
 
-%\cfoot{\thepage \ / \pageref{LastPage}}
 
-\lhead{Algebraic Number Theory}
-\chead{}
-
-%\begin{donotshow}
-%\begin{titlepage}
-\title{Course: Algebraic Numbertheory}
-%\maketitle
-%\end{titlepage}
-\begin{huge}
-\underline{\underline{\textbf{Vorlesung: Algebraische Zahlentheorie}}}
-\end{huge}
-
-\rhead{23 and 27 October 2017}
-\input{content/23-27_Oct.tex}
-
-\rhead{30 October 2017}
+\input{content/23_Oct.tex}
+\input{content/27_Oct.tex}
 \input{content/30_Oct.tex}
-
-\rhead{6 November 2017}
 \input{content/6_Nov.tex}
-
-%\setcounter{section}{2}
-%\setcounter{theorem}{9}
-%
-\rhead{8 November 2017}
 \input{content/8_Nov.tex}
-%\end{donotshow}
-
-\rhead{13 November 2017}
 \input{content/13_Nov.tex}
 
 \end{document}
