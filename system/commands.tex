@@ -1,0 +1,192 @@
+% ---------- Definitionen, Sätze, ... ----------
+\newtheoremstyle{defistyle}% hnamei
+{}% hSpace abovei
+{}% hSpace belowi
+{}% hBody fonti
+{}% hIndent amounti1
+{\bfseries}% hTheorem head fonti
+{}% hPunctuation after theorem headi
+{\newline}% hSpace after theorem headi2
+{}% hTheorem head spec (can be left empty, meaning `normal')i
+
+
+      %\theoremstyle{plain}
+      \theoremstyle{defistyle}
+      \newtheorem{theorem}{Theorem}
+      \newtheorem*{theorem*}{Theorem}
+      \newtheorem{lemma}[theorem]{Lemma}
+      \newtheorem*{lemma*}{Lemma}
+      \newtheorem{cor}[theorem]{Corollary}
+      \newtheorem*{cor*}{Corollary}
+      \newtheorem{prop}[theorem]{Proposition}
+      \newtheorem*{prop*}{Proposition}
+      \newtheorem{conjecture}[theorem]{Conjecture}  
+      \newtheorem*{conjecture*}{Conjecture}   
+      \newtheorem{claim}[theorem]{Claim}   
+      
+            
+\newtheorem{defi}[theorem]{Definition}
+\newtheorem{Bem}[theorem]{Remark}
+\newtheorem*{Bem*}{Remark}
+\newtheorem{Not}[theorem]{Notation}
+\newtheorem{Bemdef}[theorem]{Remark and Definition}
+\newtheorem{Lemdef}[theorem]{Lemma and Definition}
+\newtheorem{Satz}[theorem]{Theorem}
+\newtheorem{Lem}[theorem]{Lemma}
+\newtheorem{Bsp}[theorem]{Example}
+\newtheorem{Kor}[theorem]{Corollary}
+\newtheorem{Prop}[theorem]{Proposition}
+\newtheorem{idea}[theorem]{Idea}
+\newtheorem{prob}[theorem]{Problem}
+\newtheorem{remin}[theorem]{Reminder}
+\newtheorem{Beobachtung}[theorem]{Beobachtung}
+\newtheoremstyle{bewstyle}
+{}% hSpace abovei
+{}% hSpace belowi
+{}% hBody fonti
+{}% hIndent amounti1
+{\bfseries}% hTheorem head fonti
+{}% hPunctuation after theorem headi
+{}% hSpace after theorem headi2
+{}% hTheorem head spec (can be left empty, meaning `normal')i
+\newtheorem*{Bew}{Proof:}
+      
+      \theoremstyle{definition}
+      
+      \newtheorem{definition}[theorem]{Definition}
+      \newtheorem*{definition*}{Definition}
+      
+      \theoremstyle{remark}
+      
+      \newtheorem{remark}[theorem]{Remark}
+      \newtheorem*{remark*}{Remark}     
+      \newtheorem{example}[theorem]{Example}
+      \newtheorem*{example*}{Example}
+      \newtheorem{reminder}[theorem]{Reminder}
+      
+      \numberwithin{theorem}{section}
+      
+      
+
+
+
+% ========== Abkürzungen ==========
+
+% ---------- Mengen, Buchstaben, ... ----------
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\let\k\relax
+\newcommand{\k}{\mathbb{K}}
+\newcommand{\Aff}{\mathbb{A}}
+
+\newcommand{\Pot}{\mathcal{P}}
+
+\let\P\relax
+\newcommand{\P}{\mathbb{P}}
+
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\G}{\mathcal{G}}
+
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+
+\let\O\relax
+\newcommand{\O}{\mathcal{O}}
+
+\newcommand{\Le}{L^1}
+\newcommand{\SLe}{\mathscr{L}^1}
+\newcommand{\Cpi}{\mathcal{C}_{2\pi}}
+
+\newcommand{\p}{\mathfrak{p}}
+
+\newcommand{\X}{\mathscr{X}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\LC}{\mathcal{L}}
+
+\newcommand{\one}{\mathbbm{1}}
+
+\DeclareMathOperator{\BV}{BV}
+
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\D}{\mathbb{D}}
+
+
+% ---------- Funktionen ----------
+
+\newcommand{\abs}[1]{\left|{#1}\right|}
+\newcommand{\norm}[1]{\left\|{#1}\right\|}
+\newcommand{\Lenorm}[1]{\left\|{#1}\right\|_{\Le}}
+\newcommand{\SLenorm}[1]{\left\|{#1}\right\|_{\SLe}}
+\newcommand{\Bnorm}[1]{\left\|{#1}\right\|_{B}}
+\newcommand{\supnorm}[1]{\left\|{#1}\right\|_{\infty}}
+\newcommand{\lipnorm}[1]{\left\|{#1}\right\|_{\text{Lip}}}
+\newcommand{\BVnorm}[1]{\left\|{#1}\right\|_{\BV}}
+
+\newcommand{\bigO}[1]{\mathcal{O}\left(#1\right)}
+\newcommand{\littleo}[1]{o\left(#1\right)}
+
+
+\newcommand{\ceil}[1]{\left\lceil {#1} \right\rceil}
+\newcommand{\floor}[1]{\left\lfloor {#1} \right\rfloor}
+
+
+\newcommand{\ex}[1]{\mathbb{E}\left[ {#1} \right]}
+%\newcommand{\prob}[1]{\mathbb{P}\left[ {#1} \right]}
+
+
+% ---------- MathOperators ----------
+
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Gl}{Gl}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Syz}{Syz}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\spec}{spec}
+\DeclareMathOperator{\Bild}{Bild}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\rg}{rg}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\spanset}{span}
+\DeclareMathOperator{\LH}{LH}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\ggT}{ggT}
+\DeclareMathOperator{\Quot}{Quot}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Norm}{\mathcal{N}}
+\newcommand{\TrL}{\operatorname{Tr_{L/K}}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\DeclareMathOperator{\NormL}{\mathcal{N}_{L/K}}
+\DeclareMathOperator{\rank}{rank}
+
+
+
+% ---------- Sonstiges ----------
+
+\newcommand{\piint}{\frac{1}{2\pi}\int\limits_{0}^{2\pi}}
+
+\newcommand{\td}{\,\mathrm{d}}
+\newcommand{\bs}{\backslash}

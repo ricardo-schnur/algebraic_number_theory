@@ -1,0 +1,399 @@
+\section*{Small prefix:}
+\underline{Recall:}
+\begin{itemize}
+\item $L$ numberfield $:\iff$ $L$ is a finite extension of $\Q$\\
+In particular: $L / \Q$ is separable $\Rightarrow L/\Q$ is primitive, i.e. $L=\Q(\alpha), \Q[X] \ni f_\alpha=$ minimal polynomial of $\alpha$ over $\Q$ and $[L:\Q]=\deg(f_\alpha)$.
+\item $\O:=\{\alpha \in L \ | \ f_\alpha \in \Z[X]\}$ is called \emph{ring of integers} (generalization of $\Z \subseteq \Q$).\\
+$\O$ is an integral domain.
+\item \underline{Goal:} study the ring $\O$
+\item \underline{Questions:} \begin{enumerate}
+\item What is $\O^\times$? What is its structure?
+\item What are the prime ideals of $\O$?
+\item Do we have a unique prime factorization, i.e. is $\O$ a UFD?
+\end{enumerate}
+\end{itemize}
+
+\section{Motivation}
+\begin{prob}[Fermat's conjecture, $\sim$ 1640]
+Show that the equation $x^n+y^n=z^n$ has no nontrivial integer solutions, i.e. solutions $(x,y,z)$ with $x,y,z \in \Z\setminus \{0\}$ for $n \geq 3$.
+\end{prob}
+\underline{History:} \begin{itemize}
+\item 1770: Euler found solution for $n=3$
+\item 1825: Dirichlet and Legendre using Germain \todo{??}
+\item Kummer showed it for many primes, he showed as well that his idea doesn't work for all $n \in \N_{>2}$
+\item Conjecture was proved by Wiles in 1997
+\end{itemize}
+
+\begin{Bem}
+\begin{enumerate}[i)]
+\item If Fermat's is true for $n$, then also for $nk$ for all $k \in \N$.
+\item It is sufficient to prove Fermat's conjecture for $n=4$ and all odd primes.
+\end{enumerate}
+\end{Bem}
+\begin{proof}
+\begin{enumerate}[i)]
+\item Suppose $(x,y,z)$ is a nontrivial solution of $x^{nk}+y^{nk}=z^{nk} \Rightarrow (x^k,y^k,z^k)$ is a nontrivial solution to $x^n+y^n=z^n$.
+\item Follows from i).
+\end{enumerate}
+\end{proof}
+
+\begin{Prop}[$n=2$]
+Suppose $x,y,z \in \Z, \gcd(x,y,z)=1$
+\begin{enumerate}[i)]
+\item $x,y,z$ are pairwise coprime if $x^2+y^2=z^2$
+\item $x^2+y^2=z^2 \Rightarrow$ either $x$ or $y$ is even
+\item $x^2+y^2=z^2 \iff \exists \ r,s \in \N_0, \gcd(r,s)=1$ s.t. $x=\pm 2rs, y= \pm (r^2-s^2), \linebreak
+z = \pm(r^2+s^2)$.
+\end{enumerate}
+\end{Prop}
+\begin{proof}
+\begin{enumerate}[i)]
+\item clear \checkmark
+\item One of $x,y,z$ has to be even, since $odd+odd \neq odd$. Suppose $z$ is even. Then look at equation $\mod 4$, this gives a contradiction. By i) only one of $x$ and $y$ is even.
+\item \glqq $\Leftarrow$\grqq: calculation\\
+\glqq $\Rightarrow$\grqq: Wlog. assume $x,y,z \in \N_0,\ x$ even, $y,z$ odd:
+\begin{align*}
+\ \ &\Rightarrow x=2u, z+y=2v, z-y=2w, \gcd(w,v)=1 (y,z \text{ are coprime}) , x^2+y^2=z^2\\
+&\Rightarrow 4u^2=x^2=z^2-y^2=(z-y)(z+y)=4wv \Rightarrow u^2=wv\\
+&\stackrel{\gcd(v,w)=1}{\Longrightarrow} v=r^2, w=s^2 \Rightarrow z=v+w=r^2+s^2, y=v-w=r^2-s^2\\
+&\hphantom{\stackrel{\gcd(v,w)=1}{\Longrightarrow}} \text{ and } x=2u=2\sqrt{vw}=2rs
+\end{align*} 
+\end{enumerate}
+\end{proof}
+
+\begin{Bem*}
+$(x,y,z) \in \Z^3$ with $x^2+y^2=z^2$ are called \emph{pythagorean triples}.
+\end{Bem*}
+
+\addtocounter{theorem}{-1}
+\begin{Prop}[$n=4$]
+The equation $x^4+y^4=z^2$ (and $x^4+y^4=z^4$) have no nontrivial integer solutions.
+\end{Prop}
+
+\begin{proof}
+Suppose $x,y,z \in \Z$ with $x^4+y^4=z^2, xyz \not = 0$. Wlog $x,y,z > 0, x,y,z \text{ coprime},\linebreak
+x=2\tilde{x}$ for some $\tilde{x} \in \N$. Choose $z$ minimal with this conditions.
+\begin{align*}
+\text{Prop. 1.2 } &\Rightarrow \exists r,s \in \N \text{ s.t. } x^2=2rs,y^2=r^2-s^2, z=r^2+s^2 \text{ and } \gcd(r,s)=1\\
+&\Rightarrow y^2+s^2=r^2\text{ with }y,s,r \text{ coprime.}\\
+\text{Prop. 1.2 } &\Rightarrow \exists a,b \in \N \text{ s.t. } s=2ab, y=a^2-b^2, r=a^2+b^2 \text{ and } \gcd(a,b)=1.\\
+\text{plug in } &\Rightarrow x^2=4ab(a^2+b^2)\\
+&\Rightarrow \tilde{x}^2=ab(a^2+b^2) \text{ and } a,b,a^2+b^2 \text{ pairwise coprime}
+\end{align*}
+As in proof of Prop. 1.2 (they are coprime but a square number)
+\begin{align*}
+&\Rightarrow \exists\ c,d,e \in \N \text{ s.t. } a=c^2, b=d^2, a^2+b^2=e^2\\
+&\Rightarrow c^4+d^4=a^2+b^2=e^2 \text{ and } e \leq a^2+b^2 = r < z
+\end{align*}
+\Lightning since $z$ was chosen to be minimal.
+\end{proof}
+
+\underline{From now on:} $n=p$ odd prime.
+
+\begin{idea}[by Germain]
+Distinguish 2 cases in Fermat's problem:
+\begin{enumerate}
+\item \glqq First case\grqq : $x,y,z$ with $p$ does not divide $xyz$.
+\item \glqq Second case\grqq : exactly one of $x,y,z$ is divided by $p$.
+\end{enumerate}
+\end{idea}
+
+\underline{Some approach:}
+\begin{itemize}
+\item Use primitive $p$-th root of unity $\zeta=\zeta_p$.
+\item Reminder: $X^p-1=(X-1)(X-\zeta)\dots (X-\zeta^{p-1})$
+\item Setting $\tilde{y}=-y$ we get:
+\begin{align*}
+x^p+y^p&= x^p-\tilde{y}^p=\tilde{y}^p( (\frac{x}{\tilde{y}})^p -1)\\
+&=\tilde{y}^p (\frac{x}{\tilde{y}}-1)(\frac{x}{\tilde{y}}-\zeta)\dots(\frac{x}{\tilde{y}}-\zeta^{p-1})\\
+&=(x-\tilde{y})(x-\tilde{y}\zeta)\dots (x-\tilde{y}\zeta^{p-1})\\
+&=(x+y)(x+y\zeta)\dots (x+y\zeta^{p-1})
+\end{align*}
+\end{itemize}
+
+\begin{Lem}
+For $x,y,z \in \Z$ we have $x^p+y^p=z^p \iff (x+y)(x+y\zeta)\dots(x+y \zeta^{p-1})=z^p$
+\end{Lem}
+
+\underline{Idea:} Look at prime divisors in $\Z[\zeta]$.\\
+\underline{Problem:} Would be good to have unique prime factorization. This will not be true in general.
+
+\section{The ring $\Z[\zeta]$}
+Suppose $\zeta$ is a primitive $n$-th root of unity
+
+\begin{remin}\ \vspace*{-\baselineskip}
+\begin{enumerate}[i)]
+\item $\Q(\zeta)/\Q$ is algebraic extension of degree $[\Q(\zeta) : \Q] = \varphi(n)$
+\item $\Q(\zeta)/\Q$ is a Galois extension. In particular:\\
+$\Hom(\Q(\zeta)/ \Q)\cong \Gal(\Q(\zeta)/\Q)=\{\sigma_i \text{ with } \sigma_i(\zeta)=\zeta^i \ | \ i \in (\Z/n\Z)^\times\} \cong (\Z/n\Z)^\times$
+\item Consider the norm map $\Norm: \Q(\zeta) \to \Q \ ,\ \alpha \mapsto \det( \gamma \mapsto \alpha \gamma)$. 
+We have for $\alpha = r(\zeta)$ ($r \in \Q[X]$ polynomial) with min. polynomial $f_\alpha = X^k+c_{k-1}X^{k-1} + \dots + c_0$:
+\begin{itemize}
+\item  If we have $\Q(\alpha)=\Q(\zeta)$, then $\Norm(\alpha)=(-1)^{\varphi(n)} c_0$
+\item $\Norm(\alpha)= \prod_{\sigma \in \Gal(\Q(\zeta)/\Q)} \sigma(\alpha) = \prod_{i \in (\Z/n\Z)^\times} r(\zeta^i)$
+\item $\alpha \in \Q \Rightarrow \Norm(\alpha)=\alpha^{\varphi(n)}$
+\end{itemize}
+\item $X^{n-1}+X^{n-2}+\dots + 1 = \frac{X^n-1}{X-1}=(X - \zeta)(X-\zeta^2)\dots (X- \zeta^{n-1})\\
+\stackrel{X=1}{\Rightarrow} n=(1-\zeta)(1-\zeta^2)\dots (1- \zeta^{n-1})$
+\end{enumerate}
+\end{remin}
+
+\begin{remin}[and preview]\ \vspace*{- \baselineskip} 
+\begin{enumerate}[i)]
+\item $\O:=\Z[\zeta]:=\{ r(\zeta ) \ | \ r \in \Z [X]\}$
+\item $\Z[\zeta]=\{\alpha \in \Q(\zeta) \ | \ f_\alpha \in \Z[X]\}$ (proof later)
+\item $\Z[\zeta]$ is a free $\Z$-module with basis $\{1,\zeta, \dots, \zeta^{d-1}\}$ with $d=\varphi(n)$ (proof later)
+\item $\alpha \in \Z[\zeta] \Rightarrow \Norm(\alpha) \in \Z$ (proof later)
+\item $\{\alpha \in \O \ | \ |\alpha|=1\}$ is finite (proof later)
+\end{enumerate}
+\end{remin}
+
+\begin{remin}
+Suppose $R$ is an integral domain:
+\begin{enumerate}[i)]
+\item $\alpha \in R$ is \emph{irreducible} :$\iff$ If $\alpha=\alpha_1 \alpha_2$ with $\alpha_i \in R$, then $\alpha_1 \in R^\times$ or $\alpha_2 \in R^\times$
+\item $\alpha, \alpha' \in R$ are \emph{associated to each other} :$\iff \exists \varepsilon \in R^\times: \alpha = \varepsilon \alpha'$
+\item $R$ is called \emph{factorial} :$\iff$ each $\alpha \in R, \alpha\neq 0$ can be written in a unique way as\\
+$\alpha = \varepsilon \pi_1 \cdot \ldots \cdot \pi_r$ with $\pi_i$ irreducible up to multiplication with $\varepsilon \in R^\times$
+\item $\alpha_1, \alpha_2 \in R$ are called \emph{coprime} :$\iff$ If $\alpha' \in R$ with $\exists \beta_1, \beta_2 \in R: \alpha_1=\alpha'\beta_1, \alpha_2=\alpha'\beta_2$ then $\alpha' \in R^\times$.
+\end{enumerate}
+\end{remin}
+
+\begin{Bem*}[and correction]\ \vspace*{-\baselineskip}
+\begin{enumerate}
+\item 
+Recall: $L/\Q$ field extensions:
+\[ \O :=\{\alpha \in L \ | \ f_\alpha \in \Z[X]\}\]
+!! Here: $f_\alpha$ is by definition monic, i.e leading coefficient is 1.\\
+\underline{Remark:} $\O=\{\alpha \in L \ | \ \exists f \in \Z[X]$ with $f$ monic and $f(\alpha)=0\}$\\
+\glqq $\subseteq$\grqq: clear\\
+\glqq $\supseteq$\grqq: Lemma of Gauss
+\item \underline{Recall:} Definition of field norm for $L / K$ finite field extension
+How is norm defined? $\Norm: L \to K$ defined as follows:\\
+Suppose $\alpha \in L \Rightarrow \varphi_\alpha: \beta \mapsto \alpha \beta$ is linear map over $K$. Then:
+\[\Norm_{L/K}(\alpha) := \det (\phi_\alpha)\]
+\underline{Properties:}
+\begin{enumerate}
+\item If $L= K(\alpha)$ and $X^n+c_{n-1}X^{n-1}+\dots+c_0$ is a minimal polynomial of $\alpha$ over $K$, then $\Norm_{L|K}(\alpha) = (-1)^n c_0$.\\
+%!! Mistake in Reminder 2.1, you need that $\alpha$ generates $L$.
+\item $\Norm_{L/K}(\alpha)=(\prod_{i=1}^r \sigma_i(\alpha))^q$ with $\Hom_K(L, \overline K)= \{\sigma_1, \dots, \sigma_r\}$ and $q=$ inseparable degree, i.e. $[L:K]=[L:K]_s \cdot q$.
+\item $\alpha \in K \Rightarrow \Norm_{L|K}(\alpha)=\alpha^d$ with $d = [L:K]$ (see Bosch \glqq Algebra\grqq 4.7).
+\end{enumerate}
+\end{enumerate}
+\end{Bem*}
+
+General reference: NEUKIRCH\\
+This chapter: BOREVICH + SHAFEREVICH Chapter 3.1.\\
+
+\underline{Recall:} Goal: prove for $p$ prime and odd 
+\[x^p+y^p=z^p\]
+has no non-trivial solutions.
+Last time:
+\[x^p+y^p=z^p=(x+y)(x+y\zeta)(x+y\zeta^2)\dots (x+y\zeta^{p-1}) \in \Z[\zeta]\]
+From now on: $p$ odd prime, $\zeta = e^{\frac{2\pi i}{p}}$ primitive $p-th$ root of unity $\O= \Z[\zeta]$.
+
+\begin{Prop}
+For the group of units $\O^\times$ of $\O=\Z[\zeta]$ we have:
+\[ \O^\times = \{ \alpha \in \O \ | \ \Norm(\alpha) = \pm 1\}\]
+Notation: $\Norm=\Norm_{\Q(\zeta) / \Q}$ in this chapter.
+\end{Prop}
+\begin{proof}
+\glqq $\subseteq$ \grqq $\alpha \in \O^\times \Rightarrow \exists \beta \in \O$ with $\alpha\beta=1$
+$\Rightarrow 1 = N(\alpha\beta) \stackrel{!}{=} \underbrace{\Norm(\alpha)}_{\in \Z} \underbrace{\Norm(\beta)}_{\in \Z \text{ by 2.2 v)}} \Rightarrow \text{claim}$\\
+\glqq $\supseteq$\grqq: Suppose $\alpha \in \O$ with $\Norm(\alpha) = \pm 1$.\\
+$\Rightarrow \pm 1 = \Norm(\alpha) = \prod_{\sigma \in Gal(\Q(\zeta)| \Q)} \sigma(\alpha)$\\
+Note: $\alpha = a_0 + a_1 \zeta + \dots a_{p-2} \zeta^{p-2} \in \Z[\zeta]$\\
+$\Rightarrow \sigma(\alpha)=a_0+a_1\zeta^i + \dots + a_{p-2}\zeta^{i(p-2)}$ for some $i \in \{1, \dots, p-1\} \Rightarrow \sigma(\alpha) \in \Z[\zeta] \\
+\Rightarrow \alpha$ is a divisor of 1 in $\Z[\zeta] \Rightarrow \alpha \in \O^\times$.
+\end{proof}
+
+\begin{Lem}\ \vspace*{-\baselineskip}
+\begin{enumerate}[i)]
+\item $\Norm(1-\zeta^s) = p$ for $s \in \Z$ with $s \not\equiv 0 \mod p$
+\item $1- \zeta$ is irreducible in $\O=\Z[\zeta]$.
+\item $p= \varepsilon \cdot(1-\zeta)^{p-1}$ with some $\varepsilon \in \O^\times$.
+\end{enumerate}
+\end{Lem}
+
+\begin{proof}
+\begin{enumerate}[i)]
+\item 
+2.1. iv) $\Rightarrow p= (1- \zeta)(1- \zeta^2) \dots (1-\zeta^{p-1})$\\
+2.1. iii) $\Rightarrow \Norm(1-\zeta^s)=\prod_{\sigma \in \Gal(\Q(\zeta)/ \Q)} \sigma(1-\zeta^s) = \prod_{i=1}^{p-1} (1- \zeta^{si}) = \prod_{j=1}^{p-1}(1-\zeta^j)=p$
+\item We obtain from i) that $1- \zeta \not\in \O^\times$. Suppose $1-\zeta = \alpha \beta$ with $\alpha, \beta \in \O$\\
+$\Rightarrow p=\Norm(1- \zeta)=\Norm(\alpha)\Norm(\beta) \Rightarrow \Norm(\alpha) = \pm 1 $ or $\Norm(\beta)=\pm 1 \stackrel{\text{Prop 2.4}}{\Longrightarrow} \alpha \in \O^\times$ or $\beta \in \O^\times$.
+\item Use: $1-\zeta^s = (1-\zeta)\underbrace{(1+\zeta +\zeta^2+\dots+\zeta^{s-1})}_{\varepsilon_s} = (1-\zeta)\varepsilon_s$\\
+$\Rightarrow p=\Norm(1-\zeta^s)=\underbrace{\Norm(1-\zeta)}_{=p}\cdot \Norm(\varepsilon_s) \Rightarrow \Norm(\varepsilon_s)=1 \Rightarrow \varepsilon_s \in \O^\times$\\
+Hence $p = \prod_{s=1}^{p-1}(1-\zeta^s)=\prod_{s=1}^{p-1} \underbrace{\varepsilon_s}_{\in \O^\times} (1- \zeta) = (1- \zeta)^{p-1}\underbrace{\prod_{s=1}^{p-1} \varepsilon_s}_{\in \O^\times}$
+\end{enumerate}
+\end{proof}
+
+\underline{Notation:} $\varepsilon_s = 1+ \zeta + \dots + \zeta^s$.
+
+\begin{Lem}\ \vspace*{-\baselineskip}
+\begin{enumerate}[i)]
+\item $a \in \Z$ with $1- \zeta$ divides $a$ in $\O \Rightarrow p$ divides $a$.
+\item An $n$-th root of unity lies in $\Q(\zeta) \iff n $ divides $2p$.
+\end{enumerate}
+\end{Lem}
+\begin{proof}
+\begin{enumerate}[i)]
+\item $a=(1- \zeta)\beta$ with $\beta \in \O \Rightarrow a^{p-1}=\Norm(a)=p\Norm(\beta) \stackrel{(\Norm(\beta) \in \Z)}{\Longrightarrow} p$ divides $a$.
+\item \glqq $\Leftarrow$\grqq: $-1 \in \Q(\zeta)$ and thus $e^{\frac{2\pi i}{2p}} \in \Q(\zeta)$\\
+\glqq $\Rightarrow$\grqq: Consider $H:=\{\omega \in \Q(\zeta) \ | \ \omega \text{ is a root of unity} \}$
+\begin{enumerate}
+\item $H \subseteq \Z[\zeta]$: Suppose $\omega \in H \Rightarrow \omega^n-1 = 0$ for some $n \in \N \Rightarrow f_\omega$ is a divisor of $X^n-1 \Rightarrow f_\omega \in \Z[X] \stackrel{2.2 ii)}{\Longrightarrow} \omega \in \Z[\zeta].$
+\item $\tilde{\omega}$ some conjugate of $\omega \Rightarrow \tilde{\omega}$ is a root of $X^n-1 \Rightarrow |\tilde{\omega}|=1 \stackrel{2.2 v)}{\Longrightarrow} H$ is finite $\Rightarrow H$ is a cyclic subgroup of $\Q(\zeta)^\times$.\\
+Choose some generator $\omega_0$ of $H$ and denote $m:= \ord(\omega_0)$. Since $\zeta \in H$ and $\ord(\zeta)=p \Rightarrow p$ divides $m$. Decompose $m=p^s \cdot m'$ with $s \geq 1$ and $\gcd(m',p)=1$. Consider the field extensions chain:
+\[\Q \subseteq \Q(\omega_0) \subseteq \Q(\zeta)\]
+with degrees $[\Q(\zeta):\Q]=p-1=\varphi(p)$ and $[\Q(\omega_0):\Q]=\varphi(m) = \linebreak p^{s-1}(p-1)\varphi(m') \leq p-1 \Rightarrow s=1$ and $\varphi(m')=1$ and thus $m'=1,2 \Rightarrow \ord(\omega_0) \leq 2p$.
+\end{enumerate}
+\end{enumerate}
+\end{proof}
+
+\begin{Not}\
+\begin{enumerate}
+\item $L / K$ field extension, $\alpha \in L, \overline{K}$ given algebraic closure. The elements $\sigma (\alpha)$ with $\sigma \in \Hom_K(L, \bar{K})$ are called \emph{conjugates of $\alpha$}. In particular: $L/K$ normal $\Rightarrow$ conjugates live in $L$.
+\item $R$ ring, $I$ ideal in $R$, $p: R \to R/I$ canonical projection. For $\alpha, \beta \in R$ we denote $\alpha \equiv \beta \mod I : \iff p(\alpha)=p(\beta)$.\\
+If $I=<q>$ is a principal ideal, we denote $\alpha \equiv \beta \mod q :\iff \alpha \equiv \beta \mod <q>$
+\end{enumerate}
+
+\begin{Bsp}
+Consider $\Q(\zeta)/\Q$ with $\zeta^p=1, R=\O=\Z[\zeta], \alpha = a_0 + a_1\zeta+a_2\zeta^2+\dots+a_{p-2}\zeta^{p-2}$
+\begin{enumerate}[i)]
+\item The conjugates of $\alpha$ are: $\alpha_h=a_0+a_1\zeta^h+ a_2\zeta^{2h}+\dots+a_{p-2}\zeta^{h(p-2)}$ with $h \in \{1, \dots, p-1\}$.
+\item Consider $\lambda = 1- \zeta$ and $I=<\lambda>$.\\
+$1 \equiv \zeta \mod \lambda$ and $\alpha \equiv a_0 + a_1 + \dots + a_{p-2} \mod \lambda (\in \Z)$.
+\item $\alpha^p \equiv a_0^p+(a_1 \zeta)^p+\dots + (a_{p-2} \zeta^{p-2})^p= \underbrace{a_0^p + a_1^p + \dots + a_{p-1}^p}_{\in \Z} \mod p$
+\end{enumerate}
+\end{Bsp}
+\end{Not}
+
+\begin{Satz}[Kummer's Lemma]
+If $\varepsilon \in \Z[\zeta]$ is a unit, i.e. $\varepsilon \in \Z[\zeta]^\times$,
+\[ \frac{\varepsilon}{\bar{\varepsilon}}=\zeta^a \quad \text{for some } a \in \Z\]
+Here $\bar{\varepsilon}= \tau (\varepsilon)$, where $\tau$ is the complex conjugation.\\
+Recall: $\tau \in \Gal(\Q(\zeta)/\Q)$.
+\end{Satz}
+
+\begin{proof}
+Denote $\varepsilon = a_0 + a_1 \zeta + \dots + a_{p-2}\zeta^{p-2} = r(\zeta)$ with $r(X)=\sum_{i=0}^{p-2} a_iX^i \in \Z[X]$.\\
+\underline{Observe:}
+\begin{enumerate}
+\item $\varepsilon \in \O^\times \Rightarrow \exists \varepsilon' \in \O $ s.t. $ \varepsilon \varepsilon' = 1 \Rightarrow \bar{\varepsilon} \bar{\varepsilon}'=1 \Rightarrow \bar{\varepsilon} \in \O^\times$
+\item $\mu := \frac{\varepsilon}{\bar{\varepsilon}}=\frac{r(\zeta)}{r(\zeta^{-1})}$ and the conjugate $\mu_k$ of $\mu$ is $\frac{r(\zeta^k)}{r(\zeta^{-k})}=\frac{r(\zeta^k)}{\overline{r(\zeta^{k})}}$. In particular $|\mu_k|=1$.\\
+It follows that $\mu_k \in \{\alpha \in \O^\times \ | \ |\alpha|=1\}$ which is by 2.2. v) a finite subgroup of $\Q(\zeta)^\times \Rightarrow \mu $ is a root of unity\\
+Lemma 2.6 $\Rightarrow \mu = \pm \zeta^a$ for some $a \in \Z$.\\
+\underline{Claim:} $\mu= \zeta^a$\\
+\underline{Proof of claim:} suppose $\mu = -\zeta^a$, i.e. $\varepsilon=-\bar{\varepsilon}\zeta^a$ \quad $(\star )$\\
+\underline{Idea:} calculation mod $\lambda=1-\zeta$ \quad $\varepsilon = a_0+a_1\zeta+\dots+a_{p-2}\zeta^{p-2}$\\
+Ex. 2.8.ii) $\Rightarrow \varepsilon \equiv \underbrace{a_0 + a_1+ \dots + a_{p-2}}_{ =: M \in \Z} \equiv \bar{\varepsilon} \mod \lambda$\\
+$(\star) \Rightarrow \varepsilon \equiv -\bar{\varepsilon} \mod \lambda \Rightarrow M\equiv -M \mod \lambda \Rightarrow 2M \equiv 0 \mod \lambda \stackrel{\text{Lemma 2.6 i)}}{\Longrightarrow} p$ divides $2M$ in $\Z \stackrel{{p \text{ odd}}}{\Longrightarrow} p$ divides $M.\\
+\Rightarrow \lambda = 1-\zeta$ divides $M$ in $\O$ by Lemma 2.5.\\
+$\Rightarrow \varepsilon \equiv \bar{\varepsilon} \equiv M \equiv 0 \mod \lambda=1-\zeta \Rightarrow $Contradiction to $\varepsilon$ is unit and $1- \zeta$ is irreducible
+\end{enumerate}
+\end{proof}
+
+\begin{Kor}
+$\varepsilon$ unit in $\Z[\zeta] \Rightarrow \varepsilon = r  \zeta^s$ with some $r \in \R, s \in \Z$.
+\end{Kor}
+\begin{proof}
+Prop 2.9 $\Rightarrow \exists \ a \in \Z, \varepsilon= \zeta^a \cdot \bar{\varepsilon}$.\\
+Choose $s \in \Z$ with $2s \equiv a \mod p$\\
+$\Rightarrow \frac{\varepsilon}{\zeta^s} = \zeta^s \cdot \bar{\varepsilon} = \frac{\bar{\varepsilon}}{\zeta^{-s}} = \bar{\frac{\varepsilon}{\zeta^s}}=r \in \R$ and $\varepsilon = r\cdot \zeta^s$.
+\end{proof}
+\hrulefill\\
+Reminder: $x^p+y^p= (x+y)(x+\zeta y) \dots (x+\zeta^{p-1}y)$
+\begin{Lem}
+Suppose $x,y,m,n \in \Z$ with $m \not \equiv n \mod p$.
+$x+y\zeta^n$ and $x+y\zeta^m$ are relatively prime $\iff$ ($x$ and $y$ are relatively prime) and ($x+y$ not divisible by $p$)
+\end{Lem}
+
+\begin{proof}
+\glqq $\Rightarrow$\grqq: \begin{itemize}
+\item $d|x$ and $d|y \Rightarrow d|x+\zeta^ny$ and $d| x+\zeta^ny$ \Lightning
+\item \glqq $p| x+y$\grqq\ Recall: $p= \varepsilon (1-\zeta)^{p-1}$ with $\varepsilon \in O^\times\\
+\Rightarrow x+\zeta^my = \underbrace{x+y}_{\text{divisible by } p} +y\cdot\underbrace{(\zeta^m-1)}_{(\zeta-1)(1+\zeta+\zeta^2\dots + \zeta^{m-1})} \equiv 0 \mod 1-\zeta$\\
+same way $x+\zeta^ny \equiv 0 \mod 1- \zeta$ \Lightning
+\end{itemize}
+\glqq $\Leftarrow$\grqq: \underline{Idea:} show: $\exists \alpha_0, \beta_0 \in \O$ with:
+\[1= \alpha_0(x+\zeta^m y) + \beta (x+ \zeta^ny)\]
+Consider: $A:= \{\alpha (x+\zeta^my)+\beta(x+\zeta^ny) \ | \ \alpha,\beta \in \O \}$\\
+$A$ is an ideal in $\O$. We have:
+\begin{enumerate}
+\item $(x+\zeta^m y) - (x+\zeta^n y) = \zeta^m(1-\zeta^{n-m})y= \underbrace{\zeta^n\varepsilon_{n-m}}_{\in \O^\times} (1 - \zeta)y \Rightarrow (1 - \zeta)y \in A$
+\item $\zeta^n (x+ \zeta^my) - \zeta^m(x+\zeta^ny)=(\zeta^n-\zeta^m)x= \zeta^n\cdot(1-\zeta^{n-m})x=\underbrace{\zeta^n \varepsilon_{m-n}}_{\in \O^\times} \cdot (1- \zeta)x \Rightarrow (1- \zeta) x \in A$.
+\item $\gcd(x,y)=1 \Rightarrow \exists \ a,b \in \Z$ with $1=ax+by \Rightarrow (1-\zeta)xa +(1-\zeta)yb = 1-\zeta \stackrel{1.\& 2.}{\Rightarrow} 1- \zeta \in A$
+\item $x+y = \underbrace{x+ \zeta^ny}_{\in A} + \underbrace{(1- \zeta^n)y}_{\in A} \in A$
+\item $\gcd(p,x+y)=1 \Rightarrow \exists \bar{a}, \bar{b} \in \Z: 1= \underbrace{\bar{a}p}_{\in A}+\bar{b}\underbrace{(x+y)}_{\in A} \in A$.\\
+$\Rightarrow$ Hence $x+\zeta^ny$ and $x+ \zeta^my$ are coprime.
+\end{enumerate}
+\end{proof}
+
+\begin{Bem}
+Suppose $\alpha = a_0 + a_1 \zeta + \dots + a_{p-1}\zeta^{p-1} \in \O$ with $a_i \in \Z$ and at least one $a_j =0$.\\
+If $n \in \Z$ with $n$ divides $\alpha$ in $\O$, then $n$ divides all $a_i$
+\end{Bem}
+\begin{proof}
+Recall from 2.2 (preview): $1, \zeta, \zeta^2, \dots, \zeta^{p-2}$ is a basis of $\O$.\\
+Furthermore: $1+\zeta+\dots+\zeta^{p-1}=0$\\
+$\Rightarrow \{1, \zeta, \dots, \zeta^{p-1}\} \setminus \{\zeta^j\}$ is a basis $\Rightarrow$ claim.
+\end{proof}
+
+\section{First case of Fermat in case of $\Z[\zeta]$ is a UFD (unique factorization domain)}
+Reference: BOREVICH + SHAFEREVIC + WASHINGTON Chapter 1\\
+As before: $p$ odd prime, $\zeta= e^{\frac{2 \pi i}{p}} p$-th root of unity.
+
+\begin{theorem}
+Suppose that $\Z[\zeta]$ is a UFD, then $x^p+y^p=z^p$ has no non-trivial solutions $(x,y,z)$, such that neither $x,y$ nor $z$ is divisible by $p$.
+\end{theorem}
+
+\addtocounter{theorem}{-1}
+\begin{Satz}[$p=3$]
+Suppose $x,y,z \in \Z$ with $x^3+y^3=z^3 \mod 9 \Rightarrow 3$ divides $x,y$ or $z$.
+\end{Satz}
+\begin{proof}
+Recall: Little Fermat's theorem $x^p \equiv x, y^p \equiv y, z^p\equiv z \mod p$.
+\begin{align*}
+x^3+y^3=z^3 \mod 3 \Rightarrow x+y \equiv z \mod 3\\
+\Rightarrow z=x+y+3u \text{ with } u \in \Z\\
+\Rightarrow \underline{x^3+y^3} \equiv (x+y+3u)^3 \equiv \underline{x^3+y^3}+3xy^2+3x^2y \mod 9\\
+\Rightarrow 0 \equiv xy^3+x^2y \equiv xy(x+y) \equiv xyz \mod 3\\
+\Rightarrow x,y \text{ or } z \text{ is divisible by } 3
+\end{align*}
+\end{proof}
+
+\begin{Lem}
+Let $p \geq 5$. Suppose $x,y,z \in \Z$ with $x^p+y^p=z^p$. If $x\equiv y \equiv -z \mod p$, then $p | z$.
+\end{Lem}
+\begin{proof}
+$z \equiv z^p = x^p+y^p \equiv -2z^p \equiv -2z \mod p \Rightarrow 3z \equiv 0 \mod p \stackrel{p \neq 3}{\Longrightarrow} p | z$.
+\end{proof}
+
+\begin{Bem}
+It follows from Lemma 3.2 that in the first case of Fermat we may assume for $p \geq 5$ that $x \not\equiv y \mod p$ because we can replace $x^p + y^p = z^p $ by $x^p+(-z)^p=(-y)^p$ and $x \not\equiv -z \mod p$.
+\end{Bem}
+
+\begin{Bew}[of Thm. 1]
+$p=3 \Rightarrow $ claim follows from Prop 3.1.\\
+Now: $p \geq 5$. Suppose $x,y,z \in \Z$ with $p$ divides neither $x,y$ nor $z$, $x,y,z$ are pairwise coprime and $x \not\equiv y \mod p$. Suppose $z^p = x^p +y^p=(x+y)(x+\zeta y)\dots (x+\zeta^{p-1}y)$.\\
+Apply Lemma 2.11:
+\begin{itemize}
+\item $\gcd(x,y)=1$ \checkmark
+\item Little Fermat $\Rightarrow x+y \equiv x^p+y^p\equiv z^p \not \equiv 0 \mod p$
+\end{itemize}
+$\stackrel{2.11}{\Longrightarrow} x+y, x+\zeta y, \dots, x+\zeta^{p-1}y$ are pairwise coprime.\\
+$\stackrel{\Z[\zeta] \text{ UFD}}{\Longrightarrow}$ \glqq $x+\zeta^i y$ have to be $p$-power\grqq \ More precisely: $x+\zeta y = \varepsilon \alpha^p$ with $\varepsilon \in \O^\times, \alpha \in \O$, since they are coprime factors of a $p$-th power.
+\begin{enumerate}
+\item Cor. 2.10 $\Rightarrow \varepsilon = r \zeta^s$ with $r \in \R, s \in \Z$
+\item Example 2.8. iii) $\Rightarrow \exists a \in \Z$ with $\alpha^p \equiv a \mod p$.
+\begin{align*}
+x + \zeta y = r \zeta^s \alpha^p \equiv r \zeta^s a \mod p\\
+x+ \zeta^{-1} y = \overline{x+ \zeta y} \equiv r \zeta^{-s}a \mod p\\
+\Rightarrow \zeta^{-s}(x+\zeta y) \equiv ra \equiv \zeta^s(x+\zeta^{-1}y) \mod p\\
+\Rightarrow \underbrace{x+\zeta y - \zeta^{2s}x- \zeta^{2s-1}y}_{=x\cdot 1 + y \zeta -x \zeta^{2s} - y \zeta^{2s-1}} \equiv 0 \mod p\\
+\end{align*}
+Idea: Use Rem. 2.12\\
+\underline{Case 1:} $1, \zeta, \zeta^{2s-1}, \zeta^{2s}$ are distinct $\stackrel{p \geq 5, \text{ Rem 2.12}}{\Longrightarrow} p | x$ and $p | y$.  Contradiction to first case.
+\end{enumerate}
+\end{Bew}

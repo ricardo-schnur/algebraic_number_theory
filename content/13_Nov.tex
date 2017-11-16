@@ -1,0 +1,238 @@
+\begin{Bem}[and Definition]
+	Suppose $K=\Q, A=\Z$, $L$ a number field and $B=\O_k$.
+	\begin{enumerate}[(i)]
+		\item There is always an integral basis $w_1, \dots, w_n$.
+		\item The \textbf{discriminant} $d_k = d_k(\O_k) = d(w_1, \dots, w_n)$ does not depend on the choice of integral basis.
+	\end{enumerate}
+\end{Bem}
+
+\begin{Bew}
+	\enquote{(i)} Proposition 2.12
+	\enquote{(ii)} Let $w_1', \dots, w_n'$ be another integral basis. Then there exists a base change matrix $T \in \GL_n(\Z)$ with
+	\[ \begin{pmatrix}
+		w_1' \\ \vdots \\ w_n'
+	\end{pmatrix}
+	= T  \begin{pmatrix}
+	w_1 \\ \vdots \\ w_n
+	\end{pmatrix}.
+	\]
+	Hence 
+		\[ \begin{pmatrix}
+		\sigma(w_1') \\ \vdots \\ \sigma(w_n')
+		\end{pmatrix}
+		= T  \begin{pmatrix}
+		\sigma(w_1) \\ \vdots \\ \sigma(w_n)
+		\end{pmatrix}.
+		\]
+	such that
+	\[ d(w_1', \dots, w_n') = {\underbrace{\det T}_{ \in \{ 1, -1\} } }^2 d(w_1, \dots, w_n)
+	= d_k.
+	\]
+\end{Bew}
+
+\begin{Bsp}
+	Let $L=\Q(\sqrt{D})$ with $D\in\Z$ square-free. By Proposition 2.14 we have:
+	\begin{enumerate}[(i)]
+		\item $\O_k=\Z[\sqrt{D}]$ and $\{1,\sqrt{D} \}$ is an integral basis for $D \equiv 2,3 \mod 4$ and $d_k = 4D$.
+		\item $\O_k=\Z\left[\frac{1+\sqrt{D}}{2}\right]$ and $\left\{1,\frac{1+\sqrt{D}}{2} \right\}$ is an integral basis for $D \equiv 1 \mod 4$ and $d_k = D$.
+	\end{enumerate}	
+In particular, this holds for $D=-1$, i.e., the Gaussian integers $\Z[i]$.
+\end{Bsp}
+
+
+
+\section{Ideals}
+Let $R$ be a commutative ring with $1$.
+
+\textbf{Problem:}
+	$O_k$ is not a UFD in many cases, e.g. in $\Z[\sqrt{-5}]$ we have
+	\[ (1+\sqrt{-5})(1-\sqrt{-5}) = 1+5=6=2\cdot 3,
+	\]
+	that is, two different ways to factor $6$ in irreducible elements.
+
+
+\bigskip \textbf{Idea:}
+\begin{enumerate}[(1)]
+	\item Maybe we have too few elements, i.e.,
+	\[ 1+\sqrt{-5} = p_1 p_2, 1-\sqrt{-5} = p_3 p_4 \text{ and }
+		2=p_2p_3, 3=p_1 p_4
+	\]
+	for some primes $p_i$.
+	\item An element is determined by the set of elements it divides, e.g.
+	\[ p_1 \longleftrightarrow \{ x \in \O_k; \, p_i | x  \} = p_i \O_k \text{ (this is an ideal)}.
+	\]
+\end{enumerate}
+
+
+\begin{Not}
+	Let $I , J \subset R$ be ideals. We define
+	\begin{itemize}
+		\item $I+J = \{a+b; \, a \in I, b \in J  \}$,
+		\item $IJ = \left\{ \sum_i a_i b_i; \, a_i \in I, b_i \in J \right\}$.
+	\end{itemize}
+\end{Not}
+
+\begin{defi}[and Reminder]
+	Let $I \subsetneq R$ be an ideal.
+	\begin{enumerate}[(a)]
+		\item $I$ is called \textbf{prime} if for all $a,b \in R$ with $ab \in I$ we already have $a \in I$ or $b \in I$.
+		
+		$\Leftrightarrow$ For all ideals $A,B \subset R$ with $AB \subset I$ we have $A\subset I$ or $B \subset I$.
+		\item $I$ is called \textbf{maximal} if for any ideal $I \subset J \subset R$ we have $J=I$ or $J=R$.
+		
+		$\Leftrightarrow$ $R/I$ is a field.
+		\item $R$ is called \textbf{Noetherian} if every ascending chain of ideals
+		\[ I_1 \subset I_2 \subset \cdots
+		\]
+		becomes stationary, i.e., if there is an $N \in \N$ such that $I_n = I_N$ for alls $n \geq N$.
+		
+		$\Leftrightarrow$ Every ideal in $R$ is finitely generated.
+		\item $R$ is called a \textbf{Dedekind domain} if
+		\begin{itemize}
+			\item $R$ is an integral domain,
+			\item $R$ is integrally closed,
+			\item $R$ is Noetherian, and
+			\item every prime ideal in $R$ is maximal.
+		\end{itemize}
+	\end{enumerate}
+\end{defi}
+
+
+\begin{Prop}
+	If $\O$ is the integral closure of $\Z$ in a number field then $\O$ is a dedekind domain.
+\end{Prop}
+
+
+\begin{Bew}
+	It is clear that $\O$ is an integral domain and integrally closed.
+	Furthermore, by Proposition 2.12 each $\Z$-submodule is finitely generated as a $\Z$-module, thus also as an $\O$-module. Hence $\O$ is Noetherian.
+	
+	Now, let $I \subset \O$ be a prime ideal. Then $I \cap \Z \subset \Z$ is a prime ideal such that $\Z/(I\cap \Z) =\mathbb{F}_p$.
+	Using $\O= \Z[w_1,\dots, w_n]$ we conclude
+	\[ \O/ I = \Z/(I\cap \Z) [w_1', \dots, w_n'] 
+	= \mathbb{F}_p [w_1', \dots, w_n'] 
+	= \mathbb{F}_p (w_1', \dots, w_n'),
+	\]
+	where $w_i' \equiv w_i \mod I$. Thus $\O/ I$ is a field ad hence $I$ maximal.
+\end{Bew}
+
+\textbf{From now on:} Let $\O$ denote a Dedekind domain.
+
+\begin{Satz}
+	Every ideal $0 \neq I \subset \O$ has a unique factorization
+	\[ I = P_1 \cdots P_n
+	\]
+	into prime ideals $P_i \subset \O$.
+\end{Satz}
+
+\begin{Lem}
+	For every ideal $0\neq I \subset \O$ there exist nonzero prime ideals $P_i \subset \O$ such that
+	\[ P_1 \cdots P_n \subset I.
+	\]
+\end{Lem}
+
+\begin{Bew}Set $M = \{ 0 \neq I \subset \O \text{ ideal; } I \text{ does not have such } P_i \}$ and suppose $M \neq \emptyset$. Then $M$ is partially ordered by inclusion and since $\O$ is Noetherian, every chain in $M$ has an upper bound.
+	Thus, the Lemma of Zorn yields a maximal element $I_0 \in M$. Since $I_0$ cannot be prime there are $aa,b \in \O$ such that $ab \in I$ but $a,b \not \in I$.
+	Consider the ideals $I_1 = (a) +I_0$ and $I_2 =(b) + I_0$ which satisfy $I_0 \subsetneq I_1$, $I_0 \subsetneq I_2$ and $I_1I_2 \subset I_0$.
+	Since $I_0$ is a maximal ideal, we have $I_0 \not \in M$ such that we find 
+	prime ideals $P_1, \dots, P_n, P_1', \dots, P_m' \subset \O$ with
+	\[ P_1 \dots P_n \subset I_1 \text{ and } P_1' \dots P_m' \subset I_2.
+	\]
+	Finally, we conclude $  P_1 \dots P_nP_1' \dots P_m' = I_1I_2 \subset I_0$.
+\end{Bew}
+
+\begin{Lem}
+	Let $0 \neq P \subset \O$ be a prime ideal, $I \subset \O$ an ideal and $K=\Quot(\O)$. Then:
+	\begin{enumerate}[(i)]
+		\item $P^{-1} = \{ x \in K; \, xP \subset \O \} \supsetneq \O $
+		\item $ I \subsetneq P^{-1} I = \left\{  \sum_i a_ix_i; \, a_i \in I, x_i \in P^{-1}  \right\}$
+	\end{enumerate}
+\end{Lem}
+
+\begin{Bew}
+	\enquote{(i)} Let $0 \neq a \in P$, $P_1 \cdots P_n \subset (a) \subset P$ as in Lemma 3.5 with $n$ minimal.
+	
+
+	\bigskip
+	\textbf{Claim:} Without loss of generality we can assume that $P_1 =P$.
+	
+	\textbf{Proof of the claim:}
+	Since $P_1 \cdots P_n \subset P$ and $P$ is prime, there is an index $i$ such that $P_i \subset P$, by reindexing we may assume that $i=1$.
+	However, we assumed $\O$ to be Dedekind, hence $P_1$ is a maximal ideal in $\O$. Thus,  $P_1 \subset P \subsetneq \O$ implies that $P_1 = P$ as claimed.
+	
+	\bigskip
+	Now, since $n$ was chosen minimal we have $P_2 \cdots P_n \not\subset (a)$, i.e, there exists an element $b \in (a) \bs P_2 \cdots P_n$. On the one hand we thus have
+	\[ a^{-1} b \not \in \O
+	\]
+	and on the other hand $bP \subset (a)$ such that $a^{-1}bP \subset \O$ and hence
+	\[ a^{-1} b \in P^{-1}.
+	\]
+	Both of this together shows that $P^{-1} \supsetneq \O$.
+	
+	\bigskip \enquote{(ii)} Assume there is an ideal $I \subset \O$ such that $P^{-1} I \subset I$. Let $\{\alpha_1, \dots, \alpha_n \} \subset I$ be a generating set and choose $x \in P^{-1} \bs \O$. Then,
+	\[ x \alpha_i = \sum_j a_{ij} \alpha_j
+	\]
+	for some $a_{ij} \in \O$. Consider the matrix $A=  xE_n - \left( a_{ij}\right)_{i,j}$, which satisfies
+	\[ A \begin{pmatrix}
+	\alpha_1 \\ \vdots \\ \alpha_n
+	\end{pmatrix}
+	= 0.
+	\]
+	Since $A^\#A = \det A$ we conclude $\det A =0$ such that $x$ is a zero of the monic polynomial $\det \left(  XE_n - \left( a_{ij}\right)_{i,j} \right)$ over $\O$. But since $\O$ is integrally closed this implies $x \in \O$, a contradiction.
+\end{Bew}
+
+
+\begin{Bew}[of Theorem 3.4]
+	\textbf{Existence of a factorization:} Let
+	\[ M = \left\{  0 \neq I \subset \O \text{ ideal; $I$ has no factorization} \right\}
+	\]
+	ans assume that $M\neq \emptyset$. As in Lemma 3.5, let $I_0 \in M$ be a maximal element and let $P \supset I_0$ be a maximal ideal containing $I_0$.
+	Since $I_0$ is not prime we have $I_0 \neq P$ such that by Lemma 3.6,
+	\[ I_0 \subsetneq P^{-1} I_0 \subset P^{-1} P = \O.
+	\]
+	Note that $I_0 = I_0 \O = I_0 P^{-1} P$ and $I_0 \neq P$ imply $P^{-1}I_0 \neq \O$.
+	Since $I_0$ was maximal in $M$ we thus have $P^{-1}I_0 \not \in M$, i.e., there are prime ideals $P_1, \dots, P_n \subset \O$ with $P^{-1} I = P_1 \cdots P_n$.
+	This leads to the contradiction $I=PP_1 \cdots P_n$.
+	
+	\bigskip \textbf{Uniqueness of the factorization:} Suppose that
+	\[ I=P_1 \cdots P_n =Q_1 \cdots Q_m
+	\]
+	are two prime factorizations. Then $P_1 \supset I =Q_1 \cdots Q_m$, hence without loss of generality we can assume that $Q_1 \subset P_1$. Since $\O$ is Dedekind we conclude $Q_1 = P_1$ such that 
+	\[ P_2 \cdots P_n = P_1^{-1} I = Q_2 \cdots Q_m.
+	\]
+	The claim follows by induction.
+\end{Bew}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
