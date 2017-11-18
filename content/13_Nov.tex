@@ -60,8 +60,8 @@ Let $R$ be a commutative ring with $1$.
 		2=p_2p_3, 3=p_1 p_4
 	\]
 	for some primes $p_i$.
-	\item An element is determined by the set of elements it divides, e.g.
-	\[ p_1 \longleftrightarrow \{ x \in \O_k; \, p_i | x  \} = p_i \O_k \text{ (this is an ideal)}.
+	\item An element is determined (up to units) by the set of elements it divides, e.g.
+	\[ p_i \longleftrightarrow \{ x \in \O_k; \, p_i | x  \} = p_i \O_k \text{ (this is an ideal)}.
 	\]
 \end{enumerate}
 
@@ -101,7 +101,7 @@ Let $R$ be a commutative ring with $1$.
 
 
 \begin{Prop}
-	If $\O$ is the integral closure of $\Z$ in a number field then $\O$ is a dedekind domain.
+	If $\O$ is the integral closure of $\Z$ in a number field then $\O$ is a Dedekind domain.
 \end{Prop}
 
 
@@ -134,20 +134,20 @@ Let $R$ be a commutative ring with $1$.
 \end{Lem}
 
 \begin{proof}Set $M = \{ 0 \neq I \subset \O \text{ ideal; } I \text{ does not have such } P_i \}$ and suppose $M \neq \emptyset$. Then $M$ is partially ordered by inclusion and since $\O$ is Noetherian, every chain in $M$ has an upper bound.
-	Thus, the Lemma of Zorn yields a maximal element $I_0 \in M$. Since $I_0$ cannot be prime there are $aa,b \in \O$ such that $ab \in I$ but $a,b \not \in I$.
+	Thus, the Lemma of Zorn yields a maximal element $I_0 \in M$. Since $I_0$ cannot be prime there are $a,b \in \O$ such that $ab \in I_0$ but $a,b \not \in I_0$.
 	Consider the ideals $I_1 = (a) +I_0$ and $I_2 =(b) + I_0$ which satisfy $I_0 \subsetneq I_1$, $I_0 \subsetneq I_2$ and $I_1I_2 \subset I_0$.
-	Since $I_0$ is a maximal ideal, we have $I_0 \not \in M$ such that we find 
+	Since $I_0$ is a maximal ideal in $M$, we have $I_{1,2} \not \in M$ hence we find 
 	prime ideals $P_1, \dots, P_n, P_1', \dots, P_m' \subset \O$ with
 	\[ P_1 \dots P_n \subset I_1 \text{ and } P_1' \dots P_m' \subset I_2.
 	\]
-	Finally, we conclude $  P_1 \dots P_nP_1' \dots P_m' = I_1I_2 \subset I_0$.
+	Finally, we conclude $  P_1 \dots P_nP_1' \dots P_m' = I_1I_2 \subset I_0 \Rightarrow I_0 \not \in M$ \Lightning $\Rightarrow M = \emptyset$.
 \end{proof}
 
 \begin{Lem}
 	Let $0 \neq P \subset \O$ be a prime ideal, $I \subset \O$ an ideal and $K=\Quot(\O)$. Then:
 	\begin{enumerate}[(i)]
-		\item $P^{-1} = \{ x \in K; \, xP \subset \O \} \supsetneq \O $
-		\item $ I \subsetneq P^{-1} I = \left\{  \sum_i a_ix_i; \, a_i \in I, x_i \in P^{-1}  \right\}$
+		\item $P^{-1} := \{ x \in K; \, xP \subset \O \} \supsetneq \O $
+		\item $ I \subsetneq P^{-1} I := \left\{  \sum_i a_ix_i; \, a_i \in I, x_i \in P^{-1}  \right\}$
 	\end{enumerate}
 \end{Lem}
 
@@ -184,15 +184,15 @@ Let $R$ be a commutative ring with $1$.
 \end{proof}
 
 
-\begin{proof}[of Theorem 3.4]
+\begin{proof}[Proof of Theorem 3.4]
 	\textbf{Existence of a factorization:} Let
 	\[ M = \left\{  0 \neq I \subset \O \text{ ideal; $I$ has no factorization} \right\}
 	\]
-	ans assume that $M\neq \emptyset$. As in Lemma 3.5, let $I_0 \in M$ be a maximal element and let $P \supset I_0$ be a maximal ideal containing $I_0$.
+	and assume that $M\neq \emptyset$. As in Lemma 3.5, let $I_0 \in M$ be a maximal element and let $P \supset I_0$ be a maximal ideal containing $I_0$.
 	Since $I_0$ is not prime we have $I_0 \neq P$ such that by Lemma 3.6,
 	\[ I_0 \subsetneq P^{-1} I_0 \subset P^{-1} P = \O.
 	\]
-	Note that $I_0 = I_0 \O = I_0 P^{-1} P$ and $I_0 \neq P$ imply $P^{-1}I_0 \neq \O$.
+	Note that $I_0 = I_0 \O = I_0 P^{-1} P$ and $I_0 \neq P$ imply $P^{-1}I_0 \subsetneq \O$.
 	Since $I_0$ was maximal in $M$ we thus have $P^{-1}I_0 \not \in M$, i.e., there are prime ideals $P_1, \dots, P_n \subset \O$ with $P^{-1} I = P_1 \cdots P_n$.
 	This leads to the contradiction $I=PP_1 \cdots P_n$.
 	
