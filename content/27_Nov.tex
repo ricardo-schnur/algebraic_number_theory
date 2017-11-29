@@ -1,0 +1,131 @@
+\rhead{27 November 2017}
+
+\begin{remin}
+$\Jk =$ group of fractional ideals $=$ abelian group enerated by all prime ideals\\
+$\Pk=$ group of all principal fractional ideals.\\
+$\Cl_K:= \Jk / \Pk$\\
+$\Rightarrow$ obtain following exact sequence:
+\begin{align*}
+1 \rightarrow \underbrace{\O_K^\times}_{\text{How big?}} \rightarrow &K^\times \rightarrow \Jk \rightarrow \underbrace{\Cl_K}_{\text{How big?}} \rightarrow 1\\
+& a \mapsto (a)=a\O_K
+\end{align*}
+\end{remin}
+
+\underline{Last Time:} $\scrpt{a}$ ideal in $\O_K, \scrpt{a} \neq 0$.
+\begin{itemize}
+\item $\Norm(\scrpt{a})=(\O_K : \scrpt{a})$ absolute norm.
+\end{itemize}
+In particular: $\Norm((a)):= | \NormKQ(a)|$.
+\begin{itemize}
+\item $\a = \mathcal{P}_{1}^{\nu_1} \dots \mathcal{P}_{r}^{\nu_r}$ decomposition into primes\\
+$\Rightarrow \Norm(\a)= \Norm(\mathcal{P}_1)^{\nu_1} \cdot \dots \cdot \Norm(\mathcal{P}_r)^{\nu_r}$
+\end{itemize}
+In particular: $\Norm(\a_1\a_2)=\Norm(\a_1)\Norm(\a_2)$.
+\begin{itemize}
+\item Hence $\Norm$ can be extended to fractional ideals: $\Norm: \Jk \to \R^\times_+$.
+\end{itemize}
+\underline{Goal}: Show that $\Cl_K$ is finite.\\
+\underline{Idea:}
+\begin{itemize}
+\item Find in each integral ideal $\a$ an element $a \neq 0$ of norm bounded by $\Norm(\a)$.
+\item Show: For $M> 0$ there are only finitely many integral ideals $\a$ with $N(\a) \leq M$.
+\item Show: Each class $[\a] \in \Cl_K$ contains an integral ideal $\a_1$ s.t. $\Norm(\a_1) \leq M_0 = (\frac{2}{\pi})^s \sqrt{|d_K}$.\\
+Recall: $s=$ number of not-real embeddings of $K$ into $\C$.
+\end{itemize}
+
+\begin{Lem}
+Suppose: $\a \neq 0$ is an integral ideal $\Rightarrow \exists a \in \a, a \neq 0$ s.t. $|\NormKQ(a)| \leq (\frac{2}{\pi})^s \sqrt{|d_K|} \Norm(\a)$.
+\end{Lem}
+\begin{proof}
+$M_0:= (\frac{2}{\pi})^s \sqrt{|d_K|}$\\
+\underline{Idea:} Use \glqq Thm. 5.3 \grqq\\
+given: $c_\tau \in \R_{>0} (\tau \in \Hom(K, \C))$ with $c_\tau = c_{\overline{\tau}}$ and $\prod_\tau c_\tau > M_0 \Norm(\a)$\\
+$\Rightarrow \exists a \in \a, a \neq 0$ with $|\tau(a)| < c_\tau$ for all $\tau$.\\
+For each $\varepsilon >0$ choose a sequence $c_\tau \in \R_{>0}$ with $c_\tau = c_{\overline{\tau}}$ and $\prod_\tau c_\tau = M_0 \Norm(\a) + \varepsilon$\\
+$\stackrel{\text{Thm 5.3}}{\Rightarrow}$ Find $a_\varepsilon \neq 0$ in $\a$ with
+\[ |\NormKQ(a)| = \prod_\tau |\tau(a)| < M_0\Norm(\a) + \varepsilon\]
+Since left side is integer, we obtain: $\exists a \neq 0$ in $\a$ with $|\NormKQ(a)| \leq M_0\Norm(\a)$.
+\end{proof}
+
+\begin{Lem}
+Let $M \in \R_{>0}$. There are only finitely many integral ideals $\a$ with $\Norm(\a) \leq M$.
+\end{Lem}
+
+\begin{proof}
+(1) Consider first only prime ideals $\mathcal{P} \neq 0$: Suppose $\Norm(\mathcal{P}) \leq M$\\
+Recall: $\mathcal{P} \cap \Z = p \Z$ with $p$ prime number (Prop. 3.3)\\
+$\Rightarrow$ obtain embedding $\F_p = \Z / p\Z \hookrightarrow \O_K / \mathcal{P} \Rightarrow \Norm(\mathcal{P})= (\O_K : \mathcal{P}) = \# \O_K/\mathcal{P} = p^f$\\
+Hence: $p^f \leq M$. In particular $P$ is bounded.\\
+Furthermore: There are only finitely many prime ideals $\mathcal{P}$ with $\mathcal{P} \cap \Z= p \Z$.\\
+Since $\mathcal{P} \cap \Z=p\Z \Rightarrow p \in \mathcal{P} \Rightarrow (p) \subseteq \mathcal{P}$ But there are only finitely many prime ideals in $\O_K$ which divide $(p)$.\\
+(2) Suppose now $\a$ is an arbitrary integral ideal, $\a \neq 0:$\\
+$\Rightarrow \a=\mathcal{P}_1^{\nu_1}\cdot \dots \cdot \mathcal{P}_r^{\nu_r}$ with $\mathcal{P}_i$ prime ideal and $\nu_i \in \N$ and $\Norm(\a)= \Norm(\mathcal{P}_1)^{\nu_1}\cdot \dots \cdot \Norm(\mathcal{P}_r)^{\nu_r}$.
+Now the claim follows from (1).
+\end{proof}
+
+\begin{Satz}[Finiteness of $\Cl_K$]
+The ideal class group of $\Cl_K=\Jk/\Pk$ is finite.
+\end{Satz}
+
+\begin{proof}
+Let $M_0:= (\frac{2}{\pi})^s \sqrt{|d_K|}$\\
+Show that each class $[\a] \in \Cl_K$ contains an integral ideal $\a_1$ with $\Norm(\a_1) \leq M_0$. Then the claim follows from Lemma 6.3.\\
+Let $[\a] \in \Cl_K$. Choose $\gamma \in \O_K, \gamma \neq 0$ with $\gamma \a^{-1}$ is integral.
+\begin{align*}
+\text{Lemma 6.2} &\Rightarrow \exists b \in \scrpt{b}:= \gamma \a^{-1} \text{ with } b \neq 0 \text{ and } |\NormKQ(b)| \leq M_0 \Norm(\scrpt{b})\\
+&\Rightarrow \Norm((b)\scrpt{b}^{-1})=\Norm((b))\Norm(\scrpt{b}^{-1}) \leq M_0
+\end{align*}
+Observe: The factorial ideal $(b) \scrpt{b}^{-1} = (b) \gamma^{-1} \a \in [\a]$, hence $\a_1:=b\gamma^{-1}\a$ does the job. $\a_1$ is an integral ideal, since $(b) \subseteq \gamma \a^{-1}$
+\end{proof}
+
+\begin{defi}[\glqq Klassenzahl \grqq]
+$h_K:= \# \Cl_K:= (\Jk : \Pk)$ is called the \underline{\emph{class number}} of $K$.
+\end{defi}
+
+\begin{Prop}
+Suppose $R$ is a Dedekind domain.\\
+$R$ is a UFD $\iff R$ is a PID (principal ideal domain).
+\end{Prop}
+
+\begin{proof}
+\glqq $\Leftarrow$\grqq: true for general domains.\\
+\glqq $\Rightarrow$\grqq: Suppose $R$ is a UFD.\\
+\underline{Step 1:} Every prime ideal is principal.\\
+Let $\mathcal{P}$ be a prime ideal, $\mathcal{P} \neq 0$. Choose $a \in \mathcal{P}, a \neq 0$. Let $a= p_1 \cdot \dots \cdot p_n$ be its prime factor decomposition. $\mathcal{P}$ prime $\Rightarrow p_i \in \mathcal{P}$ for one of the $i$'s $\Rightarrow \mathcal{P} \supseteq (p_i) \Rightarrow \mathcal{P} = (p_i)$, since $(p_i)$ is a prime ideal and $R$ is a Dedekinddomain.\\
+\underline{Step 2:} $\a$ arbitrary ideal.\\
+$\Rightarrow \a = \mathcal{P}_1 \cdot \dots \mathcal{P}_n$ is a product of prime ideals\\
+$\Rightarrow \a$ is principal, since each $\mathcal{P}_i$ is.
+\end{proof}
+
+\begin{Kor}
+We have for a number field $K$:\\
+$h_K=1 \iff \O_K$ is a prinicpal domain $\iff \O_K$ is a UFD.
+\end{Kor}
+
+\section{The theorem of Dirichlet}
+\underline{Goal:} Describe $\O^\times_K$\\
+\underline{Recall:}
+\begin{itemize}
+\item $\O^\times= \{\varepsilon \in \O_K \ | \ \NormKQ(\varepsilon)= \pm 1\}$
+\item $\mu(K):= \{x \in \O_K \ | \ \exists n \in \N \text{ with } x^n=1 \} \subseteq \O_K^\times$ is a finite subgroup.
+\end{itemize}
+\underline{Idea:} Use multiplicative Minkowsky theory:
+\begin{itemize}
+\item $\Hom(K, \C) = \{\tau_1, \dots, \tau_r, \tau_{r+1}, \overline{\tau_{r+1}}, \tau_{r+s}, \overline{\tau_{r+s}}\}$
+\item $j : K^\times \hookrightarrow K_\{\R\}^\times = \{x \in \prod_\tau \C^\times \ | \ x_{\overline{\tau}} = \overline{x_\tau}\} , a \mapsto (\tau(a))_\tau$
+\item $l : K^\times_{\R} \to [\prod_\tau \R]^+ := \{z \in \prod_\tau \R \ | \ z_{\overline{\tau}}=z_\tau \}, x=(x_\tau) \mapsto (\log|x_\tau|)_\tau$
+\end{itemize}
+$\Rightarrow$ commutative diagramm:\\
+\begin{tikzcd}
+\O^\times_K \arrow[draw=none]{d}[sloped,auto=false]{\subseteq} & S\arrow[draw=none]{d}[sloped,auto=false]{\subseteq} & H \arrow[draw=none]{d}[sloped,auto=false]{\subseteq}\\
+ K^\times \arrow[r, hook, "j"] \arrow{d}{\NormKQ} & K^\times_{\R} \arrow{d}{\Norm} \arrow{r}{l} & \, [ \prod_\tau \R ]^+ \arrow{d}{\Tr} \\
+\Q^\times \arrow{r}{} & \R \arrow{r}{} &\R
+\end{tikzcd}
+
+with $\Norm(x) = \prod_\tau x_\tau\ ,\ \Tr(z)=\sum_\tau z_\tau$.\\
+Consider the three groups:
+\begin{enumerate}[(1)]
+\item $\O^\times_K = \{ \varepsilon \in \O_K \ | \ \NormKQ(\varepsilon)=\pm 1 \}$
+\item $S:= \{ x \in K^\times_\R \ | \ \Norm(x) = \pm 1 \}$ \glqq Norm 1 hyper surface\grqq
+\item $H:= \{ z \in [\prod_\tau \R]^+ \ | \ \Tr(z)=0\}$ \glqq Trace 0 hypersurface\grqq
+\end{enumerate}
