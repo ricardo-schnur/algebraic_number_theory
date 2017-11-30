@@ -1,1 +1,2 @@
-tatsächlicher Font für die Ideale finden...
+Theoremnummerierung überprüfen
+Verschiebung bei theoremstyle checken (bei enumerates hab ich manchmal ein vspace eingeschoben)

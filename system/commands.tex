@@ -4,13 +4,16 @@
 \newtheorem{defi}{Definition}
 \newtheorem{Not}[defi]{Notation}
 
+
 \theoremstyle{plain}
-\newtheorem{Satz}[defi]{Theorem}
 \newtheorem{Lem}[defi]{Lemma}
 \newtheorem{Kor}[defi]{Corollary}
 \newtheorem{Prop}[defi]{Proposition}
 \newtheorem*{conjecture*}{Conjecture}
 \newtheorem{Lemdef}[defi]{Lemma and Definition}
+
+\theoremstyle{theorem}
+\newtheorem{Satz}{Theorem}
 
 \theoremstyle{remark}
 \newtheorem{Bem}[defi]{Remark}
@@ -64,7 +67,9 @@
 \newcommand{\Jk}{\mathcal{J}_K}
 \newcommand{\Pk}{\mathcal{P}_K}
 \newcommand{\PP}{\mathcal{P}}
-\newcommand{\scrpt}{\mathfrak}
+
+\newfont{\suet}{suet14}
+\DeclareTextFontCommand{\scrpt}{\suet}
 \renewcommand{\a}{\scrpt{a}}
 
 
