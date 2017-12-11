@@ -1,0 +1,277 @@
+\rhead{11 December 2017}
+
+
+\begin{Prop}
+Let $R$ and $S$ be rings and $\varphi\colon R \to S$ a ring homomorphism.
+\begin{enumerate}[(i)]
+\item If $\q$ is a prime ideal in $S$ then $\varphi^{-1}(\q)$ is a prime ideal in $R$.
+\item If $\varphi$ is surjective and $\p$ is a prime ideal in $R$ with $\ker \varphi \subset \p$ then $\varphi(\p)$ is a prime ideal in $S$.
+\end{enumerate}
+\end{Prop}
+
+
+\begin{proof}
+\enquote{(i)} Preimages of ideals are ideals. Suppose $ab \in \varphi^{-1}(\q)$. Then $\varphi(a)\varphi(b)  \in\q$ such that, without loss of generality, $\varphi(a) \in \q$
+and hence $a \in \varphi^{-1}(\q)$.
+
+\bigskip
+\enquote{(ii)} Images of ideals under surjective homomorphisms are ideals. Since $\varphi$ is surjectiv there are $a,b \in R$ with $\varphi(a) = \overline{a}, \varphi(b)= \overline{b}$ and there is $c \in \p$ with $\varphi(c) = \overline{a}\overline{b}$. Hence
+\[ ab - c \in \ker \varphi \subset \p
+\]
+such that $ab \in \p$. We may assume that $a \in \p$ and conclude $\overline{a} = \varphi(a) \in \varphi(\p)$.
+\end{proof}
+
+
+\begin{defi}
+In the situation of Proposition 2.8.17 we define:
+\begin{enumerate}[(i)]
+\item $\Spec(R) = \left\{\p \subset R \, | \, \p \text{ is a prime ideal}\right\}$
+\item $\Spec_S(R) = \left\{\p \subset \Spec(R) \, | \, \p \ \supset \ker \varphi\right\}$
+\end{enumerate}
+\end{defi}
+
+
+\begin{Kor}
+In the situation of Proposition 2.8.17 we have:
+\begin{enumerate}[(i)]
+\item If $\varphi \colon R \to S$ is a homomorphism of rings then $\varphi$ induces a map
+\[ \varphi^* \colon \Spec(S) \to \Spec_S(R), \, \p \mapsto \varphi^{-1}(\p).
+\]
+\item If $\varphi$ is surjective then $\varphi^*$ is a bijection with inverse map
+\[ \varphi_* \colon \Spec_S(R) \to \Spec(S), \, \p \mapsto \varphi(\p).
+\]
+\end{enumerate}
+\end{Kor}
+
+\begin{remin}
+For $a \in \Z$ and $p$ prime in $\Z$ the \textbf{Legendre symbol} is defined by
+\[ \Legendre{a}{p} = \begin{cases}
+0, & p \text{ divides } a, \\
+1, & \text{ there is an } x \in \Z / p\Z \text{ such that } x^2 \equiv a \mod p,\\
+-1, & \text{ else.}\\
+\end{cases}
+\]
+\end{remin}
+
+\begin{Bsp}
+Apply Proposition 8.15 for quadratic number fields, $D$ square-free:
+\[ \begin{tikzcd}
+\hat{\O} 
+	& = & Z[\theta] 
+	& \subset & \Q(\sqrt{D}) \\
+\O 
+	& = & \Z
+		\arrow[u, hook]
+	&  \subset & \Q
+		\arrow[u, hook]
+\end{tikzcd}
+\]
+\end{Bsp}
+
+
+\begin{remin}
+	If $D \not\equiv 1 \mod 4$ then we can choose $\theta = \sqrt{D}$ and obtain
+	$f = f_\theta = X^2- D$ and $d(f_\theta) = 4D$.
+	
+	
+	If $D \equiv 1 \mod 4$ then we can choose $\theta = \frac{1}{2}(1+)\sqrt{D})$ and obtain
+	$f = f_\theta = X^2- -X - \frac{D-1}{4}$ and $d(f_\theta) = D$.
+\end{remin}
+
+Consider $p \in\Z$ prime and define $\overline{f} = \overline{f}_\theta$ as the image of $f$ in $\Z / p\Z [X]$.
+
+\bigskip
+\textbf{Observe:} $\overline{f}$ has two equal zeroes in $\Z / p\Z$ iff $d(f) = 0$ in $Z / p/Z$ iff 
+\[ \begin{cases}
+\Legendre{4D}{p} = 0, & D \not \equiv 1 \mod 4, \\
+\Legendre{D}{p} = 0, & D \equiv 1 \mod 4. \\
+\end{cases}
+\]
+
+\bigskip $\overline{f}$ has two different zeroes in  $\Z / p\Z$ iff $d(f)$ is a non-zero square in $Z / p/Z$ iff 
+\[ \begin{cases}
+\Legendre{4D}{p} = 1, & D \not \equiv 1 \mod 4, \\
+\Legendre{D}{p} = 1, & D \equiv 1 \mod 4 \\
+\end{cases}
+\Leftrightarrow \Legendre{D}{p} = 1.
+\]
+
+\bigskip $\overline{f}$ has no zeroes in  $\Z / p\Z$ iff $\Legendre{D}{p} = -1$.
+
+\bigskip Proposition 8.15 then implies in the first case that
+$p\hat{\O} = \hat{\PP}_1$ with 
+\[\PP_1 = \begin{cases}
+p\hat{\O} +\theta \hat{\O}, & D \not \equiv 1 \mod 4, \\
+p\hat{\O} + \left( \theta - \frac{1}{2} \right) \hat{\O}, & D \equiv 1 \mod 4, \\
+\end{cases}
+\]
+and $x = \frac{p+1}{2}$ with  $2x \equiv 1 \mod p$.
+
+\bigskip
+In the second case we obtain $p \hat{\O} = \hat{\PP}_1\hat{\PP}_2$ with
+$\hat{\PP}_{1,2} = p \hat{\O} + \left(\theta \pm x  \right) \hat{\O}$, where $x^2 \equiv D \mod p$.
+
+\bigskip
+In the third case $p\hat{\P}$ is a prime ideal.
+
+
+\begin{Bsp*}
+Let $D\not\equiv 1 \mod p$, $\Legendre{4D}{p} = 0$ and $p \neq 2$. Consider the map
+$\pi \colon \hat{\O} \to \hat{\O} / \p\hat{\O}$
+with $\hat{\O} = \Z[\sqrt{D}]$ and $\p \hat{\O} = \left\{
+a+b\sqrt{D} \, | \, p | a \text{ and } p | b \right\}$ and thus
+\begin{align*}
+\O / p\O 
+&\cong \Z / p\Z \oplus \Z / p\Z [\sqrt{D}] 
+&\cong \left( \Z / p\Z [X] \right) / (X^2-D), \\
+\theta 
+&\leftrightarrow \left(0, \sqrt{D}\right)
+&\leftrightarrow \overline{X} \\.
+\end{align*}
+We have
+\[ \hat{\PP}_1 = \pi^{-1}((\overline{\theta}))
+= \left\{ a+b \sqrt{D} \, | \, p \text{ divides } a \right\}.
+\]
+\end{Bsp*}
+
+\begin{Bsp*}
+Let $D\not\equiv 1 \mod p$ and $\Legendre{4D}{p} = 1$.
+Then there exists $x \in \Z$ with $x^2 \equiv D \mod p$ and $p \not | \, x$.
+Here, $\pi \colon \hat{\O} \to \hat{\O} / p\hat{\O}$ is the map
+\begin{align*}
+\Z[\sqrt{D}] 
+&\to \Z / p\Z \oplus \Z / p\Z [\sqrt{D}] \\
+&\cong \left( \Z / p\Z [X] \right) / (X-x)(X+x) \\
+&\cong \left( \Z / p\Z [X] \right) / (X-x) \oplus \left( \Z / p\Z [X] \right) / (X+x)
+\end{align*}
+given by
+\[ a b \sqrt{D}
+\mapsto \overline{a} + \overline{b} \sqrt{D}
+\cong \overline{a} + \overline{b} X
+\cong ( \overline{a} + \overline{b} x, \overline{a} - \overline{b} x ).
+\]
+Recall that $\overline{f}(X)=(X-x)(X+x) = \overline{f}_1 \overline{f}_2$ with $\overline{f}_1, \overline{f}_2 \in \Z[X]$ and
+\[ f_1(\theta) = \theta -x = \sqrt{D} -x = -x + \sqrt{D}
+\]
+with $\pi(f_1(\theta)) \leftrightarrow (0, -2 \overline{x})$.
+
+\bigskip
+Observe that for $\overline{x} \in \F_p^x$ we have the correspondence
+\[ (\pi(f_1(\theta))) 
+\leftrightarrow \O \oplus \left( \Z / p\Z [X] \right) / (X+p)
+\cong \O \oplus  \Z / p\Z 
+\]
+and hence $\hat{\PP}_1 = \pi^{-1}(\O \oplus  \Z / p\Z  )$.
+\end{Bsp*}
+
+
+\begin{proof}[Proof of Prop. 8.16]
+Consider the map $\pi \colon \hat{\O} \to \hat{\O} / p\hat{\O}$. By Corollary 8.19 we have a bijection
+\[ \left\{ \hat{\PP} \, | \, \hat{\PP} \text{ prime ideal in } \hat{\O} \text{ with }
+\hat{\PP} \cap \O = \p \right\}
+\leftrightarrow \left\{ \q \, | \, \q \text{ prime ideal in } \hat{\O} / p\hat{\O}
+\right\}.
+\]
+We show:
+\[ \hat{\O} / p\hat{\O}
+\cong \hat{\O}' / p\hat{\O}'
+\cong k[X] / (\overline{f}),
+\]
+where $k = \hat{\O} / p\hat{\O}$ and $\hat{\O}' = \O[\theta]$.
+
+\bigskip \textbf{Step 1:} $\hat{\O} / p\hat{\O} \equiv \hat{\O}' / p\hat{\O}'$
+
+Consider the homomorphism $\varphi \colon \hat{\O}' \to \hat{\O} / p\hat{\O}$ induced by the inclusion $\hat{\O}' \hookrightarrow \hat{\O}$.
+
+\bigskip
+\enquote{(1)} $\varphi$ is surjective:
+If $\p + (\F \cap \O) = 0$ then $\p\O + \F = \hat{\O}$ and hence $\p \hat{\O}' = \hat{\O}$.
+
+\bigskip
+\enquote{(2)} $\ker \varphi = \p \hat{\O}'$:
+\enquote{$\supset$} Clear.
+\enquote{$\subset$} We have $\ker \varphi = \hat{\O}' \cap \p \hat{\O}$.
+Use $\p +(\F \cap \O) = \O$ and write $1 = p+a$ with $p \in \p$ and $a \in \F \cap \O$.
+For $x \in \hat{\O}' \cap \p\hat{\O}$ we have:
+\[ x = 1\cdot x = (p+a)x = px +ax \in \p \hat{\O}'.
+\]
+
+\bigskip \textbf{Step 2:} $\hat{\O}' / p\hat{\O}' \cong k[X] / (\overline{f})$
+
+Recall that $\hat{\O}' = \O[\theta] \cong \O[X] / (f)$. Consider
+$\Psi \colon \O[X] \to k[X] / (\overline{f})$, which is surjective. It holds that
+$\ker \Psi = (\p, f)$ and hence $\Psi$ induces an isomorphism 
+$\hat{\O} ' / \p \hat{\O}' \to k[X] / (\overline{f})$.
+
+
+\bigskip \textbf{Step 3:}
+Consider now $R =  k[X] / (\overline{f})$ and determine $\Spec(R)$.
+
+\bigskip
+\enquote{(1)} 
+Recall the prime decomposition $\overline{f} = \overline{f}_1^{e_1} \cdots \overline{f}_r^{e_r}$ in $k[X]$ and consider the projection $k[X] \twoheadrightarrow 
+k[X] / (\overline{f})$. By Corollary 8.19 we have the correspondence
+\[ \Spec(R) \leftrightarrow 
+\{ \p \text{ prime ideal in } k[X] \, | \, f \in \p \}
+\]
+and hence $\Spec(R)= \left\{ \left(  \overline{f}_i \right) \, | \, i = 1, \dots, r  \right\}$.
+
+\bigskip
+\enquote{(2)} 
+Notice that
+\[ R / \left(  \overline{f}_i \right)
+= \left(  k[X] / (\overline{f}) \right) \left(  \overline{f}_i \right)
+\cong k[X] / (\overline{f_i})
+\]
+is a $k$-vector space of dimension $\deg (\overline{f_i})$ such that
+\[  \left[  R / \left(  \overline{f}_i \right)  \colon k \right]
+= \deg (\overline{f_i}).
+\]
+
+\bigskip
+\enquote{(3)} 
+In $R$ we have
+\[ \bigcap_{i=1}^r \left( \overline{f}_i \right)^{e_i} 
+= \left( \overline{f} \right)
+= 0.
+\]
+
+
+\bigskip \textbf{Step 4:}
+Use the isomorphism 
+\[
+ k[X] / (\overline{f})  \to \hat{\O} / \p\hat{\O}, \, g \mapsto g(\O)
+ \]
+and obtain from Step 3 with $\PP_i = \left( f_i(\theta) \right)$ that:
+\begin{enumerate}[(i)]
+\item $\Spec\left(\hat{\O} / \p\hat{\O} \right) = \left\{  \PP_i \, | \, i = 1, \dots, r  \right\}$
+\item $\left[  \left(\hat{\O} / \p\hat{\O}\right)/  \PP_i  \colon k \right] = \deg (\overline{f_i})$
+\item  $\bigcap_{i=1}^r \PP_i^{e_i} = 0$
+\end{enumerate}
+
+
+\bigskip \textbf{Step 5:}
+Take preimages in $\hat{\O}$ via $\hat{\O} \to \hat{\O} / \p\hat{\O}$
+and observe that (iii) implies
+$\bigcap_{i=1}^r \hat{\PP}_i^{e_i} \subset \p\hat{\O}$ such that
+$\p\hat{\O}$ divides $\bigcap_{i=1}^r \hat{\PP}_i^{e_i}$. Furthermore,
+\[ [L:K] = n= \deg(f) = \sum_{i=1}^{r} e_if_i
+\]
+such that by Theorem 1.1, $\p\hat{\O} = \prod_{i=1}^r \hat{\PP}_i^{e_i}$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
