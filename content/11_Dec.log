@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.16)  23 DEC 2017 01:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.16)  3 JAN 2018 17:56
 entering extended mode
 **./11_Dec.tex
 (11_Dec.tex
@@ -3103,6 +3103,16 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no e in font nullfont!
+
+! Undefined control sequence.
+l.114 In the third case $p\hat{\PP
+                                  }$ is a prime ideal.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -3123,7 +3133,7 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 114--115
  []
 
 
-Overfull \hbox (11.14236pt too wide) in paragraph at lines 114--115
+Overfull \hbox (5.03125pt too wide) in paragraph at lines 114--115
 \OML/cmm/m/it/10 p[]$
  []
 
@@ -3272,17 +3282,32 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.122 \begin{alignat*}
-                      [c]{3}
+                      {3}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-Missing character: There is no [ in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no ] in font nullfont!
 Missing character: There is no 3 in font nullfont!
+! Undefined control sequence.
+l.123 \hO
+          / p\hO
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 Missing character: There is no / in font nullfont!
 Missing character: There is no p in font nullfont!
+! Undefined control sequence.
+l.123 \hO / p\hO
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 ! Misplaced alignment tab character &.
 l.124 &
        \cong& \Z / p\Z \oplus \Z / p\Z [\sqrt{D}]
@@ -3407,7 +3432,7 @@ might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
 l.128 &
-       \leftrightarrow & \overline{X} \\.
+       \leftrightarrow & \overline{X}.
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -3417,7 +3442,7 @@ might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
 l.128 &\leftrightarrow &
-                         \overline{X} \\.
+                         \overline{X}.
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -3522,12 +3547,7 @@ Overfull \hbox (98.1565pt too wide) in paragraph at lines 118--131
 
 
 Overfull \hbox (7.7778pt too wide) in paragraph at lines 118--131
-\OT1/cmr/m/n/10 
- []
-
-
-Overfull \hbox (15.5556pt too wide) in paragraph at lines 118--131
-\OT1/cmr/m/n/10 $[]
+[]
  []
 
 
@@ -3561,13 +3581,8 @@ Overfull \hbox (51.05692pt too wide) in paragraph at lines 118--131
  []
 
 
-Overfull \hbox (9.06943pt too wide) in paragraph at lines 118--131
-[][] 
- []
-
-
-Overfull \hbox (2.77779pt too wide) in paragraph at lines 118--131
-\OML/cmm/m/it/10 :$
+Overfull \hbox (11.84721pt too wide) in paragraph at lines 118--131
+[]\OML/cmm/m/it/10 :$
  []
 
 ! Undefined control sequence.
@@ -4026,10 +4041,11 @@ Overfull \hbox (9.60417pt too wide) in paragraph at lines 137--147
  []
 
 
-Overfull \hbox (190.50139pt too wide) detected at line 151
-\OML/cmm/m/it/10 ab[] \OMS/cmsy/m/n/10 7! [] \OT1/cmr/m/n/10 + [][] [] [] + []\
-OML/cmm/m/it/10 X [] \OT1/cmr/m/n/10 ([] + []\OML/cmm/m/it/10 x; [] \OMS/cmsy/m
-/n/10   []\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :
+Overfull \hbox (198.27919pt too wide) detected at line 151
+\OML/cmm/m/it/10 a \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 b[] \OMS/cmsy/m/n/10 7! [
+] \OT1/cmr/m/n/10 + [][] [] [] + []\OML/cmm/m/it/10 X [] \OT1/cmr/m/n/10 ([] + 
+[]\OML/cmm/m/it/10 x; [] \OMS/cmsy/m/n/10   []\OML/cmm/m/it/10 x\OT1/cmr/m/n/10
+ )\OML/cmm/m/it/10 :
  []
 
 Missing character: There is no R in font nullfont!
@@ -4106,17 +4122,33 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no . in font nullfont!
+! Undefined control sequence.
+l.156 \todo
+           {hier steht Mist! 0=O?}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Overfull \hbox (48.7466pt too wide) in paragraph at lines 154--156
- $\OML/cmm/m/it/10 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/
-cmm/m/it/10 \OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 $
- []
-
-
-Overfull \hbox (35.71532pt too wide) in paragraph at lines 154--156
-\OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 2[])$ 
- []
-
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no M in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ! in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no ? in font nullfont!
 Missing character: There is no O in font nullfont!
 Missing character: There is no b in font nullfont!
 Missing character: There is no s in font nullfont!
@@ -4164,12 +4196,18 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no e in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 158--159
-[]
+Overfull \hbox (48.7466pt too wide) in paragraph at lines 154--159
+ $\OML/cmm/m/it/10 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/
+cmm/m/it/10 \OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 $
  []
 
 
-Overfull \hbox (20.1944pt too wide) in paragraph at lines 158--159
+Overfull \hbox (35.71532pt too wide) in paragraph at lines 154--159
+\OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 2[])$
+ []
+
+
+Overfull \hbox (20.1944pt too wide) in paragraph at lines 154--159
 [] \OMS/cmsy/m/n/10 2[]$
  []
 
@@ -4616,6 +4654,15 @@ LaTeX Warning: Command \O invalid in math mode on input line 181.
 
 LaTeX Warning: Command \O invalid in math mode on input line 181.
 
+! Undefined control sequence.
+l.181 \bigskip \textbf{Step 1:} $\hat{\O} / \p
+                                              \hat{\O} \cong \hat{\O}' / \p\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 
 LaTeX Warning: Command \O invalid in math mode on input line 181.
 
@@ -4627,6 +4674,15 @@ LaTeX Warning: Command \O invalid in math mode on input line 181.
 
 
 LaTeX Warning: Command \O invalid in math mode on input line 181.
+
+! Undefined control sequence.
+l.181 ...hat{\O} / \p\hat{\O} \cong \hat{\O}' / \p
+                                                  \hat{\O}'$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Command \O invalid in math mode on input line 181.
@@ -4645,13 +4701,13 @@ Overfull \hbox (8.9444pt too wide) in paragraph at lines 181--182
  []
 
 
-Overfull \hbox (36.14238pt too wide) in paragraph at lines 181--182
-[]\OML/cmm/m/it/10 =p[] \OMS/cmsy/m/n/10 
+Overfull \hbox (31.11113pt too wide) in paragraph at lines 181--182
+[]\OML/cmm/m/it/10 =[] []
  []
 
 
-Overfull \hbox (31.19798pt too wide) in paragraph at lines 181--182
-[]\OML/cmm/m/it/10 =p[]$ 
+Overfull \hbox (26.16673pt too wide) in paragraph at lines 181--182
+[]\OML/cmm/m/it/10 =[]$ 
  []
 
 Missing character: There is no C in font nullfont!
@@ -4688,6 +4744,15 @@ LaTeX Warning: Command \O invalid in math mode on input line 183.
 
 
 LaTeX Warning: Command \O invalid in math mode on input line 183.
+
+! Undefined control sequence.
+l.183 ...varphi \colon \hat{\O}' \to \hat{\O} / \p
+                                                  \hat{\O}$ induced by the i...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Command \O invalid in math mode on input line 183.
@@ -4740,8 +4805,8 @@ Overfull \hbox (34.34717pt too wide) in paragraph at lines 183--184
  []
 
 
-Overfull \hbox (25.58687pt too wide) in paragraph at lines 183--184
-[]\OML/cmm/m/it/10 =p[]$
+Overfull \hbox (20.55562pt too wide) in paragraph at lines 183--184
+[]\OML/cmm/m/it/10 =[]$
  []
 
 
@@ -4785,7 +4850,7 @@ Missing character: There is no f in font nullfont!
 <recently read> \p 
                    
 l.187 If $\p
-             + (\F \cap \O) = 0$ then $\p\O + \F = \hat{\O}$ and hence $\p \...
+             + (\F \cap \O) = \O$ then $\p\hO + \F = \hat{\O}$ and hence $\p...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4794,12 +4859,18 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.187 If $\p + (\F
-                   \cap \O) = 0$ then $\p\O + \F = \hat{\O}$ and hence $\p \...
+                   \cap \O) = \O$ then $\p\hO + \F = \hat{\O}$ and hence $\p...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 187.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 187.
 
 
 LaTeX Warning: Command \O invalid in math mode on input line 187.
@@ -4814,23 +4885,26 @@ Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
 <recently read> \p 
                    
-l.187 If $\p + (\F \cap \O) = 0$ then $\p
-                                         \O + \F = \hat{\O}$ and hence $\p \...
+l.187 If $\p + (\F \cap \O) = \O$ then $\p
+                                          \hO + \F = \hat{\O}$ and hence $\p...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-LaTeX Warning: Command \O invalid in math mode on input line 187.
-
-
-LaTeX Warning: Command \O invalid in math mode on input line 187.
+! Undefined control sequence.
+l.187 If $\p + (\F \cap \O) = \O$ then $\p\hO
+                                              + \F = \hat{\O}$ and hence $\p...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.187 If $\p + (\F \cap \O) = 0$ then $\p\O + \F
-                                                 = \hat{\O}$ and hence $\p \...
+l.187 If $\p + (\F \cap \O) = \O$ then $\p\hO + \F
+                                                   = \hat{\O}$ and hence $\p...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4854,8 +4928,17 @@ Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
 <recently read> \p 
                    
-l.187 ...then $\p\O + \F = \hat{\O}$ and hence $\p
-                                                   \hat{\O}' = \hat{\O}$.
+l.187 ...hen $\p\hO + \F = \hat{\O}$ and hence $\p
+                                                  \hO+ \hat{\O}' = \hat{\O}$...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.187 ... $\p\hO + \F = \hat{\O}$ and hence $\p\hO
+                                                  + \hat{\O}' = \hat{\O}$ (m...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4874,6 +4957,55 @@ LaTeX Warning: Command \O invalid in math mode on input line 187.
 
 LaTeX Warning: Command \O invalid in math mode on input line 187.
 
+Missing character: There is no ( in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no q in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+! Undefined control sequence.
+<recently read> \hO 
+                    
+l.187 ...ly both sides of first equation with $\hO
+                                                  $).
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ) in font nullfont!
 Missing character: There is no . in font nullfont!
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 186--188
@@ -4891,13 +5023,13 @@ Overfull \hbox (40.5556pt too wide) in paragraph at lines 186--188
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 186--188
-\OT1/cmr/m/n/10 0$
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 186--188
+\OT1/cmr/m/n/10 $
  []
 
 
-Overfull \hbox (26.11111pt too wide) in paragraph at lines 186--188
-\OT1/cmr/m/n/10 + =
+Overfull \hbox (18.33331pt too wide) in paragraph at lines 186--188
+\OT1/cmr/m/n/10 + =
  []
 
 
@@ -4906,13 +5038,13 @@ Overfull \hbox (7.7778pt too wide) in paragraph at lines 186--188
  []
 
 
-Overfull \hbox (21.13887pt too wide) in paragraph at lines 186--188
-[] \OT1/cmr/m/n/10 =
+Overfull \hbox (28.91667pt too wide) in paragraph at lines 186--188
+\OT1/cmr/m/n/10 +[] =
  []
 
 
 Overfull \hbox (7.7778pt too wide) in paragraph at lines 186--188
-[]$ 
+[]$
  []
 
 ! Undefined control sequence.
@@ -5225,6 +5357,15 @@ LaTeX Warning: Command \O invalid in math mode on input line 198.
 
 LaTeX Warning: Command \O invalid in math mode on input line 198.
 
+! Undefined control sequence.
+l.198 \bigskip \textbf{Step 2:} $\hat{\O}' / \p
+                                               \hat{\O}' \cong k[X] / (\over...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 
 LaTeX Warning: Command \O invalid in math mode on input line 198.
 
@@ -5242,8 +5383,8 @@ Overfull \hbox (8.9444pt too wide) in paragraph at lines 198--199
  []
 
 
-Overfull \hbox (41.7535pt too wide) in paragraph at lines 198--199
-[]\OML/cmm/m/it/10 =p[] []
+Overfull \hbox (36.72224pt too wide) in paragraph at lines 198--199
+[]\OML/cmm/m/it/10 =[] []
  []
 
 
@@ -5654,7 +5795,7 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.214 \{ \p
-            \text{ prime ideal in } k[X] \, | \, f \in \p \}
+            \text{ prime ideal in } k[X] \, | \, \overline{f} \in \p \}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5663,7 +5804,7 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.214 \{ \p \text
-                 { prime ideal in } k[X] \, | \, f \in \p \}
+                 { prime ideal in } k[X] \, | \, \overline{f} \in \p \}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5671,7 +5812,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.214 ...t{ prime ideal in } k[X] \, | \, f \in \p
+l.214 ...eal in } k[X] \, | \, \overline{f} \in \p
                                                    \}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5683,7 +5824,7 @@ and I'll forget about whatever was undefined.
 Overfull \hbox (140.5993pt too wide) detected at line 215
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 R\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $ f[]\OML
 /cmm/m/it/10 k\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ] \OMS/cmsy/m/
-n/10 j \OML/cmm/m/it/10 f \OMS/cmsy/m/n/10 2g
+n/10 j [] 2g
  []
 
 Missing character: There is no a in font nullfont!
@@ -5869,7 +6010,7 @@ LaTeX Warning: Command \O invalid in math mode on input line 242.
 
 ! Undefined control sequence.
 l.242  k[X] / (\overline{f})  \to \hat{\O} / \p
-                                               \hat{\O}, \, g \mapsto g(\O)
+                                               \hat{\O}, \, g \mapsto g(\theta)
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5883,16 +6024,11 @@ LaTeX Warning: Command \O invalid in math mode on input line 242.
 LaTeX Warning: Command \O invalid in math mode on input line 242.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 242.
-
-
-LaTeX Warning: Command \O invalid in math mode on input line 242.
-
-
-Overfull \hbox (122.48598pt too wide) detected at line 243
+Overfull \hbox (119.6804pt too wide) detected at line 243
 \OML/cmm/m/it/10 k\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ]\OML/cmm/
 m/it/10 =\OT1/cmr/m/n/10 ([]) \OMS/cmsy/m/n/10 ! []\OML/cmm/m/it/10 =[];  g \OM
-S/cmsy/m/n/10 7! \OML/cmm/m/it/10 g\OT1/cmr/m/n/10 ()
+S/cmsy/m/n/10 7! \OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/
+m/n/10 )
  []
 
 Missing character: There is no a in font nullfont!
@@ -6414,14 +6550,13 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no m in font nullfont!
 Missing character: There is no 1 in font nullfont!
-Missing character: There is no . in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no , in font nullfont!
 ! Undefined control sequence.
 <recently read> \p 
                    
-l.259 such that by Theorem 1.1, $\p
-                                   \hat{\O} = \prod_{i=1}^r \hat{\PP}_i^{e_i}$.
+l.259 such that by Theorem 11, $\p
+                                  \hat{\O} = \prod_{i=1}^r \hat{\PP}_i^{e_i}$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -6435,7 +6570,7 @@ LaTeX Warning: Command \O invalid in math mode on input line 259.
 LaTeX Warning: Command \O invalid in math mode on input line 259.
 
 ! Undefined control sequence.
-l.259 ...1.1, $\p\hat{\O} = \prod_{i=1}^r \hat{\PP
+l.259 ... 11, $\p\hat{\O} = \prod_{i=1}^r \hat{\PP
                                                   }_i^{e_i}$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6475,10 +6610,10 @@ Overfull \hbox (32.02739pt too wide) in paragraph at lines 258--261
 
  
 Here is how much of TeX's memory you used:
- 41 strings out of 493386
- 507 string characters out of 3145013
+ 42 strings out of 493386
+ 509 string characters out of 3145013
  70761 words of memory out of 3000000
- 3614 multiletter control sequences out of 15000+200000
+ 3615 multiletter control sequences out of 15000+200000
  3948 words of font info for 15 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  18i,8n,12p,325b,114s stack positions out of 5000i,500n,10000p,200000b,50000s
