@@ -15,7 +15,7 @@ is an exact sequence.
 \begin{proof}
 $\lambda:= l \circ j$\\
 We have to show: $\ker(\lambda)=\mu(K)$.\\
-Obersve: $a \in \ker(\lambda) \iff \forall \tau \in \Hom(K, \C) : \log|\tau(a)|=0 \iff |\tau(a)|=1$\\
+Observe: $a \in \ker(\lambda) \iff \forall \tau \in \Hom(K, \C) : \log|\tau(a)|=0 \iff |\tau(a)|=1$\\
 Hence: $\ker(\lambda) = \{a \in \O^\times \ | \ |\tau(a)|=1\}$.\\
 \glqq $\supseteq$\grqq: \checkmark\\
 \glqq $\subseteq$\grqq: $j(\ker(\lambda))$ is bounded as subset of $K_\R^\times$. Furthermore: $j(\ker(\lambda)) \subseteq j(\O)$ which is a lattice in $K_\R$
@@ -27,13 +27,13 @@ Altogether: $\ker(\lambda)$ is a finite subgroup of $K^\times \Rightarrow$ every
 \underline{Recall:} $\alpha, \alpha' \in \O_K$ are associated $:\iff \exists, \varepsilon \in \O^\times_K$ s.t. $\alpha'=\alpha\cdot \varepsilon$.
 
 \begin{Prop}
-Let $a \in \Z$. There are at most $(\O_K: a\O_K)=\Norm((a))$ elements $\alpha \in \O_K$ up to associates with $\NormKQ(\alpha)=\pm a$.
+Let $a \in \Z$. There are at most $(\O_K: a\O_K) =\Norm((a))$ elements $\alpha \in \O_K$ up to associates with $\NormKQ(\alpha)=\pm a$.
 \end{Prop}
 
 \begin{proof}
 Suppose w.l.o.g.: $a >1$.\\
 Consider the cosets of $\O_K$ modulo the subgroup $a \O_K$. Show that each coset contains at most one such $\alpha$ up to associatives.\\
-Suppose: $\alpha \in \O$ with $\NormKQ(\alpha)=\pm a$ and suppose $\beta = \alpha + a \gamma$ with $\gamma \in \O_K$ also satisfies $\NormKQ(\beta)=\pm a \Rightarrow \frac{\beta}{\alpha} = 1 \pm \frac{\NormKQ(\alpha}{\alpha} \gamma.$\\
+Suppose: $\alpha \in \O$ with $\NormKQ(\alpha)=\pm a$ and suppose $\beta = \alpha + a \gamma$ with $\gamma \in \O_K$ also satisfies $\NormKQ(\beta)=\pm a \Rightarrow \frac{\beta}{\alpha} = 1 \pm \frac{\NormKQ(\alpha)}{\alpha} \gamma.$\\
 Recall: $\frac{\Norm(\alpha)}{\alpha} \in \O_K \Rightarrow \frac{\beta}{\alpha} \in \O_K$.\\
 Obtain in the same way $\frac{\alpha}{\beta} \in \O_K.$ Hence $\frac{\alpha}{\beta}$ and $\frac{\beta}{\alpha}$ are in $\O_K^\times \Rightarrow \alpha$ and $\beta$ are associated.
 \end{proof}
@@ -74,7 +74,7 @@ Since $\prod_\tau |x_\tau| =1 \Rightarrow \exists c >0: \forall x \in T: \forall
 \item Choose sequence $(c_\tau)$ with $c_\tau >0, c_{\bar{\tau}}=c_\tau$ and $C:=\prod c_\tau >M_0= (\frac{2}{\pi})^s \sqrt{d_K}$ and define $X:= \{ (x_\tau)_\tau \ | \ | x_\tau| < c_\tau\}$.
 \item Choose $\alpha_1, \dots, \alpha_N \in \O_K$ s.t. each $\alpha \in \O_K, \alpha \neq 0$ with $|\NormKQ(\alpha)| \leq C$ is associated to one $\alpha_i$ (by Prop 7.2. possible).
 \end{itemize}
-Define $T:= S \cap \bigcup_{i=1}^n X \cdot j(\alpha_i)^{-1}$.
+Define $T:= S \cap \bigcup_{i=1}^n X \cdot j(\alpha_i)^{-1}$.\\
 \underline{Step 4:} $T$ does the job:
 \begin{enumerate}[(1)]
 \item $X$ is bounded $\Rightarrow X j(\alpha_i)^{-1}$ is bounded $\Rightarrow T$ is bounded.

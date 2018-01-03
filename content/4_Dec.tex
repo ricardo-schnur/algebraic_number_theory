@@ -93,17 +93,17 @@ Let
 	
 	\[ \hO / \p\hO = \bigoplus_{i=1}^r	\hO / \p_i^{e_i}	\]
 	
-	by the Chinese Remainder Theorem. Let $K = \O / \p$
+	by the Chinese Remainder Theorem. Let $k = \O / \p$
 	
 	\begin{enumerate}[Step 1:]
-		\item We show, that $\dim_K \hO/\p\hO = n$. Choose a basis $\bar\omega_1, \dots, \bar\omega_m$ of $\hO/\p\hO$ over K and choose preimages $\omega_1, \dots, \omega_m$ in $\hO$. We will show, that $\omega_1, \dots, \omega_m$ is a basis of $L \mid K$, i.e $m = n$, from which the claim follows.
+		\item We show, that $\dim_k \hO/\p\hO = n$. Choose a basis $\bar\omega_1, \dots, \bar\omega_m$ of $\hO/\p\hO$ over $k$ and choose preimages $\omega_1, \dots, \omega_m$ in $\hO$. We will show, that $\omega_1, \dots, \omega_m$ is a basis of $L \mid K$, i.e $m = n$, from which the claim follows.
 		
 		\begin{enumerate}[(1)]
 			\item Suppose $\omega_1, \dots, \omega_m$ are linearly dependant, i.e $\exists \alpha_1, \dots, \alpha_m \in K$, not all zero and such that
 			 
 			 \[  \alpha_1\omega_1 + \dots + \alpha_m\omega_m = 0. \tag{$\ast$}     \]
 			 
-			 Since $K = \Quot(\O)$, we may choose $\alpha_1, \dots, \alpha_m \in \O$, since we can just clear denominators. Consider the ideal $\a := \left\langle \alpha_1, \dots, \alpha_m \right\rangle \subset \O$. $\p \neq 0 \Rightarrow \a^{-1}\p \subsetneq \a^{-1}$. Choose some $\alpha \in \a^{-1} \setminus \a^{-1}\p \Rightarrow \alpha \cdot \a \subsetneq \p \Rightarrow \alpha\alpha_1, \dots \alpha\alpha_m \in \O$, but not all lie in $\p$.
+			 Since $K = \Quot(\O)$, we may choose $\alpha_1, \dots, \alpha_m \in \O$, since we can just clear denominators. Consider the ideal $\a := \left\langle \alpha_1, \dots, \alpha_m \right\rangle \subset \O$. $\p \neq 0 \Rightarrow \a^{-1}\p \subsetneq \a^{-1}$. Choose some $\alpha \in \a^{-1} \setminus \a^{-1}\p \Rightarrow \alpha \cdot \a \not\subseteq \p \Rightarrow \alpha\alpha_1, \dots \alpha\alpha_m \in \O$, but not all lie in $\p$.
 			 
 			 $\overset{(\ast)}{\Longrightarrow} \alpha\alpha_1\omega_1 + \dots + \alpha\alpha_m\omega_m = 0 \mod \p$ with at least one of the $\alpha\alpha_i \not\in \p$. Hence $\alpha\alpha_1\bar\omega_1 + \dots + \alpha\alpha_m\bar\omega_m = 0$ with at least one $\alpha\alpha_i \neq 0$, which contradicts the assumption that $\bar\omega_1, \dots, \bar\omega_m$ is a basis.
 			 
@@ -149,7 +149,7 @@ Let
 		 \hO/\p_i^{e_i} \supsetneq \p_i/\p_i^{e_i} \supsetneq \dots \supsetneq \p_i^{e_i-1}/\p_i^{e_i} \supsetneq 0
 		  \]
 		  
-		  as a chain of $K$-vectorspaces. Choos an $\alpha \in \p_i^j \setminus \p_i^{j+1}$ and consider the homomorphism
+		  as a chain of $K$-vectorspaces. Choose an $\alpha \in \p_i^j \setminus \p_i^{j+1}$ and consider the homomorphism
 		  
 		  \[
 		  \begin{aligned}
@@ -158,7 +158,7 @@ Let
 		   \end{aligned}
 		   \]
 		   
-		  which is surjective with kernel $\p_i$. Therefore $\p_i^j / \p_i^{j+1} \cong \hO / \p_i$ and we have
+		  which is surjective with kernel $\p_i$ (since $\p_i^{j+1}$ is coprime to $\alpha \hO$). Therefore $\p_i^j / \p_i^{j+1} \cong \hO / \p_i$ and we have
 		  \[  \dim_K \hO/\p_i^{e_i} = \sum_{j=0}^{e_i-1} \dim_K \p_i^j / \p_i^{j+1} = e_i \cdot f_i  \]	   	
 	\end{enumerate}
 \end{proof}
