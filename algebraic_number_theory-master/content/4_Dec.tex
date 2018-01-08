@@ -1,0 +1,164 @@
+\rhead{04. Dezember 2017}
+
+\section{Prime ideals in $\O_K$}
+
+\textbf{Question:} Describe the prime ideals in $\O_K$ that "live above a prime ideal $\p \subset \Z$".
+
+Consider the following, more general situation:
+Let
+\begin{itemize}
+	\item $\O$ be a Dedekind domain,
+	\item $K = \Quot(\O)$,
+	\item $L \mid K$ a finite and separable field extension,
+	\item $\hO$ the integral closure of $\O$ in $L$.
+\end{itemize}
+
+\begin{defi}
+	In the setting above, we say that a prime ideal $\hat\p \in \hO$ lies above a prime ideal $\p \in \O$ $:\Leftrightarrow$ $\hat\p \cap \O = \p$.
+\end{defi}
+
+\begin{Prop}
+	$\hO$ is a Dedekind domain.
+\end{Prop}
+\begin{proof}
+	\begin{enumerate}[(1)]
+		\item $\hO$ is an integral domain and is integrally closed (see \textbf{Remark 2.1}).
+		
+		\item We show, that every prime ideal $0 \neq \hat\p \in \hO$ is maximal:
+		We know that $\p := \hat\p \cap \O$ is a prime ideal in $\O$.
+		
+		\underline(Claim:) $\p \neq 0$. Choose $0 \neq x \in \hat\p$. Since $\hO$ is integrally closed, $\exists a_0, \dots, a_{n-1}$, such that
+		
+		\[ x^n + a_{n-1}x^{n-1}+ \dots +a_1x + a_0 = 0.	\]
+		
+		We may assume that the equation is minimal, i.e $a_0 \neq 0$. Then we have
+		
+		\[ 0 \neq a_0 = -a_1x - \dots - a_{n-1}x^{n-1} - x^n \in \hat\p \cap \O = \p.  \]
+		
+		Since $\p$ is a prime ideal of $\O$, it is also maximal, i.e $\O / \p$ is a field. Hence $\hO / \hat\p$ is a finite extension of  $\O/\p$ as an $\O/\p$-algebra. Therefore $\O/\p$ a field $\Rightarrow$ $\hO/\hat\p$ is a field $\Rightarrow$ $\hat\p$ is a maximal ideal.
+		
+		\item $\hO$ is Noetherian:
+		Choose a basis $\alpha_1, \dots, \alpha_n$ of $L \mid K$ with $\alpha_1, \dots, \alpha_n \in \hO$. Let $d:=d(\alpha_1, \dots, \alpha_n) \neq 0$ (\textbf{Proposition 2.6}). Recall that $d \cdot \hO \subset \O\alpha_1+\dots+\O\alpha_n$ (\textbf{Proposition 2.8}) and that therefore $\hO \subset \O\frac{\alpha_1}{d} + \dots + \O\frac{\alpha_n}{d}$. Hence every ideal $I \subset \hO$ can be regarded as a submodule of the $\O$-module $\O\frac{\alpha_1}{d} + \dots + \O\frac{\alpha_n}{d}$. But since this module is finitely generated and $\O$ is Noetherian, I must be finitely generated as well.
+	\end{enumerate}
+\end{proof}
+
+\begin{Prop}
+	Let $\p \subset \O$ be a prime ideal. Then $\p \cdot \hO \subsetneq \hO$.
+\end{Prop}
+\begin{proof}
+	We may assume $\p \neq 0 $.
+	\begin{enumerate}[(1)]
+		\item Choose $\pi \in \p \setminus \p^2$. Then we can write $\pi \cdot \O = \p \cdot \a$ with $\p$, $\a$ coprime, i.e $\O = \p + \a \Rightarrow \exists s\in\a, t\in\p: 1=s+t$. In particular, $s\not\in \p$ since $1 \not\in \p$ and $s\cdot \p \subset \a \cdot \p = \pi \cdot \O$.
+		
+		\item Suppose $\p\hO = \hO$. Then $s \cdot \hO = s\p\hO \subset \pi\hO \Rightarrow s = \pi x$ with some $x \in \hO \cap K = \O \Rightarrow s \in \pi\O \subset \p$, a contradiction.
+	\end{enumerate}
+\end{proof}
+
+\begin{Bem}
+	Let $\p \neq 0$ be a prime ideal in $\O$. Then:
+	\begin{enumerate}[(i)]
+		\item $\p \cdot \hO = \p_1^{e_1} \cdot \dots \cdot \p_r^{e_r}$ with $e_1,\dots,e_r \in \N$ and $\p_1, \dots, \p_r$ prime ideals in $\hO$.
+		
+		\item A prime ideal $\hat\p$ in $\hO$ satisfies: $\hat\p \cap \O = \p \Leftrightarrow \hat\p = \p_i$ for some i.
+	\end{enumerate}
+\end{Bem}
+\begin{proof}
+	\begin{enumerate}[(i)]
+		\item follows from  \textbf{Proposition 8.2+8.3}.
+		
+		\item "$\Leftarrow$": $\p\hO = \p_1^{e_1} \cdot \dots \cdot \p_r^{e_r} \Rightarrow \p\O \subset \p_i \Rightarrow \p \subset \p_i \cap \O$. We have $\p_i \cap \O \neq 0$, $1 \not\in \p_i \cap \O$ and $\p$ is maximal, hence $\p = \p_i \cap \O$.\\
+		"$\Rightarrow$": $\hat\p \cap \O = \p \Rightarrow \p\hO \subset \hat\p \Rightarrow \hat\p$ divides $\p\hO$.
+	\end{enumerate}
+\end{proof}
+
+\begin{defi}
+	Let $0 \neq \p$ be a prime ideal in $\O$ and $\p\hO = \p_1^{e_1} \cdot \dots \cdot \p_r^{e_r}$ the decomposition into prime ideals.
+	\begin{enumerate}[(i)]
+		\item $e_i$ is called \textbf{ramification index of $\p_i$}.\\
+		$\p_i$ is called \textbf{unramified} $:\Leftrightarrow e_i = 1$.\\
+		$\p$ is called unramified, if all $\p_i$ are unramified.\\
+		$\p$ is called \textbf{totally ramified} $:\Leftrightarrow r = 1$. 
+		
+		\item $f_i : = \dim_K \hO / \p_i$ with $K:=\O/\p$ is called \textbf{local degree} or \textbf{relative degree} of $\p_i$.
+	\end{enumerate}
+\end{defi}
+
+\begin{Satz}
+	In the situation of \textbf{Definition 8.5}, we have the fundamental equation:
+	
+	\[ \sum_{i=1}^r e_i \cdot f_i = n \quad \text{with } n = \left[ L:K\right]     \]
+\end{Satz}
+\begin{proof}
+	We can write
+	
+	\[ \hO / \p\hO = \bigoplus_{i=1}^r	\hO / \p_i^{e_i}	\]
+	
+	by the Chinese Remainder Theorem. Let $k = \O / \p$
+	
+	\begin{enumerate}[Step 1:]
+		\item We show, that $\dim_k \hO/\p\hO = n$. Choose a basis $\bar\omega_1, \dots, \bar\omega_m$ of $\hO/\p\hO$ over $k$ and choose preimages $\omega_1, \dots, \omega_m$ in $\hO$. We will show, that $\omega_1, \dots, \omega_m$ is a basis of $L \mid K$, i.e $m = n$, from which the claim follows.
+		
+		\begin{enumerate}[(1)]
+			\item Suppose $\omega_1, \dots, \omega_m$ are linearly dependant, i.e $\exists \alpha_1, \dots, \alpha_m \in K$, not all zero and such that
+			 
+			 \[  \alpha_1\omega_1 + \dots + \alpha_m\omega_m = 0. \tag{$\ast$}     \]
+			 
+			 Since $K = \Quot(\O)$, we may choose $\alpha_1, \dots, \alpha_m \in \O$, since we can just clear denominators. Consider the ideal $\a := \left\langle \alpha_1, \dots, \alpha_m \right\rangle \subset \O$. $\p \neq 0 \Rightarrow \a^{-1}\p \subsetneq \a^{-1}$. Choose some $\alpha \in \a^{-1} \setminus \a^{-1}\p \Rightarrow \alpha \cdot \a \not\subseteq \p \Rightarrow \alpha\alpha_1, \dots \alpha\alpha_m \in \O$, but not all lie in $\p$.
+			 
+			 $\overset{(\ast)}{\Longrightarrow} \alpha\alpha_1\omega_1 + \dots + \alpha\alpha_m\omega_m = 0 \mod \p$ with at least one of the $\alpha\alpha_i \not\in \p$. Hence $\alpha\alpha_1\bar\omega_1 + \dots + \alpha\alpha_m\bar\omega_m = 0$ with at least one $\alpha\alpha_i \neq 0$, which contradicts the assumption that $\bar\omega_1, \dots, \bar\omega_m$ is a basis.
+			 
+			 \item Consider $M := \O\omega_1 + \dots + \O\omega_m$ and $N:= \hO/M$. Since $\hO/\p\hO = K\bar\omega_1 + \dots + K\bar\omega_m$, we have $\hO = M + \p\hO \overset{\mod M}{\Longrightarrow} N = \p N$. The proof of \textbf{Proposition 8.2} implies, that $\hO$ and $N$ are finitely generated as $\O$-modules. Choose generators $\bar\alpha_1, \dots, \bar\alpha_s$ of $N$. $N = \p N \Rightarrow \exists \alpha_{i,j} \in \p$ with $\bar\alpha_i = \sum_{i=1}^s \alpha_{i,j}\bar\alpha_j$. Consider $A = (\alpha_{i,j})_{i,j=1}^s - I$. Then
+			 
+			 \[
+			 A \cdot
+			 \begin{pmatrix}
+			 	\bar\alpha_1 \\
+			 	\vdots \\
+			 	\bar\alpha_s
+			 \end{pmatrix}
+			 = 0.	 
+			 \]
+			 
+			 Furthermore, $d:=\det(A) = (-1)^s \mod \p \Rightarrow d \neq 0$. We now see
+			 
+			 \[
+			 0 = A^\#A
+			 \begin{pmatrix}
+			 \bar\alpha_1 \\
+			 \vdots \\
+			 \bar\alpha_s
+			 \end{pmatrix}	 
+			 = d \cdot
+			 \begin{pmatrix}
+			 \bar\alpha_1 \\
+			 \vdots \\
+			 \bar\alpha_s
+			 \end{pmatrix}		 
+			 \Longrightarrow d \cdot N = 0,
+			 \]
+			 
+			 hence $d \cdot \hO \subset M = \O\omega_1 + \dots \O\omega_m$.
+			 Now, for some $\beta \in L$, we have $\beta = d\underbrace{\beta'}_{\in L} = d \cdot \frac{b}{a} = \frac{1}{a}db$, with $b \in \hO$ and $a \in \O$. Hence $\beta \in K\omega_1 + \dots + K\omega_m \Rightarrow m = n$ and $\omega_1, \dots, \omega_m$ generate $L \mid K$.			 
+		\end{enumerate}
+		
+		\bigskip
+		
+		 \item We show, that $\dim_K \hO/\p_i^{e_i} = e_if_i$. Consider the chain
+		 
+		 \[
+		 \hO/\p_i^{e_i} \supsetneq \p_i/\p_i^{e_i} \supsetneq \dots \supsetneq \p_i^{e_i-1}/\p_i^{e_i} \supsetneq 0
+		  \]
+		  
+		  as a chain of $K$-vectorspaces. Choose an $\alpha \in \p_i^j \setminus \p_i^{j+1}$ and consider the homomorphism
+		  
+		  \[
+		  \begin{aligned}
+		   \hO &\longrightarrow \p_i^j/\p_i^{j+1} \\
+		   a &\longmapsto \alpha \cdot a,
+		   \end{aligned}
+		   \]
+		   
+		  which is surjective with kernel $\p_i$ (since $\p_i^{j+1}$ is coprime to $\alpha \hO$). Therefore $\p_i^j / \p_i^{j+1} \cong \hO / \p_i$ and we have
+		  \[  \dim_K \hO/\p_i^{e_i} = \sum_{j=0}^{e_i-1} \dim_K \p_i^j / \p_i^{j+1} = e_i \cdot f_i  \]	   	
+	\end{enumerate}
+\end{proof}
