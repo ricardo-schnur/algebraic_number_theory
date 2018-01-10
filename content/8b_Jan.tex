@@ -1,20 +1,32 @@
 \rhead{08. January 2018 part 2}
 
-\setcounter{section}{10}
-\setcounter{defi}{4}
 
-\begin{Lem}
-\todo{guter Übergang}
-s. morning session
-\end{Lem}
 
 \begin{proof}
+Idea: Use Proposition 8.15.
+
+Observe: Since $\O = \Z[\zeta]$, Proposition 8.15 can be applied to all prime ideals of $\O$.
+\begin{itemize}
+	\item Consider $f(X) = \phi_n(X)$.
+	
+	\item Take the image $h(X) := \bar{f(X)} \in \F_p[X]$ and decompose it as $h(X) = h_1^{e_1} \cdot \dots \cdot h_r^{e_r}$ into irreducible factors over $\F_p$.
+\end{itemize}
+Then we have: $p \O = \p_1^{e_1} \cdot \dots \cdot \p_r^{e_r}$ with prime ideals $\p_i$ of local degree $f_i := \deg h_i$.
+	
+\bigskip
+	
+\underline{Step 1:} Show $e_1 = \dots = e_r = 1$.
+
+Consider $q(X) := X^n -1 \in \F_p[X]$. Since $p \not\vert n$, $q'(X) = nX^{n-1}$ and $q$ have no common zeroes in $\F_p \Rightarrow q(X)$ has no multiple zeroes in $\bar{\F}_p \Rightarrow $ The same must be true for $h(x) \Rightarrow e_1 = \dots = e_r = 1$.
+
+\bigskip
+
 \underline{Step 2:} Show: $f_1=f_2= \dots=f_r=h_0:=\min \{ k \ | \ p^k \equiv 1 \mod n \}$\\
 Recall: $f(X)= \phi_n(X), h(X):=$image in $\F_p[X]=h_1^{l_1}(X)\cdot \ldots \cdot h_r^{l_r}(X)$\\
-Consdier the field $L:= \F_{p^{h_0}}$ with $p^{h_0}$ elements as field extension of $\F_p$.
+Consider the field $L:= \F_{p^{h_0}}$ with $p^{h_0}$ elements as field extension of $\F_p$.
 Write $p^{k_0}-1= nw$ with $w \in \N$.\\
 Observe: $L^\times = <a>$ with $\ord(a)=nw \Rightarrow \bar{\zeta}=a^w$ is a primitive $n$-th root of unity and $h$ decomposes into linear factors over $L$.\\
-Furthermore: $L=\F_p(\bar{\zeta}$ by minimality of $k_0$, since $\# \F_p[\bar{\zeta}] = p^M$ for some $M$ and $\ord(\bar{\zeta})=n$ divides $p^M-1 \Rightarrow k_0=M$.\\
+Furthermore: $L=\F_p(\bar{\zeta})$ by minimality of $k_0$, since $\# \F_p[\bar{\zeta}] = p^M$ for some $M$ and $\ord(\bar{\zeta})=n$ divides $p^M-1 \Rightarrow k_0=M$.\\
 Let $\bar{f}_1(X)$ be the minimal polynomial of $\bar{\zeta}$ over $\F_p \Rightarrow$
 \begin{itemize}
 \item $\bar{f}_1$ is an irreducible divisor of $h(X) \Rightarrow $w.l.o.g.$ \bar{f}_1 = h_1$

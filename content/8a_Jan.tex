@@ -1,0 +1,159 @@
+\rhead{08. January 2018 part 1}
+
+\section{Cyclotomic Fields}
+
+In this section, we have
+
+\begin{itemize}
+	\item $\zeta = \zeta_n = $primitive n-th root of unity
+	\item $L = \Q(\zeta)$
+	\item $\O = $ ring of integers in $L$ 
+	\item $d = \varphi(n) = \left[ L : \Q \right]$.
+\end{itemize}
+
+\underline{\textbf{GOAL:}}
+ \begin{enumerate}[(1)]
+	\item Show, that $\O = \Z[\zeta]$
+	\item Describe the prime ideals in $\O$
+\end{enumerate}
+
+\begin{Lem}
+	Suppose $n = l^k$ with $l$ prime and hence $d = \varphi(n) = l^k - l^{k-1} = l^{k-1}(l-1)$.
+	\begin{enumerate}[(i)]
+		\item The minimal polynomial $\phi(X)$ of $\zeta$ is $\phi(X) = X^{(l-1)l^{k-1}} + X^{(l-2)l^{k-1}} + \dots + X^{l^{k-1}} + 1$.
+		
+		\item We have $l = \prod_{g \in (\Z/n\Z)^\times} (1-\zeta^g)$.
+		
+		\item $1-\zeta^g = \epsilon_g(1-\zeta)$ with $\epsilon_g \in \O^\times$ for $g \not\equiv 0 \mod l$.
+		
+		\item $l = \epsilon(1-\zeta)^d$ with $\epsilon \in \O^\times$.
+		
+		\item $\NormLQ (1-\zeta) = l$.
+	\end{enumerate}
+\end{Lem}
+\begin{proof}
+	\begin{enumerate}[(i)]
+		\item 
+		\begin{eqnarray*}
+		\phi(x) &=& \prod_{g \in (\Z/n\Z)^\times} (X - \zeta^g) = \frac{ \prod_{g \in (\Z/n\Z)}(X - \zeta^g)} { \prod_{g \in (\Z/l^{k-1}\Z)} (X - \zeta^{gl})} = \frac{X^{l^k} - 1}{X^{l^{k-1}}-1}\\
+		&=& X^{(l-1)l^{k-1}} + X^{(l-2)l^{k-1}} + \dots + X^{l^{k-1}} + 1
+		\end{eqnarray*}
+	
+	\item Follows from (i) with $X = 1$.
+	
+	\item Observe 
+	
+	\[ \epsilon_g := \frac{1-\zeta^g}{1-\zeta} = 1 + \zeta + \dots +\zeta^{g-1} \in \O \]
+	
+	and 
+	
+	\[\frac{1}{\epsilon_g} = \frac{1-\zeta}{1-\zeta^g} \]
+	
+	Since $g \not\equiv 0 \mod l$, we can choose some $g' \in \Z$ with $gg' \equiv 1 \mod l^k$. Hence
+	
+	\[\frac{1}{\epsilon_g} = \frac{1-\zeta^{gg'}}{1-\zeta^g} = 1 + \zeta^g + \dots + \zeta^{g^{g'-1}} \in \O.\]
+	
+	\item Follows from (ii) and (iii) with $\epsilon := \prod_{g \in (\Z/n\Z)^\times}\epsilon_g$.
+	
+	\item Follows from (ii).
+	\end{enumerate}
+\end{proof}
+
+
+\begin{Prop}
+	Suppose again that $n = l^k$ with $l$ prime. Set $\lambda := 1 - \zeta$. Then
+	\begin{enumerate}[(i)]
+		\item $\Pi := (\lambda)$ is a prime ideal of local degree $1$.
+		
+		\item $l\cdot\O = \Pi^d$. In particular, $l\O$ is non-split.
+	\end{enumerate}
+\end{Prop}
+\begin{proof}
+	10.1 (iv) $\Rightarrow l\O = (\lambda)^d$. Let $l\O = \p_1^{e_1} \cdot \dots \cdot \p_r^{e_r}$ be the decomposition into prime ideals. By Theorem 11, $d = e_1f_1 + \dots + e_rf_r$, where $f_i = $ local degree of $\p_i$, hence the above is already the prime decomposition and the local degree is $1$.
+\end{proof}
+
+\begin{Bem}
+	10.1 and 10.2 generalize Lemma I.25.
+\end{Bem}
+
+\begin{Prop}
+	Let $n = l^k$, $l$ prime. The basis $1, \zeta, \zeta^2, \dots, \zeta^{d-1}$ of $\Q(\zeta) \vert \Q$ has the discriminant $d(1, \zeta, \dots, \zeta^{d-1}) = (-1)^a l^s$ with $s = l^{k-1}(kl -k -1)$ and $a \in \left\lbrace  0,1 \right\rbrace $.
+\end{Prop}
+\begin{proof}
+	\underline{Step 1:} Show $d(1,\dots, \zeta^{d-1}) = \pm \Norm(\phi'(\zeta))$. 
+	
+	Let $\zeta = \zeta_1, \zeta_2, \dots \zeta_d$ be the conjugates of $\zeta$. 
+	
+	\[
+		\text{Remark 2.4} \Rightarrow d(1, \dots \zeta^{d-1} = d(\phi) = \prod_{1 \leq i < j \leq d} (\zeta_i - \zeta_j) = \pm \prod_{\substack{i = 1 \\ i \neq j }}^d (\zeta_i - \zeta_j).
+	\]
+	
+	Observe
+	
+	\[
+		\phi(X) = \prod_{i=1}^d (X - \zeta_i) \Rightarrow \phi'(X) = \sum_{m=1}^d \prod_{\substack{i=1 \\ i \neq m}}^d (X - \zeta_i)
+	\]
+	
+	and therefore
+	
+	\[
+		\phi'(\zeta_j) = \prod_{\substack{i=1 \\ i \neq j}}^d (\zeta_j - \zeta_i).
+	\]
+	
+	Hence we have $d(1, \dots \zeta^{d-1}) = \pm \prod_{j=1}^d \phi'(\zeta_j) = \pm \Norm (\phi'(\zeta))$.
+	
+	\bigskip
+	
+	\underline{Step 2:} Calculate $\Norm(\phi'(\zeta))$ partially.
+	
+	Observe: $(X^{l^{k-1}}-1)\phi(X) = X^{l^k}-1$. Differentiating yields $(X^{l^{k-1}}-1)\phi'(X) + \phi(X)(\dots) = l^k X^{l^k-1}$. Plugging in $X = \zeta$ gives $(\zeta^{l^{k-1}}-1)\phi'(\zeta) = l^k \zeta^{l^k-1} = l^k \zeta^{-1}$. Set $\xi := \zeta^{l^{k-1}}$. Then $\xi$ is a root of unity of order $l$ and we have $\Norm(\phi'(\zeta)) = \frac{l^{k^d}}{\Norm(\xi - 1)}$.
+	
+	\bigskip
+	
+	\underline{Step 3:} Calculate $\Norm(\xi - 1)$.
+	
+	Lemma 10.1 $\Rightarrow \Norm_{\Q(\xi) \vert \Q} (\xi - 1) = l$. Hence $\NormLQ (\xi - 1) = \left(   \Norm_{\Q(\xi) \vert \Q} (\xi - 1) \right) ^{l^{k-1}} = l^{l^{k-1}}$.
+	
+	Now combining all 3 steps yields: $d(1, \dots, \zeta^{d-1}) = \pm \frac{l^{k^d}}{l^{l^{k-1}}} = \pm l^s$.
+\end{proof}
+
+\begin{Prop}
+	Let $n$ be some natural number. Then $1, \zeta, \dots \zeta^{d-1}$ is an integral basis of $\O$.
+\end{Prop}
+\begin{proof}
+	\underline{Step 1:} Show the claim for $n = l^k$ with $l$ prime.
+	
+	\begin{enumerate}[(1)]
+		\item Proposition 2.7 $\Rightarrow \pm l^s = d(1, \dots, \zeta^{d-1}) \cdot \O \subset \Z + \dots + \Z \zeta^{d-1} = \Z[\zeta] \subset \O$.
+		
+		\item Consider $\lambda := (1-\zeta)$. Proposition 10.2 $\Rightarrow$ local degree of $(lambda)$ is $1 \Rightarrow \O = \Z + \lambda \O \Rightarrow \O = \Z[\zeta] + \lambda \O$ \vspace{2mm} $(*)$. Multiplying with $\lambda$ yields $\lambda \O = \lambda \Z[\zeta] + \lambda^2 \O \overset{(*)}{\Rightarrow} \O = \Z[\zeta] + \lambda^2 \O \Rightarrow \dots \Rightarrow \O = \Z[\zeta] + \lambda^t \O$ $\forall t \geq 1$.
+		
+		\item Plug in $t = s\varphi(l^k)$. Proposition 10.2 $\Rightarrow l \O = \lambda^{\varphi(l^k)} \O$. Hence $\O = \Z[\zeta] + \lambda^{s \varphi(l^k)} \O =  \Z[\zeta] + l^s \O = \Z[\zeta]$.
+	\end{enumerate}
+
+	\bigskip
+	
+	\underline{Step 2:} Generalize to arbitrary $n = l_1^{k_1} \cdot \dots \cdot l_r^{k_r}$.
+		
+	Consider $\zeta_i := \zeta^{n_i}$ with $n_i := \frac{n}{l_i^{k_i}}$, a primitive $l_i^{k_i}$-th root of unity. Then $\ord(\zeta_1), \dots, \ord(\zeta_r)$ are relatively prime. Hence:
+	
+	\begin{enumerate}[(1)]
+		\item $\Q(\zeta) = \Q(\zeta_1) \cdot \dots \cdot \Q(\zeta_r)$.
+		
+		\item $\Q(\zeta_1) \cdot \dots \cdot \Q(\zeta_{i-1}) \cap \Q(\zeta_i) = \Q$.
+		
+		\item Apply Proposition 2.13 to $\Q(\zeta_1) \cdot \dots \cdot \Q(\zeta_r)$ successively. We obtain, that
+		
+		\[\set{\zeta_1^{j_1}, \dots, \zeta_r^{j_r}}{0 \leq j_i \leq d_i -1} \]
+		
+		with $d_i = \varphi(l_i^{k_i})$ is an integral basis of $\Q(\zeta_1, \dots, \zeta_r) = \Q(\zeta)$. Hence $\O = \Z[\zeta] = \Z + \Z \zeta + \dots + \Z \zeta^{d-1}$, since all $\zeta_i$'s are powers of $\zeta$.
+	\end{enumerate}
+\end{proof}
+
+\begin{Lem}
+	Let $p$ be a prime which does not divide n. Then we have in $\O = \Z[\zeta]$:
+	
+	\[ p \O = \hP_1 \cdot \dots \cdot \hP_r  	\]
+	
+	with $\hP_i$ different prime ideals in $\O$ and the local degree of each $\hP_i$ is \newline $f = \min(\set{k \in \N}{p^k \equiv 1 \mod n})$.
+\end{Lem}
