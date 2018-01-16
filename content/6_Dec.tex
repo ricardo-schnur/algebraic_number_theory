@@ -91,7 +91,7 @@ Next, we will examine the example of the Gaussian integers $\Z[i]$. By \textbf{P
 	\begin{enumerate}[(i)]
 		\item If p is prime then $p = a^2 + b^2 \Leftrightarrow p \not\equiv 3 \mod 4$
 		
-		\item $\forall n \in \N: \quad n = a^2+b^2 \Leftrightarrow \nu_p(n) $ is even for all primes $p \equiv 3 \mod 4$.
+		\item $\forall n \in \N: \quad n = a^2+b^2 \Leftrightarrow \nu_p(n) $ is even for all primes $p \equiv 3 \mod 4$ ($\nu_p(n)=$ exponent of $p$ in prime factorization of $n$ over $\Z$).
 	\end{enumerate}
 \end{Kor}
 \begin{proof}
@@ -128,15 +128,15 @@ Next, we will examine the example of the Gaussian integers $\Z[i]$. By \textbf{P
 \textbf{\underline{Idea:}} Take the largest ideal of $\hO$ which also lies in $\hO'$.
 
 \begin{defi}
-	The set $\F := \set{\alpha \in \hO}{\alpha\hO \subset \hO'}$ is called \textbf{conductor}.
+	The set $\mathcal F := \set{\alpha \in \hO}{\alpha\hO \subset \hO'}$ is called \textbf{conductor}.
 \end{defi}
 
 \begin{Bsp}
-	If $\hO = \Z[i]$ and $\Theta = i$, then $\hO' = \O[\Theta] \Rightarrow \F = \hO$.
+	If $\hO = \Z[i]$ and $\Theta = i$, then $\hO' = \O[\Theta] \Rightarrow \mathcal F = \hO$.
 \end{Bsp}
 
 \begin{Prop}
 	In the situation above, let $f(X) := f_\Theta(X)$ be the minimal polynomial of $\Theta$. Let $\p$ be a prime ideal in $\O$ and $K := \O / \p$. consider the image $\bar f$ of $f$ in $K[X]$ and let $\bar f = \bar f_1^{e_1} \cdot \dots \cdot \bar f_f^{e_r}$ be the prime factorization in $K[X]$. Choose preimages $f_1, \dots, f_r \in \O[X]$. Then:
 	
-	If $\p$ is coprime to $\F$, i.e $\p + \F \cap \O = \O$, then the ideals in $\hO$ which lie over $\p$ are given as follows: $\p_i := \p\hO + f_i(\Theta) \hO, \quad 1 \leq i \leq r$ and the local degree of $\p_i$ is equal to $\deg(\bar f_i)$.
+	If $\p$ is coprime to $\mathcal F$, i.e $\p + \mathcal F \cap \O = \O$, then the ideals in $\hO$ which lie over $\p$ are given as follows: $\p_i := \p\hO + f_i(\Theta) \hO, \quad 1 \leq i \leq r$ and the local degree of $\p_i$ is equal to $\deg(\bar f_i)$.
 \end{Prop}
