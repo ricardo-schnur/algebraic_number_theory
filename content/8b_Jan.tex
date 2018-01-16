@@ -9,9 +9,9 @@ Observe: Since $\O = \Z[\zeta]$, Proposition 8.15 can be applied to all prime id
 \begin{itemize}
 	\item Consider $f(X) = \phi_n(X)$.
 	
-	\item Take the image $h(X) := \bar{f(X)} \in \F_p[X]$ and decompose it as $h(X) = h_1^{e_1} \cdot \dots \cdot h_r^{e_r}$ into irreducible factors over $\F_p$.
+	\item Take the image $h(X) := \bar{f(X)} \in \F_p[X]$ and decompose it as $h(X) = h_1^{e_1} \cdot \ldots \cdot h_r^{e_r}$ into irreducible factors over $\F_p$.
 \end{itemize}
-Then we have: $p \O = \p_1^{e_1} \cdot \dots \cdot \p_r^{e_r}$ with prime ideals $\p_i$ of local degree $f_i := \deg h_i$.
+Then we have: $p \O = \p_1^{e_1} \cdot \ldots \cdot \p_r^{e_r}$ with prime ideals $\p_i$ of local degree $f_i := \deg h_i$.
 	
 \bigskip
 	
@@ -21,9 +21,9 @@ Consider $q(X) := X^n -1 \in \F_p[X]$. Since $p \not\vert n$, $q'(X) = nX^{n-1}$
 
 \bigskip
 
-\underline{Step 2:} Show: $f_1=f_2= \dots=f_r=h_0:=\min \{ k \ | \ p^k \equiv 1 \mod n \}$\\
+\underline{Step 2:} Show: $f_1=f_2= \dots=f_r=k_0:=\min \{ k \ | \ p^k \equiv 1 \mod n \}$\\
 Recall: $f(X)= \phi_n(X), h(X):=$image in $\F_p[X]=h_1^{l_1}(X)\cdot \ldots \cdot h_r^{l_r}(X)$\\
-Consider the field $L:= \F_{p^{h_0}}$ with $p^{h_0}$ elements as field extension of $\F_p$.
+Consider the field $L:= \F_{p^{k_0}}$ with $p^{k_0}$ elements as field extension of $\F_p$.
 Write $p^{k_0}-1= nw$ with $w \in \N$.\\
 Observe: $L^\times = <a>$ with $\ord(a)=nw \Rightarrow \bar{\zeta}=a^w$ is a primitive $n$-th root of unity and $h$ decomposes into linear factors over $L$.\\
 Furthermore: $L=\F_p(\bar{\zeta})$ by minimality of $k_0$, since $\# \F_p[\bar{\zeta}] = p^M$ for some $M$ and $\ord(\bar{\zeta})=n$ divides $p^M-1 \Rightarrow k_0=M$.\\
@@ -31,7 +31,8 @@ Let $\bar{f}_1(X)$ be the minimal polynomial of $\bar{\zeta}$ over $\F_p \Righta
 \begin{itemize}
 \item $\bar{f}_1$ is an irreducible divisor of $h(X) \Rightarrow $w.l.o.g.$ \bar{f}_1 = h_1$
 \item $f_1=\deg(h_1)=\deg(\bar{f_1})=[L:\F_p]=k_0 \Rightarrow f_1=k_0$
-\end{itemize} 
+\end{itemize}
+\todo{this proof is kind of quirky}
 \end{proof}
 
 \begin{Prop}[CHARACTERISATION OF PRIME IDEALS]
@@ -41,8 +42,8 @@ Then $p \O=(\hP_1 \cdot \dots \cdot \hP_r)^{e_p}$ with $e_p=\varphi(p^{k_p})$ is
 
 \begin{proof}
 Again: Use Prop. 8.15 which applies to \underline{all} prime ideals in $\O$\\
-$\Rightarrow \phi_n(X) \in \Z[X9$ min. polynomial of $\zeta \Rightarrow \bar{\phi}_n(X) \in \F_p[X]$ image in $\F_p[X]$.\\
-Denote $n=mpâ$ with $\gcd(p,m)=1$, i.e. $a=k_p$.\\
+$\Rightarrow \phi_n(X) \in \Z[X]$ min. polynomial of $\zeta \Rightarrow \bar{\phi}_n(X) \in \F_p[X]$ image in $\F_p[X]$.\\
+Denote $n=mp^a$ with $\gcd(p,m)=1$, i.e. $a=k_p$.\\
 Remember $U_m^\times=\{\text{primitive } m-th \text{ roots of unity }\} \cong ((\Z/m\Z)^\times, \cdot) \quad (\zeta^k\leftrightarrow k)$.\\
 Use the isomorphism:
 \begin{align*}
@@ -53,15 +54,16 @@ U_m^\times \times U_{p^a}^\times \to U_n \ , \ (\xi, \eta) \mapsto \xi \cdot \et
 \begin{enumerate}[(1)]
 \item Observe: $X^{p^a}-1 \equiv (X-1)^{p^a} \mod p$. For prime ideal $\hP$ over $(p)$:
 \[X^{p^a}-1 \equiv (X-1)^{p^a} \mod \hP\]
-Let $\eta_1, \dots, \eta_{\varphi(p^a)}$ be the $p^a$-th roots of unity.\\
+Let $\eta_1, \dots, \eta_{\varphi(p^a)}$ be the primitve $p^a$-th roots of unity.\\
 $0=\eta_j^{p^a}-1 \equiv (\eta_j-1)^{p^a}\mod \hP \Rightarrow \eta_j \equiv 1 \mod \hP.$
 \item \begin{align*}
-\phi_n(X)&=\prod_{\substack{\xi \in U_m^\times,\\ \eta \in U_{p^a}^\times}}=\prod_{g \in (\Z/m\Z)^\times} (X -\xi)^{\varphi(p^a)} = \phi_m^{\varphi(p^a)} \mod \hP\\
+\phi_n(X)&=\prod_{\substack{\xi \in U_m^\times,\\ \eta \in U_{p^a}^\times}} (X -\xi \eta)=\prod_{g \in (\Z/m\Z)^\times} (X -\xi)^{\varphi(p^a)} = \phi_m^{\varphi(p^a)} \mod \hP\\
 \Rightarrow \phi_n(X) &\equiv \phi_m(X)^{\varphi(p^a)} \mod p
 \end{align*}
 \end{enumerate}
-\underline{Step 2:} Use Lemma 10.5:\\
-Proof of Lemma 10.5 $\Rightarrow$ exponents of $\phi_m(X) \mod p$ are all 1 $\Rightarrow$ all exponents of $\phi_n(X) \mod p$ are $\varphi(p^a)$. The local degree of the prime factors are by Lemma 10.5 \linebreak $f=\min\{k \in \N \ | \ p^k \equiv 1 \mod \underbrace{m}_{=n/p^a}\}$.
+\underline{Step 2:} Use Lemma 10.5:\\ \todo{ennumeration seems here to be 1 to high in this document}
+Proof of Lemma 10.5 $\Rightarrow$ exponents of $\phi_m(X) \mod p$ are all 1 $\Rightarrow$ all exponents of $\phi_n(X) \mod p$ are $\varphi(p^a)$. The local degree of the prime factors are by Lemma 10.5
+\linebreak $f=\min\{k \in \N \ | \ p^k \equiv 1 \mod \underbrace{m}_{=n/p^a}\}$.
 \end{proof}
 
 \begin{Kor}
@@ -123,10 +125,10 @@ Then we have: \underline{either} the ideals $(x+\zeta^i y)$ (with $i \in \{0, \d
 \end{Lem}
 
 \begin{proof}
-Use from the proof of Lemma I.2.11: Let $0 \leq j < i \leq p-1. A:=(x+\zetaî \cdot y, x+ \zeta^j \cdot y) \Rightarrow$
+Use from the proof of Lemma I.2.11: Let $0 \leq j < i \leq p-1.\ A:=(x+\zetaî \cdot y, x+ \zeta^j \cdot y) \Rightarrow$
 \begin{enumerate}[(1)]
 \item $(1-\zeta)\cdot y \in A$
-\item $(1-\zeta)x \in A$
+\item $(1-\zeta )\cdot x \in A$
 \item $1- \zeta \in A$ and thus $p \in A$
 \item $x+y \in A$
 \end{enumerate}

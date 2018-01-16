@@ -9,16 +9,16 @@
 \begin{proof}
 	Without loss of generality we may assume that $x,y,z$ are coprime. Proceed as in the proof of Theorem 1:
 	\begin{itemize}
-		\item $z^p = x + y^p = (x+y)(x+\zeta y) \cdots \left( x+ \zeta^{p-1}y \right)$
+		\item $z^p = x^p + y^p = (x+y)(x+\zeta y) \cdots \left( x+ \zeta^{p-1}y \right)$
 		\item Since $p\not | \, z$ we have 
-				$x+y \equiv x^p + y^p = z^p \equiv z \not \equiv 0$
+				$x+y \equiv x^p + y^p = z^p \equiv z \not \equiv 0 \mod p$
 				by little Fermat's theorem such that $p \not | \, x+y$.
 		\item Lemma 2.11 implies that $(x+y),(x+\zeta y), \dots, \left( x+ 
 				\zeta^{p-1}y \right)$ are pairwise coprime such that the first bullet point together with the regularity of $p$ and Remark 1.2 yields
-				$ \left( x+ \zeta^i y \right)= \left( \alpha_i \right)^p$ for some $\alpha_i \in \O$. Thus $x+ \zeta^i y = \varepsilon_i  \alpha_i^p$ with
+				$ \left( x+ \zeta^i y \right)= \left( \alpha_i \right)^p$ for some $\alpha_i \in \O$\todo{IJ principal implies I, J principal}. Thus $x+ \zeta^i y = \varepsilon_i  \alpha_i^p$ with
 				$\varepsilon_i \in \O^\times$.
 	\end{itemize}
-	Now continue as in the proof of Theorem 1.
+	Now continue as in the proof of Theorem 1. \todo{huh?}
 \end{proof}
 
 \begin{recall*}[Example 1.2.8]
@@ -71,7 +71,7 @@ The proof is hard and needs more theory.
 				\zeta^l \alpha
 				&\equiv \left( 1-l(1-\zeta) \right) \left( a_0 + a_1(1-\zeta) \right)\\
 				&\equiv a_0 + \left(a_1 -l a_0  \right) (1-\zeta)\\
-				&\equiv a_o \mod (1-\zeta)^2.
+				&\equiv a_0 \mod (1-\zeta)^2.
 				\end{align*}
 	\end{enumerate}
 \end{proof}
@@ -91,7 +91,7 @@ The proof is hard and needs more theory.
 	Then, by 2.10.1,
 	\[ z = p^m z_0 = \varepsilon \left(1-\zeta\right)^{(p-1)m} z_0
 	\]  
-	with $z_0 \in \Z, m \geq 1$, $\gcd(z_0,p)$ and $\varepsilon \in \O^\times$
+	with $z_0 \in \Z, m \geq 1$, $\gcd(z_0,p)=1$ and $\varepsilon \in \O^\times$
 	such that
 	\[ x^p+y^p = \varepsilon^p \left(1-\zeta\right)^{(p-1)mp} z_0^p .
 	\]
@@ -133,7 +133,7 @@ The proof is hard and needs more theory.
 		\zeta^j y \equiv b \mod (1-\zeta) ^2.
 		\]
 		\item We may replace $x$ by $x\zeta^l$ and $y$ by $y\zeta^j$ and thus can assume that $x\equiv a, y \equiv b \mod (1-\zeta) ^2$ with $a,b\in \Z$.
-		\item $1-\zeta | x+y$ implies $1-\zeta | a+b$ such that $(1-\zeta) ^{p-1} | a+b$ and hence $(1-\zeta)^2 | x+y$. In particular, $k \geq 2$.
+		\item $1-\zeta | x+y$ implies $1-\zeta | a+b$ such that $(1-\zeta) ^{p-1} | a+b$ (since $a+b \in \Z$ we have also $p | a+b$) and hence $(1-\zeta)^2 | x+y$. In particular, $k \geq 2$.
 	\end{enumerate}
 	
 	\bigskip \textbf{\enquote{Step 2:}}
@@ -188,7 +188,7 @@ The proof is hard and needs more theory.
 	\]
 	to obtain 
 	\begin{align} \tag{$**$}
-	\varepsilon'  (1-\zeta) ^{p(k-1)} \beta^p = \eta \alpha_{-1}^p = \alpha_1^p.
+	\varepsilon'  (1-\zeta) ^{p(k-1)} \beta^p = \eta \alpha_{-1}^p - \alpha_1^p.
 	\end{align}
 	
 	\bigskip \textbf{\enquote{Step 5:}}
@@ -197,6 +197,10 @@ The proof is hard and needs more theory.
 	By ($**$) we have $0\equiv\eta \alpha_{-1}^p - \alpha_1^p \mod p$ such that
 	Example 1.2.8 ascertains the existence of $a_{-1}, a_1 \in \Z$ with
 	$a_{-1}^p\equiv a_1, \alpha_1^p \equiv a_1 \mod p$.
+	
+	\bigskip \textbf{\enquote{Step 6:}} Find a smaller solution to $(\star)$:\\
+	\[x':= \alpha_{-1}, y':=v\eta_1, z_0:=\beta.\]
+	With $(\star\star): \varepsilon'(1-\zeta)^{p(k-1)} \cdot z_0^p=y'^p+x'^p$ is a smaller solution, a contradiction.
 \end{proof}
 
 

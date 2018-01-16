@@ -1,0 +1,134 @@
+\rhead{15. January 2018}
+
+\chapter{Geometric aspects}
+\section{Localisation}
+Recall: Here all rings are commutative with 1.
+
+\begin{remin}
+\begin{enumerate}[(i)]
+\item Let $R$ be a ring and $S \subseteq R \setminus \{0\}$ be a multiplicative system, i.e.
+\begin{enumerate}[(1)]
+\item $a,b \in S \Rightarrow a\cdot b \in S$ and
+\item $1 \in S$.
+\end{enumerate}
+\[R\cdot S^{-1}:=\{(a,s) \ | \ a \in R, s \in S\}/\sim\]
+with $(a,s) \sim (a',s')$ if there is $t \in S: t(as'-a's)=0$.\\
+Denote $\frac{a}{s} := [(a,s)]/\sim$ equivalence class of $(a,s)$.\\
+$RS^{-1}$ becomes a ring with
+\begin{align*}
+\frac{a_1}{s_1} + \frac{a_2}{s_2} &= \frac{a_1 s_2 + a_2 s_1}{s_1 s_2},\\
+\frac{a_1}{s_1} \cdot \frac{a_2}{s_2} &= \frac{a_1 a_2 }{s_1 s_2}
+\end{align*}
+$RS^{-1}$ is called \emph{\underline{localisation of $R$ by $S$}}.
+\item The map
+\[j_S: R \to RS^{-1} \ , \ r \mapsto \frac{r}{1}\]
+is a ring homomorphism with $j_S(S) \subseteq (RS^{-1})^\times$. $\ker(j_S)=\{r \in R \ | \ \exists a \in S$ with $ar=0\}$. In particular: $R$ is an integral domain $\Rightarrow j_S$ is an embedding an $\frac{a}{b}=\frac{a'}{b'}$ is equivalent to $ab'=a'b$.\\
+Furthermore: $R$ is an integral domain $\Rightarrow RS^{-1} \subseteq \Quot(R) \ , \ \frac{a}{b} \mapsto \frac{a}{b}$.
+\item Localisation has the following universal property: $f: R \mapsto R'$ a ring homomorphism with $f(S) \subseteq (R')^\times$ then there exists a unique ringhomomorphism $g: RS^{-1} \to R'$ with $f=g \circ j_S$
+\[
+\begin{tikzcd}
+R \arrow[rd, "f"] \arrow[rr, "j_S"] && RS^{-1} \arrow[ld, dashed, "\exists ! g"]\\
+&R'&
+\end{tikzcd}
+\]
+\end{enumerate}
+\end{remin}
+
+
+\begin{Bsp}
+\begin{enumerate}[(i)]
+\item $R$ integral domain, $S=R\setminus{0} \Rightarrow RS^{-1}=\Quot(R)$
+\item $p$ prime ideal in $R, S:= R \setminus p \Rightarrow R_p:=RS^{-1}$.
+\end{enumerate}
+\end{Bsp}
+
+\begin{Prop}[Description of prime ideals in localisations]
+We have the following bijection:
+\begin{align*}
+\{p \in \Spec(R) \ | \ p \subseteq R \setminus S\}  &\leftrightarrow \{q \in \Spec(RS^{-1})\}\\
+\phi: p &\mapsto pS^{-1} = \{\frac{a}{s} \ | \ a \in p, s \in S \}\\
+j_S^{-1}(q) &\mapsfrom q : \psi\\
+\end{align*}
+\end{Prop}
+
+\begin{proof}
+\begin{enumerate}[(1)]
+\item $\frac{a}{s}=\frac{a'}{s'}$, then $a \in p \iff a' \in P:$\\
+Suppose $a \in p, a' \in R, s,s' \in S$ and $\frac{a}{s}=\frac{a'}{s'} \Rightarrow \exists t \in S: \underbrace{t}_{\not\in p} (as'-a's)=0 \in p$\\
+So $as'-a's \in p$, hence $a's \in p$ and $a' \in p$.
+\item $\phi$ is well defined, i.e. $pS^{-1}$ is a prime ideal: clear.
+\item $\psi$ is well-defined by Prop. II.8.16.
+\item $\psi\circ\phi(p)=j_S^{-1}(pS^{-1})=p:$\\
+$r \in j_S^{-1}(pS^{-1}) \iff j_S(r) \in pS^{-1} \iff \frac{r}{1} \in pS^{-1} \iff r \in p$
+\item $\phi \circ \psi(q)=\psi(j_S^{-1}(q))=j_S^{-1}(q)S^{-1}=q:$\\
+$\frac{r}{s} \in j_S^{-1}(q)S^{-1} \iff r \in j_S^{-1}(q) \iff j_S(r) \in q \iff \frac{r}{1} \in q \iff \frac{r}{s} \in q$
+\end{enumerate}
+\end{proof}
+
+\begin{defi}[and Prop., lokaler Ring]
+A ring is a \emph{\underline{local ring}} if $R$ has one of the following equivalent properties:
+\begin{enumerate}[(i)]
+\item $R$ has a unique maximal ideal $m$.
+\item $R \setminus R^\times$ is an ideal.
+\item $\forall x \in R: x \in R^\times$ or $1-x \in R^\times$.
+\end{enumerate}
+In particular we have: If $R$ is a local ring then $m=R \setminus R^\times$ is the unique maximal ideal of $R$.
+\end{defi}
+
+\begin{proof}
+$(i) \Rightarrow (ii):$ Show that $R=R^\times \dot{\cup} m:$
+\begin{enumerate}[(1)]
+\item $R=R^\times \cup m: a \in R\setminus m$. Hence $(a)$ is not contained in $m$. So $(a)=R$ and hence $a \in R^\times$.
+\item $R^\times \cap m = \emptyset: a \in R^\times$, so $a \not\in m$ since $m \not = R=(a)$. It follows that $m=R \setminus R^\times$ and thus $R \setminus R^\times$ is an ideal.
+\end{enumerate}
+$(ii) \Rightarrow (iii):$ Suppose $x$ and $1-x \in R \setminus R^\times$. Hence $1=x+(1-x) \in R \setminus R^\times \Lightning$.\\
+$(iii) \Rightarrow (i):$ Suppose that $m$ and $m'$ are two different maximal ideals. Let $a \in m' \setminus m$. Since $m$ is maximal we have $(m,a)=R \Rightarrow \exists b \in m, r\in R$ with $1=b+ra$. We know $ra \in m'$, hence $ra \not \in R^\times$ and by assumption $(iii) \Rightarrow b=1-ra \in R^\times \Lightning$ to $b \in m$.
+\end{proof}
+
+\begin{Prop}[localisations by prime ideals are local]
+Let $R$ be a ring and $p \in \Spec(R)$. Then $R_p$ is a local ring with maximal ideal $pS^{-1}$ where $S=R \setminus p$.
+\end{Prop}
+
+\begin{proof}
+We show that $R_p=R_p^\times \dot \cup pS^{-1}$. Hence $R_p \setminus R_p^\times = pS^{-1}$ is an ideal. Thus $R_p$ is a local ring.
+\begin{enumerate}[(1)]
+\item $R_p=pS^{-1} \cup Rp^\times:$\\
+Let $a \in R, s\in S=R\setminus p$. Suppose $\frac{a}{s} \not \in pS^{-1}$, i.e $a \not\in p$. So $\frac{s}{a} \in R_p$ and $\frac{a}{s}\frac{s}{a}=1$ Hence $\frac{a}{s} \in R_p^\times$.
+\item $pS^{-1} \cap R_p^\times= \emptyset:$\\
+Suppose that $\frac{a}{s} \in R_p^\times$ (with $a \in R, s \in S) \Rightarrow \exists a' \in R, s' \in S: \frac{a}{s}\frac{a'}{s'}=1 \Rightarrow \exists t \in S$ with $t(aa'-ss')=0 \in p$ Since $t \not \in p$ we have $aa'-\underbrace{ss'}_{\not\in p} \in p$, so $aa' \not\in p$. Since $a \not\in p$ it follows $\frac{a}{s} \not \in pS^{-1}$.
+\end{enumerate}
+\end{proof}
+
+\begin{Prop}[being Dedekind is stable under localisation]
+Let $\O$ be a Dedekind domain, $S \subseteq \O\setminus \{0\}$ multiplicative system, then $\O S^{-1}$ is a Dedekind domain.
+\end{Prop}
+
+\begin{proof}
+$\O$ is an integral domain, so $\O \subseteq \O S^{-1} \subseteq \Quot(\O)$.
+\begin{enumerate}[(1)]
+\item $\O S^{-1}$ is an integral domain, since $\O S^{-1} \subseteq \Quot(\O)$.
+\item Show that $\O S^{-1}$ is Noetherian, i.e. each ideal is finitely generated:\\
+Let $q$ be an ideal in $\O S^{-1}$ and $p:=j_S^{-1}(q)$.\\
+Prop 1.3 says that $q=pS^{-1}$. $\O$ is a Dedekind domain, hence $p$ is finitely generated i.e. $p=(a_1, \dots, a_n) \Rightarrow q=pS^{-1}=(\frac{a_1}{1}, \dots, \frac{a_n}{1})$ is finitely generated.
+\item Show that $\O S^{-1}$ is integrally closed:\\
+Suppose $x \in \Quot(\O S^{-1})=\Quot(\O)$ with $x^n+\frac{r_{n-1}}{s_{n-1}} x^{n-1}+\dots+\frac{r_0}{s_0}=0$ and $r_0, \dots, r_{n-1} \in \O, s_0, \dots, s_{n-1} \in S$.\\
+Let $s:=s_0 \cdot \ldots \cdot s_{n-1} \in S$, then
+\[(sx)^n + \underbrace{s\frac{r_{n-1}}{s_{n-1}}}_{\in \O} (sx)^{n-1} + \dots + \underbrace{s^n \frac{r_0}{s_0}}_{\in \O} =0\]
+$\Rightarrow sx$ is integral over $\O$ and $\hat x = sx \in \O$, since $\O$ is integrally closed.\\
+$\Rightarrow x = \frac{\hat x}{s} \in \O S^{-1}$. Thus $\O S^{-1}$ is integrally closed.
+\item Prop 1.3 implies that every prime ideal $q \not= 0$ in $\O S^{-1}$ is maximal.
+\end{enumerate}
+\end{proof}
+
+\begin{defi}[\glqq diskreter Bewertungsring \grqq]
+A ring is called \emph{\underline{discrete valuation ring}} (DVR) if
+\begin{itemize}
+\item $R$ is a principal ideal domain and
+\item $R$ has a (unique) maximal ideal $m=(\Pi)\not = 0$.
+\end{itemize}
+In particular
+\begin{itemize}
+\item $R$ is an integral domain
+\item $R$ is not a field.
+\end{itemize}
+\end{defi}
