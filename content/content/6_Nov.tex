@@ -1,0 +1,195 @@
+\rhead{6 November 2017}
+
+%\newpage
+%\textbf{Lecture 5, 6.11.2017}\\
+%HIER WIRD DIE NUMMERIERUNG VERÄNDERT!!!!!!!!!!!!!!!!
+%\setcounter{section}{2}
+%\addtocounter{theorem}{1}
+\begin{remin}[Trace, Norm]
+	Let $K\subseteq L$ be a finite field extension. For $\alpha$ in $L$ consider the map $T_\alpha: \beta\mapsto \alpha\beta$. The following holds
+	\begin{itemize}
+		\item [i)] $\TrL(\alpha)=\Tr(T_\alpha)$ and $\NormL(\alpha)=\det(T_\alpha)$,
+		\item [ii)] If $L=K(\alpha)$ and $f_\alpha(X)=X^n+\sum_{i=0}^{n-1}a_i X^i$ then \begin{align*}
+			\TrL(\alpha)=-a_{n-1} \mathrm{~and~} \NormL(\alpha)=(-1)^{n}\cdot a_0,
+		\end{align*}
+		\item [iii)] Since $T_{\alpha+\beta}=T_\alpha+T_\beta$ and $T_{\alpha\cdot\beta}=T_\alpha\circ T_\beta$, we conclude that 
+		\begin{align*}
+			\TrL: (L,+)\to (K,+) \mathrm{~and~} \NormL:(L^*,\cdot)\to (K^*,\cdot)
+		\end{align*}
+		are group homomorphisms,
+		\item [iv)] Suppose $K\subseteq L$ is a seperable field extension with $L=K(\alpha)$. Further assume $\Hom_K(L,\overline{K})=\{\sigma_1,\dots,\sigma_n \}$. Then the following holds
+		\begin{itemize}
+			\item [$\bullet$] $f_\alpha= \prod_{i=1}^{n} (X-\sigma_i(\alpha))$,
+			\item [$\bullet$] $\TrL(\alpha)=\sum_{i=1}^{n} \sigma_i(\alpha)$,
+			\item [$\bullet$] $\NormL(\alpha)=\prod_{i=1}^{n}\sigma_i(\alpha))$,
+		\end{itemize} 
+		\item [v)] Trace and norm are transitive, i.e., for field extensions $K\subseteq L\subseteq M$ it holds
+		\begin{itemize}
+			\item [$\bullet$] $\NormL\circ \Norm_{M/L}=\Norm_{M/K}$,
+			\item [$\bullet$] $\TrL\circ\Tr_{M/L}=\Norm_{M/K}$.
+		\end{itemize} 
+	\end{itemize}
+\end{remin}
+
+\begin{defi}[Discriminant]\label{def discriminant}
+	Let $K\subseteq L$ be a seperable field extension and let $\alpha_1,\dots,\alpha_n$ be a $K$-basis of $L$. Further let $\Hom_K(L,\overline{K})=\{\sigma_1,\dots,\sigma_n\}$. Consider the matrix
+	\begin{align*}
+		A:=\begin{pmatrix}
+		\sigma_1(\alpha_1) & \sigma_1(\alpha_2) &\cdots& \sigma_1(\alpha_n) \\
+		\sigma_2(\alpha_1) & \sigma_2(\alpha_2) & \cdots& \sigma_2(\alpha_n) \\
+		\vdots &\vdots &\cdots&\vdots\\
+		\sigma_n(\alpha_1) & \sigma_n(\alpha_2) &\cdots& \sigma_n(\alpha_n) \\
+		\end{pmatrix}
+		=\left( \sigma_i(\alpha_j)\right) _{i,j}\in L^{n\times n}.
+	\end{align*}
+	We call $d(\alpha_1,\cdots,\alpha_n):=\det(A^2)$ the \textbf{discriminant} of $L$ over $K$ with respect to the basis $\alpha_1,\cdots,\alpha_n$.
+\end{defi}
+
+\begin{Bem}
+	In the situation of Definition (\ref{def discriminant}) the following holds.
+	\begin{itemize}
+		\item [i)] Consider the matrix $B=\left( \TrL(\alpha_i \alpha_j)\right) _{i,j}$ in $K^{n\times n}$. Then the discriminant is given by $d(\alpha_1,\cdots,\alpha_n)=\det(B)$. In particular, the discriminant $d(\alpha_1,\cdots,\alpha_n)$ lies in $K$.
+		\item [ii)] Suppose we have $\Theta$ in $L$ such that $1,\Theta,\dots,\Theta^{n-1}$ forms a basis of $L$. Then the following equality holds $$d(1,\Theta,\dots,\Theta^{n-1})=\prod_{1\le i<j\le n} (\Theta_i-\Theta_j)^2.$$
+		Here $\Theta_i$ denotes $\sigma_i(\Theta)$. If $L=K(\Theta)$ then $d(1,\Theta,\dots,\Theta^{n-1})$ coincides with the discriminant of the minimal polynomial $f_\Theta$. Note that we use the notion of discriminants for polynomials here.
+	\end{itemize}
+\end{Bem}
+
+\begin{proof}
+	We begin by proving statement i). One computes
+	$$\det(A)^2=\det(A^t)\cdot\det(A)=\det(A^t\cdot A).$$
+	The following calculation proves the claim
+	\begin{align*}
+		A^t\cdot A&=\left( \sigma_j(\alpha_i)\right) _{i,j}\cdot\left( \sigma_k(\alpha_\ell)\right) _{k,\ell}\\
+		&=\left( \sum_{j=1}^{n} \sigma_j(\alpha_i)\cdot \sigma_j(\alpha_\ell)\right) _{i,\ell}\\
+		&=\left( \sum_{j=1}^{n} \sigma_j(\alpha_i\cdot\alpha_\ell)\right) _{i,\ell}\\
+		&=(\TrL(\alpha_i\cdot\alpha_\ell))_{i,\ell}\\
+		&=B.
+	\end{align*}
+	For statement ii), we will compute the determinant of the following Vondermonde matrix
+	\begin{align*}
+	\det(A)=\det\begin{pmatrix}
+	1 & \Theta_1 &\cdots& \Theta_1^{n-1} \\
+	1 & \Theta_2 & \cdots& \Theta_2^{n-1} \\
+	\vdots &\vdots &\cdots&\vdots\\
+	1 & \Theta_n(\alpha_2) &\cdots& \Theta_n^{n-1} \\
+	\end{pmatrix}
+	=:V_n(\Theta_1,\dots,\Theta_n).
+	\end{align*}
+	By induction, we prove that $V_n(\Theta_1,\dots,\Theta_n)$ is nonzero and that the following equality holds
+	$$V_n(\Theta_1,\dots,\Theta_n)=\prod_{1\le i<j\le n} (\Theta_j-\Theta_i).$$ 
+	For $n=2$, we have
+		\begin{align*}
+		\det(A)=\det\begin{pmatrix}
+		1 & \Theta_1 \\
+		1 & \Theta_2 \\
+		\end{pmatrix}
+		=\Theta_2-\Theta_1\neq 0.
+		\end{align*}
+	Hence the claim holds for $n=2$. Now we assume that the claim holds for a $n\in\N_{\ge 2}$. We want to prove that viewed as polynomials in $Z$ the following equality holds \begin{align}\label{eq vandermonde}
+		V_{n+1}(\Theta_1,\dots,\Theta_{n},Z)=V_n(\Theta_1,\dots,\Theta_n)\cdot\prod_{i=1}^{n}(Z-\Theta_i).
+	\end{align}
+	This implies that 
+	\begin{align*}
+		V_n(\Theta_1,\dots,\Theta_{n+1})=V_n(\Theta_1,\dots,\Theta_n)\cdot\prod_{i=1}^{n}(\Theta_{n+1}-\Theta_i)=\prod_{1\le i<j\le n} (\Theta_j-\Theta_i).
+	\end{align*}
+	To show equality (\ref{eq vandermonde}), recall that
+	\begin{align*}
+		V_{n+1}(\Theta_1,\dots,\Theta_n,Z)=\det\begin{pmatrix}
+		1 & \Theta_1 &\cdots& \Theta_1^{n} \\
+		1 & \Theta_2 & \cdots& \Theta_2^{n} \\
+		\vdots &\vdots &\cdots&\vdots\\
+		1 & \Theta_n(\alpha_2) &\cdots& \Theta_n^{n} \\
+		1 & Z & \cdots & Z^n
+		\end{pmatrix}
+		.
+	\end{align*}
+	Ones sees that the polynomials on both sides of equality (\ref{eq vandermonde}) have degree $n$. Moreover, $\{\Theta_1,\cdots,\Theta_n\}$ is the set of zeros for both polynomials. Since the leading coefficient in both cases is $	V_n(\Theta_1,\dots,\Theta_n)$, the polynomials are equal. This proves the claim. 
+\end{proof}
+
+\begin{Bsp}
+	Consider $L=\Q(\sqrt{D})$ for a square free integer $D$ different from $0$ and $1$. Then the following holds
+	\begin{itemize}
+		\item [$\bullet$] $\mathfrak{B}_1=\{1,\sqrt{D} \}$ is a $\Q$-basis of $L$.
+		\item [$\bullet$] Define $\sigma_2:L\to\overline{\Q},a+b\sqrt{D}\mapsto a-b\sqrt{D}$. Then we have $$\Hom_\Q(L,\overline{\Q})=\{\sigma_1=\id,\sigma_2 \}.$$
+		\item [$\bullet$] $\Tr_{L/\Q}(a+b\sqrt{D})= a+b\sqrt{D}+a-b\sqrt{D}=2a.$
+		\item [$\bullet$]$\Norm_{L/\Q}(a+b\sqrt{D})= (a+b\sqrt{D})\cdot(a-b\sqrt{D})=a^2-b^2\cdot D.$
+		\item [$\bullet$] $d(\mathfrak{B}_1)=\det
+		\begin{pmatrix}
+		1 & \sqrt{D} \\
+		1 & -\sqrt{D} \\
+		\end{pmatrix}^2=(-2\sqrt{D})=4D.$
+		\item [$\bullet$] We have $$(\alpha_i\alpha_j)_{i,j}=\begin{pmatrix}
+		1 & \sqrt{D} \\
+		\sqrt{D} & D \\
+		\end{pmatrix}.$$
+		Hence we compute
+		$$\det((\Tr(\alpha_i\alpha_j))_{i,j})=\det\begin{pmatrix}
+		2 & 0 \\
+		0 & 2D \\
+		\end{pmatrix}=4D.$$
+		\item [$\bullet$] Consider the $\Q$-basis of $L$ given by $\mathfrak{B}_2=\{1+\sqrt{D},1-\sqrt{D} \}$. Computing the discriminant for this basis yields
+		$$d(1+\sqrt{D},1-\sqrt{D})=\det\begin{pmatrix}
+		1+\sqrt{D} & 1-\sqrt{D} \\
+		1-\sqrt{D} & 1+\sqrt{D} \\
+		\end{pmatrix}^2=16D.$$
+		Hence we see that the discriminant depends on the basis we choose.
+	\end{itemize}
+\end{Bsp}
+
+\begin{Prop}
+	Let $K\subseteq L$ be a seperable field extension. 
+	\begin{itemize}
+		\item [i)] The bilinear map $$h:L^2\to K,~(x,y)\mapsto\TrL(xy)$$ is non degenerate, i.e., $h(x,y)=0$ for all $y\in L$ implies that $x=0$.
+		\item [ii)] If $\alpha_1,\dots,\alpha_n$ forms a basis of $L/K$ then $d(\alpha_1,\dots,\alpha_n)\neq 0$.
+	\end{itemize}
+\end{Prop}
+
+\begin{proof}
+	For statement i), we choose a primitive element $\Theta$. Then $1, \Theta,\dots,\Theta^{n-1}$ is a $K$-basis of $L$. Let $B$ be the matrix representation of $h$ with respect to this basis. We find
+	\begin{align*}
+		\det(B)&\stackrel{(2.4)~i)}{=}d(1,\Theta,\dots,\Theta^{n-1})\\
+		&\stackrel{(2.4)~ii)}{=} \prod_{1\le i<j\le n} (\Theta_i-\Theta_j)^2 \neq 0.
+	\end{align*}
+	Here $\Theta_i$ denotes $\sigma_i(\Theta)$. This shows that $h$ is non degenerate. We now prove statement ii). Observe that the matrix $M=(\TrL(\alpha_i\alpha_j))_{i,j}$ is the matrix representation of $h$ with respect to $\alpha_1,\dots,\alpha_n$. By Remark (2.4), we conclude
+	$$d(\alpha_1,\dots,\alpha_n)=\det(M).$$
+	Now, i) implies that $\det(M)$ is nonzero.
+\end{proof}
+
+\begin{Bem}
+	Let $A\subseteq B$ be an integral ring extension with $B\subseteq L$ and $A=B\cap K\subseteq K$. Assuming that $\Hom_K(L,\overline{K})=\{\id=\sigma_1,\dots,\sigma_n \}$ the following holds
+		\begin{itemize}
+			\item [i)] If $x\in B$ then $\sigma_i(x)\in B$ for all $1\le i \le n$. \todo{Assume here $L/K$ is normal}
+			\item [ii)] For all $x\in B$ the trace $\TrL(x)$ and the norm $\NormL(x)$ lie in $A$.
+			\item [iii)]  Let $x\in B$. Then $x$ lies in $B^*$ if and only if the norm $\NormL(x)$ lie in $A^*$.
+		\end{itemize}
+\end{Bem}
+
+\begin{proof}
+	We start by proving i). Let $x$ in $B$. By Remark (2.1), we have that the minimal polynomial $f_x$ lies in $A[X]$. Since $\sigma(x)$ is also a zero of $f_x$, it is contained in $B$. This shows i). Now, statement ii) follows from i), Reminder (2.2) iv) and the fact that $A=B\cap K$. For iii), assume that $x$ is a unit in $B$, i.e., we find $y$ in $B$ with $xy=1$. Hence $$\NormL(x)\cdot\NormL(y)=\NormL(xy)=1.$$ Using ii), we deduce that $\NormL(x)$ lies in $A^*$. This proves one direction. For the other direction, assume that $\NormL(x)$ lies in $A^*$, i.e., we find $a\in A$ with 
+	\begin{align*}
+		1=&a\cdot\NormL(x)\\
+		=&a\cdot\prod_{i=1}^{n}\sigma_i(x)\\
+		=&a\cdot x\cdot\underbrace{\prod_{i=2}^{n}\sigma_i(x)}_{\in B, ~by~ i)}.
+	\end{align*}
+	Hence $x$ lies in $B^*$. This proves iii).
+\end{proof}
+
+\begin{Prop}
+	Suppose $\alpha_1,\dots,\alpha_n\in B$ forms a $K$-basis of $L$. Let $d$ denote the discriminant $d(\alpha_1,\dots,\alpha_n)\in A$. Then $d\cdot B$ is contained in $A\alpha_1+\dots+A\alpha_n$.
+\end{Prop}
+
+\begin{proof}
+	Suppose $\alpha=\sum_{j=1}^{n} c_j\alpha_i\in B$ for $c_i\in K$. We want to solve for $(c_1,\dots,c_n)$. Applying the trace to the equalities
+	$$\alpha_i\alpha=\sum_{j=1}^{n} c_j\alpha_i\alpha_j,~1\le i\le n,$$
+	we obtain
+	$$\TrL(\alpha_i\alpha)=\sum_{j=1}^{n} c_j \TrL(\alpha_i\alpha_j),~1\le i\le n.$$
+	Hence $x=(c_1,\dots,c_n)$ is the solution of the linear system $Mx=y$, where 
+	$$M=((\TrL(\alpha_i\alpha_j)))_{i,j}\in A^{n\times n}, ~ y=(\TrL(\alpha_i\alpha))_i\in A^n.$$
+	By Reminder (1.3), we have 
+	$$\det(M)\cdot x=M^\#Mx=M^\#y\in A^n.$$
+	Using Remark (2.4), we know $\det(M)=d(\alpha_1,\dots,\alpha_n)=:d$. We conclude that $dc_i$ lies in $A$ for $1\le i\le n$, which proves the claim.
+\end{proof}
+
+\begin{defi}[Ganzheitsbasis]
+	Suppose $\omega_1,\dots,\omega_n\in B$ forms a basis of $B$ over $A$, i.e., every $\alpha\in B$ can be written in a unique way as an $A$-linear combination $\sum_{i=1}^{n}c_i\omega_i$. Then $\omega_1,\dots,\omega_n$ is called an \textbf{integral basis} of $B$ over $A$.
+\end{defi}
