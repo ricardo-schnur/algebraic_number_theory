@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.16)  22 JAN 2018 14:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.16)  24 JAN 2018 10:37
 entering extended mode
 **./22_Jan.tex
 (22_Jan.tex
@@ -2343,6 +2343,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -2350,8 +2351,8 @@ Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
 <recently read> \checkmark 
                            
-l.42 \item $\O$ is noethrian $\checkmark
-                                        $
+l.42 \item $\O$ is noetherian $\checkmark
+                                         $
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3345,7 +3346,7 @@ Missing character: There is no e in font nullfont!
 <recently read> \Aff 
                      
 l.73 Let $k$ be a field and denote $\Aff
-                                        (k)=k^n$ (\glqq affine space\grqq)\\
+                                        ^n(k)=k^n$ (\glqq affine space\grqq)\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3354,7 +3355,7 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no ( in font nullfont!
 ! Undefined control sequence.
-l.73 ...be a field and denote $\Aff(k)=k^n$ (\glqq
+l.73 ... a field and denote $\Aff^n(k)=k^n$ (\glqq
                                                    affine space\grqq)\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3374,7 +3375,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.73 ...ote $\Aff(k)=k^n$ (\glqq affine space\grqq
+l.73 ...e $\Aff^n(k)=k^n$ (\glqq affine space\grqq
                                                   )\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3434,8 +3435,8 @@ Overfull \hbox (5.52084pt too wide) in paragraph at lines 71--76
  []
 
 
-Overfull \hbox (23.85416pt too wide) in paragraph at lines 71--76
-\/cmr/m/n/10 (\OML/cmm/m/it/10 k\/cmr/m/n/10 ) =
+Overfull \hbox (29.29749pt too wide) in paragraph at lines 71--76
+[]\/cmr/m/n/10 (\OML/cmm/m/it/10 k\/cmr/m/n/10 ) =
  []
 
 
@@ -5705,57 +5706,401 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.136 \end{enumerate}
+l.136 \item $
+             \bar{V}:=V(I(V))$ is the smallest affine variety containing $V$.\\
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.136 \item $
+             \bar{V}:=V(I(V))$ is the smallest affine variety containing $V$.\\
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.136 \item $
+             \bar{V}:=V(I(V))$ is the smallest affine variety containing $V$.\\
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no . in font nullfont!
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.138 \item F
+             or affine varieties $V_1=V(I_1)$ and $V_2=V(I_2): V_1 \subseteq...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.138 \item F
+             or affine varieties $V_1=V(I_1)$ and $V_2=V(I_2): V_1 \subseteq...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.138 \item F
+             or affine varieties $V_1=V(I_1)$ and $V_2=V(I_2): V_1 \subseteq...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no F in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.140 \item $
+             I_1 \subseteq I_2 \Rightarrow V(I_1) \supseteq V(I_2)$
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.140 \item $
+             I_1 \subseteq I_2 \Rightarrow V(I_1) \supseteq V(I_2)$
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.140 \item $
+             I_1 \subseteq I_2 \Rightarrow V(I_1) \supseteq V(I_2)$
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141 \end{enumerate}
                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (21.0139pt too wide) in paragraph at lines 133--136
+Overfull \hbox (21.0139pt too wide) in paragraph at lines 133--141
 []$\OML/cmm/m/it/10 I\/cmr/m/n/10 (\OML/cmm/m/it/10 V\/cmr/m/n/10 )$
  []
 
 
-Overfull \hbox (19.71077pt too wide) in paragraph at lines 133--136
+Overfull \hbox (19.71077pt too wide) in paragraph at lines 133--141
 \OML/cmm/m/it/10 f[] \OMS/cmsy/m/n/10 2
  []
 
 
-Overfull \hbox (33.79163pt too wide) in paragraph at lines 133--136
+Overfull \hbox (33.79163pt too wide) in paragraph at lines 133--141
 \OML/cmm/m/it/10 I\/cmr/m/n/10 (\OML/cmm/m/it/10 V\/cmr/m/n/10 ) \OMS/cmsy/m/n/
 10 )
  []
 
 
-Overfull \hbox (15.41666pt too wide) in paragraph at lines 133--136
+Overfull \hbox (15.41666pt too wide) in paragraph at lines 133--141
 \OML/cmm/m/it/10 f \OMS/cmsy/m/n/10 2
  []
 
 
-Overfull \hbox (21.0139pt too wide) in paragraph at lines 133--136
+Overfull \hbox (21.0139pt too wide) in paragraph at lines 133--141
 \OML/cmm/m/it/10 I\/cmr/m/n/10 (\OML/cmm/m/it/10 V\/cmr/m/n/10 )$
  []
 
 
-Overfull \hbox (47.40277pt too wide) in paragraph at lines 133--136
+Overfull \hbox (47.40277pt too wide) in paragraph at lines 133--141
 []$\OML/cmm/m/it/10 V\/cmr/m/n/10 (\OML/cmm/m/it/10 I\/cmr/m/n/10 (\OML/cmm/m/i
 t/10 V\/cmr/m/n/10 )) \OMS/cmsy/m/n/10 
  []
 
 
-Overfull \hbox (8.05556pt too wide) in paragraph at lines 133--136
+Overfull \hbox (8.05556pt too wide) in paragraph at lines 133--141
 \OML/cmm/m/it/10 V$
  []
 
 
-Overfull \hbox (44.52776pt too wide) in paragraph at lines 133--136
+Overfull \hbox (44.52776pt too wide) in paragraph at lines 133--141
 \OML/cmm/m/it/10 I\/cmr/m/n/10 (\OML/cmm/m/it/10 V\/cmr/m/n/10 (\OML/cmm/m/it/1
 0 I\/cmr/m/n/10 )) \OMS/cmsy/m/n/10 
  []
 
 
-Overfull \hbox (5.18054pt too wide) in paragraph at lines 133--136
-\OML/cmm/m/it/10 I$ 
+Overfull \hbox (5.18054pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 I$
+ []
+
+
+Overfull \hbox (21.38885pt too wide) in paragraph at lines 133--141
+[]$[] \/cmr/m/n/10 :=
+ []
+
+
+Overfull \hbox (36.84726pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 V\/cmr/m/n/10 (\OML/cmm/m/it/10 I\/cmr/m/n/10 (\OML/cmm/m/it/1
+0 V\/cmr/m/n/10 ))$
+ []
+
+
+Overfull \hbox (8.05556pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 V$ 
+ []
+
+
+Overfull \hbox (8.05556pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 V$
+ []
+
+
+Overfull \hbox (47.40277pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 V\/cmr/m/n/10 (\OML/cmm/m/it/10 I\/cmr/m/n/10 (\OML/cmm/m/it/1
+0 V\/cmr/m/n/10 )) =
+ []
+
+
+Overfull \hbox (8.05556pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 V$
+ []
+
+
+Overfull \hbox (20.87497pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 V[] \/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (24.71533pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 V\/cmr/m/n/10 (\OML/cmm/m/it/10 I[]\/cmr/m/n/10 )$
+ []
+
+
+Overfull \hbox (20.87497pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 V[] \/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (30.27083pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 V\/cmr/m/n/10 (\OML/cmm/m/it/10 I[]\/cmr/m/n/10 ) :
+ []
+
+
+Overfull \hbox (20.87497pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 V[] \OMS/cmsy/m/n/10 
+ []
+
+
+Overfull \hbox (34.20828pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 V[]  \OMS/cmsy/m/n/10 ([])
+ []
+
+
+Overfull \hbox (33.83331pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 I\/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\/cmr/m/n/10 ) \OMS/cmsy/m/
+n/10 
+ []
+
+
+Overfull \hbox (23.2778pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 I\/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\/cmr/m/n/10 )$
+ []
+
+
+Overfull \hbox (20.87497pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 V[] \/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (34.20828pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 V[]  \OMS/cmsy/m/n/10 ([])
+ []
+
+
+Overfull \hbox (33.83331pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 I\/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\/cmr/m/n/10 ) =
+ []
+
+
+Overfull \hbox (23.2778pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 I\/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\/cmr/m/n/10 )$
+ []
+
+
+Overfull \hbox (19.43748pt too wide) in paragraph at lines 133--141
+[]$\OML/cmm/m/it/10 I[] \OMS/cmsy/m/n/10 
+ []
+
+
+Overfull \hbox (21.6597pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 I[] \OMS/cmsy/m/n/10 )
+ []
+
+
+Overfull \hbox (35.27084pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 V\/cmr/m/n/10 (\OML/cmm/m/it/10 I[]\/cmr/m/n/10 ) \OMS/cmsy/m/
+n/10 
+ []
+
+
+Overfull \hbox (24.71533pt too wide) in paragraph at lines 133--141
+\OML/cmm/m/it/10 V\/cmr/m/n/10 (\OML/cmm/m/it/10 I[]\/cmr/m/n/10 )$ 
  []
 
 
@@ -5765,31 +6110,11 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.137 \end{Bem}
+l.142 \end{Bem}
                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{proof}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.138 \end{proof}
-                 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.138 \end{proof}
-                 
-Things are pretty mixed up, but I think the worst is over.
 
 )
 ! Emergency stop.
@@ -5801,7 +6126,7 @@ Things are pretty mixed up, but I think the worst is over.
 Here is how much of TeX's memory you used:
  44 strings out of 493386
  490 string characters out of 3145013
- 66761 words of memory out of 3000000
+ 67761 words of memory out of 3000000
  3616 multiletter control sequences out of 15000+200000
  3986 words of font info for 15 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191

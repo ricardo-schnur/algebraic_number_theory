@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.16)  3 JAN 2018 18:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.16)  23 JAN 2018 16:11
 entering extended mode
 **./3_Jan.tex
 (3_Jan.tex
@@ -6,7 +6,7 @@ LaTeX2e <2017-04-15>
 Babel <3.15> and hyphenation patterns for 75 language(s) loaded.
 ! Undefined control sequence.
 l.1 \rhead
-          {3 January 2018}
+          {03 January 2018}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -20,11 +20,12 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1 \rhead{3
-             January 2018}
+l.1 \rhead{0
+            3 January 2018}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+Missing character: There is no 0 in font nullfont!
 Missing character: There is no 3 in font nullfont!
 Missing character: There is no J in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -2132,7 +2133,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.35 I
-      dea: Consider $\kappa \subseteq \ZP \underbrace{\subseteq}_{\text{non-...
+      dea: Consider $K \subseteq \ZP \underbrace{\subseteq}_{\text{non-split...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2151,8 +2152,8 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
-l.35 Idea: Consider $\kappa \subseteq \ZP
-                                          \underbrace{\subseteq}_{\text{non-...
+l.35 Idea: Consider $K \subseteq \ZP
+                                     \underbrace{\subseteq}_{\text{non-split...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2329,8 +2330,8 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 35--38
  []
 
 
-Overfull \hbox (16.3171pt too wide) in paragraph at lines 35--38
-\OML/cmm/m/it/10  \OMS/cmsy/m/n/10 
+Overfull \hbox (19.76384pt too wide) in paragraph at lines 35--38
+\OML/cmm/m/it/10 K \OMS/cmsy/m/n/10 
  []
 
 
@@ -2896,8 +2897,8 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no : in font nullfont!
 ! Undefined control sequence.
-l.50 \[ \kappa \subseteq \ZP
-                             \subseteq T_{\hP} \subseteq L\]
+l.50 \[ K \subseteq \ZP
+                        \subseteq T_{\hP} \subseteq L\]
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2905,8 +2906,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.50 \[ \kappa \subseteq \ZP \subseteq T_{\hP
-                                             } \subseteq L\]
+l.50 \[ K \subseteq \ZP \subseteq T_{\hP
+                                        } \subseteq L\]
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2914,8 +2915,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (53.35515pt too wide) detected at line 50
-\OML/cmm/m/it/10  \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 T[] \OMS/cmsy/m/n/10  
+Overfull \hbox (56.8019pt too wide) detected at line 50
+\OML/cmm/m/it/10 K \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 T[] \OMS/cmsy/m/n/10  
 \OML/cmm/m/it/10 L
  []
 
@@ -3816,38 +3817,20 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-! LaTeX Error: Environment proof undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.69 \begin{proof}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 70--70
-[][] 
- []
-
-
 ! LaTeX Error: Environment tikzcd undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.70 \[ \begin{tikzcd}
-                      
+l.69 $ \begin{tikzcd}
+                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.71 \hP
+l.70 \hP
          \arrow[draw=none]{r}[sloped,auto=false]{\subseteq} & \hO \arrow[dra...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3856,7 +3839,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.71 \hP \arrow
+l.70 \hP \arrow
                [draw=none]{r}[sloped,auto=false]{\subseteq} & \hO \arrow[dra...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3865,7 +3848,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
-l.71 ...w=none]{r}[sloped,auto=false]{\subseteq} &
+l.70 ...w=none]{r}[sloped,auto=false]{\subseteq} &
                                                    \hO \arrow[draw=none]{r}[...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -3875,7 +3858,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
-l.71 ...ne]{r}[sloped,auto=false]{\subseteq} & \hO
+l.70 ...ne]{r}[sloped,auto=false]{\subseteq} & \hO
                                                    \arrow[draw=none]{r}[slop...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3884,7 +3867,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.71 ...sloped,auto=false]{\subseteq} & \hO \arrow
+l.70 ...sloped,auto=false]{\subseteq} & \hO \arrow
                                                   [draw=none]{r}[sloped,auto...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3893,7 +3876,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
-l.71 ...w=none]{r}[sloped,auto=false]{\subseteq} &
+l.70 ...w=none]{r}[sloped,auto=false]{\subseteq} &
                                                    L\\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -3903,10 +3886,19 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
-<recently read> \PP 
+<recently read> \hP 
                     
-l.72 \PP
-        &	& T_{hP} \arrow[dash]{u}\\
+l.71 \hP
+        _T \arrow[dash]{u}&	& T_{\hP} \arrow[dash]{u} \arrow[dash, bend righ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.71 \hP_T \arrow
+                 [dash]{u}&	& T_{\hP} \arrow[dash]{u} \arrow[dash, bend righ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3914,8 +3906,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
-l.72 \PP&
-         	& T_{hP} \arrow[dash]{u}\\
+l.71 \hP_T \arrow[dash]{u}&
+                           	& T_{\hP} \arrow[dash]{u} \arrow[dash, bend righ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -3924,8 +3916,8 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.72 \PP&	&
-            T_{hP} \arrow[dash]{u}\\
+l.71 \hP_T \arrow[dash]{u}&	&
+                              T_{\hP} \arrow[dash]{u} \arrow[dash, bend righ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -3934,8 +3926,35 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
-l.72 \PP&	& T_{hP} \arrow
-                         [dash]{u}\\
+l.71 \hP_T \arrow[dash]{u}&	& T_{\hP
+                                    } \arrow[dash]{u} \arrow[dash, bend righ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.71 \hP_T \arrow[dash]{u}&	& T_{\hP} \arrow
+                                            [dash]{u} \arrow[dash, bend righ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.71 ...dash]{u}&	& T_{\hP} \arrow[dash]{u} \arrow
+                                                  [dash, bend right=30, colo...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.71 ...end right=30, color=blue]{u}[right]{I_{\hP
+                                                  }}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3945,8 +3964,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \hP 
                     
-l.73 \hP
-        _Z \arrow[dash]{uu}[sloped]{e\cdot f}&	& \ZP \arrow[dash]{u}\\
+l.72 \hP
+        _Z \arrow[dash]{u} \arrow[dash, bend left=60, color=red]{uu}[left]{e...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3954,8 +3973,17 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.73 \hP_Z \arrow
-                 [dash]{uu}[sloped]{e\cdot f}&	& \ZP \arrow[dash]{u}\\
+l.72 \hP_Z \arrow
+                 [dash]{u} \arrow[dash, bend left=60, color=red]{uu}[left]{e...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.72 \hP_Z \arrow[dash]{u} \arrow
+                                 [dash, bend left=60, color=red]{uu}[left]{e...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3963,8 +3991,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
-l.73 \hP_Z \arrow[dash]{uu}[sloped]{e\cdot f}&
-                                              	& \ZP \arrow[dash]{u}\\
+l.72 ...d left=60, color=red]{uu}[left]{e\cdot f}&
+                                                  	& \ZP \arrow[dash]{u} \ar...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -3973,8 +4001,8 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.73 \hP_Z \arrow[dash]{uu}[sloped]{e\cdot f}&	&
-                                                 \ZP \arrow[dash]{u}\\
+l.72 ...left=60, color=red]{uu}[left]{e\cdot f}&	&
+                                                   \ZP \arrow[dash]{u} \arro...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -3983,8 +4011,8 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
-l.73 ... \arrow[dash]{uu}[sloped]{e\cdot f}&	& \ZP
-                                                   \arrow[dash]{u}\\
+l.72 ...=60, color=red]{uu}[left]{e\cdot f}&	& \ZP
+                                                   \arrow[dash]{u} \arrow[da...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3992,8 +4020,26 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.73 ...[dash]{uu}[sloped]{e\cdot f}&	& \ZP \arrow
-                                                  [dash]{u}\\
+l.72 ...lor=red]{uu}[left]{e\cdot f}&	& \ZP \arrow
+                                                  [dash]{u} \arrow[dash, ben...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.72 ...t]{e\cdot f}&	& \ZP \arrow[dash]{u} \arrow
+                                                  [dash, bend left=60, color...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.72 ...h, bend left=60, color=blue]{uu}[left]{\GP
+                                                  }\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4003,8 +4049,26 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \PP 
                     
-l.74 \PP
-        &\O& K \arrow[dash]{u}
+l.73 \PP
+         \arrow[dash]{u} \arrow[draw=none]{r}[sloped,auto=false]{\subseteq}&...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.73 \PP \arrow
+               [dash]{u} \arrow[draw=none]{r}[sloped,auto=false]{\subseteq}&...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.73 \PP \arrow[dash]{u} \arrow
+                               [draw=none]{r}[sloped,auto=false]{\subseteq}&...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4012,8 +4076,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
-l.74 \PP&
-         \O& K \arrow[dash]{u}
+l.73 ...aw=none]{r}[sloped,auto=false]{\subseteq}&
+                                                  \O \arrow[draw=none]{r}[sl...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -4022,14 +4086,23 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 74.
+LaTeX Warning: Command \O invalid in math mode on input line 73.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 74.
+LaTeX Warning: Command \O invalid in math mode on input line 73.
+
+! Undefined control sequence.
+l.73 ...r}[sloped,auto=false]{\subseteq}&\O \arrow
+                                                  [draw=none]{r}[sloped,auto...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
-l.74 \PP&\O&
-             K \arrow[dash]{u}
+l.73 ...aw=none]{r}[sloped,auto=false]{\subseteq}&
+                                                   K \arrow[dash]{u}{r} \arr...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -4038,38 +4111,227 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
-l.74 \PP&\O& K \arrow
-                     [dash]{u}
+l.73 ...r}[sloped,auto=false]{\subseteq}& K \arrow
+                                                  [dash]{u}{r} \arrow[dash, ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.75 \]
-       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+! Undefined control sequence.
+l.73 ...e]{\subseteq}& K \arrow[dash]{u}{r} \arrow
+                                                  [dash, bend right=60, colo...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (572.77165pt too wide) detected at line 75
-\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 draw \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 none\
-OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 r\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 sloped; aut
-o \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 false\OT1/cmr/m/n/10 ][][\OML/cmm/m/it/10 
-draw \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 none\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 r
-\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 sloped; auto \OT1/cmr/m/n/10 = \OML/cmm/m/it/
-10 false\OT1/cmr/m/n/10 ][]\OML/cmm/m/it/10 L[] T[]\OT1/cmr/m/n/10 [\OML/cmm/m/
-it/10 dash\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 u[] []\OT1/cmr/m/n/10 [\OML/cmm/m/i
-t/10 dash\OT1/cmr/m/n/10 ][][\OML/cmm/m/it/10 sloped\OT1/cmr/m/n/10 ][][\OML/cm
-m/m/it/10 dash\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 u[] \OT1/cmr/m/n/10 \OML/cmm/m
-/it/10 K\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 dash\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10
- u
+! LaTeX Error: \begin{document} ended by \end{tikzcd}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.74 \end{tikzcd}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.76 \todo
+          {maybe someone knows how to put that picture in a nice way...}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+
+Overfull \hbox (56.04167pt too wide) in paragraph at lines 69--77
+[]$\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 draw \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (93.92955pt too wide) in paragraph at lines 69--77
+\OML/cmm/m/it/10 none\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 r\OT1/cmr/m/n/10 [\OML/c
+mm/m/it/10 sloped; auto \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (70.37975pt too wide) in paragraph at lines 69--77
+\OML/cmm/m/it/10 false\OT1/cmr/m/n/10 ][][\OML/cmm/m/it/10 draw \OT1/cmr/m/n/10
+ =
+ []
+
+
+Overfull \hbox (93.92955pt too wide) in paragraph at lines 69--77
+\OML/cmm/m/it/10 none\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 r\OT1/cmr/m/n/10 [\OML/c
+mm/m/it/10 sloped; auto \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (41.14365pt too wide) in paragraph at lines 69--77
+\OML/cmm/m/it/10 false\OT1/cmr/m/n/10 ][]\OML/cmm/m/it/10 L[] 
+ []
+
+
+Overfull \hbox (158.69171pt too wide) in paragraph at lines 69--77
+[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 dash\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 uT[]\
+OT1/cmr/m/n/10 [\OML/cmm/m/it/10 dash\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 u\OT1/cm
+r/m/n/10 [\OML/cmm/m/it/10 dash; bendright \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (46.99191pt too wide) in paragraph at lines 69--77
+\OT1/cmr/m/n/10 30\OML/cmm/m/it/10 ; color \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (59.54251pt too wide) in paragraph at lines 69--77
+\OML/cmm/m/it/10 blue\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 u\OT1/cmr/m/n/10 [\OML/c
+mm/m/it/10 right\OT1/cmr/m/n/10 ][][] 
+ []
+
+
+Overfull \hbox (114.95177pt too wide) in paragraph at lines 69--77
+[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 dash\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 u\OT1
+/cmr/m/n/10 [\OML/cmm/m/it/10 dash; bendleft \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (46.99191pt too wide) in paragraph at lines 69--77
+\OT1/cmr/m/n/10 60\OML/cmm/m/it/10 ; color \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (178.21675pt too wide) in paragraph at lines 69--77
+\OML/cmm/m/it/10 red\OT1/cmr/m/n/10 ][][\OML/cmm/m/it/10 left\OT1/cmr/m/n/10 ][
+][\OML/cmm/m/it/10 dash\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 u\OT1/cmr/m/n/10 [\OML
+/cmm/m/it/10 dash; bendleft \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (46.99191pt too wide) in paragraph at lines 69--77
+\OT1/cmr/m/n/10 60\OML/cmm/m/it/10 ; color \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (55.0558pt too wide) in paragraph at lines 69--77
+\OML/cmm/m/it/10 blue\OT1/cmr/m/n/10 ][][\OML/cmm/m/it/10 left\OT1/cmr/m/n/10 ]
+[][] 
+ []
+
+
+Overfull \hbox (68.26166pt too wide) in paragraph at lines 69--77
+\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 dash\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 u\OT1/c
+mr/m/n/10 [\OML/cmm/m/it/10 draw \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (93.92955pt too wide) in paragraph at lines 69--77
+\OML/cmm/m/it/10 none\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 r\OT1/cmr/m/n/10 [\OML/c
+mm/m/it/10 sloped; auto \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (78.15755pt too wide) in paragraph at lines 69--77
+\OML/cmm/m/it/10 false\OT1/cmr/m/n/10 ][][\OML/cmm/m/it/10 draw \OT1/cmr/m/n/1
+0 =
+ []
+
+
+Overfull \hbox (93.92955pt too wide) in paragraph at lines 69--77
+\OML/cmm/m/it/10 none\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 r\OT1/cmr/m/n/10 [\OML/c
+mm/m/it/10 sloped; auto \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (162.1641pt too wide) in paragraph at lines 69--77
+\OML/cmm/m/it/10 false\OT1/cmr/m/n/10 ][]\OML/cmm/m/it/10 K\OT1/cmr/m/n/10 [\OM
+L/cmm/m/it/10 dash\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 ur\OT1/cmr/m/n/10 [\OML/cmm
+/m/it/10 dash; bendright \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (46.99191pt too wide) in paragraph at lines 69--77
+\OT1/cmr/m/n/10 60\OML/cmm/m/it/10 ; color \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (73.95831pt too wide) in paragraph at lines 69--77
+\OML/cmm/m/it/10 blue\OT1/cmr/m/n/10 ][][\OML/cmm/m/it/10 right\OT1/cmr/m/n/10 
+]\OML/cmm/m/it/10 G$
+ []
+
+
+! LaTeX Error: Environment proof undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.78 \begin{proof}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 79--79
+[] 
  []
 
 Missing character: There is no [ in font nullfont!
@@ -4083,7 +4345,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.78 \item \begin
+l.80 \item \begin
                  {itemize}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4095,7 +4357,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.78 \item \begin
+l.80 \item \begin
                  {itemize}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4107,7 +4369,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.78 \item \begin
+l.80 \item \begin
                  {itemize}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4119,13 +4381,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.79 \item $
+l.81 \item $
             I_{\hP}$ is normal in $\GP$.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.79 \item $I_{\hP
+l.81 \item $I_{\hP
                   }$ is normal in $\GP$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4146,7 +4408,7 @@ Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
 <recently read> \GP 
                     
-l.79 \item $I_{\hP}$ is normal in $\GP
+l.81 \item $I_{\hP}$ is normal in $\GP
                                       $.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4156,14 +4418,14 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (4.89584pt too wide) in paragraph at lines 79--80
+Overfull \hbox (4.89584pt too wide) in paragraph at lines 81--82
 \OML/cmm/m/it/10 I[]$
  []
 
 ! Undefined control sequence.
 <recently read> \Gal 
                      
-l.80 \item $\Gal
+l.82 \item $\Gal
                 (T_{\hP} / \ZP) \cong \GP / I_{\hP} \stackrel{Rem 9.12}{\con...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4172,7 +4434,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.80 \item $\Gal(T_{\hP
+l.82 \item $\Gal(T_{\hP
                        } / \ZP) \cong \GP / I_{\hP} \stackrel{Rem 9.12}{\con...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4181,7 +4443,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.80 \item $\Gal(T_{\hP} / \ZP
+l.82 \item $\Gal(T_{\hP} / \ZP
                               ) \cong \GP / I_{\hP} \stackrel{Rem 9.12}{\con...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4190,7 +4452,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.80 \item $\Gal(T_{\hP} / \ZP) \cong \GP
+l.82 \item $\Gal(T_{\hP} / \ZP) \cong \GP
                                           / I_{\hP} \stackrel{Rem 9.12}{\con...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4199,7 +4461,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.80 \item $\Gal(T_{\hP} / \ZP) \cong \GP / I_{\hP
+l.82 \item $\Gal(T_{\hP} / \ZP) \cong \GP / I_{\hP
                                                   } \stackrel{Rem 9.12}{\con...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4208,7 +4470,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.80 ... / I_{\hP} \stackrel{Rem 9.12}{\cong} \Aut
+l.82 ... / I_{\hP} \stackrel{Rem 9.12}{\cong} \Aut
                                                   (\kappa(\hP)/\kappa(\PP))$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4217,7 +4479,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.80 ...\stackrel{Rem 9.12}{\cong} \Aut(\kappa(\hP
+l.82 ...\stackrel{Rem 9.12}{\cong} \Aut(\kappa(\hP
                                                   )/\kappa(\PP))$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4226,7 +4488,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.80 ...m 9.12}{\cong} \Aut(\kappa(\hP)/\kappa(\PP
+l.82 ...m 9.12}{\cong} \Aut(\kappa(\hP)/\kappa(\PP
                                                   ))$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4235,23 +4497,23 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (29.67708pt too wide) in paragraph at lines 80--81
+Overfull \hbox (29.67708pt too wide) in paragraph at lines 82--83
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]=\OT1/cmr/m/n/10 ) []
  []
 
 
-Overfull \hbox (43.95728pt too wide) in paragraph at lines 80--81
+Overfull \hbox (43.95728pt too wide) in paragraph at lines 82--83
 \OML/cmm/m/it/10 =I[] []
  []
 
 
-Overfull \hbox (39.85658pt too wide) in paragraph at lines 80--81
+Overfull \hbox (39.85658pt too wide) in paragraph at lines 82--83
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 ()\OML/cmm/m/it/10 =\OT1/cm
 r/m/n/10 ())$ 
  []
 
 ! Undefined control sequence.
-l.81 \item $T_{\hP
+l.83 \item $T_{\hP
                   }$ is the fixed field of $I_{\hP}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4277,7 +4539,7 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no f in font nullfont!
 ! Undefined control sequence.
-l.81 \item $T_{\hP}$ is the fixed field of $I_{\hP
+l.83 \item $T_{\hP}$ is the fixed field of $I_{\hP
                                                   }$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4286,17 +4548,17 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (6.34375pt too wide) in paragraph at lines 81--82
+Overfull \hbox (6.34375pt too wide) in paragraph at lines 83--84
 \OML/cmm/m/it/10 T[]$
  []
 
 
-Overfull \hbox (4.89584pt too wide) in paragraph at lines 81--82
+Overfull \hbox (4.89584pt too wide) in paragraph at lines 83--84
 \OML/cmm/m/it/10 I[]$ 
  []
 
 ! Undefined control sequence.
-l.83 \item $\kappa(\hP
+l.85 \item $\kappa(\hP
                       )/\kappa(\PP)$ is separable $\Rightarrow \#\Aut(\kappa...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4305,7 +4567,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.83 \item $\kappa(\hP)/\kappa(\PP
+l.85 \item $\kappa(\hP)/\kappa(\PP
                                   )$ is separable $\Rightarrow \#\Aut(\kappa...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4325,7 +4587,7 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.83 ...ppa(\PP)$ is separable $\Rightarrow \#\Aut
+l.85 ...ppa(\PP)$ is separable $\Rightarrow \#\Aut
                                                   (\kappa(\hP)/\kappa(\PP))=...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4334,7 +4596,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.83 ...s separable $\Rightarrow \#\Aut(\kappa(\hP
+l.85 ...s separable $\Rightarrow \#\Aut(\kappa(\hP
                                                   )/\kappa(\PP))=[\underbrac...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4343,7 +4605,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.83 ...$\Rightarrow \#\Aut(\kappa(\hP)/\kappa(\PP
+l.85 ...$\Rightarrow \#\Aut(\kappa(\hP)/\kappa(\PP
                                                   ))=[\underbrace{\kappa(\hP...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4354,7 +4616,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \kappa (\hP 
                        )
-l.83 ...hP)/\kappa(\PP))=[\underbrace{\kappa(\hP)}
+l.85 ...hP)/\kappa(\PP))=[\underbrace{\kappa(\hP)}
                                                   _{\hO/\hP}:\underbrace{\ka...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4363,7 +4625,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.83 ...kappa(\PP))=[\underbrace{\kappa(\hP)}_{\hO
+l.85 ...kappa(\PP))=[\underbrace{\kappa(\hP)}_{\hO
                                                   /\hP}:\underbrace{\kappa(\...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4372,7 +4634,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.83 ...a(\PP))=[\underbrace{\kappa(\hP)}_{\hO/\hP
+l.85 ...a(\PP))=[\underbrace{\kappa(\hP)}_{\hO/\hP
                                                   }:\underbrace{\kappa(\PP)}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4383,7 +4645,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \kappa (\PP 
                        )
-l.83 ...a(\hP)}_{\hO/\hP}:\underbrace{\kappa(\PP)}
+l.85 ...a(\hP)}_{\hO/\hP}:\underbrace{\kappa(\PP)}
                                                   _{\O/\PP}]\stackrel{\text{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4392,13 +4654,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 83.
+LaTeX Warning: Command \O invalid in math mode on input line 85.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 83.
+LaTeX Warning: Command \O invalid in math mode on input line 85.
 
 ! Undefined control sequence.
-l.83 ...{\hO/\hP}:\underbrace{\kappa(\PP)}_{\O/\PP
+l.85 ...{\hO/\hP}:\underbrace{\kappa(\PP)}_{\O/\PP
                                                   }]\stackrel{\text{9.12}}{=...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4409,7 +4671,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \text 
                  {9.12}
-l.83 ...a(\PP)}_{\O/\PP}]\stackrel{\text{9.12}}{=}
+l.85 ...a(\PP)}_{\O/\PP}]\stackrel{\text{9.12}}{=}
                                                   \underbrace{\#\GP}_{e\cdot...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4420,7 +4682,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \#\GP 
                  
-l.83 ...stackrel{\text{9.12}}{=}\underbrace{\#\GP}
+l.85 ...stackrel{\text{9.12}}{=}\underbrace{\#\GP}
                                                   _{e\cdot f}/\#I_{\hP}=f$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4429,7 +4691,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.83 ...}{=}\underbrace{\#\GP}_{e\cdot f}/\#I_{\hP
+l.85 ...}{=}\underbrace{\#\GP}_{e\cdot f}/\#I_{\hP
                                                   }=f$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4438,38 +4700,38 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (32.07878pt too wide) in paragraph at lines 83--84
+Overfull \hbox (32.07878pt too wide) in paragraph at lines 85--86
 \OML/cmm/m/it/10 \OT1/cmr/m/n/10 ()\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 ()$
  []
 
 
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 83--84
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 85--86
 \OMS/cmsy/m/n/10 )
  []
 
 
-Overfull \hbox (58.74545pt too wide) in paragraph at lines 83--84
+Overfull \hbox (58.74545pt too wide) in paragraph at lines 85--86
 \OT1/cmr/m/n/10 #(\OML/cmm/m/it/10 \OT1/cmr/m/n/10 ()\OML/cmm/m/it/10 =\OT1/c
 mr/m/n/10 ()) =
  []
 
 
-Overfull \hbox (26.33347pt too wide) in paragraph at lines 83--84
+Overfull \hbox (26.33347pt too wide) in paragraph at lines 85--86
 \OT1/cmr/m/n/10 [[] :
  []
 
 
-Overfull \hbox (37.88907pt too wide) in paragraph at lines 83--84
+Overfull \hbox (37.88907pt too wide) in paragraph at lines 85--86
 []\OT1/cmr/m/n/10 ] []
  []
 
 
-Overfull \hbox (48.45154pt too wide) in paragraph at lines 83--84
+Overfull \hbox (48.45154pt too wide) in paragraph at lines 85--86
 [] \OML/cmm/m/it/10 =\OT1/cmr/m/n/10 #\OML/cmm/m/it/10 I[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.97226pt too wide) in paragraph at lines 83--84
+Overfull \hbox (5.97226pt too wide) in paragraph at lines 85--86
 \OML/cmm/m/it/10 f$ 
  []
 
@@ -4492,7 +4754,7 @@ Missing character: There is no h in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.84 \item We will show below hat $\kappa(\hP
+l.86 \item We will show below hat $\kappa(\hP
                                              _T)=\kappa(\hP)$ This implies:
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4501,7 +4763,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.84 ...l show below hat $\kappa(\hP_T)=\kappa(\hP
+l.86 ...l show below hat $\kappa(\hP_T)=\kappa(\hP
                                                   )$ This implies:
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4522,12 +4784,12 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no : in font nullfont!
 
-Overfull \hbox (30.39455pt too wide) in paragraph at lines 84--85
+Overfull \hbox (30.39455pt too wide) in paragraph at lines 86--87
 \OML/cmm/m/it/10 \OT1/cmr/m/n/10 ([]) =
  []
 
 
-Overfull \hbox (13.53938pt too wide) in paragraph at lines 84--85
+Overfull \hbox (13.53938pt too wide) in paragraph at lines 86--87
 \OML/cmm/m/it/10 \OT1/cmr/m/n/10 ()$
  []
 
@@ -4547,7 +4809,7 @@ Missing character: There is no f in font nullfont!
 ! Undefined control sequence.
 <recently read> \hP 
                     
-l.86 \item local degree of $\hP
+l.88 \item local degree of $\hP
                                _T/\hP$ is 1
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4556,7 +4818,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.86 \item local degree of $\hP_T/\hP
+l.88 \item local degree of $\hP_T/\hP
                                      $ is 1
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4568,7 +4830,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no 1 in font nullfont!
 
-Overfull \hbox (11.29967pt too wide) in paragraph at lines 86--87
+Overfull \hbox (11.29967pt too wide) in paragraph at lines 88--89
 []\OML/cmm/m/it/10 =$ 
  []
 
@@ -4594,7 +4856,7 @@ Missing character: There is no f in font nullfont!
 ! Undefined control sequence.
 <recently read> \hP 
                     
-l.87 \item ramification index of $\hP
+l.89 \item ramification index of $\hP
                                      _T/\hP$ is $e$ since $[L/T_{\hP}]=\#I_{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4603,7 +4865,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.87 \item ramification index of $\hP_T/\hP
+l.89 \item ramification index of $\hP_T/\hP
                                            $ is $e$ since $[L/T_{\hP}]=\#I_{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4619,7 +4881,7 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.87 ...dex of $\hP_T/\hP$ is $e$ since $[L/T_{\hP
+l.89 ...dex of $\hP_T/\hP$ is $e$ since $[L/T_{\hP
                                                   }]=\#I_{\hP}=e$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4628,7 +4890,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.87 ..._T/\hP$ is $e$ since $[L/T_{\hP}]=\#I_{\hP
+l.89 ..._T/\hP$ is $e$ since $[L/T_{\hP}]=\#I_{\hP
                                                   }=e$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4637,27 +4899,27 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (11.29967pt too wide) in paragraph at lines 87--88
+Overfull \hbox (11.29967pt too wide) in paragraph at lines 89--90
 []\OML/cmm/m/it/10 =$
  []
 
 
-Overfull \hbox (4.65627pt too wide) in paragraph at lines 87--88
+Overfull \hbox (4.65627pt too wide) in paragraph at lines 89--90
 \OML/cmm/m/it/10 e$
  []
 
 
-Overfull \hbox (34.26042pt too wide) in paragraph at lines 87--88
+Overfull \hbox (34.26042pt too wide) in paragraph at lines 89--90
 \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 L=T[]\OT1/cmr/m/n/10 ] =
  []
 
 
-Overfull \hbox (23.78471pt too wide) in paragraph at lines 87--88
+Overfull \hbox (23.78471pt too wide) in paragraph at lines 89--90
 \OT1/cmr/m/n/10 #\OML/cmm/m/it/10 I[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (4.65627pt too wide) in paragraph at lines 87--88
+Overfull \hbox (4.65627pt too wide) in paragraph at lines 89--90
 \OML/cmm/m/it/10 e$ 
  []
 
@@ -4689,7 +4951,7 @@ Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
 <recently read> \checkmark 
                            
-l.88 ...f $e$ and $f \Rightarrow$ rest $\checkmark
+l.90 ...f $e$ and $f \Rightarrow$ rest $\checkmark
                                                   $ \todo{if one wants, here...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4698,7 +4960,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.88 ...nd $f \Rightarrow$ rest $\checkmark$ \todo
+l.90 ...nd $f \Rightarrow$ rest $\checkmark$ \todo
                                                   {if one wants, here was th...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4779,17 +5041,17 @@ Missing character: There is no . in font nullfont!
 Missing character: There is no 5 in font nullfont!
 Missing character: There is no ) in font nullfont!
 
-Overfull \hbox (4.65627pt too wide) in paragraph at lines 88--89
+Overfull \hbox (4.65627pt too wide) in paragraph at lines 90--91
 \OML/cmm/m/it/10 e$
  []
 
 
-Overfull \hbox (18.74998pt too wide) in paragraph at lines 88--89
+Overfull \hbox (18.74998pt too wide) in paragraph at lines 90--91
 \OML/cmm/m/it/10 f \OMS/cmsy/m/n/10 )$
  []
 
 
-Overfull \hbox (4.65627pt too wide) in paragraph at lines 88--89
+Overfull \hbox (4.65627pt too wide) in paragraph at lines 90--91
 \OML/cmm/m/it/10 e$
  []
 
@@ -4802,7 +5064,7 @@ Missing character: There is no h in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.90 Show that $\kappa(\hP
+l.92 Show that $\kappa(\hP
                           _T)=\kappa(\hP)$:\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4811,7 +5073,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.90 Show that $\kappa(\hP_T)=\kappa(\hP
+l.92 Show that $\kappa(\hP_T)=\kappa(\hP
                                         )$:\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4865,22 +5127,22 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no m in font nullfont!
 
-Overfull \hbox (30.39455pt too wide) in paragraph at lines 90--92
+Overfull \hbox (30.39455pt too wide) in paragraph at lines 92--94
   $\OML/cmm/m/it/10 \OT1/cmr/m/n/10 ([]) =
  []
 
 
-Overfull \hbox (13.53938pt too wide) in paragraph at lines 90--92
+Overfull \hbox (13.53938pt too wide) in paragraph at lines 92--94
 \OML/cmm/m/it/10 \OT1/cmr/m/n/10 ()$ 
  []
 
 
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 90--92
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 92--94
 \OMS/cmsy/m/n/10 )$
  []
 
 ! Undefined control sequence.
-l.92 \[I_{\hP
+l.94 \[I_{\hP
              }=\Gal(L/T_{\hP}) \stackrel{\varphi}{\twoheadrightarrow} \Aut(\...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4889,7 +5151,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.92 \[I_{\hP}=\Gal
+l.94 \[I_{\hP}=\Gal
                    (L/T_{\hP}) \stackrel{\varphi}{\twoheadrightarrow} \Aut(\...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4898,7 +5160,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.92 \[I_{\hP}=\Gal(L/T_{\hP
+l.94 \[I_{\hP}=\Gal(L/T_{\hP
                             }) \stackrel{\varphi}{\twoheadrightarrow} \Aut(\...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4909,7 +5171,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \twoheadrightarrow 
                               
-l.92 ...P}) \stackrel{\varphi}{\twoheadrightarrow}
+l.94 ...P}) \stackrel{\varphi}{\twoheadrightarrow}
                                                    \Aut(\kappa(\hP)/\kappa(\...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4918,7 +5180,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.92 ...stackrel{\varphi}{\twoheadrightarrow} \Aut
+l.94 ...stackrel{\varphi}{\twoheadrightarrow} \Aut
                                                   (\kappa(\hP)/\kappa(\hP_T))\]
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4927,7 +5189,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.92 ...arphi}{\twoheadrightarrow} \Aut(\kappa(\hP
+l.94 ...arphi}{\twoheadrightarrow} \Aut(\kappa(\hP
                                                   )/\kappa(\hP_T))\]
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4936,7 +5198,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.92 ...eadrightarrow} \Aut(\kappa(\hP)/\kappa(\hP
+l.94 ...eadrightarrow} \Aut(\kappa(\hP)/\kappa(\hP
                                                   _T))\]
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4945,7 +5207,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (101.12761pt too wide) detected at line 92
+Overfull \hbox (101.12761pt too wide) detected at line 94
 \OML/cmm/m/it/10 I[] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 L=T[]\OT1/cmr/m/n/10 )
  [] (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 ()\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 ([]
 ))
@@ -4966,7 +5228,7 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no f in font nullfont!
 ! Undefined control sequence.
-l.93 By definition of $I_{\hP
+l.95 By definition of $I_{\hP
                              }$ the image of this homomorphism is trivial.\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5011,7 +5273,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
-l.94 $\Rightarrow \Aut
+l.96 $\Rightarrow \Aut
                       (\kappa(\hP)/\kappa(\hP_T))=\{1\} \stackrel{\text{norm...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5020,7 +5282,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.94 $\Rightarrow \Aut(\kappa(\hP
+l.96 $\Rightarrow \Aut(\kappa(\hP
                                  )/\kappa(\hP_T))=\{1\} \stackrel{\text{norm...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5029,7 +5291,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.94 $\Rightarrow \Aut(\kappa(\hP)/\kappa(\hP
+l.96 $\Rightarrow \Aut(\kappa(\hP)/\kappa(\hP
                                              _T))=\{1\} \stackrel{\text{norm...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5040,7 +5302,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \text 
                  {normal+separable}
-l.94 ...{\text{normal+separable}}{\Longrightarrow}
+l.96 ...{\text{normal+separable}}{\Longrightarrow}
                                                    [\kappa(\hP):\kappa(\hP_T...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5049,7 +5311,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.94 ...l+separable}}{\Longrightarrow} [\kappa(\hP
+l.96 ...l+separable}}{\Longrightarrow} [\kappa(\hP
                                                   ):\kappa(\hP_T)]=1$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5058,7 +5320,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.94 ...}{\Longrightarrow} [\kappa(\hP):\kappa(\hP
+l.96 ...}{\Longrightarrow} [\kappa(\hP):\kappa(\hP
                                                   _T)]=1$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5068,38 +5330,38 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (4.89584pt too wide) in paragraph at lines 92--95
+Overfull \hbox (4.89584pt too wide) in paragraph at lines 94--97
    $\OML/cmm/m/it/10 I[]$
  []
 
 
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 92--95
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 94--97
 \OMS/cmsy/m/n/10 )
  []
 
 
-Overfull \hbox (56.71175pt too wide) in paragraph at lines 92--95
+Overfull \hbox (56.71175pt too wide) in paragraph at lines 94--97
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 ()\OML/cmm/m/it/10 =\OT1/cm
 r/m/n/10 ([])) =
  []
 
 
-Overfull \hbox (84.91325pt too wide) in paragraph at lines 92--95
+Overfull \hbox (84.91325pt too wide) in paragraph at lines 94--97
 \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 1\OMS/cmsy/m/n/10 g []
  []
 
 
-Overfull \hbox (21.87267pt too wide) in paragraph at lines 92--95
+Overfull \hbox (21.87267pt too wide) in paragraph at lines 94--97
 \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 \OT1/cmr/m/n/10 () :
  []
 
 
-Overfull \hbox (33.17233pt too wide) in paragraph at lines 92--95
+Overfull \hbox (33.17233pt too wide) in paragraph at lines 94--97
 \OML/cmm/m/it/10 \OT1/cmr/m/n/10 ([])] =
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 92--95
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 94--97
 \OT1/cmr/m/n/10 1$ 
  []
 
@@ -5110,7 +5372,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.96 \end{proof}
+l.98 \end{proof}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -5124,10 +5386,10 @@ or  <return>  to continue without it.
 
  
 Here is how much of TeX's memory you used:
- 38 strings out of 493386
- 466 string characters out of 3145013
+ 39 strings out of 493386
+ 475 string characters out of 3145013
  60761 words of memory out of 3000000
- 3611 multiletter control sequences out of 15000+200000
+ 3612 multiletter control sequences out of 15000+200000
  3986 words of font info for 15 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  18i,10n,12p,276b,178s stack positions out of 5000i,500n,10000p,200000b,50000s
