@@ -1,0 +1,178 @@
+\rhead{23 April 2018}
+
+
+\begin{Bsp}
+\begin{enumerate}[(i)]
+\item Für das inverse System in Beispiel 5.4.2 (i) erhalten wir als projektiven Limes
+\[ \hat{\Z} = \left\{ (a_n)_{n\in\N} \, | \, a_n \in \Z/n\Z, n \text{ teilt } m \Rightarrow a_m \equiv a_n \mod n  \right\}
+\]
+mit komponentenweiser Addition.
+\item Für Beispiel 5.4.2 (ii) erhalten wir
+\begin{align*}
+\hat{G} = \{ &(g_N)_{\text{$N$ Normalteiler von $G$ mit endlichem Index}} \, | \, g_N \in G/N, \\
+&M \subset N \Rightarrow g_N \mod N = g_M \mod M  \}.
+\end{align*}
+$\hat{G}$ heißt \textbf{proendliche Komplettierung} von $G$.
+\end{enumerate}
+\end{Bsp}
+
+\begin{Bem}
+Analog erhält man projektive Limiten unter anderem in folgenden Kategorien:
+\begin{center}
+\Mengen, \Ringe, \Rmod, \kalg
+\end{center}
+\end{Bem}
+
+\begin{defi}
+Eine \textbf{topologische Gruppe} besteht aus
+\begin{itemize}
+\item[(1)] einer Gruppe $G$ und
+\item[(2)] einer Topologie $T$ auf $G$ so, dass
+\item[(A)] die Gruppenabbildung $G\times G \to G, (a,b) \mapsto ab$ stetig ist und
+\item[(B)] die Inversenabbildung $G\to G, g \mapsto g^{-1}$  stetig ist.
+\end{itemize}
+Ein  \textbf{Morphismus} $\varphi$ zwischen topologischen Gruppen ist ein stetiger Gruppenhomomorphismus.
+\end{defi}
+
+\begin{Bem}
+Topologische Gruppen bilden mit Morphismen eine Kategorie, \TopGroups.
+\end{Bem}
+
+\begin{defi}
+Sei $I$ eine Indexmenge und $(X_i,T_i)_{i\in I}$ eine Familie topologischer Räume. Sei $X=\prod_{i\in I}X_i$ das kartesische Produkt und $p_i \colon X \to X_i, \, (x_k) \mapsto x_i$.
+Dann ist die \textbf{Produkttopologie} $T$ die kleinste Topologie auf $X$ für die alle $p_i$ stetig sind. Das heißt
+\[ \B = \left\{ p_i^{-1}(U) \,|\, i \in I, U \subset X_i \text{ offen}   \right\}
+\]
+bildet eine Subbasis von $T$.
+\end{defi}
+
+\begin{remin}
+\begin{itemize}
+\item $\B \subset T$ heißt \textbf{Subbasis}, falls jede offene Menge $U\in T$ eine beliebige Vereinigung von Mengen, die endliche Schnitte von Mengen in $\B$ sind, ist.
+\item Für $x\in X$ heißt $\B_x\subset T$ \textbf{Umgebungsbasis} von $x$, falls:
+\begin{enumerate}
+\item[(1)] Für alle $U \in \B_x$ gilt $x \in U$.
+\item[(2)] Für jedes $V\in T$ mit $x \in V$ existiert ein $U\in B_x$ mit $U \subset V$.
+\end{enumerate}
+\end{itemize}
+\end{remin}
+
+\begin{Bem}
+Sei $G$ eine topologische Gruppe mit neutralem Element $1$.
+\begin{enumerate}
+\item[(1)] Jedes $g\in G$ definiert einen Homöomorphismus (\textbf{kein} Automorphismus)
+\[ \Phi_g \colon G \to G, \, x\mapsto gx
+\]
+mit Umkehrabbildung $\Phi_{g^{-1}}$.
+\item[(2)] $\B_{(1)}$ ist Umgebungsbasis von $1$ genau dann, wenn
+\[ g \B_{(1)} = \{ gU \, | \, U \in \B_{(1)} \}
+\]
+eine Umgebungsbasis von $g$ ist für jedes $g \in G$.
+\item[(3)] Ist $G$ zusammenhängend so gilt
+\[ G = \bigcup_{n \in \N} \B_{(1)}^n.
+\]
+\end{enumerate}
+\end{Bem}
+
+
+\begin{Bem}
+In der Kategorie $\TopSpaces$ und in der Kategorie $\TopGroups$ existieren jeweils projektive Limiten.
+\end{Bem}
+
+
+\begin{proof}
+Analog zu Proposition 5.4.5 betrachte auf $\prod_{i\in I}A_i$ die Produkttopologie und auf $A$ die Spurtopologie davon.
+\end{proof}
+
+\begin{Bem}
+Die proendliche Komplettierung $\hat{G}$ einer Gruppe $G$ wird zu einer topologischen Gruppe wie folgt:
+\begin{itemize}
+\item[(1)] Versehe die Quotienten $G/N$ mit der diskreten Topologie $\Pot(G/N)$.
+\item[(2)] Bilde den projektiven Limes in der Kategorie der topologischen Gruppen $\TopGroups$.
+\end{itemize}
+\end{Bem}
+
+\begin{defi}
+Eine topologische Gruppe $G$ heißt \textbf{proendlich}, falls $G$ isomorph zum projektiven Limes von endlichen Gruppen, jeweils versehen mit der diskreten Topologie, ist.
+\end{defi}
+
+\begin{Bem}
+Analog definiert man \textbf{topologische Ringe} als Ringe $(R,+,\cdot)$ mit $(R,+)$ topologische Gruppe und $\cdot \colon R\times R\to R$ stetig und sieht, dass auch für diese projektive Limiten existieren.
+\end{Bem}
+
+
+
+\section{Ganze $p$-adische Zahlen}
+
+\textbf{Ziel:} Zeige, dass
+\[ \Z_p \cong \limproj_{n\in \N} \Z /p^n \Z,
+\]
+beziehungsweise allgemeiner, dass
+\[ \hat{\O} \cong \limproj_{n\in\N} \O / \p^n.
+\]
+
+
+\textbf{Sei ab jetzt:}
+\begin{itemize}
+\item $K$ ein Körper, $v$ eine diskrete Bewertung auf $K$ und $\abs{\cdot} = q^{-v(\cdot)}$ die zugehörige Norm für ein $q>1$
+\item $\hat{K}$ die Vervollständigung von $K$ bezüglich $\abs{\cdot}$, $\hat{v}$ die zugehörige Bewertung und  $\abs{\cdot} = q^{-\hat{v}(\cdot)}$ die zugehörige Norm
+\item $\O$ der Bewertungsring zu $v$ mit maximalem Ideal $\p= \Pi \cdot\O$ mit $v(\Pi)=1$
+\item $\hat{\O}$ der Bewertungsring zu $\hat{v}$ mit maximalem Ideal $\hat{\p}= \Pi \cdot\hat{\O}$
+\end{itemize}
+
+
+\begin{Bem}
+Da $v$ diskrete Bewertung ist gilt $v(K)=\hat{v}(\hat{K})$, denn für $c_n \xrightarrow{n\to\infty}x$ gilt $\hat{v}(x) = \lim\limits_{n\to \infty} v(c_n)$.
+\end{Bem}
+
+Ohne Einschränkung sei ab jetzt $v(k) = \hat{v}(\hat{K}) = \Z \cup \{\infty \}$.
+
+
+\begin{Prop}
+Für alle $n\in\N_0$ gilt $\hat{\O} / \hat{\p}^n \cong \O / \p^n$.
+\end{Prop}
+
+\begin{proof}
+Für $x \in \O$ gilt:
+\[ x \in \p^n \Leftrightarrow v(x) \geq n \Leftrightarrow \hat{v}(x) \geq n \Leftrightarrow x \in \hat{\p}^n
+\]
+Also steigt $i \colon O \hookrightarrow \hat{\O}$ ab zu einem injektiven Morphismus
+$\O/ \p^n \hookrightarrow \hat{\O} / \hat{\p}^n$. Dieser ist surjektiv, denn zu $x \in \hat{\O}$ existiert eine Folge $(c_k)$ in $K$ mit $c_k \to x$. Da $v$ eine diskrete Bewertung ist, gilt ohne Einschränkung $c_k \in \O$, also ist für $k$ groß genug $\abs{x-c_k}<q^{-n}$ und damit $v(x-c_n)>n$.
+Also $c_k \equiv x \mod \hat{\p}^n$. Folglich wird $c_k \mod \p^n$ abgebildet auf $x \mod \hat{\p}^n$.
+\end{proof}
+
+\begin{Prop}
+Es gilt $ \hat{\O} \cong \limproj_{n\in\N} \O / \p^n$ in der Kategorie $\TopRings$ von topologischen Ringen. Hierbei erhält $\hat{\O}$ die von der Norm $\abs{\cdot}$ induzierte Topologie und die Ringe $\O / \p^n$ die diskrete Topologie.
+\end{Prop}
+
+
+\begin{proof}
+$p^r_{m,n} \colon \O / \p^n \rightarrow \O/ \p^m$ sei die natürliche Projektion für $m\leq n$
+und $h_n \colon \mathcal{L} = \limproj_{n\in\N} \O/\p^n \to \O/\p^n$die Projektionsabbildung des Limes.
+\begin{itemize} 
+\item[(1)] Definiere eine Abbildung $\Phi \colon \hat{\O} \to\mathcal{L}$:
+
+Verwende den Isomorphismus $\alpha_n \colon \hat{\O}/ \hat{\p}^n \to \O / \p$ aus Proposition 5.5.2 und definiere 
+\[ \Phi_n \colon \hat{\O} \to \O / \p^n, \, x \mapsto \alpha_n \left(  x \mod \hat{\p}^n \right).
+\]
+Dann ist $\Phi_n$ ein Ringhomomorphismus und die $\{ \Phi_n \}$ passen zusammen mit den Projektionen $p_{m,n}$.
+
+\bigskip Zeige noch: $\Phi_n$ ist stetig
+
+Sei $U \subset \O/\p^n$ und $V=\Phi_n^{-1}(U)$, Es gilt $\ker \Phi_n = \hat{p}^n$. Für $x\in V$ und $\varepsilon_n = q^{-n}$ ist dann
+\begin{align*}
+K_{\varepsilon_n}(x) 
+&= \{ y \in \hat{\O} \,|\, \abs{y-x}< \varepsilon_n  \} \\
+&= \{ y \in \hat{\O} \,|\, \hat{v}(y-x) > n  \} \\
+&= x+ \hat{\p}^{n+1}.
+\end{align*}
+Folglich gilt $\Phi(n)( K_{\varepsilon_n}(x)  ) = \{x\}$ und daher $K_{\varepsilon_n}(x)  \subset V$. Also ist $V$ offen.
+Nach der Definition von projektivem Limes induziert $\{\Phi_n \}$ also einen stetigen Ringhomomorphismus  $\Phi \colon \hat{\O} \to\mathcal{L}$.
+\end{itemize}
+\end{proof}
+
+
+
+
+
+
