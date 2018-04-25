@@ -146,30 +146,6 @@ Es gilt $ \hat{\O} \cong \limproj_{n\in\N} \O / \p^n$ in der Kategorie $\TopRing
 \end{Prop}
 
 
-\begin{proof}
-$p^r_{m,n} \colon \O / \p^n \rightarrow \O/ \p^m$ sei die natürliche Projektion für $m\leq n$
-und $h_n \colon \mathcal{L} = \limproj_{n\in\N} \O/\p^n \to \O/\p^n$die Projektionsabbildung des Limes.
-\begin{itemize} 
-\item[(1)] Definiere eine Abbildung $\Phi \colon \hat{\O} \to\mathcal{L}$:
-
-Verwende den Isomorphismus $\alpha_n \colon \hat{\O}/ \hat{\p}^n \to \O / \p$ aus Proposition 5.5.2 und definiere 
-\[ \Phi_n \colon \hat{\O} \to \O / \p^n, \, x \mapsto \alpha_n \left(  x \mod \hat{\p}^n \right).
-\]
-Dann ist $\Phi_n$ ein Ringhomomorphismus und die $\{ \Phi_n \}$ passen zusammen mit den Projektionen $p_{m,n}$.
-
-\bigskip Zeige noch: $\Phi_n$ ist stetig
-
-Sei $U \subset \O/\p^n$ und $V=\Phi_n^{-1}(U)$, Es gilt $\ker \Phi_n = \hat{p}^n$. Für $x\in V$ und $\varepsilon_n = q^{-n}$ ist dann
-\begin{align*}
-K_{\varepsilon_n}(x) 
-&= \{ y \in \hat{\O} \,|\, \abs{y-x}< \varepsilon_n  \} \\
-&= \{ y \in \hat{\O} \,|\, \hat{v}(y-x) > n  \} \\
-&= x+ \hat{\p}^{n+1}.
-\end{align*}
-Folglich gilt $\Phi(n)( K_{\varepsilon_n}(x)  ) = \{x\}$ und daher $K_{\varepsilon_n}(x)  \subset V$. Also ist $V$ offen.
-Nach der Definition von projektivem Limes induziert $\{\Phi_n \}$ also einen stetigen Ringhomomorphismus  $\Phi \colon \hat{\O} \to\mathcal{L}$.
-\end{itemize}
-\end{proof}
 
 
 
