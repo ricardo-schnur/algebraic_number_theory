@@ -1,0 +1,144 @@
+\rhead{2 / 08 January 2018}
+
+
+
+\begin{proof}
+Idea: Use Proposition 8.15.
+
+Observe: Since $\O = \Z[\zeta]$, Proposition 8.15 can be applied to all prime ideals of $\O$.
+\begin{itemize}
+	\item Consider $f(X) = \phi_n(X)$.
+	
+	\item Take the image $h(X) := \bar{f(X)} \in \F_p[X]$ and decompose it as $h(X) = h_1^{e_1} \cdot \ldots \cdot h_r^{e_r}$ into irreducible factors over $\F_p$.
+\end{itemize}
+Then we have: $p \O = \p_1^{e_1} \cdot \ldots \cdot \p_r^{e_r}$ with prime ideals $\p_i$ of local degree $f_i := \deg h_i$.
+	
+\bigskip
+	
+\underline{Step 1:} Show $e_1 = \dots = e_r = 1$.
+
+Consider $q(X) := X^n -1 \in \F_p[X]$. Since $p \not\vert n$, $q'(X) = nX^{n-1}$ and $q$ have no common zeroes in $\F_p \Rightarrow q(X)$ has no multiple zeroes in $\bar{\F}_p \Rightarrow $ The same must be true for $h(x) \Rightarrow e_1 = \dots = e_r = 1$.
+
+\bigskip
+
+\underline{Step 2:} Show: $f_1=f_2= \dots=f_r=k_0:=\min \{ k \ | \ p^k \equiv 1 \mod n \}$\\
+Recall: $f(X)= \phi_n(X), h(X):=$image in $\F_p[X]=h_1^{l_1}(X)\cdot \ldots \cdot h_r^{l_r}(X)$\\
+Consider the field $L:= \F_{p^{k_0}}$ with $p^{k_0}$ elements as field extension of $\F_p$.
+Write $p^{k_0}-1= nw$ with $w \in \N$.\\
+Observe: $L^\times = <a>$ with $\ord(a)=nw \Rightarrow \bar{\zeta}=a^w$ is a primitive $n$-th root of unity and $h$ decomposes into linear factors over $L$.\\
+Furthermore: $L=\F_p(\bar{\zeta})$ by minimality of $k_0$, since $\# \F_p[\bar{\zeta}] = p^M$ for some $M$ and $\ord(\bar{\zeta})=n$ divides $p^M-1 \Rightarrow k_0=M$.\\
+Let $\bar{f}_1(X)$ be the minimal polynomial of $\bar{\zeta}$ over $\F_p \Rightarrow$
+\begin{itemize}
+\item $\bar{f}_1$ is an irreducible divisor of $h(X) \Rightarrow $w.l.o.g.$ \bar{f}_1 = h_1$
+\item $f_1=\deg(h_1)=\deg(\bar{f_1})=[L:\F_p]=k_0 \Rightarrow f_1=k_0$
+\end{itemize}
+\todo{this proof is kind of quirky}
+\end{proof}
+
+\begin{Prop}[CHARACTERISATION OF PRIME IDEALS]
+Let $n=p_1^{k_1} \cdot \ldots p_r^{k_r}$ be the prime decomposition of $n$ and $p$ some arbitrary prime number.\\
+Then $p \O=(\hP_1 \cdot \dots \cdot \hP_r)^{e_p}$ with $e_p=\varphi(p^{k_p})$ is the factorisation into prime ideals and each prime ideal $\hP_i$ is of local degree $f_p:=\min\{k \in \N \ | \ p^k \equiv 1 \mod \frac{n}{p^{k_p}}\}$
+\end{Prop}
+
+\begin{proof}
+Again: Use Prop. 8.15 which applies to \underline{all} prime ideals in $\O$\\
+$\Rightarrow \phi_n(X) \in \Z[X]$ min. polynomial of $\zeta \Rightarrow \bar{\phi}_n(X) \in \F_p[X]$ image in $\F_p[X]$.\\
+Denote $n=mp^a$ with $\gcd(p,m)=1$, i.e. $a=k_p$.\\
+Remember $U_m^\times=\{\text{primitive } m-th \text{ roots of unity }\} \cong ((\Z/m\Z)^\times, \cdot) \quad (\zeta^k\leftrightarrow k)$.\\
+Use the isomorphism:
+\begin{align*}
+U_m^\times \times U_{p^a}^\times \to U_n \ , \ (\xi, \eta) \mapsto \xi \cdot \eta\\
+\Rightarrow \phi_n(X)=\prod_{g \in (\Z/n\Z)^\times} (X -\zeta^g) = \prod_{\substack{\xi \in U_m^\times,\\ \eta \in U_{p^a}^\times}} (X -\xi \eta)
+\end{align*}
+\underline{Step 1:} Show that $\phi_n(X) \equiv \phi_m(X)^{\varphi(p^a)} \mod p$
+\begin{enumerate}[(1)]
+\item Observe: $X^{p^a}-1 \equiv (X-1)^{p^a} \mod p$. For prime ideal $\hP$ over $(p)$:
+\[X^{p^a}-1 \equiv (X-1)^{p^a} \mod \hP\]
+Let $\eta_1, \dots, \eta_{\varphi(p^a)}$ be the primitve $p^a$-th roots of unity.\\
+$0=\eta_j^{p^a}-1 \equiv (\eta_j-1)^{p^a}\mod \hP \Rightarrow \eta_j \equiv 1 \mod \hP.$
+\item \begin{align*}
+\phi_n(X)&=\prod_{\substack{\xi \in U_m^\times,\\ \eta \in U_{p^a}^\times}} (X -\xi \eta)=\prod_{g \in (\Z/m\Z)^\times} (X -\xi)^{\varphi(p^a)} = \phi_m^{\varphi(p^a)} \mod \hP\\
+\Rightarrow \phi_n(X) &\equiv \phi_m(X)^{\varphi(p^a)} \mod p
+\end{align*}
+\end{enumerate}
+\underline{Step 2:} Use Lemma 10.5:\\ \todo{ennumeration seems here to be 1 to high in this document}
+Proof of Lemma 10.5 $\Rightarrow$ exponents of $\phi_m(X) \mod p$ are all 1 $\Rightarrow$ all exponents of $\phi_n(X) \mod p$ are $\varphi(p^a)$. The local degree of the prime factors are by Lemma 10.5
+\linebreak $f=\min\{k \in \N \ | \ p^k \equiv 1 \mod \underbrace{m}_{=n/p^a}\}$.
+\end{proof}
+
+\begin{Kor}
+\begin{enumerate}[i)]
+\item $p$ is ramified in $\Q(\zeta) \iff n \equiv 0 \mod p$ and we have \underline{not} $p=2=\gcd(4,n)$.
+\item $p \neq 2$. Then $p$ is totally split $\iff p \equiv 1 \mod n$.
+\end{enumerate}
+\end{Kor}
+
+\begin{proof}
+\begin{enumerate}[i)]
+\item Prop. 10.6 $\Rightarrow p$ is unramified $\iff e=1 \stackrel{Prop 10.6}{\iff} \varphi(p^{k_p})=1 \iff k_p=0$ or $p^{k_p}-p^{k_p -1} = p^{k_p -1} (p-1) = 1 \iff k_p=0$ or ($p=2$ and $2=\gcd(4,n)$).
+\item $p \neq 2: e=1 \iff k_p=0 \iff p \not | n$\\
+\hphantom{$p \neq 2:$} $f=1 \iff  \min\{k \ | \ p^k \equiv 1 \mod \frac{n}{p^k}\} =1 \iff p \equiv 1 \mod n$.
+\end{enumerate}
+\end{proof}
+
+\begin{Bem}
+We have now in particular proved I.2.2.
+\end{Bem}
+
+\chapter{Fermat's theorem for regular primes}
+\section{The proof using a lemma of Kummer}
+\underline{Setting:} $K$-number field, $\O=$ ring of integers\\
+\underline{Recall:} $\Jk:= $ group of fractional ideals, $\Pk=$ subgroup of principal ideals,\linebreak
+$\Cl_K=\Jk/\Pk, h_K=\#\Cl_K$
+
+\begin{defi}
+A prime $p \in \N$ is \underline{regular} $:\iff h_K$ is not divisible by $p$ where $K=\Q(\zeta_p)$.
+\end{defi}
+
+\begin{Bem}
+Suppose $p$ regular. Then we have for each ideal $I$ in $\O=$ ring of integers in $K$:\\
+If $I^p$ is a principal ideal, then $I$ is a principal ideal.
+\end{Bem}
+
+\begin{proof}
+$p \not | h_K \Rightarrow$ No element of $\Cl_K$ has order $p$.
+\end{proof}
+
+\underline{Recall:} (Lemma I.2.11) $x,y \in \Z, \gcd(x,y)=1, x +y \not \equiv 0 \mod p\\
+\Rightarrow x+\zeta^i y$ and $x+\zeta^j y$ are coprime, if $i \not \equiv j \mod p$.
+
+\begin{Satz}
+If $p$ is a regular prime, then Fermat's theorem holds, i.e.
+\[x^p+y^p=z^p \text{ in } \Z \Rightarrow xyz=0.\]
+\end{Satz}
+
+\underline{Recall:} \begin{enumerate}[(1)]
+\item $x^p+y^p=(x+y)(x+\zeta y)\cdot \dots \cdot (x+\zeta^{p-1}y)$ in $\Z[\zeta]$.
+\item $\lambda=1-\zeta$ is prime in $\O=\Z[\zeta]$
+\item $1-\zeta \sim 1-\zeta^g$ for all $g \not \equiv 0 \mod p$
+\end{enumerate}
+
+\begin{Lem}
+Suppose that $x,y \in \O$ with $x,y$ are coprime and $p$ does not divide $y$.\\
+Then we have: \underline{either} the ideals $(x+\zeta^i y)$ (with $i \in \{0, \dots, p-1\}$) are relatively prime\\
+\hphantom{Then we have: } \underline{or} they all have $(1-\zeta)$ as a common factor and the ideals $(\frac{x+\zetaî \cdot y}{1- \zeta})$ (with $i \in \{0, \dots, p-1\}$) are relatively prime.
+\end{Lem}
+
+\begin{proof}
+Use from the proof of Lemma I.2.11: Let $0 \leq j < i \leq p-1.\ A:=(x+\zetaî \cdot y, x+ \zeta^j \cdot y) \Rightarrow$
+\begin{enumerate}[(1)]
+\item $(1-\zeta)\cdot y \in A$
+\item $(1-\zeta )\cdot x \in A$
+\item $1- \zeta \in A$ and thus $p \in A$
+\item $x+y \in A$
+\end{enumerate}
+Suppose $q$ is a prime ideal with $q | (x+ \zeta^i \cdot y)$ and $q | (x+\zeta^j \cdot y)$.\\
+Hence $q \supseteq A \stackrel{(3)}{\ni} 1- \zeta \stackrel{1- \zeta \text{ prime}}{\Longrightarrow} q =(1- \zeta)$.\\
+Hence $q=(1-\zeta)$ is the only prime ideal which possibly divides $(x+\zeta^i \cdot y), (x+ \zeta^j\cdot y)$.\\
+Show: If $q=(1-\zeta)$ divides $(x+\zeta^i \cdot y)$, then it divides $(x+\zeta^{i+1} \cdot y)$.\\
+This follows from the following calculation: $x+\zeta^{i+1} \cdot y = x+\zeta^i \cdot y + \zeta^i(\zeta-1)\cdot y$\\
+Finally show: If $(1-\zeta)$ divides $x+\zeta^i \cdot y$, then the $(\frac{x+\zeta^i \cdot y}{1-\zeta})$ and $(\frac{x+\zeta^j \cdot y}{1-\zeta})$ are coprime for $0 \leq j < i \leq p-1$.\\
+Recall: $p \not | y \Rightarrow 1- \zeta \not | y$\\
+Proof: $x+\zeta^i \cdot y -(x+\zeta^j \cdot y)=\zeta^j \cdot y \underbrace{(\zeta^{i-j}-1)}_{\sim (\zeta-1)} \Rightarrow \frac{x+\zeta^i \cdot y}{1-\zeta}-\frac{x+\zeta^h \cdot y}{1-\zeta} \sim y$.\\
+But $(1-\zeta)\not | y \Rightarrow$ Claim.
+\end{proof}

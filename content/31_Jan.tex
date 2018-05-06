@@ -1,0 +1,132 @@
+\rhead{31 January 2018}
+\begin{Bem}
+$R$ now an arbitrary ring.\\
+The elements of $R$ define functions on $\Spec(R)$ as follows:
+\[f: p \mapsto f \mod p \in R_p/p=:\underbrace{\kappa(p)}_{\emph{\underline{\text{residue field of } p}}}\]
+\end{Bem}
+
+\begin{Bsp}
+$R=\Z, X=\Spec(\Z)=\{(p) \ | \ p \text{ prime } \} \cup \{(0)\}$. Observe:
+\begin{itemize}
+\item The $(p)$ are closed points.
+\item $\bar{\{(0=\}} = \Spec(\Z)$
+\end{itemize}
+\end{Bsp}
+
+
+\begin{defi}
+Let $U \subseteq \Spec(R)$ be an open subset. Define
+\begin{align*}
+\O(U):=\{s=(s_p)_{s \in U} \in \prod_{p \in U} R_p \ | \ & \forall p \ \exists U_p \text{ open nbhd. of } p \text{ and } f,g \in R \text{ with}:\\
+&\forall q \in U_p: \underbrace{g(q)}_{=g \mod q} \underbrace{\neq 0}_{\iff g \not \in q} \text{ and } s_q=\frac{f}{g} \text{ in } R_q\}
+\end{align*}
+Observe: $\O$ is a sheaf.
+\end{defi}
+
+\begin{defi}
+The pair $(\Spec R, \O)$ is called an \emph{\underline{affine scheme}}.\\
+It is called \emph{\underline{noetherian}} $\iff R$ is noetherian.\\
+Its \emph{\underline{dimension}} is the dimension of $R$.
+\end{defi}
+
+\begin{Bsp}
+\begin{enumerate}[i)]
+\item $R=k[V]$ for some affine variety $V$ with $k$ is algebraically closed\\
+$\Rightarrow V \hookrightarrow \Spec(R)$ as set of closed points.
+\item $R=K$ field $\Rightarrow \Spec(K)=\{(0)\}: \O(\{0\})=K$\\
+$\underline{/!\backslash} \Spec(K)$ as affine scheme depends on $K$.
+\item $R$ discrete valuation ring with maximal ideal $m \Rightarrow \Spec(R)=\{(0),m\}$\\
+Closed subsets: $\emptyset, \{m\}, \Spec(R)$\\
+Open subsets: $\Spec(R), \{0\}, \emptyset$\\
+$\O(\{0\})=\Quot(R), \O(\Spec(R))=R_m=R$ \todo{Bilder?}
+\end{enumerate}
+\end{Bsp}
+
+\begin{defi}
+For a one-dimensional (!) noetherian domain $R$ we say that the associated affine scheme ($\Spec R \O$) is \emph{\underline{regular}} $:\iff$ All local rings $R_p (p $ prime in $R, p \neq (0)$) are discrete valuation rings.
+\end{defi}
+
+\begin{Beob}
+For a domain $R$ we have: $(\Spec R, \O)$ is a noetherian, one-dimensional, regular affine scheme $\iff R$ is a Dedekind domain.
+\end{Beob}
+
+\section{A \glqq general\grqq example}
+\begin{Bsp}
+Consider $V_1:=V(f_\lambda) \subseteq \Aff^2(\C)$ with $f_\lambda=Y^2-X(X-1)(X-\lambda)$ and $\lambda \in \C \setminus \{0,1\}, V_2:\Aff^1(\C), f:V_1 \to V_2 \ , \ (x,y) \mapsto x$
+\[ \begin{tikzpicture}[scale=0.5]
+\draw[brown](-1.5,0) -- (2,0);
+\draw(0,-1.5) -- (0,2.5);
+\draw[smooth, domain=0:1, variable=\x,blue] plot ({\x},{sqrt(\x*(\x-1)*(\x-2))});
+\draw[smooth, domain=2:2.5, variable=\x,blue] plot ({\x},{sqrt(\x*(\x-1)*(\x-2))});
+\draw[smooth, domain=0:1, variable=\x,blue] plot ({\x},{-sqrt(\x*(\x-1)*(\x-2))});
+\draw[smooth, domain=2:2.5, variable=\x,blue] plot ({\x},{-sqrt(\x*(\x-1)*(\x-2))});
+\end{tikzpicture}
+\]
+\end{Bsp}
+
+\begin{Bem}
+\begin{enumerate}[i)]
+\item $x \in \Aff^1(\C)$ has two preimages $\iff x \not \in \{0,1,\lambda\}$
+\item $x \in \Aff^1(\C)$ has one preimage $\iff x \in \{0,1,\lambda\}$, namely $(x,0)$.
+\end{enumerate}
+\end{Bem}
+
+\begin{Bem}
+Recall: $\O_1:=\C[V_1]=\C[X,Y]/(f_\lambda), \O_2:=\C[V_2]=\C[X]$\\
+The map $f$ induces:
+\begin{enumerate}[i)]
+\item a morphism of $k$-algebras: $f^\star: \C[V_2] \to \C[V_1] \ , \ h \mapsto h \circ f$
+\item a morphism of fields: $f^\star: \Rat(V_2) = \Quot(\O_2) \hookrightarrow \Rat(V_1)=\Quot(\O_1)$ induced by $f^\star$ in i).
+\end{enumerate}
+\end{Bem}
+
+\begin{conc}
+Hence we have the following setting:
+\[
+\begin{tikzcd}
+\O_1 \arrow[r, hook] & \Quot(\O_1)=:K_1\\
+\O_2 \arrow[u, hook, "f^\star"] \arrow[r, hook] & \Quot(\O_2)=:K_2 \arrow[u, hook, "f^\star"]
+\end{tikzcd}
+\quad \quad 
+\begin{tikzcd}
+\ &V_1=\C \arrow[d, "f"]&\ \\
+\C(X) \arrow[u, hook, "f^\star"]&V_2=\Aff^1 \arrow[r, "h"]& \C \\
+\end{tikzcd}
+\]
+\begin{itemize}
+\item $\O_1$ and $\O_2$ are Dedekind domains
+\item $\Quot(\O_2)=\Quot(\C[X])=\C(X)$\\
+$\Quot(\O_1)=\Quot(\C[X,Y]/(f_\lambda)) =\C(X)(\alpha)$ with $\alpha$ has minimal polynomial $Y^2-X(X-1)(X-\lambda) \in \C(X)[Y]$
+\item $[K_1:K_2]=2$
+\end{itemize}
+\end{conc}
+
+Recall: points in $V_1$ resp. $V_2 \leftrightarrow $ mmaximal ideals in $\O_1$ resp. $\O_2$\\
+$f(a)=b \iff f^\star(m_b) \subseteq m_a \iff m_a$ lies above $m_b$.
+
+\[
+\begin{tikzcd}
+\C[X][\alpha)=\C[X,Y]/(f_\lambda) \arrow[draw=none]{r}[sloped,auto=false]{=} &\O_1 \arrow[r, hook] & \Quot(\O_1)=:K_1 \arrow[draw=none]{r}[sloped,auto=false]{=} & \C(X)(\alpha)\\
+(X-b) \subseteq \C[X] \arrow[draw=none]{r}[sloped,auto=false]{=} &\O_2 \arrow[u, hook, "f^\star"] \arrow[r, hook] & \Quot(\O_2)=:K_2 \arrow[u, hook, "f^\star"] \arrow[draw=none]{r}[sloped,auto=false]{=}&\C(X) 
+\end{tikzcd}
+\]
+
+\begin{Bem}
+Consider the prime ideal $(X-b)$ for $b \in \C$.\\
+Apply Prop. II.8.15: Observe $\O_1=\O_2[\alpha], f_\alpha(Y)=Y^2-X(X-1)(X-\lambda) \in \O_2[Y]$\\
+Consider image $\bar{f_\alpha} \in \O_2/(X-b) [Y] \stackrel{\text{evaluation map}}{\cong} \C [Y]$\\
+Hence $\bar{f_\alpha}=Y^2-b(b-1)(b-\lambda) \in \C[Y]=(Y- \sqrt{b(b-1)(b-\lambda)})(Y+\sqrt{b(b-1)(b-\lambda)})$.\\
+Prop. II.8.15. $\Rightarrow:$
+\begin{itemize}
+\item If $b \not \in \{0,1,\lambda\}: o\O_1=\hP_1 \cdot \hP_2$.\\
+Hence we have two prime ideals $\hP_1$ and $\hP_2$ lying above $p:=(X-b)$ and the ramification indices are $e_1=e_2=1$.\\
+Degree forumula: $2=e_1f_1+e_2f_2 \Rightarrow f_1=f_2=1$.
+\item If $b \in \{0,1,\lambda\}: p\O_1=\hP^2$.\\
+Hence we have one prime ideal $\hP$ over $p$ with ramification index 2 and $f=1$.
+\end{itemize}
+\end{Bem}
+
+\begin{Bem}
+Why is $f$ in the example $=1$?\\
+Recall: $f= \dim_{\O_2/\P} \O_1/\hP$ Here: $\O_2=k[V_2], p=\text{maximal ideal corresp. to a point } b. \Rightarrow \O_2/p\cong \C$. Same way: $\O_1/\hP \cong \C$.
+\end{Bem}

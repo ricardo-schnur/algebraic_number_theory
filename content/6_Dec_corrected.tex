@@ -1,0 +1,144 @@
+\rhead{06. Dezember 2017}
+
+Next, we will examine the example of the Gaussian integers $\Z[i]$. By \textbf{Proposition 2.10}, $\Z[i]$ is the ring of integers $\hO$ of the field extension $\Q[i] \mid \Q$. 
+
+\begin{remin}
+	\begin{enumerate}[(i)]
+		\item $\Z[i]$ is an euclidean ring $\Rightarrow$ $\Z[i]$ is a PID $\Rightarrow$ $\Z[i] $ is a UFD	
+		\item In particular, all prime ideals $\p = \gen{\pi}$ with $\pi$ prime.
+	\end{enumerate}
+\end{remin}
+
+\begin{Bem}
+	Let $R$ be a domain, $a,b \in R$. Then $\gen{a} = \gen{b} \Leftrightarrow$ $a$ and $b$ are associated.
+\end{Bem}
+\begin{proof}
+	"$\Rightarrow$": $\gen{a} = \gen{b} \Rightarrow \exists r,r' \in R: b = ra$ and $a = r'b \Rightarrow b = rr'b \Rightarrow (1-rr')b = 0 \overset{R \text{ domain}}{\Rightarrow} r,r' \in R^\times$.
+	
+	"$\Leftarrow$": $a = \epsilon b$ with $\epsilon \in R^\times \Rightarrow b = \epsilon^{-1}a \Rightarrow \gen{a} = \gen{b}$.
+\end{proof}
+
+\begin{Bem}
+	For $L = \Q[i]$ and $K = \Q$, we have
+	\begin{enumerate}[(i)]
+		\item $\Gal L \mid K = \left\lbrace \id, (a+bi \mapsto a-bi) \right\rbrace$
+		
+		\item $\NormL (a+bi) = (a+bi) \cdot (a-bi) = a^2 + b^2$.
+		
+		\item Since $\Z[i]$ is a UFD, an element is prime $\Leftrightarrow$ it is irreducible.
+		
+		\item $\Z[i]^\times = \set{\alpha \in \Z[i]}{\NormL (\alpha) = 1} = \left\lbrace 1, -1, i, -i \right\rbrace$.
+		
+		\item For $\alpha = a+bi$, its associated elements are $-a-bi$, $ai-b$, $-ai+b$.
+	\end{enumerate}
+\end{Bem}
+
+\begin{Prop}[Theorem of Wilson]
+	Let $p \in \Z$ be a prime number. Then:
+	\begin{enumerate}[(i)]
+		\item $(p-1)! \equiv -1 \mod p$.
+		
+		\item If  $p = 4n+1$ with $n \in \N$, then $(2n)!^2 \equiv -1 \mod p$ 
+	\end{enumerate}
+\end{Prop}
+\begin{proof}
+	\begin{enumerate}[(i)]
+		\item 	Since the statement is obvious for $p=2$, let $p > 2$. Consider $X^{p-1} - 1 \in \Z /p\Z[x]$Then $1, \dots, p-1$ are all zeroes and 
+		
+		\[	X^{p-1} - 1 = (x-1)\cdot (x-2) \cdot \dots \cdot (x-(p-1)) \in \Z/p\Z[X].	\]
+		
+		When we look at the constant term, we see that $-1 = (-1)^{p-1} \cdot (p-1)! = (p-1)!$
+		
+		\item $(-1) \equiv (p-1)! \equiv (4n)! = 1 \cdot 2 \cdot \dots \cdot 2n \cdot (p-1) \cdot \dots \cdot (p-2n) \equiv (2n)! \cdot (-1)^{2n} \cdot (2n)! \equiv (2n)!^2 \mod p$.
+	\end{enumerate}
+\end{proof}
+
+\begin{Prop}
+	If $p$ is a prime in $\Z$ with $p \equiv 1 \mod 4$, then $p$ is not a prime in $\Z[i]$.
+\end{Prop}
+\begin{proof}
+	Write $p = 4n+1$. By the Theorem of Wilson, we have $X^2 \equiv -1 \mod p$ for $x = (2n)!$. Then $p \vert X^2+1 = (x+i)(x-i) \in \Z[i]$, but $\frac{x \pm i}{p} \not\in \Z[i]$.
+\end{proof}
+
+\begin{Prop}
+	Each prime element $\pi \in \Z[i]$ is associated to one of the following prime elements of $\Z[i]$:
+	\begin{enumerate}[(1)]
+		\item $\pi = 1+i$.
+		
+		\item $\pi = a+bi$, with $a^2+b^2 = p$ prime in $\Z$ and $p \equiv 1 \mod 4$.
+		
+		\item $\pi = p$ prime in $\Z$ and $p \equiv3 \mod 4$.
+	\end{enumerate}
+\end{Prop}
+\begin{proof}
+	We proof the proposition in 3 steps.
+	\begin{enumerate}[Step 1:]
+		\item If $\pi$ is as in $(1)$ or $(2)$, then $\pi$ is prime. Suppose $\pi = \alpha\beta$. Then $p = \Norm(\pi) = \Norm(\alpha) \cdot \Norm(\beta) \in \Z$, so either $\Norm(\alpha) = 1$ or $\Norm(\beta) = 1$, i.e $\alpha$ or $\beta$ is a unit.
+		
+		\item  If $\pi$ is as in $(3)$, then $\pi$ is a prime in $\Z$. Suppose $\pi = \alpha\beta \in \Z[i]$. Then $p^2 = \Norm(\pi) = \Norm(\alpha)\cdot\Norm(\beta)$. If $\alpha,\beta \not\in \Z[i]^\times$, then $\Norm(\alpha) = \Norm(\beta) = p$. Write $\alpha = a +bi$. Then $p = \Norm(\alpha) = a^2+b^2\not\equiv 3 \mod 4$, since it is always $a^2+b^2 \equiv 0,1 \mod 4$, a contradiction.
+		
+		\item We have now shown, that the elements $(1)-(3)$ are prime. Let now $\pi_0 \in \Z[i]$ be a prime element. We wil show, that $\pi_0$ is associated to one of the three elements above. Look at $\Norm(\pi_0) = p_1 \cdot \dots \cdot p_r$ with $p_1 , \dots,p_r$ primes in $\Z$. Since $\pi_0$ is prime, it divides $p:=p_i, \quad 1 \leq i \leq r \Rightarrow \Norm(\pi_0)$ divides $\Norm(p) = p^2$, i.e $\Norm(\pi_0) = p$ or $p^2$.
+		\begin{enumerate}
+			\item[Case 1:] $\Norm(\pi_0) = p$. if $p = 2$, then $\pi_0 \in \left\lbrace 1+i, 1-i,-1+i,-1-1 \right\rbrace $, i.e $\pi_0$ is associated to $1+i$. If $p > 2$, then $p = \Norm(\pi_0) = a^2+b^2 \equiv 1 \mod 4 \Rightarrow \pi_0$ is associated to an element as in $(2)$.
+			
+			\item[Case 2:] $\Norm(\pi_0) = p^2 \Rightarrow \pi_0 \vert p^2 \Rightarrow \pi_0 \vert p \Rightarrow \frac{p}{\pi_0} \in \Z[i]$ and $\Norm(\frac{p}{\pi_0}) = \frac{\Norm(p)}{\Norm(\pi_0)} = \frac{p^2}{p^2} = 1$, i.e $\frac{p}{\pi_0}$ is a unit, hence $\pi_0$ is associated to $p$. By \textbf{Proposition 8.10}, $p \not\equiv 1 \mod 4$. Also $p \neq 2$, since $ 2 = (1+i)(1-i)$ is not prime in $\Z[i]$. Hence $p \equiv 3 \mod 4$ and $\pi_0$ is associated to an element as in $(3)$.
+		\end{enumerate}		
+	\end{enumerate}
+\end{proof}
+
+\begin{Kor}[Fermat]
+	\begin{enumerate}[(i)]
+		\item If p is prime then $p = a^2 + b^2 \Leftrightarrow p \not\equiv 3 \mod 4$
+		
+		\item $\forall n \in \N: \quad n = a^2+b^2 \Leftrightarrow \nu_p(n) $ is even for all primes $p \equiv 3 \mod 4$.
+	\end{enumerate}
+\end{Kor}
+\begin{proof}
+	\begin{enumerate}[(i)]
+		\item "$\Rightarrow$": Same as in Step 2 of \textbf{8.11}
+		
+		"$\Leftarrow$": If $p = 2$, then $2 = 1+1$. If $p \equiv 1 \mod 4$, then by \textbf{Proposition 8.10}, $p = \alpha\beta \in \Z[i]$ with $\Norm(\alpha) = \Norm(\beta) = p$. Write $\alpha = a +bi$ and get $p = \Norm(\alpha) = a^2 + b^2$.
+		
+		\item $"\Rightarrow$": $n = a^2+b^2 \Rightarrow n = \Norm(\alpha)$ with $\alpha = a+bi \in \Z[i]$. Write $\alpha = \epsilon \cdot \pi_1 \cdot \dots \cdot \pi_r \cdot \pi_{r+1}\cdot \dots \cdot \pi_{r+s}$ with $\pi_1, \dots, \pi_r$ as in $(3)$ and $\pi_{r+1}, \dots, \pi_{r+s}$ as in $(1)$ or $(2)$. Then $\Norm(\alpha) = \prod_{i=1}^r \Norm(\pi_i) = p_1^2 \cdot \dots p_r^2 \cdot p_{r+1} \cdot \dots \cdot p_{r+s}$ with $p_1, \dots, p_r \equiv 3 \mod 4$ and $p_{r+1}, \dots, p_{r+s} \not\equiv 3 \mod 4$.
+		
+		"$\Leftarrow$": $n = p_1^2 \cdot \dots \cdot p_r^2 \cdot p_{r+1} \cdot \dots \cdot p_{r+s}$ as above. By $(i)$, $p_j \not\equiv 3 \mod 4$ and hence $p_j = a_j^2+b_j^2$ for $r+1 \leq j \leq r+s$. Define $\alpha := p_1 \cdot \dots \cdot p_r \cdot (a_{r+1}+ib_{r+1})  \cdot \dots \cdot (a_{r+s} + ib_{r+s})$. Then $\Norm(\alpha) = n$.
+	\end{enumerate}
+\end{proof}
+
+\begin{Kor}
+	The prime ideals $\p_i$ in $\Z[i]$ that lie over a prime ideal $\p = \gen{p}$ in $\Z$ are obtained as follows:
+	\begin{enumerate}[(i)]
+		\item $p = 2 \Rightarrow \gen{2}\Z[i] = \gen{1+i}\gen{1-i} = \gen{1+i}^2$. Hence $r = 1$, $e_1 = 2$, $f_1 = 1$.
+		
+		\item $p \equiv 1 \mod 4 \overset{p = a^2+b^2}{\Longrightarrow} \gen{p}\Z[i] = \gen{a+bi}\gen{a-bi}$. Hence $r = 2$, $e_1 = e_2 =  1$, $f_1 = f_2 = 1$.
+		
+		\item $p \equiv 3 \mod 4 \Rightarrow \gen{p}\Z[i]$ is a prime ideal. Hence $r = 1$, $e_1 = 1$, $f_1 = 2$.
+	\end{enumerate}
+\end{Kor}
+\begin{proof}[]
+\end{proof}
+
+\bigskip
+
+\textbf{\underline{GOAL:}} Describe prime ideals explicitely for all simple extensions $L = K[\Theta]$ with $\Theta \in \hO$.
+
+\textbf{\underline{Caution:}} Before, we had $\Z[i] = \hO$. In general, we might have $\hO' := \O[\Theta] \subsetneq \hO$.
+
+\textbf{\underline{Idea:}} Take the largest ideal of $\hO$ which also lies in $\hO'$.
+
+\begin{defi}
+	The set $\F := \set{\alpha \in \hO}{\alpha\hO \subset \hO'}$ is called \textbf{conductor}.
+\end{defi}
+
+\begin{Bsp}
+	If $\hO = \Z[i]$ and $\Theta = i$, then $\hO' = \O[\Theta] \Rightarrow \F = \hO$.
+\end{Bsp}
+
+\begin{Prop}
+	In the situation above, let $f(X) := f_\Theta(X)$ be the minimal polynomial of $\Theta$. Let $\p$ be a prime ideal in $\O$ and $K := \O / \p$. consider the image $\bar f$ of $f$ in $K[X]$ and let $\bar f = \bar f_1^{e_1} \cdot \dots \cdot \bar f_f^{e_r}$ be the prime factorization in $K[X]$. Choose preimages $f_1, \dots, f_r \in \O[X]$. Then:
+	
+	If $\p$ is coprime to $F$, i.e $\p + \F \cap \O = \O$, then the ideals in $\hO$ which lie over $\p$ are given as follows: $\p_i := \p\hO + f_i(\Theta) \hO, \quad 1 \leq i \leq r$ and the local degree of $\p_i$ is equal to $\deg(\bar f_i)$.
+\end{Prop}
+\begin{proof}
+	Dec. 11th.
+\end{proof}
