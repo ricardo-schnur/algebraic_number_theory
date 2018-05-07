@@ -1,0 +1,117 @@
+\rhead{07 Mai 2018}
+
+\begin{Kor}
+In Satz 3 (Satz von Ostrawski) erhalte sogar Isomorphismus von normierten Körpern. Also $(K, |\cdot|)$ vollständiger Körper mit archimedischer Norm, dann:
+\[ (K,|\cdot|) \cong (\R, |\cdot|_\infty) \text{ oder } (\C, |\cdot|_\infty)\]
+\end{Kor}
+
+\begin{proof}
+Sei $(K,|\cdot|)$ ein solcher Körper. Im Beweis von Satz 3: $\R \hookrightarrow K$ mit Einbettung erhält die Norm. $K/ \R$ ist $\leq$ Grad 2 Erweiterung.\\
+Prop 6.8+ Prop 1.7 $\Rightarrow$ Behauptung.
+\end{proof}
+
+\begin{Lem}
+Sei $K$ ein Körper und $h: K \to \R_{\geq 0}$ Abbildung mit
+\[h(\alpha) = 0 \iff \alpha = 0 \text{ und } \forall \ \alpha,\beta: h(\alpha \beta) = h(\alpha)h(\beta)\]
+Dann sind äquivalent:
+\begin{itemize}
+\item $h$ erfüllt die verschärfte Dreiecksungleichung $\forall\ \alpha, \beta: h(\alpha+\beta) \leq \max\{h(\alpha), h(\beta)\}$
+\item Es gilt: $\forall \alpha \in K: h(\alpha) \leq 1 \Rightarrow h(\alpha+1) \leq 1$
+\end{itemize}
+\end{Lem}
+
+\begin{proof}
+\glqq $\Rightarrow$\grqq : mit $\beta=1$.\\
+\glqq $\Leftarrow$ \grqq : $\alpha=\beta=0$: \checkmark\\
+$\OE h(\alpha) \leq h(\beta)$ und $\beta \neq 0 \Rightarrow h(\frac{\alpha}{\beta})=\frac{h(\alpha)}{h(\beta)} \leq 1 \Rightarrow h(\alpha+\beta)=h(\beta)h(\frac{\alpha}{\beta}+1)\stackrel{Vor.}{\leq} h(\beta)\cdot 1 ) \max \{h(\alpha), h(\beta)\}.$
+\end{proof}
+
+\begin{proof}[Beweis von Satz 5]
+\begin{enumerate}[(A)]
+\item Falls $||\cdot||$ archimedisch, dann folgt Beh. aus:
+\begin{itemize}
+\item $\C$ ist algebraischer Abschluss von $\R$
+\item Kor. 6.9
+\item $|z|_\infty = \sqrt{z \bar{z}} = \sqrt[2]{|\mathcal{N}_{\C/\R}(z)|}$ für $z \in \C$.
+\end{itemize}
+\item Sei nun $||\cdot||$ nicht-archimedisch und $L/K$ endlich. Zeige, dass $\alpha \mapsto \sqrt[n]{||\NLK(\alpha)||}=:h(\alpha)$ Norm ist.
+\begin{enumerate}[(1)]
+\item $h(\alpha)=0=\NLK(\alpha)=0 \iff \alpha=0$
+\item $h(\alpha\beta)=h(\alpha)h(\beta)$
+\item Seien $\O=\{\alpha \in K \ | \ ||\alpha|| \leq 1 \}$ der BWR zu $||\cdot||$, und $\hO$ der ganze Abschluss von $\O$ in $L$.\\
+Lemma 6.6. $\Rightarrow$ $\hO=\{\alpha \in L \ | \ \NLK(\alpha) \in \O\} = \{\alpha \in L \ | \ h(\alpha) \leq 1\}$.\\
+Lemma 6.10. $\Rightarrow$ die verschärfte Dreiecksungleichung gilt.\\
+Prop. 6.8. $\Rightarrow$ Jede Fortsetzung der Norm auf $K$ nach $L$ ist äquivalent zu $h \Rightarrow$ Eindeutigkeit + Vollständigkeit.
+\end{enumerate}
+\item Sei nun $|| \cdot||$ nicht-archimedisch und $L/K$ algebraisch. Für $\alpha \in L$ wähle endlichen Zwischenkörper $E$ von $L/K$. Definiere $|\alpha|:=\sqrt[n]{||\mathcal{N}_{E/K}(\alpha)||}$, wobei $n:=[E:K]$.\\
+Dies ist wohldefiniert, da für $\alpha \in F=E_1 \cap E_2$ mit $n_i:=[E_i : F], d:=[F:K]$ gilt:
+\[\sqrt[n_1\cdot d]{|| \mathcal{N}_{E_1/K} (\alpha)||}=\sqrt[n_1\cdot d]{|| \mathcal{N}_{F/K}\underbrace{(\mathcal{N}_{E_1/F} (\alpha))}_{=\alpha^{n_1}}||}=\sqrt[d]{||\mathcal{N}_{F/K}(\alpha)||}=\sqrt[n_2\cdot d]{|| \mathcal{N}_{E_2/K}}\]
+Außerdem ist das eine Norm, da die Bedingungen auf allen endlichen Zwischenkörpern erfüllt ist.
+\end{enumerate}
+\end{proof}
+
+\begin{Kor}
+In der Situation von Satz 5 gilt für nicht-archimedische Körper $K$ und endliche KE $L/K$:
+\begin{enumerate}[(i)]
+\item Die Bewertung auf $K$ ist diskret $\iff$ die Bewertung auf $L$ ist diskret.
+\item $\hO:= \text{ der ganze Abschluss von }\O \text{ in }L \\
+\hphantom{\hO \,}= \{x \in L \ | \ \NLK(x) \in \O\}\\
+\hphantom{\hO \,}= \{x \in L \ | \ ||x|| \leq 1 \} = \{x \in L \ | \ \hat{\nu}(x) \geq 0\}$\\
+\[\begin{tikzcd}
+\p\hO=\hat{\p}^e \arrow[draw=none]{r}[sloped,auto=false]{\subset} & \hO \arrow[draw=none]{r}[sloped,auto=false]{\subset} &L\\ %\arrow[r, subset]
+\p \arrow[draw=none]{r}[sloped,auto=false]{\subset}  & \O \arrow[draw=none]{r}[sloped,auto=false]{\subset} \arrow[hook]{u}{\text{ganzer Abschluss}} &K \arrow[hook, swap]{u}{endlich}
+\end{tikzcd}\]
+
+Wir sind also im Setting von Algebraischer Zahlentheorie I:\\
+$\p$ ist eindeutiges Primideal $\neq 0$ in $\O$. Dieses hat ein \glqq Urbild\grqq \ $\hp$ in $\hO$ und es gilt also $\p\hO=\hp^e$.\\
+$\p$ ist also voll-verzweigt und der Trägheitsgrad bzw. lokale Grad ist $[\hat \kappa:\kappa]$ mit $\hat \kappa:=\hO/\hp, \kappa:=\O/\p$.
+\end{enumerate}
+\end{Kor}
+
+\begin{Bem}
+Seien $L/K$ Körpererweiterung von normierten Körpern mit nicht-archimedischer Norm.\\
+Notation: $\hat{v}, \hO, \hp, \hat{\kappa}$ zu $L$ wie immer, $v, \O, \p, \kappa$ zu $K$ wie immer.\\
+$L/K$ endlich $\Rightarrow [\hat{\kappa}: \kappa]$ endlich.
+\end{Bem}
+
+\begin{proof}
+Seien $\bar{x_1}, \dots, \bar{x_n} \in \hat{\kappa}= \hO/\hP$ linear unabhängig über $\kappa$.
+Wähle Urbilder $x_1, \dots, x_n \in \hO \subseteq L$ und zeige: diese sind linear unabhängig über $K$.\\
+Seien $c_1, \dots, c_n \in K$ mit $c_1 x_1 + \dots + c_nx_n=0$ nicht alle $0$.\\
+Durchmultiplizieren mit geeignetem $c\in K \Rightarrow \OE c_1, \dots, c_n \in \O$ und ein $c_i \not \in \p$\\
+$\Rightarrow \bar{c_1}\bar{x_1}+\dots+\bar{c_n}\bar{x_n}=0$ mit $\bar{c_i} \neq 0$ in $\hat{\kappa}$.
+\end{proof}
+
+\section{Lokale Körper}
+\begin{defi}
+\begin{enumerate}[i)]
+\item Ein Körper $K$ heißt \textbf{\underline{globaler Körper}} $:\iff$\\
+$K$ ist Zahlkörper, d.h. endliche Erweterung von $\Q$, oder\\
+$K$ ist endliche Erweterung von $\F_q(T)=\Quot(F_q[T])$ mit $F_q=$ Körper mit $q$ Elementen.
+\item Ein Körper $K$ heißt \textbf{\underline{lokaler Körper}} $: \iff$\\
+$K$ ist bezüglich der Norm von einer nicht-archimedischen Bewertung $v$ vollständig, $v$ ist diskret und der Restklassenkörper $\kappa$ ist endlich.
+\end{enumerate}
+\underline{Notation:} Für $K$, Bwertung $v$, $\O$, $|\cdot|=r^{-v(\cdot)}$ mit $r >1, \p, \kappa=\O/\p$
+\end{defi}
+
+\begin{Prop}
+Sei $K$ lokaler Körper. Betrachte die von $|\cdot|$ indzierte Topologie auf $K$. Dann ist $\O$ kompakt und $K$ lokal kompakt.
+\end{Prop}
+
+\begin{Err}
+Sei $(X,T)$ ein topologischer Raum der hausdorffsch ist. Dann ist $(X,T)$ lokal-komtakt $\iff$\\
+$\forall \ x \in X \exists$ Umgebung $C$ von $x$, die kompakt ist, d.h.\\
+$\forall \ x \in X \exists \ \U \in T, C$ kompakt mit $x \in U \subseteq C$.\\
+\danger Für nicht hausdorffsche Räume gibt es unterschiedliche Definitionen. %$\hat{\underline{/!\bs}}$
+\end{Err}
+
+\begin{proof}
+Erinnerung: Für die Kette $ \O \supset \p \supset \p^2 \supset \p^3 \supset \dots$ gilt:\\
+$\p^k/\p^{k+1} \cong \O/\p = \kappa$ endlich.\\
+Aus $\O/\p$ endlich folgt, dass $\O/\p^n$ endlich für alle $n \in \N$.\\
+$\Rightarrow \prod_{n \in \N} \O/p^n$ ist kompakt (Satz von Tychonoff).\\
+$\O \cong \lim_{\stackrel{\leftarrow}{n}} \O/\p$ ist abgeschlossen in $\prod_n \O/\p^n$ und damit ebenfalls kompakt.\\
+Außerdem: $\O$ ist offen in $K$, denn:\\
+$x \in \O \iff |x| \leq 1 \iff v(x) \geq 0 \stackrel{\OE v(K)=\Z\cup \{\infty\}}{\iff} v(X) >-1 \iff |x|<r^{-1} \Rightarrow \O$ ist offene Kreisscheibe um 0.\\
+$\Rightarrow a \in K$ ist also $a+\O$ eine offene und kompakte Umgebung und somit $K$ lokal kompakt.
+\end{proof}
