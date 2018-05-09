@@ -1,0 +1,98 @@
+\rhead{9. Mai 2018}
+
+\begin{Bem}
+Sei $L$ ein lokaler Körper mit Restklassenkörper $\kappa$ mit $q$ Elementen. Dann enthält $L$ alle $(q-1)$-ten Einheitswurzeln, d.h. $X^{q-1}-1$ zerfällt über $L$ in Linearfaktoren.
+\end{Bem}
+
+\begin{proof}
+Mit Hensels Lemma genau wie in Bsp. 6.4.
+\end{proof}
+
+\begin{Satz}[BESTIMMUNG ALLER LOKALEN KÖRPER]
+$L$ ist lokaler Körper $\iff L$ ist endliche Erweiterung von $\Q_p$ oder $\F_p((T))$.
+\end{Satz}
+
+\begin{Lem}
+Sei $K$ vollständig nicht-archimedisch. Sei $L/K$ Körpererweiterug normierter Körper mit diskreter Bewertung $\hat v$. Insbesondere $\hat v|_K=v$ soll nicht trivial sein.
+Falls $[\hat \kappa: \kappa]$ endlich ist, dann ist $\hO$ ein endlich erzeugter $\O$-Modul und damit $[L:K]$ endlich.
+\end{Lem}
+
+\[\begin{tikzcd}
+(\hat \Pi)=\hP & \hat \kappa & \hO \arrow[l] \arrow[draw=none, auto=falsem sloped]{r}{\subset} & L & \hat v \to \Z\\
+(\Pi)=\p & \kappa \arrow[hook]{u} & \O \arrow[dash]{u} \arrow[l] \arrow[draw=none, auto=false, sloped]{r}{\subset} & K \arrow[dash]{u} &  v \to e\Z
+\end{tikzcd}\]
+
+\begin{proof}
+\underline{Vorüberlegung:} Normiere $\hat v$ so, dass $\hat v(L^\times)=\Z$. Dann ist $v(K^\times)$ eine Untergruppe $e\Z$ von $\Z$.
+$\Rightarrow v(\hat \Pi)1$ und $v(\Pi)=e$ und damit $\Pi=\varepsilon \hat \Piê$ mit $\varepsilon \in \hO^\times \Rightarrow \hPê=\p\hO$.\\
+Seien $\bar{w_1}, \dots, \bar{w_f}$ eine Basis von $\hat \kappa$ über $\kappa$ und $w_1, \dots, w_f$ Urbilder in $\hO$.\\
+.\\
+\underline{Ansatz:} $M:=\O w_1+\O w_2+\dots+\O w_f+\O w_1\hat \Pi+\dots+\O w_f\hat\Pi+\dots+\O w_1\hat\Pi^2+\dots+\O w_1\hat\Pi^{e-1}+\dots+\O w_f\hat\Pi^{e-1}$.\\
+Zeige: $M=\hO$.\\
+\underline{Schritt 1:} Zeige: $\hO=M+\p\O$\\
+Sei $N:=\O w_1+\O w_2+\dots+\O w_f$ und somit $M=N+N\hat\Pi+\dots+ N\hat\Pi^{e-1}$.\\
+Verwende: $\hO=N+\hO \hat \Pi$ wegen $\bar{w_1}, \dots, \bar{w_f}$ ist Basis von $\hat \kappa/\kappa$\\
+$\Rightarrow \hO = N+\hO \hat \Pi = N + (N+\hO)\hat{\Pi}= N+N\hat{\Pi}+ \hO\hat{\Pi}= \dots = N+N\hat{\Pi}+\dots +N\hat{\Pi}^{e-1}+\hO \hat{Pi}^e=M+\hO\p$.\\
+\underline{Schritt 2:} Zeige $\hO=M$\\
+Verwende: $\p^k\cdot M \subseteq M$ für $k \in \N_0$, da $\p^k \subseteq \O$.\\
+$\hO = M + \p\hO = M+\p(M+\p\hO)=M+\p^2\hO=\dots=M+\p^k\hO$ für alle $k \geq 1$\\
+$\Rightarrow M$ liegt dicht in $\hO$.
+
+\begin{tikzcd}
+&&L&\\
+\O^n \arrow[draw=none, sloped, auto=false]{r}{\cong}&M \arrow[draw=none, sloped, auto=false]{r}{\subset}& M\otimes_\O K  \arrow[hook]{u} \arrow[draw=none, sloped, auto=false]{r}{=:} &V\\
+&\O \arrow[hook]{u} \arrow[draw=none, sloped, auto=false]{r}{\subset} & K \arrow[hook]{u}&
+\end{tikzcd}
+$V:=M \otimes_\O K$ (endlich dimensionaler $K$-Vektorraum) und Prop. 6.8. $\Rightarrow V$ ist homöomorph zu $K^d$ für ein $d$.\\
+$\Rightarrow M \cong \O^n$ und ist damit abgeschlossen in $\hO \Rightarrow M=\hO$.\\
+\underline{Schritt 3:} $[L:K]$ ist endlich: Übungsaufgabe.
+\end{proof}
+
+\begin{proof}[Beweis von Satz 6]
+$\glqq \Leftarrow \grqq:$ Sei $K:=\Q_p$ oder $K=\F_p((T))$ und $L/K$ endliche Körpererweiterung.\\
+Def. 3.12+Aufgabe 2 (Blatt 3) $\Rightarrow K$ ist vollständig $\stackrel{\text{Satz 5}}{\Longrightarrow} L$ ist vollständig.\\
+Kor. 6.11 $\Rightarrow$ Norm auf $L$ gehört zu diskreter Bewertung.
+Bem. 6.12 $\Rightarrow$ $[\hat \kappa: \kappa]$ ist endlich $\stackrel{\kappa \text{ endlich}}{\Longrightarrow} \hat \kappa$ endlich $\Rightarrow L$ ist lokaler Körper.\\
+$\glqq \Rightarrow\grqq:$ Sei $L$ lokaler Körper mit diskreter Bewertung $\hat v, \hO, \hP, \hat \kappa$ wie immer.\\
+\underline{Fall 1:} $\ch(L)=0 \Rightarrow$ Habe Einbettung $\Q \hookrightarrow L$.\\
+\underline{Zeige:} $\hat{v}|_\Q$ ist nicht trivial:\\
+Sei $p:=\ch(\hat{\kappa}) \Rightarrow \hO \ni \underbrace{1+\dots+1}_{p-\text{mal}} \in \hP \Rightarrow v(p) >0$. Es folgt: $v|_\Q=v_p$.\\
+$\Rightarrow$ Erhalte Einettung $\Q_p \hookrightarrow L$, da $L$ vollständig.\\
+Lemma 7.5 $\Rightarrow L/\Q_p$ ist endlich.\\
+
+\underline{Fall 2:} $\ch(L)\neq 0 \Rightarrow \ch(\L)=\ch(\hat \kappa)=:p$.\\
+\begin{enumerate}[(1)]
+\item \underline{Zeige:} $\kappa \hookrightarrow L$\\
+$\kappa = \F_p(\alpha)$ mit $\alpha$ hat separables Minimalpolynom $f_\alpha \in \F_p[X]$.\\
+Hensels Lemma $\Rightarrow f_\alpha$ hat Nullstelle $x_0$ in $L$.\\
+$\Rightarrow \alpha \mapsto x_0$ induziert eine Einbettung $\iota: \hat \kappa = \F_P(\alpha) \hookrightarrow L$.
+\item Zeige: $L \cong \kappa((T))$.\\
+Prop. 5.8 $\Rightarrow$ Ist $R \subseteq \hO$ ein Repräsentantensystem von $\hO/\hP=\hat \kappa$, dann lässt sich jedes Element aus $L$ auf eindeutige Weise als Laurent-Reihe $\sum_{k=m}^\infty a_m \hat{\Pi}^m$ mit $a_m \in R$ beschreiben. Wähle $R:=\Bild(\iota) \Rightarrow$ Erhalte Isomorphismus $L \cong \hat{\kappa}((T))$.
+\item $\hat \kappa((T))$ ist endliche Körpererweiterung von $\F_p((T)) \rightarrow$ siehe Blatt 3. Aufgabe 2.
+\end{enumerate}
+\end{proof}
+
+ZIEL: Beschreibe $K^\times$ für lokalen Körper $K$.\\
+Sei ab jetzt stets $K$ lokaler Körper.
+
+\begin{Bem}
+Sei $\kappa$ der Restklassenkörper von $K$ mit $q=p^a$ Elementen.
+\begin{enumerate}[(1)]
+\item $\mu_{q-1}=$ Gruppe der $(q-1)$-ten Einheitswurzeln $\cong \F_q^\times \cong \Z/(q-1)\Z$.
+\item $U^{(1)}=1+p$ und
+\item $(\Pi)=\{\Pi^k \ | \ k \in \Z\}\cong \Z$ ($\Pi$ ist Erzeuger von maximalen Ideal $\p$ in $\O$)
+\end{enumerate}
+sind Untegruppen von $K^\times$.
+\end{Bem}
+
+\begin{Prop}
+$K^\times \cong (\Pi) \times \mu_{q-1} \times U^{(1})$
+\end{Prop}
+
+\begin{proof}
+\begin{enumerate}[(1)]
+\item $x \in K^\times \Rightarrow x= \varepsilon \Pi^k$ mit $\varepsilon \in \O^\times$ und $k \in \Z$ auf eindeutige Weise $\Rightarrow$ Erhalte Isomorphismus $(\Pi)\times \O^\times \to K^\times \ , \ (\Pi^k,\varepsilon) \mapsto \varepsilon \Pi^k$.
+\item Sei $\varphi: \O^\times \to \kappa^\times \ , \ x \mapsto x \mod \p$.\\
+Es ist $\Kern(\varphi)=U^{(1)}$. Außerdem: $\alpha:=\phi|_{\mu_{q-1}}: \mu_{q-1} \to \kappa^\times$ ist Isomorphismus\\
+$\Rightarrow$ Erhalte Isomorphismus $\mu_{q-1}\times U^{(1)} \to \O^\times \ , \ (\omega , \alpha) \mapsto \omega \alpha$.
+\end{enumerate}
