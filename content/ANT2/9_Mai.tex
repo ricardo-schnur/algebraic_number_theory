@@ -18,13 +18,13 @@ Falls $[\hat \kappa: \kappa]$ endlich ist, dann ist $\hO$ ein endlich erzeugter 
 \end{Lem}
 
 \[\begin{tikzcd}
-(\hat \Pi)=\hP & \hat \kappa & \hO \arrow[l] \arrow[draw=none, auto=falsem sloped]{r}{\subset} & L & \hat v \to \Z\\
-(\Pi)=\p & \kappa \arrow[hook]{u} & \O \arrow[dash]{u} \arrow[l] \arrow[draw=none, auto=false, sloped]{r}{\subset} & K \arrow[dash]{u} &  v \to e\Z
+(\hat \Pi)=\hP & \hat \kappa & \hO \arrow[l] \arrow[draw=none]{r}[auto=false, sloped]{\subset} & L & \hat v \to \Z\\
+(\Pi)=\p & \kappa \arrow[hook]{u} & \O \arrow[dash]{u} \arrow[l] \arrow[draw=none]{r}[auto=false, sloped]{\subset} & K \arrow[dash]{u} &  v \to e\Z
 \end{tikzcd}\]
 
 \begin{proof}
 \underline{Vorüberlegung:} Normiere $\hat v$ so, dass $\hat v(L^\times)=\Z$. Dann ist $v(K^\times)$ eine Untergruppe $e\Z$ von $\Z$.
-$\Rightarrow v(\hat \Pi)1$ und $v(\Pi)=e$ und damit $\Pi=\varepsilon \hat \Piê$ mit $\varepsilon \in \hO^\times \Rightarrow \hPê=\p\hO$.\\
+$\Rightarrow v(\hat \Pi)=1$ und $v(\Pi)=e$ und damit $\Pi=\varepsilon \hat \Pi^e$ mit $\varepsilon \in \hO^\times \Rightarrow \hPê=\p\hO$.\\
 Seien $\bar{w_1}, \dots, \bar{w_f}$ eine Basis von $\hat \kappa$ über $\kappa$ und $w_1, \dots, w_f$ Urbilder in $\hO$.\\
 .\\
 \underline{Ansatz:} $M:=\O w_1+\O w_2+\dots+\O w_f+\O w_1\hat \Pi+\dots+\O w_f\hat\Pi+\dots+\O w_1\hat\Pi^2+\dots+\O w_1\hat\Pi^{e-1}+\dots+\O w_f\hat\Pi^{e-1}$.\\
@@ -37,12 +37,12 @@ $\Rightarrow \hO = N+\hO \hat \Pi = N + (N+\hO)\hat{\Pi}= N+N\hat{\Pi}+ \hO\hat{
 Verwende: $\p^k\cdot M \subseteq M$ für $k \in \N_0$, da $\p^k \subseteq \O$.\\
 $\hO = M + \p\hO = M+\p(M+\p\hO)=M+\p^2\hO=\dots=M+\p^k\hO$ für alle $k \geq 1$\\
 $\Rightarrow M$ liegt dicht in $\hO$.
-
+\[
 \begin{tikzcd}
 &&L&\\
-\O^n \arrow[draw=none, sloped, auto=false]{r}{\cong}&M \arrow[draw=none, sloped, auto=false]{r}{\subset}& M\otimes_\O K  \arrow[hook]{u} \arrow[draw=none, sloped, auto=false]{r}{=:} &V\\
-&\O \arrow[hook]{u} \arrow[draw=none, sloped, auto=false]{r}{\subset} & K \arrow[hook]{u}&
-\end{tikzcd}
+\O^n \arrow[draw=none]{r}[auto=false, sloped]{\cong}&M \arrow[draw=none]{r}[auto=false, sloped]{\subset}& M\otimes_\O K  \arrow[hook]{u} \arrow[draw=none]{r}[auto=false, sloped]{=:} &V\\
+&\O \arrow[hook]{u} \arrow[draw=none]{r}[auto=false, sloped]{\subset} & K \arrow[hook]{u}&
+\end{tikzcd}\]
 $V:=M \otimes_\O K$ (endlich dimensionaler $K$-Vektorraum) und Prop. 6.8. $\Rightarrow V$ ist homöomorph zu $K^d$ für ein $d$.\\
 $\Rightarrow M \cong \O^n$ und ist damit abgeschlossen in $\hO \Rightarrow M=\hO$.\\
 \underline{Schritt 3:} $[L:K]$ ist endlich: Übungsaufgabe.
@@ -79,7 +79,7 @@ Sei ab jetzt stets $K$ lokaler Körper.
 Sei $\kappa$ der Restklassenkörper von $K$ mit $q=p^a$ Elementen.
 \begin{enumerate}[(1)]
 \item $\mu_{q-1}=$ Gruppe der $(q-1)$-ten Einheitswurzeln $\cong \F_q^\times \cong \Z/(q-1)\Z$.
-\item $U^{(1)}=1+p$ und
+\item $U^{(1)}=1+\p$ und
 \item $(\Pi)=\{\Pi^k \ | \ k \in \Z\}\cong \Z$ ($\Pi$ ist Erzeuger von maximalen Ideal $\p$ in $\O$)
 \end{enumerate}
 sind Untegruppen von $K^\times$.
