@@ -21,14 +21,17 @@ mit $t_k=a_0+a_1+\dots+a_r$ für $k=\sum_{i=0}^r a_i p^i$.
 
 \begin{proof}
 Lemma 7.14 $\Rightarrow \hat{v}(k!)= e v_p(k!)=\frac{e}{p-1}(k-t_k)$\\
-$\Rightarrow \hat{v}(\frac{x^k}{k!}=k \hat{v}(x)-\hat{v}(k!)=k(\hat{v}(x)-\frac{e}{p-1})+\frac{e}{p-1}t_k$
+$\Rightarrow \hat{v}(\frac{x^k}{k!})=k \hat{v}(x)-\hat{v}(k!)=k(\hat{v}(x)-\frac{e}{p-1})+\frac{e}{p-1}t_k$
 \end{proof}
 
 \begin{proof}[Beweis von Prop. 7.13]
-%$n>\frac{e}{p-1} \begin{tikzpicture}
-%\draw[->, out=10, in=170]{\log} (0,0) \node{U^{(n)} -- (1,1) \node{\hP^n} -- [out=190, in=350]{\exp} (0,0);
-%\end{tikzpicture}$
-\todo{Bild!}
+$n>\frac{e}{p-1}$\\
+\begin{tikzpicture}[scale=3]
+\node[left] at (0,0){$U^{(n)}$};
+\node[right] at (1,0) {$\hP^n$};
+\draw[->] (0,0.1) to [out=20, in=160] node[above]{$\log$} (1,0.1);
+\draw[->] (1,-0.1) to[out=200, in=340] node[below]{$\exp$} (0,-0.1);
+\end{tikzpicture}
 \begin{enumerate}[(1)]
 \item \underline{Zeige:} $\sum_{k=0}^\infty \frac{x^k}{k!}$ konvergent für $x \in \hP^n$ mit $n>\frac{e}{p-1}$\\
 Lemma 7.16 $\Rightarrow \hat{v}(\frac{x}{k!}>\frac{e}{p-1}t_k$, da $\hat{v}(x) \geq n > \frac{e}{p-1} \Rightarrow \hat{v}(\frac{x}{k!}) \to \infty$
