@@ -1,0 +1,132 @@
+\rhead{13 December 2017}
+
+\hspace*{4cm}$\hat \O \mathcal{P}  = \hat{\mathcal P}_1^{e_1} \cdot \dots \cdot \hat{\mathcal P}_r^{e_r}$ \quad \quad 
+\begin{tikzcd}
+\hat{\mathcal P} \arrow[draw=none]{r}[sloped,auto=false]{\subseteq} & \hat \O  \arrow[draw=none]{r}[sloped,auto=false]{\subseteq} &L\\
+\mathcal P \arrow[u, hook] \arrow[draw=none]{r}[sloped,auto=false]{\subseteq} &  \O \arrow[u, hook]  \arrow[draw=none]{r}[sloped,auto=false]{\subseteq} & K \arrow[u, hook]\\
+\end{tikzcd}
+
+\begin{Prop}
+There are only finitely many prime ideals $\hat{\mathcal P}$ in $\hat \O$ which are ramified over $\mathcal{P}= \hat{\mathcal P} \cap \O$.
+\end{Prop}
+
+\begin{proof}
+Choose primitive element $\theta$ of $L | K$ in $\hO$. Let $f_\theta \in \O[X]$ be the minimal polynomial of $\theta$ and $d:=\discr(f_\theta)=\discr(1, \theta, \ldots, \theta^{n-1})=\prod_{i <j}(\theta_i-\theta_j)^2 \in \O$.\\
+Here $\theta_i, \theta_j$ are the zeroes of $f_\theta$ in the algebraic closure.\\
+\underline{Claim:} If $\PP$ is a prime ideal in $\O$ s.t.
+\begin{itemize}
+\item $\PP$ is coprime to $(d)$ and
+\item $\PP$ is coprime to $\F \cap \O$
+\end{itemize}
+then $\PP$ is unramified, i.e. all $\hP$ lying above $\PP$ are unramified.\\
+From the claim we obtain that there are only finitely many $\PP$ which allow ramification.
+\underline{Proof of the claim:} Write $\hO\PP=\hP_1^{e_1}\cdot \dots \cdot \hP_r^{e_r}$. Consider $\bar{f}_\theta\in \O/\PP[X].$ As in Prop. 8.15
+\[\bar{f}_\theta = \bar{f}_1^{e_1} \cdot \ldots \cdot \bar{f}_r^{e_r} \quad  (\star)\]
+a prime decomposition. $(d)$ and $\PP$ are coprime $\Rightarrow \bar{d}=$ image of $d$ in $\O/\PP \neq 0 \Rightarrow \bar{f}_\theta$ has only single zeroes in an algebraic closure of $\O/\PP \stackrel{(\star)}{\Rightarrow} e_1=\dots=e_r=1$
+\end{proof}
+
+\begin{defi}\ \vspace*{-\baselineskip} \\
+\begin{itemize}
+\item $\PP$ is said to \emph{\underline{split completly}} or to be \emph{\underline{totally split}} $:\iff e_i=f_i=1 \ \forall i \in \underline{r}$.
+\item $\PP$ is said to be \emph{\underline{indecomposed}}, \emph{\underline{nonsplit}} or \emph{\underline{totally ramified}} $:\iff r=1$.
+\end{itemize}
+\end{defi}
+
+\section{Hilbert's theorem of ramification}
+\underline{Idea:} Consider Galois extensions $L|K \to $ life becomes much nicer.\\
+Same setting as in 8. Suppose further that $L|K$ normal and consider $G=\Gal(L|K)$.
+
+\begin{Bem}
+\begin{enumerate}[i)]
+\item $\hP$ prime ideals in $\hO$ with $\PP:=\hP \cap \O$. For $\sigma \in \Gal(L|K)$ we have $\sigma(\hP)$ is a prime ideal in $\hO$ above $\PP$.
+\item $\Gal(L|K)$ acts transitively on the set of prime ideals $\hP$ in $\hO$ over $\PP$.
+\end{enumerate}
+\end{Bem}
+
+\begin{proof}
+\begin{enumerate}[i)]
+\item Recall from Rem 2.1 iii) that $\sigma(\hO) = \hO$\\
+$\Rightarrow \sigma(\hP)$ is again a prime ideal in $\hO$.\\
+$\sigma(\hP) \cap \O = \sigma(\hP \cap \O) = \sigma(\PP) = \PP\\
+\Rightarrow \sigma(\hP)$ lies above $\PP$.
+\item follows from i) that we have such an action. Let $\hP$ and $\hP'$ be prime ideals above $\PP = \hP \cap \O = \hP' \cap \O$. Assume that $\hP$ and $\hP'$ are not in the same $G$-orbit. Hence $\hP'$ and $\sigma(\hP)$ are coprime for each $\sigma \in G.\\
+\Rightarrow \hP'$ is coprime to $\sigma_1(\hP) \cdot \ldots \cdot \sigma_n(\hP)$, where $G= \{\sigma_1, \dots, \sigma_n\}$.\\
+CRT $\Rightarrow \exists x \in \hO$ with $x \equiv 0 \mod \hP'$ and $x \equiv 1 \mod \sigma (\hP)$ for all $\sigma \in G$.\\
+In particular: $\NormL(x)=\prod_{\sigma \in G} \sigma(x) \in \hP' \cap \O = \PP$\\
+Also: $\forall \sigma \in G: x \not\in \sigma(\hP) \Rightarrow \forall \sigma \in G: \sigma(x) \not\in \PP\\
+ \Rightarrow \NormL(x)=\prod_{\sigma \in G} \sigma(x) \not\in \hP \cap \O = \PP$ \Lightning.
+\end{enumerate}
+\end{proof}
+
+\begin{defi}
+Let $\hP$ be a prime ideal of $\hO$ above $\PP$.
+\begin{enumerate}[i)]
+\item $\GP := \Stab_G(\hP)=\{\sigma \in G \ | \ \sigma(\hP)=\hP\}$ is called \emph{\underline{decomposition group}} (\glqq Zerlegungsgruppe\grqq)
+\item $\ZP := \{ x \in L \ | \ \sigma(x) = x \text{ for all } \sigma \in \GP\}$ is called \emph{\underline{decomposition field}} (\glqq Zerlegungskörper\grqq)
+\end{enumerate}
+\end{defi}
+
+\begin{Bem}
+Let $\hP_0$ be a prime ideal which lies above $\PP$.
+\begin{enumerate}[i)]
+\item $G/G_{\hP_0}:=\{gG_{\hP_0} \ | \ g \in G\} \stackrel{1:1}{\leftrightarrow} \{\hP \ | \ \hP \text{ lies above } \PP\}$
+\item $G_{\hP_0}=\{1\} \iff [G:G_{\hP_0}]=[L:K]=n \hspace*{4cm} (r=[G:G_{\hP_0}])\\
+ \phantom{G_{\hP_0}=\{1\}}\iff \PP$ is totally split $\\
+ \phantom{G_{\hP_0}=\{1\}}\iff Z_{\hP_0} =L$
+\item $G_{\hP_0}=G \iff [G:G_{\hP_0}]=1 \iff \PP$ is nonsplit $\iff Z_{\hP_0} =K$
+\item $G_{\sigma(\hP_0)}=\sigma \circ G_{\hP_0} \circ \sigma^{-1}$
+\end{enumerate}
+\end{Bem}
+\begin{proof}
+Follows from Prop 9.1 + definitions + group actions.
+\end{proof}
+
+\begin{Bem}
+Suppose $\PP \hO = \hP_1^{e_1}\cdot \dots \cdot \hP_r^{e_r}$ with local degrees $f_i=[\hO/\hP_i : \O/\PP]$\\
+Then $e_1=\dots=e_r$ and $f_1=\dots=f_r$.
+\end{Bem}
+\begin{proof}
+Prop. 9.1 $\Rightarrow \exists \sigma_i \in G$ s.t. $\sigma_i(\hP_1)=\hP_i$\\
+$\Rightarrow \hO/\hP_1 \cong \hO/\hP_i \ , \ a \mod \hP_1 \mapsto \sigma_i(a) \mod \hP_i$ as $k=\O/\PP$-vectorspaces $\Rightarrow f_1=f_i$ and $\hP_i^k \supseteq \PP\hO \iff \hP_i^k = (\sigma_i(\hP_1))^k \supseteq \PP\hO=\sigma_i(\PP \hO) \Rightarrow e_i = e_1$.
+\end{proof}
+
+Consider the field extensions $K \subseteq \ZP \subseteq L$. We have:\\
+\[ \begin{tikzcd}
+ &	\hP	\arrow[draw=none]{r}[sloped,auto=false]{\subseteq} & \hO \arrow[draw=none]{r}[sloped,auto=false]{\subseteq} & L\\
+ \hP_Z \arrow[draw=none]{r}[sloped,auto=false]{:=} & \hP \cap \ZP \arrow[dash]{u} \arrow[draw=none]{r}[sloped,auto=false]{\subseteq} &\hO\cap \ZP \arrow[dash]{u} \arrow[draw=none]{r}[sloped,auto=false]{\subseteq} & \ZP \arrow[dash]{u} \\
+ & \PP \arrow[dash]{u} \arrow[draw=none]{r}[sloped,auto=false]{\subseteq} & \O \arrow[dash]{u} \arrow[draw=none]{r}[sloped,auto=false]{\subseteq} &K \arrow[dash]{u}
+\end{tikzcd}
+\]
+Observe $\hO \cap \ZP$ is the integral closure of $\O$ in $\ZP$.
+
+\begin{Prop}
+Suppose $\PP \hO = (\prod_\sigma \sigma(\hP))^e$ with local degree $f$.
+\begin{enumerate}[i)]
+\item $\hP_Z$ is non-split in $\hO$, i.e. $\hP$ is the only prime ideal above $\hP_Z$.
+\item $\hP/\hP_Z$ has ramification index $e$ and local degree $f$.
+\item $\hP_Z/\PP$ has ramification index 1 and local degree 1, i.e. $\hP_Z/\PP$ is totally split.
+\end{enumerate}
+\end{Prop}
+
+\begin{proof}
+\begin{enumerate}[i)]
+\item $\ZP = L^{\GP} \Rightarrow \Gal(L/\ZP) = \GP$. Now statement follows from 9.3 iii)
+\item[ii)+iii)]  Let $e'=$ ramification index of $\hP/\hP_Z$ and $e'' = $ ramification index of $\hP_Z/\PP$\\
+Let $f'=$ local degree of $\hP/\hP_Z$ and $f'' = $ local degree of $\hP_Z/\PP$.\\
+Hence: $\hP_Z\hO=\hP^{e'}$ and $\PP(\hO \cap \ZP)= \hP_Z^{e''} \cdot \ldots \Rightarrow \PP \hO = (\hP^{e'})^{e''} \cdot \ldots$\\
+$\Rightarrow e=e'\cdot e'' \hspace*{3cm} (\star)$.\\
+Also we have for the field extensions
+\[ \hO/\hP \underbrace{\supseteq}_{f'} \hO\cap \ZP/\hP_Z \underbrace{\supseteq}_{f''} \O/\PP\]
+$\Rightarrow f=f' \cdot f'' \hspace*{3cm} (\star \star)$.\\
+Thm. 11 $\Rightarrow$ 1) For $L|K:\ n=[L:K]=e\cdot f\cdot r$ with $r = [G : \GP] \quad (n=|G|)$.\\
+2) For $L|\ZP: |\GP|=\frac{n}{r} \stackrel{Thm. 11}{=} e'\cdot f' \cdot \underbrace{r'}_{=1 \text{(by i) )}} \stackrel{1)}{=} e\cdot f \Rightarrow e'=e, f'=f$ and $e''=1=f'' \Rightarrow$ Claim.
+\end{enumerate}
+\end{proof}
+
+\begin{defi}
+In our general setting we call $\kappa(\hP):= \hO/\hP$ the \emph{\underline{residue class field}} (\glqq Restklassenkörper\grqq).
+\end{defi}
+
+\begin{Bem}
+Prop 9.5 iii) $\Rightarrow [\kappa(\hP_Z):\kappa(\PP)]=1$ hence, $\kappa(\hP_Z)=\kappa(\PP)=\O/\PP=:k$.
+\end{Bem}

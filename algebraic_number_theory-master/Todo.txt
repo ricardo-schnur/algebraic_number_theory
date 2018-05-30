@@ -1,0 +1,4 @@
+Theoremnummerierung überprüfen (generell scheint die Numerierung manchmall off)
+Verschiebung bei theoremstyle checken (bei enumerates hab ich manchmal ein vspace eingeschoben)
+
+low-priot: Stil vereinheitlichen (s. Ideale)

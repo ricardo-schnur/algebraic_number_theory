@@ -1,0 +1,100 @@
+\rhead{30 April 2018}
+
+\section{Endliche Erweiterung von vollständigen Körpern}
+\underline{Ziele}
+\begin{enumerate}[(1)]
+\item Archimedische Normen sind langweilig.
+\item Vervollständigung bzgl. nicht archimedischer Normen \glqq kann lokal \grqq $\rightarrow$ Hensels Lemma.
+\item Fortsetzen von vollständigen Körpern bezüglich nicht-archimedischer Norm auf algebraische Körper-Erweiterung.
+\end{enumerate}
+
+\begin{Lem}
+Seien $z_0 \in \C, \varepsilon >0$ und $g(X):=X^2-(z_0+\bar{z}_0)X +z_0 \bar{z}_0 + \varepsilon \in \R[X]$\\
+Die beiden Nullstellen $z_1$ und $z_2$ von $g$ sind nicht reell, also $z_2=\bar{z}_1$ und $|z_1|>|z_0|$.
+\end{Lem}
+
+\begin{proof}
+\begin{enumerate}[(1)]
+\item $z_{1/2} = \frac{z_0 + \bar{z}_0}{2}\pm \frac{1}{4} \sqrt{\underbrace{(z_0+\bar{z}_0)^2-4z_0 \bar{z}_0 -4\varepsilon}_{=:D}}$\\
+$\Rightarrow D=(\underbrace{z_0-\bar{z}_0}_{2Im(z_0)})^2-4\varepsilon=-4(Im(z_0))^2 - 4 \varepsilon <0$\\
+$\Rightarrow$ erhalte zwei nicht-reele, zueinander komplex konjugierte Nullstellen.
+\item Vieta $\Rightarrow z_1\bar{z}_1=z_0\bar{z}_0 + \varepsilon \Rightarrow |z_1|^2=|z_0|^2+\varepsilon>|z_0|^2$
+\end{enumerate}
+\end{proof}
+
+\begin{Satz}[Satz von Ostrowski]
+Jeder vollständig normierte Körper $(K, |\cdot|)$ mit archimedischer Norm $|\cdot|$ ist isomorph zu $\R$ oder $\C$.
+\end{Satz}
+
+\begin{proof}
+Da $|\cdot|$ archimedisch ist, also $|n|$ beliebig groß wird für $n \in \N$, ist $\mathrm{char}(K)=\infty$.\\
+$\Rightarrow$ Wir haben Einbettung von $\Q \hookrightarrow K$. Satz 1 $\Rightarrow \OE |\cdot|_{|\Q}=|\cdot|_\infty$ mit der Betragsnorm $|\cdot|_\infty$.\\
+Da $K$ vollständig ist, lässt sich die Einbettung $\Q \hookrightarrow K$ fortsetzen zu einer Einbettung $\R \hookrightarrow K$ und $|\cdot|_{|\R}=|\cdot|_{\infty}$ (Betragsnorm).
+
+Zeige nun: $K$ ist algebraisch über $\R$, genauer: jedes $\alpha \in K$ hat Minimalpolynom vom Grad $\leq 2$.\\
+Für $\alpha \in K$ definiere die Abbildung
+\[f_\alpha: \C \to \R \ , \ z \mapsto |\alpha^2-(z+\bar{z})\alpha +z\bar{z}|\]
+Zeige: $f_\alpha$ hat eine Nullstelle $z_0 \in \C$, dann ist
+\[X^2-(z_0+\bar{z_0})X+z_0\bar{z_0} \in \R[X]\]
+Vielfaches vom Minimalpolynom von $\alpha$.\\
+\underline{Schritt 1:} Zeige: $f_\alpha$ nimmt auf $\C$ ein Minimum an.\\
+$f_\alpha$ ist stetig. Außerdem gilt
+\begin{align*}
+f_\alpha(z) &\geq |z\bar{z}|-|z+\bar{z}||\alpha|-|\alpha^2|\\
+&\geq |z|^2-2|z||\alpha|-|\alpha^2| \to \infty \text{ für } |z| \to \infty
+\end{align*}
+$\Rightarrow$ Erhalte Minimum $m$.
+
+\underline{Schritt 2:} Zeige $m=0$:\\
+Sei $S:=\{z \in \C \ | \ f_\alpha(z)=m\}=f_\alpha^{-1}(\{m\}) \Rightarrow \exists \ z_0 \in S$ mit $|z_0| \geq |z|$ für alle $z \in S$.\\
+Annahme: $m >0$. Wähle $\varepsilon>0$ mit $0<\varepsilon<m$.
+
+\underline{Einerseits:} Sei $g(X):=X^2-(z_0+\bar{z_0})X+z_0\bar{z_0}+\varepsilon \in \R[X]$.\\
+Lemma 6.1 $\Rightarrow g$ hat Nullstellen $z_1, \bar{z_1}$ mit $|z_1|>|z_0|$.\\
+$\Rightarrow f_\alpha(z_1) >m$ wegen Maximalitätsbedingung in Def. von $z_0$.
+
+\underline{Andererseits:} Sei $G(X):=(g(X)-\varepsilon)^n-(-\varepsilon)^n$ für $n \in \N$.\\
+Es gilt $G(z_1)=(g(z_1)-\varepsilon)^n-(-\varepsilon)^n=0.$\\
+Seien $x_1=z_1, x_2, \dots, x_{2n}$ die Nullstellen in $\C$ von $G$. Das heißt:
+\begin{align*}
+&G(X)=\prod_{i=1}^{2n}(X-x_i)=\prod_{i=1}^{2n}(X-\bar{x_i})\\
+\Rightarrow & G(X)^2=\prod_{i=1}^{2n}(X^2-(x_i+\bar{x_i})X+x_i\bar{x_i})
+\end{align*}
+Es gilt dann
+$(\star) |G(\alpha)|^2=\prod_{i=1}^{2n} f_\alpha (x_i)\geq f_\alpha(z_1)m^{2n-1}$
+Außerdem $|G(\alpha)| \leq |\alpha^2-(z_0+\bar{z_0}\alpha+z_0\bar{z_0}|^n+(-\varepsilon)^n=f_\alpha(z_0)^n+\varepsilon^n=m^n+\varepsilon^n (\star \star)$\\
+\begin{align*}
+(\star) + (\star \star) \Rightarrow & f_\alpha(z_1)m^{2n-1}\leq (m^n+\varepsilon^n)^2 \quad |:m^2n\\
+\iff & \frac{f_\alpha(z_1)}{m} \leq (1+(\frac{\varepsilon}{m}^n)^2
+\end{align*}
+Für $n \to \infty$ erhalte: $f_\alpha(z_1) \leq m \Lightning$ zu \glqq Einerseits \grqq.
+\end{proof}
+
+\underline{Ab jetzt:} $(K, |\cdot|)$ ein Körper mit nicht archimedischer Norm. $\nu, \O, p, \O/p=\kappa$ Restklassenkörper wie immer.
+
+\begin{defi}
+Sei $f=a_nX^n+a_{n-1}X^{n-1}+ \dots + a_0 \in \O[X]$.
+\begin{enumerate}
+\item $|f|:=\max\{|a_0|, \dots, |a_n|\} \leq 1$
+\item $f$ heißt primitiv $: \iff |f|=1 \iff f(X)\not \equiv 0 \mod p$.
+\end{enumerate}
+\end{defi}
+
+\begin{Satz}[Lemma von Hensel\footnote{Kurt Hensel, 1861-1941}]
+Sei $K$ ein vollständiger Körper. Seien $f \in \O[X]$ ein primitives Polynom,
+\[proj: \O[X] \to \kappa[X]\]
+die natürliche Projektion und $\bar{f}:=proj(f)$.\\
+Dann gilt: Falls $\bar{f}=\bar{g}\bar{h}$ mit $\bar{g}, \bar{h} \in \kappa[X]$ teilerfremd, dann gibt es $g,h \in \O[X]$ mit:
+\begin{enumerate}[(1)]
+\item $f(X)=g(X)h(X)$
+\item $proj(g)=\bar{g}, proj(h)=\bar{h}$
+\item $\deg(g)=\deg(\bar{g})$
+\end{enumerate}
+\end{Satz}
+
+\begin{Bem}[Vorbemerkung]
+$K[X]$ trägt die von $(K, | \cdot|)$ induzierte Topologie (\glqq Finale Topologie auf dem Raum der endlichen Folgen \grqq). Insbesondere gilt für $f_n$ Folge in $K[X]$ und $f \in K[X]$.\\
+$f_n \to f (n \to \infty) \iff $ Für die Koeffizienten $a_i^{(n)}$ von $f_n$ gilt
+\[\forall \ i : a_i^{(n)} \to a_i (n \to \infty)\]
+wobei $a_i$ die Koeffizienten von $f$ sind. Wie in $K$ gilt: $f_n \to f$ und $g_n \to g \Rightarrow f_n g_n \to f\cdot g, f_n+g_n \to f+g$
+\end{Bem}

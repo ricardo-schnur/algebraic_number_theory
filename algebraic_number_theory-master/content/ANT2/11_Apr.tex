@@ -1,0 +1,199 @@
+\rhead{11 April 2018}
+
+\section{Archimedische und nicht-archimedische Normen}
+
+\textbf{Ab jetzt:} Betrachte nur nicht-triviale Normen!
+
+\begin{defi}
+Eine Norm $\abs{\cdot} \colon K \to \Rnn$ heißt \textbf{nicht-archimedisch} falls ein $C \in \Rnn$ existiert mit $\abs{n} \leq C$ für alle $n\in \N$.
+Andernfalls heißt  $\abs{\cdot}$ \textbf{archimedisch}.
+
+Hierbei: $n = 1+ \dots + 1 \in K$
+\end{defi}
+
+\begin{Prop}
+Eine Norm $\abs{\cdot} \colon K \to \Rnn$ ist nicht-archimedisch genau dann, wenn die verschärfte Dreiecksungleichung gilt, d.h. für alle $x,y \in K$:
+\[ \abs{x+y} \leq \max \left\{ \abs{x}, \abs{y} \right\}
+\] 
+\end{Prop}
+
+\begin{proof}
+\enquote{$\Leftarrow$} $\abs{n} \leq \max\{ \abs{1}, \dots, \abs{1} \} = \abs{1} = 1$
+
+\bigskip \enquote{$\Rightarrow$}
+Sei $C\in\Rnn$ mit $\abs{n} \leq C$ für alle $n\in\N$. Für $x,y \in K$ können wir ohne Einschränkung annehmen, dass $\max \{\abs{x}, \abs{y}  \} = \abs{x}$ gilt und somit
+\[ \abs{x}^j \abs{y}^{n-j} \leq \abs{x}^n
+\]
+für alle $j \in\N_0$ und daher
+\begin{align*}
+\abs{x+y}^n
+&= \abs{(x+y)^n}
+= \abs{ \sum_{j=0}^{n} \binom{n}{j} x^j y^{n-j}  }\\
+&\leq \sum_{j=0}^{n} \binom{n}{j} \abs{x}^j \abs{y}^{n-j} 
+\leq \sum_{j=0}^{n} C \abs{x}^n
+=(n+1)C\abs{x}^n
+\end{align*}
+Es folgt $ \abs{x+y} \leq \sqrt[n]{n+1} \sqrt[n]{C} \abs{x}$ so, dass
+$ \abs{x+y} \leq  \abs{x} = \max \{\abs{x}, \abs{y}  \} $.
+\end{proof}
+
+
+\begin{Bem}
+Ist $\abs{\cdot}$ nicht-archimedisch, so gilt:
+\[ \abs{x} \neq \abs{y} \quad \Rightarrow \quad 
+\abs{x+y} = \max \left\{ \abs{x}, \abs{y} \right\} 
+\]
+\end{Bem}
+
+\begin{proof}
+Ohne Einschränkung sei $\abs{y} < \abs{x}$.
+
+\enquote{$\leq$} Gilt nach der verschärften Dreiecksungleichung.
+
+\enquote{$\geq$} $\abs{y} < \abs{x} = \abs{x+y-y} \leq \max \{ \abs{x+y}, \abs{y} \}
+= \abs{x+y}$
+\end{proof}
+
+
+\begin{defi}
+Wir betrachten eine Abbildung $v\colon K \to \R \cup \{\infty \}$.
+\begin{enumerate}[(i)]
+\item $v$ heißt \textbf{Bewertung}, falls für alle $x,y \in K$ die folgenden Bedingungen erfüllt sind:
+		\begin{enumerate}[(i)]
+			\item $v(x) = \infty\Leftrightarrow x = 0$
+			\item $v(xy) = v(x) + v(y)$
+			\item $v(x+y) \geq \min \left\{ v(x), v(y) \right\}$
+		\end{enumerate}
+\item $v$ heißt \textbf{diskrete Bewertung}, falls $v$ eine Bewertung ist und $v(K) \cap \R_{>0}$ ein Minimum $s$ besitzt. Dies ist genau dann der Fall, wenn $v(K) = s\Z \cup \{\infty \}$.
+\item Zwei Bewertungen $v_1, v_2 \colon K \to \R_{>0}$ heißen \textbf{äquivalent}, falls ein $r \in \R\bs\{0\}$ existiert mit $v_1(x) = rv_2(x)$ für alle $x \in K^\times$.
+
+Die Bewertung $v_{\triv} \colon K \to \R \cup \{\infty \}$ mit $v_{\triv}(x) = 0$ für alle $x \in K^\times$
+heißt \textbf{triviale Bewertung}.
+\end{enumerate}
+\end{defi}
+
+
+\begin{Prop}
+Die Bewertungen auf $K$ entsprechen bijektiv den nicht-archimedischen Normen, wobei die triviale Bewertung der trivialen Norm entspricht und äquivalente Bewertungen äquivalenten Normen entsprechen.
+\end{Prop}
+
+\begin{proof}
+Seien $q>1$,
+\[ M_1 = \left\{ v\colon K \to \R_\cup\{\infty \} \, | \, v \text{ ist Bewertung}   \right\}
+\]
+und 
+\[ M_2 = \left\{ \abs{\cdot} \colon K \to \R \, | \, \abs{\cdot} \text{ ist Norm}   \right\}.
+\]
+Definiere weiterhin
+\[ f = f_q \colon M_1 \to M_2, \colon v \mapsto \abs{\cdot}
+\text{ mit } \abs{x} = q^{-v(x)} \text{ für } x \in K^\times
+\]
+sowie
+\[ g = g_q \colon M_2 \to M_1, \colon \abs{\cdot} \mapsto v
+\text{ mit } v(x)=-\log_q \abs{x} \text{ für } x \in K^\times.
+\]
+Es gilt: $f,g$ sind invers zueinander und bilden trivial (äuivalent) auf trivial (äuivalent) ab.
+\end{proof}
+
+
+\begin{Bem}
+Im Beweis von Proposition 5.2.5 spielt das gewählte $q>1$ bis auf Äquivalenz keine Rolle.
+\end{Bem}
+
+\setcounter{Satz}{0}
+\begin{Satz}[Satz von Ostrowski]
+Jede nicht-triviale Norm $\norm{\cdot}$ auf $\Q$ ist äquivalent zu $\abs{\cdot}_\infty$ oder zu $\abs{\cdot}_p$.
+\end{Satz}
+
+\begin{proof}
+\textbf{Fall 1:} $\norm{\cdot}$ ist archimedisch
+
+Schreibe $\abs{\cdot} = \abs{\cdot}_\infty$. Da $\norm{\cdot}$ archimedisch ist, gibt es $n_0 \in \N_{>1}$ mit $\norm{n_0}>1$.
+
+\bigskip Zeige: Für alle $m,n\in \N$ gilt:
+$\log \norm{m} \log \abs{n} = \log \abs{m} \log \norm{n}$
+
+Dann folgt die Behauptung aus Lemma 5.1.9.
+
+\bigskip Für $n=1$ oder $m=1$ ist obige Gleichung offensichtlich erfüllt.
+Schreibe $m=a_rn^r + \dots + a_0$ mit $a_i \in \{ 0, \dots, n-1 \}$ und $a_r \neq 0$.
+Insbesondere gelten: 
+
+(A) $0 \leq r \leq \frac{\log m}{\log n}$ 
+\qquad 
+(B) $\norm{a_i} = \underbrace{\norm{1+ \dots + 1}}_{\text{$a_i$-mal}} \leq n$
+
+\bigskip \textbf{Fall A:} $\norm{n} \geq 1$:
+\begin{align*}
+\norm{m}
+&= \norm{a_0 + \dots + a_rn^r}
+\leq \sum_{i=0}^{r} \norm{a_i} \norm{n}^i\\
+&\overset{\text{(B)}}{ \leq} \sum_{i=0}^{r}  n \norm{n}^r
+=(r+1)n\norm{n}^r \\
+&\leq \left(\, \frac{\log m}{\log n} +1  \right)n \norm{n}^{ \frac{\log m}{\log n} }
+\end{align*}
+Es folgt für alle $k \in \N$, dass
+\[ \norm{m^k} \leq \left(\, \frac{k\log m}{\log n} +1  \right) n \left(\, \norm{n}^{ \frac{\log m}{\log n} } \right)^k
+\]
+und somit
+\[ \norm{m} \leq \left(\, \frac{k\log m}{\log n} +1  \right)^{\frac{1}{k}} n^{\frac{1}{k}}  \norm{n}^{ \frac{\log m}{\log n} } ,
+\]
+also $\norm{m} \leq \norm{n}^{ \frac{\log m}{\log n} }$.
+
+\bigskip \textbf{Fall B:} $\norm{n} < 1$:
+
+Analog wie oben erhalte $\norm{m} \leq \left(\, \frac{\log m}{\log n} +1  \right) n$
+und damit auch $\norm{m^k} \leq \left(\, \frac{k\log m}{\log n} +1  \right) n$ für alle $k \in \N$.
+Es folgt
+\[ \norm{m} \leq \left(\, \frac{k\log m}{\log n} +1  \right)^{\frac{1}{k}} n^{\frac{1}{k}}
+\]
+so, dass der Grenzübergang $k \to \infty$ schließlich $\norm{m} \leq 1$ liefert.
+
+\bigskip Insgesamt: $\norm{m} \leq \max \left\{  \norm{n}^{ \frac{\log m}{\log n} }, 1  \right\}$
+
+Wähle jetzt $m =n_0$, d.h. $\norm{m} = \norm{n_0}>$ so, dass obige Abschätzung
+$\norm{m} \leq \norm{n}^{ \frac{\log m}{\log n} }$ liefert. Damit gilt insbesondere $\norm{n}>1$ für alle $n \in \N_{>1}$.
+
+Also tritt Fall B nicht auf und für $n,m \in \N_{>1}$ gilt: $\norm{m} \leq \norm{n}^{ \frac{\log m}{\log n} }$ 
+Durch Vertauschen der Rollen von $m$ und $n$ erhalten wir ebenso 
+$\norm{n} \leq \norm{m}^{ \frac{\log n}{\log m} }$ und damit
+\[ \norm{m} \leq \norm{n}^{ \frac{\log m}{\log n} } \leq \norm{m}
+\]
+so, dass
+\[ \norm{m} =\norm{n}^{ \frac{\log m}{\log n} }.
+\]
+Es folgt
+\[ \log\norm{m} =\frac{\log\abs{m}}{\log\abs{n}} \log\norm{n}
+\]
+und Lemma 5.1.9 liefert schließlich $\norm{\cdot} = \abs{\cdot}^s$ mit
+\[ s = \frac{\log\norm{n_o}}{\log\abs{n_0}} > 0.
+\]
+Dies zeigt die Äquivalenz von $\norm{\cdot}$ und $\abs{\cdot}$.
+
+\bigskip \textbf{Fall 2:} $\norm{\cdot}$ ist nicht-archimedisch
+
+AZT1 [IV, Prop. 1.3]: Die einzigen diskreten Bewertungen auf $\Q$ sind die $p$-adischen Bewertungen (bis auf Skalierung). Im Beweis wird \textbf{nicht} verwendet, dass $v$ diskret ist.
+Also folgt die Behauptung aus Proposition 5.2.5
+\end{proof}
+
+
+\begin{Bem}
+Sei $v\colon K \to \R \cup \{\infty \} $ eine Bewertung und
+$\O = \{ x \in K \, | \, v(x) \geq 0 \}$. Dann gilt für alle $x \in K^\times$, dass $x \in \O$ oder $\frac{1}{x} \in \O$.
+\end{Bem}
+
+
+\begin{defi}
+Sei $R$ ein Integritätsbereich und $K = \Quot(R)$. Dann nennen wir $R$ \textbf{Bewertungsring}, falls
+für alle $x \in K$ gilt, dass $x \in R$ oder $\frac{1}{x} \in R$.
+\end{defi}
+
+\begin{Prop}
+Sei $R$ ein Bewertungsring. Dann gilt:
+\begin{enumerate}[(i)]
+\item $R^\times = \left\{ x \in R \, | \, \frac{1}{x} \in R \right\}$
+\item $\m = \left\{ x \in R \, | \, \frac{1}{x} \not\in R \right\}$ ist das einzige maximale Ideal von $R$, insbesondere ist $R$ lokal.
+\item $R$ ist ganz abgeschlossen.
+\end{enumerate}
+\end{Prop}
+
