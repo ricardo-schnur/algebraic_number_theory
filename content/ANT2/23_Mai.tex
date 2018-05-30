@@ -41,7 +41,7 @@
 \end{Prop}
 
 \begin{Vorüberlegung}
-	Sei $K$ ein Körper mit nicht-archimedischer Bewertung $v$. Dann gilt für $a,b \in \O^x$:
+	Sei $K$ ein Körper mit nicht-archimedischer Bewertung $v$. Dann gilt für $a,b \in \O^\times$:
 	\[ \frac{a}{b} \in U^{(n)} = 1 +\p^n \qquad \Leftrightarrow \qquad a-b \in \p^n
 	\]
 \end{Vorüberlegung}
@@ -49,8 +49,8 @@
 \begin{proof} Es gilt:
 	\begin{align*}
 	\frac{a}{b} \in U^{(n)}
-	&= \frac{a}{b} - 1 \in \p^n 
-	\Leftrightarrow \frac{a-b}{b} \in\p
+	&\iff \frac{a}{b} - 1 \in \p^n 
+	\Leftrightarrow \frac{a-b}{b} \in\p^n
 	\Leftrightarrow a-b\in\p^n
 	\end{align*}
 \end{proof}
@@ -67,7 +67,7 @@
 	
 	\bigskip \textbf{(2)} Zeige die folgenden drei Eigenschaften für $g_n$:
 	\begin{enumerate}[(A)]
-		\item Sei $m=p^sn$, dann gilt $g_n \left( p \Z_p^f \right) \subset U^{(m)} = 1 + \p^m$.
+		\item Sei $m=p^sn$, dann gilt $g_n \left( p^s \Z_p^f \right) \subset U^{(m)} = 1 + \p^m$.
 		\item $U^{(m)} =  g_n \left( p^s \Z_p^f \right) \cdot U^{(m+1)}$, also
 				$U^{(m)} =  g_n \left( p \Z_p^f \right) + \hat{\p}^{(m+1)}$
 		\item$g_n\left( p^s\beta \right) \in U^{(m+1)}$ genau dann, wenn $\beta \in p \Z_p^f$.
@@ -89,9 +89,9 @@
 		\end{align*}
 		und damit $g_n(\alpha) \in U^{(m)}$.
 		
-		\item $\alpha$ durchläuft $p^s\Z_p^f$, d.h. $\beta$ durchläuft $\Z_p^f$. Also durchläuft $x$ $\F_p$ und somit $x^{p^s}$ ebenfalls $\F_p$. Somit durchläuft $g_n(\alpha)$ genau $U^{(m)} / U^{(m+1)}$.
+		\item $\alpha$ durchläuft $p^s\Z_p^f$, d.h. $\beta$ durchläuft $\Z_p^f$. Also durchläuft $x$ $\F_q$ und somit $x^{p^s}$ ebenfalls $\F_q$. Somit durchläuft $g_n(\alpha)$ genau $U^{(m)} / U^{(m+1)}$.
 		
-		\item $g_n(\alpha) \in U^{(m+1)} \Leftrightarrow 1+x^{p^s} t^n \equiv 1 \mod \hat{\p}^{m+1} \Leftrightarrow x = 0 \text{ in } \F_p 
+		\item $g_n(\alpha) \in U^{(m+1)} \Leftrightarrow 1+x^{p^s} t^m \equiv 1 \mod \hat{\p}^{m+1} \Leftrightarrow x = 0 \text{ in } \F_q 
 		\Leftrightarrow \beta \in p \Z_p^f$
 	\end{enumerate}
 	
@@ -134,7 +134,7 @@
 
 \begin{Satz}
 	Sei $K$ ein lokaler Körper. Dann gilt
-	\[ K^\times \cong \Z \oplus \Z / (q-1) \Z \oplus \Z_p^d \oplus \Z / K\Z,
+	\[ K^\times \cong \Z \oplus \Z / (q-1) \Z \oplus \Z_p^d \oplus \Z / k\Z,
 	\]
 	falls $\ch K = 0$ mit $[K:\Q_p] = d$, $q = \#\hat{\kappa}$ und $p = \ch \hat{\kappa}$, oder
 	\[ K^\times \cong \Z \oplus \Z / (q-1) \Z \oplus \Z_p^\N,
