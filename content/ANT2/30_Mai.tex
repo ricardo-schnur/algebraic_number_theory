@@ -61,7 +61,8 @@ Es folgt insbesondere für den Bewertungsring $\O_w$ zu $w$ und das maximale Ide
 \begin{proof}
 i) folgt direkt, da Fortsetzung $w$ eindeutig und damit $w \circ \sigma = w$.\\
 ii) Sei $\mu_\alpha$ die Multiplizität von $\alpha$ in $f \Rightarrow f(X)= \prod_{\sigma \in \Aut_K(L)} (X-\sigma(\alpha))^{\mu_\alpha}$.\\
-Annahme: $\alpha \not \in \O_w \Rightarrow w(\alpha)<0 \stackrel{i)}{\Rightarrow} w(\sigma(\alpha))<0 \forall \sigma \in \Aut_K(L) \Rightarrow$ Für $a_0=(-1)^{\deg(f)} \prod_{\sigma \in \Aut_K(L)} \sigma(\alpha)^{\mu_\alpha}$ gilt: $w(a_0)<0 \Rightarrow a_0 \not \in \O_v \Lightning$.
+Annahme: $\alpha \not \in \O_w \Rightarrow w(\alpha)<0 \stackrel{i)}{\Rightarrow} w(\sigma(\alpha))<0 \ \forall \sigma \in \Aut_K(L)$\\
+$\Rightarrow$ Für $a_0=(-1)^{\deg(f)} \prod_{\sigma \in \Aut_K(L)} \sigma(\alpha)^{\mu_\alpha}$ gilt: $w(a_0)<0 \Rightarrow a_0 \not \in \O_v$ \Lightning.
 \end{proof}
 
 \begin{Prop}
@@ -93,14 +94,3 @@ Das Newton-Polygon besteht nur aus einer Kante mit den Eckpunkten $(0, v(_0))$ u
 \begin{Prop}
 Ein Körper mit Bewertung $v$ ist Henselsch $\iff v$ lässt sich auf jede algebraische Körpererweiterung $L$ eindeutig fortsetzen.
 \end{Prop}
-
-\begin{proof}
-\glqq $\Rightarrow$\grqq: Prop 8.3\\
-\glqq $\Leftarrow$ \grqq: Sei $\O_v$ der Bewertungsring zu $v$, $f=a_nX^n+a_{n-1}X^{n-1}+ \-ldots+a_0 \in \O_v[X]$ primitiv, d.h. $|f|=1$ und $\overline{f}$ das Bild von $f$ in $\kappa_v[X]$.
-\begin{enumerate}[(1)]
-\item $f$ irreduzibel $\Rightarrow \overline{f}=\overline{a} \varphi^m$ mit $\varphi \in \kappa[X]$ irreduzibel und $\overline{a} \in \kappa$.\\
-$\deg(f) \leq 1 \Rightarrow \checkmark$. Ab jetzt: $\deg(f) \geq 2$.\\
-$f$ irreduzibel $\Rightarrow  a_0 \neq 0$. Kor 9.10 $\Rightarrow 1=|f|=\max\{|a_n|, |a_0\}$\\
-\underline{Fall 1:} $|a_n|<1$, d.h. $a_n \in \p_v \Rightarrow v(a_i)>0 \forall i \in \{1, \ldots, n\}$, d.h. $a_i \in \p_v \Rightarrow \overline{f}= \overline{a_0}$ in $\kappa[X] \Rightarrow$ Beh.
-\end{enumerate}
-\end{proof}

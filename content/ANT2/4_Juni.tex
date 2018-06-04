@@ -1,0 +1,87 @@
+\rhead{04 Juni 2018}
+
+\begin{proof}
+\glqq $\Rightarrow$\grqq: Prop. 8.3\\
+\glqq $\Leftarrow$ \grqq: Sei $\O_v$ der Bewertungsring zu $v$, $f=a_nX^n+a_{n-1}X^{n-1}+ \ldots+a_0 \in \O_v[X]$ primitiv, d.h. $|f|=1$ und $\overline{f}$ das Bild von $f$ in $\kappa_v[X]$.
+\begin{enumerate}[(1)]
+\item Zeige: $f$ irreduzibel $\Rightarrow \overline{f}=\overline{a} \varphi^m$ mit $\varphi \in \kappa[X]$ irreduzibel und $\overline{a} \in \kappa$:\\
+$\deg(f) \leq 1 \Rightarrow \checkmark$. Ab jetzt: $\deg(f) \geq 2$.\\
+$f$ irreduzibel $\Rightarrow  a_0 \neq 0$. Kor. 9.10 $\Rightarrow 1=|f|=\max\{|a_n|, |a_0\}$\\
+\underline{Fall 1:} $|a_n|<1$, d.h. $a_n \in \p_v \Rightarrow v(a_i)>0 \ \forall i \in \{1, \ldots, n\}$, d.h. $a_i \in \p_v \Rightarrow \overline{f}= \overline{a_0}$ in $\kappa[X] \Rightarrow$ Beh.\\
+\underline{Fall 2:} $|a_n|=1$, d.h. $a_n \in \O^\times$. Sei $L=Z(f)$ und $w$ die eindeutige Fortsetzung von $v$ auf $L$. Bem. 8.8 $\Rightarrow$
+\begin{itemize}
+\item Erhalte Homom. $\varphi: \Gal(L|K) \to \Gal(\kappa_w|\kappa_v).$
+\item $\alpha$ Nullstelle von $f \Rightarrow \alpha \in \O_w=$ Bewertungsring zu $w$.
+\end{itemize}
+Sei $\mu:=$ Vielfachheit der Nullstelle $\alpha$ in $f$.
+\begin{align*}
+\Rightarrow f(X)=\prod_{\sigma\in \Gal(L|K)} (X-\sigma(\alpha))^\mu\\
+\Rightarrow \overline{f}(X)=\prod_{\sigma\in \Gal(L|K)} (X-\overline{\sigma}(\overline{\alpha)})^\mu \in \kappa_v[X]\\
+\end{align*}
+Insbesondere ist jede Nullstelle von $\overline{f}$ ein Konjugat von $\overline{\alpha}$ unter $\Gal(\kappa_w|\kappa_v)$. Sei $\overline{g}$ das Minimalpolynom von $\overline{\alpha}$ über $\kappa_v \Rightarrow \overline{g}$ teilt $\overline{f}$.
+
+Falls $\overline{f}/\overline{g}$ nicht konstant, sind immer noch alle Nullstellen von $\overline{f}/\overline{g}$ Konjugate von $\overline{\alpha} \Rightarrow \overline{g}$ teilt $\overline{f}/\overline{g} \Rightarrow \dots \Rightarrow \overline{f}=\overline{\alpha_n} \cdot \overline{g}^m (m \in \N)$ und $\overline{\alpha_n} \in \kappa^\times_v$. Damit gibt es keine echte Zerlegung von $\overline{f}$ in teilerfremde Polynome. Beachte: $\deg(\overline{f})=0$ (Fall 1) oder $\deg(\overline{f})=\deg(f)$ (Fall 2).
+\item Zeige nun Behauptung für beliebiges primitives Polynom $f \in \O_v[X]$.\\
+Schreibe $f=f_1 \cdot \ldots \cdot f_r$ mit $f_i$ irreduzibel über $K$. $1=|f| \Rightarrow \OE f_1, \dots, f_r$ sind primitiv in $\O_v[X]$.\\
+$\OE \deg(\overline{f_1}), \dots, \deg(\overline{f_{r'}}) \neq 0$ und $\deg(\overline{f_{r'+1}})=\dots=\deg(\overline{f_r})=0.$\\
+Annahme: $\overline{f}=\overline{g}\overline{h}$ mit $\overline{g}, \overline{h}$ teilerfremd.\\
+$\stackrel{(1)}{\Rightarrow} \overline{g}=\overline{a} \cdot \prod_{i \in I} \overline{f_i}$ und $ \overline{h}=\overline{b} \cdot \prod_{j \in J} \overline{f_j}$ mit $I \dot{\bigcup} J = \{1, \dots, r'\}, \overline{a}, \overline{b} \in \kappa_w^\times$.\\
+Wähle Urbild $a$ von $\overline{a}$ in $\O_v^\times.$ Definiere $g_0:=a \cdot \prod_{i \in I} f_i$ und $h_0:= a^{-1}\cdot \prod_{j \in \{1, \dots, r\} \setminus I} f_j \Rightarrow f= g_0h_0$ und $\overline{g_0}=\overline{g}$ und $\overline{h_0}=\overline{h}$ (Verwende $\overline{f}=\underbrace{\overline{g}}_{=\overline{g_0}} \overline{h})$ und $\deg(g_0)=\deg(\overline{g}) \Rightarrow$ Hensels Lemma ist erfüllt.
+\end{enumerate}
+\end{proof}
+
+\begin{Not}
+Ab jetzt für Körpererweiterung $(L,w)|(K,v)$ von bewerteten Körpern:\\
+in $L$: Bewertungsring $\O_w$ mit maximalem Ideal $\p_w$ und Restklannsenkörper $\kappa_w$.\\
+in $K$: Bewertungsring $\O_v$ mit maximalem Ideal $\p_v$ und Restklannsenkörper $\kappa_v$.
+\[\begin{tikzcd}
+\p_w  \arrow[draw=none]{r}[auto=false, sloped]{\subset} & \O_w \arrow[draw=none]{r}[auto=false, sloped]{\subset} & L &w(L^\times)\\
+\p_v  \arrow[dash]{u} \arrow[draw=none]{r}[auto=false, sloped]{\subset} & \O_v \arrow[dash]{u} \arrow[draw=none]{r}[auto=false, sloped]{\subset} & K \arrow[dash]{u} & v(K^\times) \subseteq (\R,+) \arrow[dash]{u} 
+\end{tikzcd}\]
+\todo{Bild}
+\danger $\O_v$ muss nicht noethersch sein und ist damit nicht immer Dedekindring. $\O_w$ muss nicht der ganze Abschluss von $\O_v$ sein.
+\end{Not}
+
+\begin{defi}
+In der Situation von 8.12+L|K endliche Körpererweiterung:
+\begin{enumerate}[i)]
+\item $e:=e(w|v)=(w(L^\times):v(K^\times))$ heißt \underline{\emph{Verzweigungsindex}}
+\item $f:=f(w|v):=(\kappa_w:\kappa_v)$ heißt \underline{\emph{Trägheitsgrad}} der Körpererweiterung $(L,w)|(K,v)$.
+\end{enumerate}
+\end{defi}
+
+\begin{Bem}
+Falls $v$ und $w$ diskrete Bewertungen sind, dann sind $\O_w$ und $\O_v$ diskrete Bewertungsringe und damit insbesondere Dedekindringe. Ist weiterhin $K$ Henselsch, dann folgt aus Prop. 8.3. dass $\O_w$ der ganze Abschluss von $\O_v$ ist und damit sind wir in der Situation von AZT 1.
+\end{Bem}
+
+\begin{Fakt}[\glqq Nakayama-Lemma \grqq]
+Seien $R$ kommutativer Ring mit 1, $M$ ein endlich erzeugter $R$-Modul, $\a$ Ideal in $R$ mit $\a \subseteq \mathrm{Rad(R)}=\cap_{m \in S} m \ (S:=\{m =  $max Ideal in $ R\})$.\\
+Dann gilt:
+\begin{enumerate}[i)]
+\item $\a M=M \Rightarrow M=0$
+\item Falls $N$ ein Untermodul von $M$ mit $M=N+\a M$ dann gilt $M=N$.
+\end{enumerate}
+\end{Fakt}
+
+\begin{Prop}
+Mit der Notation in 8.12 und 8.13 gilt: Ist $K$ Henselscher Körper und $L|K$ endliche Körpererweiterung, dann ist
+\begin{enumerate}[i)]
+\item $[L:K] \geq ef.$
+\item $v$ diskret und $L|K$ separabael, dann $[L:K]=ef$.
+\end{enumerate}
+\danger Noch nicht bekannt, dass $e$ endlich. Aber: $f$ endlich nach Bem. 6.12.
+\end{Prop}
+
+\begin{proof}
+Seien $w_1, \dots, w_f \in \O_w$ Vertreter einer Basis $\overline{w_1}, \dots, \overline{w_f}$ von $\kappa_w | \kappa_v$ und $\Pi_0, \dots, \Pi_{k-1} \in L^\times $ Vertreter unterschiedlicher Nebenklassen von $v(K^\times)$ in $v(L^\times)$.\\
+\underline{Zeige:} \begin{enumerate}[(1)]
+\item $\{w_i \cdot \Pi_j \ | \ i \in \{1, \dots, f\}, j \in \{0 , \dots, k-1\}\}$ ist linear unabhängig in $L|K$ und damit folgt $[L:K] \geq ef$.
+\item Falls $v$ diskret+ $L|K$ separabel und $k=e$, dann ist $\{w_i\Pi_j\}$ eine Basis von $L|K$ und damit gilt \glqq $=$ \grqq in (1).
+\end{enumerate}
+\underline{Vorüberlegung:} $s=\alpha1w_1 + \dots + \alpha_f w_f$ mit $\alpha_1, \dots, \alpha_f \in K$ und $s \neq 0 \Rightarrow w(s) \in v(K^\times)$\\
+\underline{denn:} Sei $i_0$ gewählt mit $v(\alpha_{i_0})=\min\{v(\alpha_1), \dots, v(\alpha_f)\}$\\
+$\Rightarrow (\frac{\alpha_i}{\alpha_{i_0}}) \in \O_v \ \forall i \in \{1, \dots, f\}$\\
+$\Rightarrow \overline{(\frac{s}{\alpha_{i_0)}})}=\overline{(\frac{\alpha_1}{\alpha_{i_0}})}\overline{w_1}+\dots+\overline{(\frac{\alpha_f}{\alpha_{i_0}})} \overline{w_f}$ ist nicht-triviale Linearkombination von $\overline{w_1}, \dots, \overline{w_f}$.\\
+$\Rightarrow \overline{(\frac{s}{\alpha_{i_0}})}\neq 0 \Rightarrow w(\frac{s}{\alpha_{i_0}})=0 \Rightarrow w(s)=v(\alpha_{i_0}) \in v(K^\times)$
+
+\end{proof}
