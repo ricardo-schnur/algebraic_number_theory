@@ -1,0 +1,103 @@
+\rhead{06 Juni 2018}
+
+\begin{proof}
+Seien $w_1, \dots, w_f \in \O_w$ Vertreter einer Basis $\overline{w_1}, \dots, \overline{w_f}$ von $\kappa_w | \kappa_v$ und $\Pi_0, \dots, \Pi_{k-1} \in L^\times $ Vertreter unterschiedlicher Nebenklassen von $v(K^\times)$ in $v(L^\times)$.\\
+\underline{Zeige:} \begin{enumerate}[(1)]
+\item $\{w_i \cdot \Pi_j \ | \ i \in \{1, \dots, f\}, j \in \{0 , \dots, k-1\}\}$ ist linear unabhängig in $L|K$ und damit folgt $[L:K] \geq ef$.
+\item Falls $v$ diskret+ $L|K$ separabel und $k=e$, dann ist $\{w_i\Pi_j\}$ eine Basis von $L|K$ und damit gilt \glqq $=$ \grqq in (1).
+\end{enumerate}
+\underline{Vorüberlegung:} $s=\alpha_1w_1 + \dots + \alpha_f w_f$ mit $\alpha_1, \dots, \alpha_f \in K$ und $s \neq 0 \Rightarrow w(s) \in v(K^\times)$\\
+\underline{denn:} Sei $i_0$ gewählt mit $v(\alpha_{i_0})=\min\{v(\alpha_1), \dots, v(\alpha_f)\}$\\
+$\Rightarrow (\frac{\alpha_i}{\alpha_{i_0}}) \in \O_v \ \forall i \in \{1, \dots, f\}$\\
+$\Rightarrow \overline{(\frac{s}{\alpha_{i_0)}})}=\overline{(\frac{\alpha_1}{\alpha_{i_0}})}\overline{w_1}+\dots+\overline{(\frac{\alpha_f}{\alpha_{i_0}})} \overline{w_f}$ ist nicht-triviale Linearkombination von $\overline{w_1}, \dots, \overline{w_f}$.\\
+$\Rightarrow \overline{(\frac{s}{\alpha_{i_0}})}\neq 0 \Rightarrow w(\frac{s}{\alpha_{i_0}})=0 \Rightarrow w(s)=v(\alpha_{i_0}) \in v(K^\times)$\\
+\underline{Zu (1):}
+\[\sum_{i=0}^{e-1}\sum_{j=1}^f \alpha_{ij} \cdot w_j \Pi_i = 0 \text{ mit } \alpha_ij \in K \text{ und einem } \alpha_ij \neq 0\]
+$\OE$ alle $\alpha_{ij} \in \O_v$ und mindestens ein $\alpha_{ij} \in \O_v^\times$.\\
+Betrachte: $s_i:=\sum_{j=1}^f \alpha_{ij} w_j$.\\
+$s_i \neq 0$, falls mindestens ein $\alpha_{ij} \not \in \p_v$, da $\overline{w_1}, \dots, \overline{w_f}$ Basis von $\kappa_w | \kappa_v \Rightarrow$ mindestens ein $s_i \neq 0$ und damit $w(s_i)< \infty$.
+\begin{align*}
+&s_0\Pi_0+s_1\Pi_1+\ldots+s_{e-1}\Pi_{e-1}=0\\
+\Rightarrow & \exists j \neq k \text{ mit } w(s_j \Pi_j)=w(s_k \Pi_k) < \infty\\
+\Rightarrow & 0 = w(1)=w(\frac{s_j\Pi_j}{s_k\Pi_k})= w(s_j)-w(s_k)+w(\Pi_j)-w(\Pi_k)
+\end{align*}
+Vorüberlegung: $\Rightarrow w(s_j), w(s_k) \in v(K^\times) \Rightarrow w(\Pi_j)-w(\Pi_k) \in v(K^\times)$ \Lightning zu unterschiedliche Nebenklasse.\\
+\underline{Zu (2):} Seien nun $v,w$ diskret und $\Pi$ ein Erzeuger von $\p_v$. Wähle als Vertretersystem $\Pi_0=1, \Pi_1=\Pi, \Pi_2=\Pi^2, \dots, \Pi_{e-1}=\Pi^{e-1}$.\\
+Sei $M:= \sum_{i=0}^{e-1} \sum_{j=1}^f \O_v \cdot w_j \Pi^i$. Zeige: $M= \O_w$. Dann ist $\{w_j\Pi^i \ | \ j \in \{1, \ldots, f\}, i \in \{0, \ldots, e-1\}\}$ sogar eine Ganzheitsbasis von $\O_w$.\\
+Sei $N:= \sum_{j=1}^f \O_vw_j \Rightarrow M=N + \Pi\cdot N + \ldots + \Pi^{e-1}N$. Außerdem gilt: $\O_w = N+ \Pi \O_w$, denn für $\alpha \in \O_w$ gilt $\alpha \equiv \alpha_1 w_1 + \dots + \alpha_f w_f \mod \p_w=\Pi\O_w$ für ein $(\alpha_1, \dots, \alpha_f) \in \O_v^f$, da $\overline{w_1}, \dots, \overline{w_f}$ Basis von $\kappa_w$. Insgesamt: $\O_w=N+\Pi \O_w= N+ \Pi(N+\Pi\O_w)= \dots = \underbrace{N+\Pi N + \ldots + \Pi^{e-1} N}_{=M} +\Pi^e \O_w$.\\
+$L|K$ separabel und endlich $\Rightarrow \O_w$ ist endlich erzeugter $\O_v$-Modul (s. AZT 1, II Prop. 2.12) (Hier: $K$ henselsch)\\
+Nakayama-Lemma $\Rightarrow \O_w=M$.
+\end{proof}
+
+
+\section{Unverzweigte und zahm-verzweigte Erweiterungen}
+ZIEL: Übertrage Verzweigungsbegriffe auf Körpererweiterungen mit Bewertungen.\\
+\underline{Aufwärumübung:} $(L,w)|(K,v)$ Körpererweiterung bewerteter Körper und $K$ henselsch.\\
+$\alpha \in \O_w$ algebraisch und $f_\alpha$ Minimalpolynom in $K[X]$.\\
+Richtig oder falsch? $f_\alpha \in \O_v[X] \quad  (f_\alpha = \prod (X-\alpha_i), w(\alpha_i)\geq 0)$.
+
+\begin{defi}
+In der Notation von 8.12.
+\begin{enumerate}[i)]
+\item Sei $L|K$ endlich, dann heißt $L|K$ unverzweigt $: \iff$
+\begin{itemize}
+\item $[L:K]=[\kappa_w:\kappa_v]$ und
+\item $\kappa_w | \kappa_v$ ist separabel.
+\end{itemize}
+\item Sei $L|K$ unendlich, dann heißt $L|K$ unverzweigt $:\iff$\\
+\hspace*{0.2cm}$L$ ist Vereinigung von endlichen, unverzweigten Körpererweiterungen von $K$.
+\end{enumerate}
+\end{defi}
+
+\begin{Bem}
+Sei $(L,w)|(K,v)$ algebraische Körpererweiterung mit $K$ henselsch.
+\begin{enumerate}[i)]
+\item $L|K$ unverzweigt $\Rightarrow w(L^\times)=v(K^\times)$, d.h. $e(w|v)=1$, $[L:K]=ef=f$.
+\item Falls $v,w$ diskret, dann: $[L:K]=[\kappa_w : \kappa_v] \iff w(L^\times)=v(K^\times)$.
+\end{enumerate}
+\end{Bem}
+
+\begin{proof}
+\begin{enumerate}[i)]
+\item Sei zunächst $L|K$ endlich. Prop. 8.16 $\Rightarrow [L:K] \geq e(w|v)f(w|v)=[w(L^\times):v(K^\times)] \underbrace{[\kappa_w:\kappa_v]}_{=[L:K]}$\\
+$\Rightarrow [w(L^\times):v(K^\times)]=1$ und Ungleichheit ist Gleichheit.\\
+Falls nun $L|K$ unendlich $\Rightarrow L=\cup_{i \in I} L_i$ mit $L_i|K$ unverzw. Körpererweiterung. Dann ist $w(L_i^\times)=v(K^\times)$ für jedes $i \in I$ und dann auch $w(L)=v(K^\times)$.
+\item folgt aus Prop. 8.16.
+\end{enumerate}
+\end{proof}
+
+\begin{Bsp}
+Seien $(K,v)$ henselscher Körper, $(L,w)$ Fortsetzung von $(K,v)$ mit $L=K(\alpha)$ für $\alpha \in \O_w$. $f:=f_\alpha$ Minimalpolynom von $\alpha$ und $\overline{f}$ das Bild in $\kappa_v[X]$.\\
+$\overline{f}$ separabel $\Rightarrow L|K$ ist unverzweigt und $\kappa_w=\kappa_v(\overline{\alpha})$ mit $\overline{\alpha}=$ Bild von $\alpha$ in $\kappa_w$, $[\kappa_v(\overline{\alpha}): \kappa_v]=[L:K]$.
+\end{Bsp}
+
+\begin{proof}
+$\overline{f}$ separabel $\Rightarrow \overline{f}$ irreduzibel nach Henselschem Lemma, da $f$ irreduzibel. $\Rightarrow \overline{f}$ ist Minimalpolynom von $\overline{\alpha}$. Dann gilt:\\
+$[\kappa_w:\kappa_v] \geq [\kappa_v(\overline{\alpha}):\kappa_v]=\deg(\overline{f})=\deg(f)=[L_K] (\star)$\\
+Wegen $[\kappa_w:\kappa_v] \leq [L_K]$ gilt in $(\star)\ \glqq =\grqq$ und $\kappa_w=\kappa_v(\overbrace{\alpha})$. Insbesondere ist dann auch $\kappa_w|\kappa_v$ separabel.
+\end{proof}
+
+\begin{Bem}
+$L|K$ endlich+ unverzweigt+$K$ henselsch. $\alpha \in \O_w$ mit Bild $\overline{\alpha}$ in $\kappa_w$ ist erzeugend, d.h. $\kappa_w=\kappa(\overline{\alpha})$.\\
+$\Rightarrow L=K(\alpha)$ und für das Minimalpolynom $f_\alpha \in \O_v[X]$ von $\alpha$ gilt: $\overline{f_\alpha}=$ Bild in $\kappa_v[X]$ ist Minimalpolynom von $\overline{\alpha}$
+\end{Bem}
+
+\begin{proof}
+$[\kappa_w:\kappa_v] \leq \deg(\overline{f_\alpha})=\deg(f_\alpha)=[K(\alpha):K] \leq [L:K]\stackrel{unverzw.}{=\joinrel=}[\kappa_w : \kappa_v]$
+\end{proof}
+
+\begin{Prop}
+$(K,v)$ henselsch.
+\begin{enumerate}[i)]
+\item Seien $(L,w)$ und $(K',v')$ zwei Erweiterungen von $(K,v)$ im algebraischen Abschluss $\overline{K}$. Sei $L':=LK'$ mit fortgesetzter Bewertung $w'$. Dann gilt: $L|K$ unverzweigt $\Rightarrow L'|K'$ unverzweigt.
+\item $(K,v) \subseteq (L,w) \subseteq (L',w')$ Kette von bewerteten Körpern.
+\[L'|K \text{ unverzweigt} \iff L'|K \text{ und } L|K \text{ unverzweigt}.\]
+\end{enumerate}
+\end{Prop}
+
+\begin{proof}
+\begin{enumerate}[i)]
+\item \OE \ $L|K$ endlich $\Rightarrow \kappa_w| \kappa_v$ endlich. Außerdem: $\kappa_w|\kappa_v$ separabel $\Rightarrow \ \exists \ \overline{\alpha} \in \kappa_w$ mit $\kappa_w=\kappa_v(\overline{\alpha})$. Seien $\alpha \in \O_w$ ein Lift von $\overline{\alpha}$ und $f_\alpha(X) \in \O_v[X]$ das Minimalpolynom von $\alpha \stackrel{Lem.\ 9.4}{\Longrightarrow} L=K(\alpha)$ und Bild $\overline{f_\alpha} \in \kappa_v[X]$ von $f_\alpha$ ist Minimalpolynom von $\overline{\alpha} \Rightarrow L'=K'(\alpha)$.\\
+Sei $g_\alpha \in \O_{v'}[X]$ Minimalpolynom von $\alpha'$ in $L'|K' \Rightarrow g_\alpha$ ist Teiler von $f_\alpha \Rightarrow \overline{g_\alpha}$ ist Teiler von $\overline{f_\alpha}$ und damit separabel. Bsp. 9.3 $\Rightarrow L'|K'$ unverzweigt.
+\end{enumerate}
+\end{proof}
