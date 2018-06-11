@@ -1,0 +1,203 @@
+% !TeX spellcheck = de_DE
+\rhead{11 Juni 2018}
+
+\begin{proof}
+	\begin{enumerate}[i)]
+		\item \OE \ $L|K$ endlich $\Rightarrow \kappa_w| \kappa_v$ endlich. Außerdem: $\kappa_w|\kappa_v$ separabel $\Rightarrow \ \exists \ \overline{\alpha} \in \kappa_w$ mit $\kappa_w=\kappa_v(\overline{\alpha})$. Seien $\alpha \in \O_w$ ein Lift von $\overline{\alpha}$ und $f_\alpha(X) \in \O_v[X]$ das Minimalpolynom von $\alpha \stackrel{Lem.\ 9.4}{\Longrightarrow} L=K(\alpha)$ und Bild $\overline{f_\alpha} \in \kappa_v[X]$ von $f_\alpha$ ist Minimalpolynom von $\overline{\alpha} \Rightarrow L'=K'(\alpha)$.\\
+		Sei $g_\alpha \in \O_{v'}[X]$ Minimalpolynom von $\alpha'$ in $L'|K' \Rightarrow g_\alpha$ ist Teiler von $f_\alpha \Rightarrow \overline{g_\alpha}$ ist Teiler von $\overline{f_\alpha}$ und damit separabel. Bsp. 9.3 $\Rightarrow L'|K'$ unverzweigt.
+		\item Wiederum dürfen wir von endlichen Körpererweiterungen ausgehen. Die Kette $K \subset L \subset L'$ induziert die Kette $\kappa_v \subset \kappa_w \subset \kappa_{w'}$ der Restklassenkörper.
+		Aus der Algebra ist bekannt, dass $\kappa_{w'}$ über $\kappa_v$ separabel ist genau dann, wenn 
+		$\kappa_{w'}$ über $\kappa_w$ und $\kappa_{w}$ über $\kappa_v$ separabel sind.
+		Verwende weiterhin:
+		
+		\textbf{(1)} $[L':K] = [L':L] [L:K]$
+		
+		\textbf{(2)} $[\kappa_{w'}:\kappa_{v}] = [\kappa_{w'}:\kappa_{w}] [\kappa_{w}:\kappa_{v}]$
+		
+		\bigskip \enquote{$\Rightarrow$} Anwenden von i) auf
+		\[\begin{tikzcd}
+		& L' & \\
+		L' 
+		\arrow[hook]{ur}{\id}
+		& & L 
+		\arrow[hook, swap]{ul}{\text{unverzweigt}}
+		\\
+		& K 
+		\arrow[hook]{ur}
+		\arrow[hook]{ul}{\text{unverzweigt}}
+		&
+		\end{tikzcd}
+		\]
+		zeigt, dass $L'$ über $L$ unverzweigt ist und somit $[L':L] = [\kappa_{w'}:\kappa_{w}]$. Damit folgt aus (1) und (2), dass $[L':K] = [\kappa_{w'}:\kappa_{v}]$
+		
+		\bigskip \enquote{$\Leftarrow$} Folgt aus (1) und (2).
+	\end{enumerate}
+\end{proof}
+
+
+\begin{Kor}
+	Seien $L_1 /K$ und $L_2 /K$ algebraische Körpererweiterungen. Es sind genau dann $L_1/K$ und $L_2/K$ unverzweigt, wenn $L_1L_2/K$ unverzweigt ist.
+\end{Kor}
+
+
+\begin{proof}
+	\enquote{$\Rightarrow$} Folgt aus:
+	\[\begin{tikzcd}
+	& L' & \\
+	L' 
+	\arrow[hook]{ur}{\text{unverzweigt}}
+	& & L 
+	\arrow[hook, swap]{ul}{\text{unverzweigt}}
+	\\
+	& K 
+	\arrow[hook, swap]{ur}{\text{unverzweigt}}
+	\arrow[hook]{ul}{\text{unverzweigt}}
+	&
+	\end{tikzcd}
+	\]
+	
+	\enquote{$\Leftarrow$} Folgt aus Proposition 9.5.(ii).
+\end{proof}
+
+
+\begin{Bemdef}
+	Sei $L/K$ eine algebraische Körpererweiterung und
+	\[ S = \left\{
+	E; \, E \text{ ist Zwischenkörper von $L/K$ und $E/K$ is unverzweigt}.
+	\right\}
+	\]
+	Dann hat $S$ bezüglich $\subset$ ein maximales Element $T$. 
+	$T$ heißt der \textbf{maximale unverzweigte Zwischenkörper von $L/K$} und erhält jeden unverzweigten  Zwischenkörper $E$ von $L/K$.
+\end{Bemdef}
+
+\begin{proof}
+	Lemma von Zorn und Korollar 9.6.
+\end{proof}
+
+\begin{defi}
+	Sei $\overline{K}$ der algebraische Abschluss von $K$. Der maximale unverzweigte Zwischenkörper $K^{\nf}$ von $\overline{K} /K$ heißt \textbf{maximale unverzweigte Körpererweiterung von $K$}.
+\end{defi}
+
+\begin{Prop}
+	Sei $L/K$ eine algebraische Körpererweiterung und $T$ der maximal unverzweigte Zwischenkörper mit Bewertung $w_T$. Dann ist
+	\begin{align*}
+	\kappa_{w_T}
+	&= \left\{
+	\overline{\alpha} \in \kappa_w; \, \text{$\overline{\alpha}$ ist separabel über $\kappa_v$}
+	\right\}
+	\end{align*}
+	der separable Abschluss von von $\kappa_v$ in $\kappa_w$.
+\end{Prop}
+
+
+\begin{proof}
+	Die Inklusion $K\subset T \subset L$ induziert $\kappa_v \subset \kappa_{w_T} \subset \kappa_v$.
+	
+	\bigskip \enquote{$\subset$} Aus $T/K$ unverzweigt folgt $\kappa_{w_T}$ über $\kappa_v$ separabel.
+	
+	\bigskip \enquote{$\supset$} Folgt aus Beispiel 9.3: Sei $\overline{\alpha} \in \kappa_w$ mit $\overline{\alpha}$ separabel.
+	Für ein Urbild $\alpha \in \O_w$ ist dann $K(\alpha)/K$  unverzweigt, also $K(\alpha) \subset T$.
+	Damit ist auch $\overline{\alpha} \in \kappa_{w_T}$.
+\end{proof}
+
+\begin{Bsp}
+	Sei $K=\Q_p$ mit $p$-adischer Bewertung $v$ und $\kappa_v = \F_p$.
+	Sei $L=\Q_p(\zeta)$, wobei $\zeta$ eine primitive $n$-te Einheitswurzel ist, mit eindeutiger Fortsetzung $w$ von $v$.
+	
+	\bigskip
+	Sei $f\in\O_v[X]$ das Minimalpolynom von $\zeta$. Dann wird $X^n-1$ von $f(X)$ geteilt.
+	Sei nun $\overline{f}[X]$ das Bild in $\kappa_v[X] = \F_p[X]$. Dann wird $X^n-1$ auch von $\overline{f}$ geteilt.
+	
+	\bigskip
+	\textbf{(i)} $\ggT(n,p) = 1$:
+	
+	$X^n-1 \in \kappa_v[X]$ ist separabel, da $NX^[n-1] \neq 0$.
+	Also ist $\overline{f}$ separabel und damit folgt nach Beispiel 9.3 und Bemerkung 9.4, dass
+	\[ L/ K = \Q_p(\zeta) / \Q_p
+	\]
+	unverzweigt ist mit $e=1$ und
+	\[w \left( \Q_p(\zeta)^\times \right)
+	=v\left(\Q_p^\times \right)
+	=\Z.
+	\]
+	
+	\bigskip \textbf{(ii)} $n=p^k$:
+	
+	Da $\zeta$ eine $p^k$-te Einheitswurzel ist, ist $\xi = \zeta^{p^{k-1}}$ eine primitive $p$-te Einheitswurzel. Also gilt
+	\[ \xi^{p-1} + \xi^{p-2} + \cdots + 1 = 0
+	\]
+	so, dass $\zeta$ eine Nullstelle von
+	\[ \Phi(X) = X^{(p-1)p^{k-1}} + X^{(p-2)p^{k-1}} + \cdots +1
+	\]
+	ist. Daher ist $\zeta-1$ eine Nullstelle von $h(x) = \Phi(X+1)$ und $h(x) \in \O_v[X] = \Z_p[X]$ ist nach Eisenstein irreduzibel, denn:
+	
+	\textbf{(1)} $p$ ist prim in $\O_V = \Z_p$.
+	
+	\textbf{(2)} $a_0 = h(0) = \Phi(1) = p$ so, dass $p \, | \, a_0$ und $p^2 \not | \,a_0$.
+	
+	\textbf{(3)} Es gilt
+	\begin{align*}
+	\Phi(X)
+	&= \frac{ \left( X^{p^{k-1}} \right)^p - 1  }{ X^{p^{k-1}} - 1 }
+	=\frac{{ X^{p^{k}} - 1 }}{{ X^{p^{k-1}} - 1 }}
+	\equiv \frac{{ (X-1)^{p^{k}}}}{{ (X-1)^{p^{k-1}}}}
+	\equiv (X-1)^{p^k-p^{k-1}}
+	\mod p.
+	\end{align*}
+	Also ist
+	\[ h(X) = \Phi(X+1) \equiv X^{p^k-p^{k-1}} \mod p
+	\]
+	und somit sind bis auf den führenden Term alle Koeffizienten von h durch $p$ teilbar.
+	Es folgt
+	\[ [L:K] = p^{k-1}(p-1) = p^k - p^{k-1} = \varphi \left(p^k \right),
+	\]
+	wobei $\varphi$ die Eulersche $\varphi$-Funktion ist.
+	Weiterhin gilt nach der Konstruktion der Bewertungsfortsetzung aus Theorem 5:
+	\[ w(\zeta-1)
+	= \frac{1}{[L:K]} v \left( \Norm_{L/K} ( \zeta-1) \right)
+	= \frac{1}{[L:K]} v(p)
+	= \frac{1}{[L:K]}
+	\]
+	Somit ist $\zeta -1$ ein Erzeuger von $\O_w$ und $L/K$ ist \textbf{rein-verzweigt}, das heißt $f=1$ und $e=[L:K]$. Es gilt also insbesondere $\kappa_w = \kappa_v$.
+\end{Bsp}
+
+
+\begin{Prop}
+	Seien $K$ ein lokaler Körper mit Restklassenkörper $\F_q$, $q=p^r$, Bewertung $v$ und $L=K(\zeta)$, $\zeta^n =1$ mit $\ggT(n,p) = 1$. Dann gilt:
+	\begin{enumerate}[(i)]
+		\item $[L:K]$ ist unverzweigt und somit gilt $[L:K] = [\kappa_w:\kappa_v] =f$.
+		\item $[L:K] = f$ ist die kleinste Zahl mit $q^f \equiv 1 \mod n$.
+		\item $\Gal(L/K) \cong \Gal(\kappa_w/\kappa_v)$ ist zyklisch und wird von dem Isomorphismus $\zeta \mapsto \zeta^q$ erzeugt.
+		\item $\O_w = \O_v[\zeta]$
+	\end{enumerate}
+\end{Prop}
+
+\begin{proof}
+	\enquote{(i)} Wie in Beispiel 9.10.(i).
+	
+	\bigskip \enquote{(ii)} $X^n-1$ zerfällt über $\O_w$ in Linearfaktoren, da mit $\zeta$ auch alle Potenzen von $\zeta$ in $\O_w$ liegen. Also zerfällt $X^n-1$ auch über $\kappa_v=\F_q$ in Linearfaktoren und damit gilt
+	\[ \Z / n\Z \cong U_n = \left\{ 
+	\zeta \in \overline{\kappa_w}; \, \zeta^n = 1
+	\right\}
+	\subset \kappa_w^\times.
+	\]
+	Dies ist äquivalent zu $n \, | \, q^f-1$. Nach Beispiel 9.3 ist $\kappa_w = \kappa_v(\overline{\zeta})$, also ist $\kappa_w$ die kleinste Körpererweiterung von $\kappa_v$ mit $\kappa_w \supset U_n$. Daraus folgt die Behauptung.
+	
+	\bigskip \enquote{(iii)} Aus der Algebra folgt, dass $\Gal(\kappa_w/\kappa_v)$ zyklisch ist und von der Frobeniusabbildung  $\overline{\zeta} \mapsto\overline{\zeta}^q$ erzeugt wird.
+	Bemerkung 8.8 liefert einen Gruppenhomomorphismus
+	\[ \varphi \colon \Gal(L/K) \to \Gal(\kappa_w/\kappa_v).
+	\]
+	Dieser ist surjektiv, da $\zeta\mapsto \zeta^q$ einen Automorphismus definiert.
+	Da $L/K$ unverzweigt ist, gilt
+	\[ \# \Gal(L/K) = \#\Gal(\kappa_w/\kappa_v),
+	\]
+	also ist $\varphi$ ein Isomorphismus.
+	
+	\bigskip \enquote{(iv)} Da $L/K$ unverzweigt ist, gilt $e=1$ nach Bemerkung 9.2. Somit gilt $\p_w = \p_v \O_w$.
+	Außerdem ist $\overline{1}, \overline{\zeta}, \dots, \overline{\zeta}^{f-1}$ eine Basis von $\kappa_w / \kappa_v$ und damit
+	\[ \O_w 
+	= \O_v[\zeta] + \_w
+	= \O_v[\zeta] + \p_v\O_w.
+	\]
+	Nakayama liefert also $\O_w = \O_v[\zeta]$.
+\end{proof}
