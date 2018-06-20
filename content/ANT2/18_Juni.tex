@@ -1,0 +1,167 @@
+% !TeX spellcheck = de_DE
+\rhead{18 Juni 2018}
+
+\begin{proof}[Beweis von Beispiel 9.16]
+	Sei $K_1$ die maximal unverzweigte Körpererweiterung von $K$ mit Bewertung $v_1$
+	und $L_1 = K_1(\sqrt[m]{a})$ mit Bewertung $w_1$. Erhalte die Diagramme:
+	\[\begin{tikzcd}
+	& (L_1,w_1) & \\
+	(L,w)
+	\arrow[hook]{ur}
+	& & L (K_1, v_1)
+	\arrow[hook, swap]{ul}{\text{zahm verzweigt}}
+	\\
+	& (K,v)
+	\arrow[hook]{ur}
+	\arrow[hook]{ul}
+	&
+	\end{tikzcd}
+	\qquad 
+	\begin{tikzcd}
+	& \kappa_{w_1} & \\
+	\kappa_{w}
+	\arrow[hook]{ur}
+	& & \kappa_{v_1}
+	\arrow[hook, swap]{ul}{\text{separabel}}
+	\\
+	& \kappa_{v} 
+	\arrow[hook, swap]{ur}{\text{separabler Abschluss}}
+	\arrow[hook]{ul}
+	&
+	\end{tikzcd}
+	\]
+	Nach Proposition 9.9 ist $\kappa_{v_1}$ separabel abgeschlossen und nach Proposition 9.17 ist $\kappa_{w} / \kappa_{v_1}$ separabel. Also gilt $\kappa_{w}=\kappa_{v_1}$ und damit ist
+	$\kappa_{w} \subset \kappa_{w_1}$ separabel über $\kappa_{v}$.
+	
+	\bigskip Sei $T=T(L/K)$ der maximale unverzweigte Zwischenkörper von $L/K$. Dann ist $T= L \cap K_1$ und es $[L:T] = [L_1:K_1]$ is Teiler von $m$. Außerdem ist $m$ nicht durch $p$ teilbar, also auch $[L:T]$ nicht.
+\end{proof}
+
+\begin{Prop}
+	Sei $(L,w) / (K,v)$ eine endliche, zahm verzweigte Körpererweiterung mit
+	$e=e(w/v) =1$ und $f=f(w/v) = 1$. Dann gilt $L=K$.
+\end{Prop}
+
+\begin{proof}
+	\textbf{Vorüberlegeung:} Wegen $f=1$ gilt $K=T$, wobei $T=T(L/K)$ der maximale unverzweigte Zwischenkörper von $L/K$ ist. Weil $L/K$ zahm verzweigt ist gilt
+	\[ p \not| \, [L:T] = [L:K].
+	\]
+	
+	\textbf{Annahme:} Es gibt ein $\alpha \in L \bs K$. Sei 
+	\[ \Hom_K(L, \overline{L}) = \left\{ \sigma_1, \dots, \sigma_m \right\}
+	\]
+	mit $\sigma_1 = \id$. Dann wird $[L:K]$ von $M=[L:K]_s$ geteilt, also gilt $\ggT(m,p)=1$.
+	Sei 
+	\[a = \sigma_1(\alpha) + \dots + \sigma_m(\alpha) \in K
+	\]
+	und $\beta = \alpha - \frac{1}{m} a$.
+	Dann gilt $\beta \in L \bs K$ und 
+	\[\sigma_1(\beta) + \dots + \sigma_m(\beta) = 0.
+	\]
+	Wegen $e=1$ gilt $w(L^\times) = v(K^\times)$ und es gibt ein $b \in K^\times$ mit $v(b)=w(\beta)$.
+	Also ist $\varepsilon = \frac{\beta}{b} \in \O_w^\times$ und
+	\[ \sigma_1(\varepsilon) + \dots + \sigma_m(\varepsilon) = 0.
+	\]
+	In $\kappa_w = \kappa_v$ gilt
+	\[ 0 = \overline{\sigma}_1(\overline{\varepsilon}) + \cdots + \overline{\sigma}_m(\overline{\varepsilon})
+	= m \overline{\varepsilon}
+	\]
+	so, dass $\overline{\varepsilon} = 0$, da $\ggT(m,p =1)$. Dies widerspricht $\varepsilon \in \O_w^\times$.
+\end{proof}
+
+
+\begin{Prop}
+	Sei $(L,w) / (K,v)$ eine endliche Körpererweiterung. Dann ist $L/K$ zahm verzweigt genau dann, wenn $a_1,\dots, a_n \in T= T(L/K)$ und $m_1,\dots, m_n \in \N$ mit $\ggT(m_i,p) =1$ existieren so, dass
+		\[ L = T(\sqrt[m_1]{a_1}, \dots, \sqrt[m_n]{a_n}).
+		\]
+	In diesem Fall gilt
+	\[ [L:K] = e(L/K) f(L/K).
+	\]
+\end{Prop}
+
+\begin{proof}
+	\enquote{$\Rightarrow$} Sei $L/K$ zahm verzweigt.
+	
+	 \bigskip\textbf{Schritt 1:} Ohne Einschränkung sei $K=T$ und damit $\kappa_w = \kappa_v$.
+	
+	Nach Bemerkung 9.15 ist $L/K$ zahm verzweigt genau dann, wenn $L/T$ zahm verzweigt ist.
+	Falls $[L:T] = e(w/w_T) = f(w/w_T)$ dann gilt, da $T/K$ nach Bemerkung 9.2 unverzweigt ist,
+	\begin{align*}
+	[L:K]
+	&=[L:T] [T:K]
+	=e(w/w_T)f(w/w_T)e(w_T/v)f(w_T/v)
+	=e(w/v)f(w/v),
+	\end{align*}
+	da $e$ und $f$ multiplikativ für Körpererweiterungen sind.
+	
+	\bigskip\textbf{Schritt 2:} Konstruiere $a_1, \dots, a_n \in K=T$ mit $\sqrt[m_1]{a_1}, \dots, \sqrt[m_n]{a_n} \in L$.
+	
+	$m_1, \dots, m_n$ sind nicht durch $p$ teilbar und für 
+	\[ L' = K(\sqrt[m_1]{a_1}, \dots, \sqrt[m_n]{a_n})
+	\]
+	gilt $w(L'^\times) = w(L^\times)$. Seien $w_1,\dots,w_n$ ein System von Nebenklassenvertretern von $w(L^\times) / v(K^\times)$. Es gilt für die Ordnung $m_i = \ord ( \overline{w}_i )$ von $\overline{w}_i$ in $w(L^\times) / v(K^\times)$:
+	\[  \ord ( \overline{w}_i ) \text{ teilt } w(L^\times) / v(K^\times) = e(L/K)
+	\]
+	
+	Außerdem gilt
+	\begin{align*}
+	w(L^\times)
+	&= \frac{1}{[L:K]} v \left( \Norm_{L/K}(K^\times) \right)
+	\subset \frac{1}{[L:K]} v \left( K^\times \right)
+	\end{align*}
+	so, dass $[L:K]$ von  $w(L^\times) / v(K^\times)$ geteilt wird.
+	$m_i = \ord ( \overline{w}_i )$ teilt also $[L:K]$ und ist damit teilerfremd zu $p$.
+	Wähle $\gamma_1,\dots,\gamma_n \in L^\times$ mit $w(\gamma_i) = w_i$.
+	Dann ist
+	\[ w \left( \gamma_i^{m_i} \right)
+	=m_i w(\gamma_i)
+	= v(c_i)
+	\]
+	mit einem $c_i \in K^\times$, also
+	$\gamma_i^{m_i} ) c_i \varepsilon_i$ mit $\varepsilon+_i \in \O_w^\times$.
+	Aus $\kappa_w = \kappa_v$ folgt $\overline{+\varepsilon}_i = \overline{b}_i$ mit $b_i \in \O_v^\times$. Schließlich ist $\varepsilon_i = b_i u_i$ mit $u_i \in \O_w^\times$ und $\overline{u}_i =1$ in $\kappa_w$.
+	Betrachte die Gleichung $X^{m_i} - u_i$. Über $\kappa_v=\kappa_w$ erhalte $X^{m_i} - 1$
+	mit Nullstelle $1$ und separabel.
+	Nach Hensel hat $X^{m_i} - u_i$ eine Nullstelle $\beta_i \in \O_w^\times \subset L$.
+	Setze $\alpha_i = \gamma_i \beta_i^{-1}$, dann gilt:
+	\begin{align*}
+	\alpha_i^{m_i} 
+	&= \gamma_i^{m_i} \beta_i^{-m_i}
+	=c_i \varepsilon_i\beta_i^{-m_i}
+	= c_i \varepsilon_iu_i^{-1} \\
+	w(\alpha_i)
+	&= w(\gamma_i) -w(\beta_i)
+	=w(\gamma_i)
+	=w_i
+	\end{align*}
+	Sei $a_i = \alpha_i^{m_i}$. Dann leistet
+	\[ L' = K(\sqrt[m_1]{a_1}, \dots, \sqrt[m_n]{a_n})
+	=K(\alpha_1,\dots,\alpha_n)
+	\]
+	das Gewünschte.
+	
+	\bigskip\textbf{Schritt 3:} Es gilt $L=L'$.
+	
+	Sei $w'=W|_{L'}$. Dann gilt $\kappa_v \subset \kappa_{w'} \subset \kappa_w$.
+	Nach Schritt 1 ist
+	\[ \kappa_v = \kappa_{w'} = \kappa_w = 1
+	\]
+	und damit $f(w/w') =1$. Außerdem ist $e(w/w') = 1$ nach Schritt 2.
+	Proposition 9.18 impliziert schließlich $L=L'$.
+	
+	\bigskip\textbf{Schritt 4:} Es gilt $e\geq [L:K]$.
+	
+	Seien $a_1, \dots, a_n$ wie in Schritt 2 konstruiert. Sei
+	\[ L_j = K\left( \sqrt[m_1]{a_1}, \dots, \sqrt[m_j]{a_j} \right)
+	\]
+	mit $w|_{L_j} = w_j$. Für $j=1$ ist $e_1 = e(w_1/v)$. Es gilt
+	$w\left( \sqrt[m_1]{a_1} \right) = w_1$ und $m_1 = \ord (\overline{w}_1)$ teilt $e(w_1/v)$, also
+	\[ e_1 \geq m_1 \geq [L_1:K].
+	\]
+	Der Induktionsschritt $j\to j+1$ folgt aus der Multiplikativität vom Grad und vom Verzweigungsindex.
+	
+	\bigskip \enquote{$\Leftarrow$} Folgt aus Beispiel 9.16.
+\end{proof}
+
+
+
+
