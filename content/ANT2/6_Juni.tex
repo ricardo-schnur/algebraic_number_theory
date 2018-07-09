@@ -4,7 +4,7 @@
 Seien $w_1, \dots, w_f \in \O_w$ Vertreter einer Basis $\overline{w_1}, \dots, \overline{w_f}$ von $\kappa_w | \kappa_v$ und $\Pi_0, \dots, \Pi_{k-1} \in L^\times $ Vertreter unterschiedlicher Nebenklassen von $v(K^\times)$ in $v(L^\times)$.\\
 \underline{Zeige:} \begin{enumerate}[(1)]
 \item $\{w_i \cdot \Pi_j \ | \ i \in \{1, \dots, f\}, j \in \{0 , \dots, k-1\}\}$ ist linear unabhängig in $L|K$ und damit folgt $[L:K] \geq ef$.
-\item Falls $v$ diskret+ $L|K$ separabel und $k=e$, dann ist $\{w_i\Pi_j\}$ eine Basis von $L|K$ und damit gilt \glqq $=$ \grqq in (1).
+\item Falls $v$ diskret+ $L|K$ separabel und $k=e$, dann ist $\{w_i\Pi_j\}$ eine Basis von $L|K$ und damit gilt \glqq $=$\grqq \ in (1).
 \end{enumerate}
 \underline{Vorüberlegung:} $s=\alpha_1w_1 + \dots + \alpha_f w_f$ mit $\alpha_1, \dots, \alpha_f \in K$ und $s \neq 0 \Rightarrow w(s) \in v(K^\times)$\\
 \underline{denn:} Sei $i_0$ gewählt mit $v(\alpha_{i_0})=\min\{v(\alpha_1), \dots, v(\alpha_f)\}$\\
@@ -59,7 +59,8 @@ Sei $(L,w)|(K,v)$ algebraische Körpererweiterung mit $K$ henselsch.
 
 \begin{proof}
 \begin{enumerate}[i)]
-\item Sei zunächst $L|K$ endlich. Prop. 8.16 $\Rightarrow [L:K] \geq e(w|v)f(w|v)=[w(L^\times):v(K^\times)] \underbrace{[\kappa_w:\kappa_v]}_{=[L:K]}$\\
+\item Sei zunächst $L|K$ endlich. Prop. 8.16\\
+$\Rightarrow [L:K] \geq e(w|v)f(w|v)=[w(L^\times):v(K^\times)] \underbrace{[\kappa_w:\kappa_v]}_{=[L:K]}$\\
 $\Rightarrow [w(L^\times):v(K^\times)]=1$ und Ungleichheit ist Gleichheit.\\
 Falls nun $L|K$ unendlich $\Rightarrow L=\cup_{i \in I} L_i$ mit $L_i|K$ unverzw. Körpererweiterung. Dann ist $w(L_i^\times)=v(K^\times)$ für jedes $i \in I$ und dann auch $w(L)=v(K^\times)$.
 \item folgt aus Prop. 8.16.
@@ -72,14 +73,15 @@ $\overline{f}$ separabel $\Rightarrow L|K$ ist unverzweigt und $\kappa_w=\kappa_
 \end{Bsp}
 
 \begin{proof}
-$\overline{f}$ separabel $\Rightarrow \overline{f}$ irreduzibel nach Henselschem Lemma, da $f$ irreduzibel. $\Rightarrow \overline{f}$ ist Minimalpolynom von $\overline{\alpha}$. Dann gilt:\\
-$[\kappa_w:\kappa_v] \geq [\kappa_v(\overline{\alpha}):\kappa_v]=\deg(\overline{f})=\deg(f)=[L_K] (\star)$\\
-Wegen $[\kappa_w:\kappa_v] \leq [L_K]$ gilt in $(\star)\ \glqq =\grqq$ und $\kappa_w=\kappa_v(\overbrace{\alpha})$. Insbesondere ist dann auch $\kappa_w|\kappa_v$ separabel.
+$\overline{f}$ separabel $\Rightarrow \overline{f}$ irreduzibel nach Henselschem Lemma, da $f$ irreduzibel.\\
+$\Rightarrow \overline{f}$ ist Minimalpolynom von $\overline{\alpha}$. Dann gilt:\\
+$[\kappa_w:\kappa_v] \geq [\kappa_v(\overline{\alpha}):\kappa_v]=\deg(\overline{f})=\deg(f)=[L : K] \quad (\star)$\\
+Wegen $[\kappa_w:\kappa_v] \leq [L : K]$ gilt in $(\star)\ \glqq =\grqq$ und $\kappa_w=\kappa_v(\overline{\alpha})$. Insbesondere ist dann auch $\kappa_w|\kappa_v$ separabel.
 \end{proof}
 
 \begin{Bem}
 $L|K$ endlich+ unverzweigt+$K$ henselsch. $\alpha \in \O_w$ mit Bild $\overline{\alpha}$ in $\kappa_w$ ist erzeugend, d.h. $\kappa_w=\kappa(\overline{\alpha})$.\\
-$\Rightarrow L=K(\alpha)$ und für das Minimalpolynom $f_\alpha \in \O_v[X]$ von $\alpha$ gilt: $\overline{f_\alpha}=$ Bild in $\kappa_v[X]$ ist Minimalpolynom von $\overline{\alpha}$
+$\Rightarrow L=K(\alpha)$ und für das Minimalpolynom $f_\alpha \in \O_v[X]$ von $\alpha$ gilt: $\overline{f_\alpha}=$ Bild in $\kappa_v[X]$ von $f_\alpha$ ist Minimalpolynom von $\overline{\alpha}$
 \end{Bem}
 
 \begin{proof}
@@ -91,6 +93,6 @@ $(K,v)$ henselsch.
 \begin{enumerate}[i)]
 \item Seien $(L,w)$ und $(K',v')$ zwei Erweiterungen von $(K,v)$ im algebraischen Abschluss $\overline{K}$. Sei $L':=LK'$ mit fortgesetzter Bewertung $w'$. Dann gilt: $L|K$ unverzweigt $\Rightarrow L'|K'$ unverzweigt.
 \item $(K,v) \subseteq (L,w) \subseteq (L',w')$ Kette von bewerteten Körpern.
-\[L'|K \text{ unverzweigt} \iff L'|K \text{ und } L|K \text{ unverzweigt}.\]
+\[L'|K \text{ unverzweigt} \iff L'|L \text{ und } L|K \text{ unverzweigt}.\]
 \end{enumerate}
 \end{Prop}

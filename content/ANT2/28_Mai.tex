@@ -37,7 +37,7 @@
 \begin{proof}
 	Sei $\hat{\O}^{\alg}$ der Bewertungsring in $\Q_p^{\alg}$ und $f\in\hat{\O}^{\alg}[X]$
 	mit $f$ primitiv und $\overline{f} = \overline{g} \overline{h}$ in $\F_p[X]$ mit $\overline{g}, \overline{h}$ teilerfremd.
-	Nach Hensels Lemma gibt es $g,h \in \O[X$ mit $f=gh$ und $\deg g = \deg \overline{g}$ so, dass $\overline{g}$ und $\overline{h}$ jeweils die Bilder von $g$ und $h$ in $\F_p[X]$ sind. Hierbei sei $\O$ der Bewertungsring von $\Q_p$.
+	Nach Hensels Lemma gibt es $g,h \in \O[X]$ mit $f=gh$ und $\deg g = \deg \overline{g}$ so, dass $\overline{g}$ und $\overline{h}$ jeweils die Bilder von $g$ und $h$ in $\F_p[X]$ sind. Hierbei sei $\O$ der Bewertungsring von $\Q_p$.
 	
 	\bigskip Sei $\overline{\Q}$ der algebraische Abschluss von $\Q$. Setze $v_p$ und $\abs{\cdot}_p$ auf $\overline{\Q}$ fort. Sei $\hat{\overline{\Q}}$ die metrische Komplettierung von $\overline{\Q}$. Erhalte folgendes Diagramm:
 	\[ \begin{tikzcd}
@@ -53,12 +53,12 @@
 	\\
 	\end{tikzcd}
 	\]
-Über $\overline{\Q}$ zerfällt $f$ in Linearfaktoren $f=(X-\alpha_1) \cdots (X-\alpha_n)$ mit $\alpha_1, \dots, \alpha_n \in\overline{\Q}$. Nach umsortieren können wir also annehmen, dass
+Über $\overline{\Q}$ zerfällt $f$ in Linearfaktoren $f=(X-\alpha_1) \cdots (X-\alpha_n)$ mit $\alpha_1, \dots, \alpha_n \in\overline{\Q}$. Nach Umsortieren können wir also annehmen, dass
 $g=(X-\alpha_1) \cdots (X-\alpha_r)$ und $h=(X-\alpha_{r+1}) \cdots (X-\alpha_n)$ . Also liegen die Koeffizienten von $g$ und $h$ in $\overline{\Q} \cap \Q_p = \Q_p^{\alg}$ so, dass $g,h \in \Q_p^{\alg}[X]$. Somit ist Hensels Lemma erfüllt.
 \end{proof}
 
 \begin{Prop}
-	Seien $(K,v)$ ein Henselscher Körper und $L/K$ eine algebraische Erweiterung. Dann hat $v$ auf $L$ eine eindeutige Fortsetzung $w$ und der Bewertungsrings $\O_w$ von $w$ is der ganze Abschluss vom Bewertungsring $\O_v$ von $v$. Ist $L/K$ endlich vom Grad $n$, dann ist $w$ gegeben durch
+	Seien $(K,v)$ ein Henselscher Körper und $L/K$ eine algebraische Erweiterung. Dann hat $v$ auf $L$ eine eindeutige Fortsetzung $w$ und der Bewertungsring $\O_w$ von $w$ is der ganze Abschluss vom Bewertungsring $\O_v$ von $v$. Ist $L/K$ endlich vom Grad $n$, dann ist $w$ gegeben durch
 	\[ w(\alpha) = \frac{1}{n} v \left( \Norm_{L/K} ( \alpha) \right)
 	\]
 	und
@@ -85,7 +85,7 @@ $g=(X-\alpha_1) \cdots (X-\alpha_r)$ und $h=(X-\alpha_{r+1}) \cdots (X-\alpha_n)
 Als nächstes wollen wir zeigen, dass in Proposition 5.8.3 auch die umgekehrte Implikation gilt.
 Dazu wollen wir erst Folgendes zeigen:
 
-\bigskip Wenn $v$ von $K$ auf einen Zerfällungskörper $Z(f)$ für ein $f\in K[X]$ fortgesetzt werden kann, dann \enquote{kennen} die Bewertungen der Koeffizienten von $f$ schon die Bewertungen der Nullstellen von $f$.
+\bigskip Wenn $v$ von $K$ auf einem Zerfällungskörper $Z(f)$ für ein $f\in K[X]$ fortgesetzt werden kann, dann \enquote{kennen} die Bewertungen der Koeffizienten von $f$ schon die Bewertungen der Nullstellen von $f$.
 
 \begin{Bsp}
 	\textbf{(1)} Seien $p=3$, $v= v_3$ und
@@ -123,10 +123,9 @@ Dazu wollen wir erst Folgendes zeigen:
 	(d.h., die Länge der Projektion von $e_i$ auf die $x$-Achse) $c_i$ zu.
 \end{defi}
 
-
 \begin{Prop}
-	Es seien $(K,v)$ ein bewerteter Körper, $f(X)=a_nX^n+ \cdots + a_0$ in $K[X]$ mit $a_n a_0 \neq 0$
-	und $L$ der Zerfällungskörper von $f$ mit Fortsetzung $w$ von $v$. Weiter seien $e_1, \dots, e_k)$ das Newton-Polygon von $f$, $m_1,\dots,m_k$ die Steigungen von $e_1, \dots, e_k$ und $c_1,\dots, c_k$ die kombinatorischen Längen. Dann hat $f$ in $L$ $c_i$ Nullstellen $\alpha$ mit Bewertung 
+Es seien $(K,v)$ ein bewerteter Körper, $f(X)=a_nX^n+ \cdots + a_0$ in $K[X]$ mit $a_n a_0 \neq 0$
+und $L$ der Zerfällungskörper von $f$ mit Fortsetzung $w$ von $v$. Weiter seien $(e_1, \dots, e_k)$ das Newton-Polygon von $f$, $m_1,\dots,m_k$ die Steigungen von $e_1, \dots, e_k$ und $c_1,\dots, c_k$ die kombinatorischen Längen. Dann hat $f$ in $L$ $c_i$ Nullstellen $\alpha$ mit Bewertung 
 	$w(\alpha) = -m_i$ für alle $i=1, \dots, k$.
 \end{Prop}
 

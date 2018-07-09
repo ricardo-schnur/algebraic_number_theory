@@ -1,0 +1,150 @@
+\rhead{9. Juli 2018}
+
+\begin{proof}
+\underline{Ziel:} Konstruiere Folge $(a_k)$ in $\overline{\Q_p}$, die CF ist, aber keinen Limes in $\overline{\Q_p}$ hat.\\
+\underline{Ansatz:} $a_k=\sum_{j=0}^k b_j p^{N_j}$ mit $0 = N_0 < N_1 < N_2 < \ldots$ und $b_j$ ist primitive $(p^{2^j}-1)$-te Einheitswurzel. $\Rightarrow (a_k)$ ist Cauchy-Folge.
+
+\underline{Schritt 1:} Zeige $L_k:=\Q_p(b_k) \subseteq L_{k+1}:=\Q_p(b_{k+1})$\\
+$k \leq k+1 \Rightarrow 2^k | 2^{k+1} \Rightarrow p^{2^k}-1|p^{2^{k+1}}-1(=(p^{2^k}-1)(p^{2^k}+1))$\\
+$\Rightarrow b_k$ ist Potenz von $b^{k+1}$\\
+\underline{Beachte:} Prop. 9.11 $\Rightarrow L_k |\Q_p$ ist alg., unverzweigt, $[L_k:\Q_p]=2^k$.\\
+\underline{Schritt 2:} Zeige $\Q_p(a_k)=\Q_p(b_k)\stackrel{Def.}{=} L_k$\\
+$a_k=\sum\limits_{j=0}^k b_j p^{N_j} \stackrel{Schritt 1}{\Rightarrow} \Q_p(a_k) \subseteq \Q_p(b_k)$\\
+Wäre $\Q_p(a_k)\neq \Q_p(b_k)$, dann gäbe es $\sigma \in \Gal(\Q_p(b_k)|\Q_p(a_k))$ mit $\sigma \neq id$. \underline{Aber:} $(b_0, \dots, b_k)$ ist die $p$-adische Entwicklung von $a_k$. Also gilt wegen $\sigma(a_k)=a_k \Rightarrow (\sigma(b_0), \dots, \sigma(b_k))=(b_0,\dots, b_k) \Rightarrow \sigma=id $ \Lightning
+
+Es gilt:
+\begin{tikzcd}
+& & & \Q_p \arrow[dash]{d}\\
+\Q_p(b_0) \arrow[draw=none]{r}[auto=false, sloped]{\subseteq} \arrow[draw=none]{d}[auto=false, sloped]{=} & \Q_p(b_1) \arrow[draw=none]{r}[auto=false, sloped]{\subseteq} \arrow[draw=none]{d}[auto=false, sloped]{=} \arrow[draw=none]{r}[auto=false, sloped]{\subseteq} & \dots \arrow[draw=none]{r}[auto=false, sloped]{\subseteq} & \Q_p(b_n) \arrow[draw=none]{d}[auto=false, sloped]{=}\\
+\Q_p(a_0) \arrow[draw=none]{r}[auto=false, sloped]{\subseteq} & \Q_p(a_1) \arrow[draw=none]{r}[auto=false, sloped]{\subseteq} & \dots \arrow[draw=none]{r}[auto=false, sloped]{\subseteq}& \Q_p(a_n) \\
+\end{tikzcd}
+
+\underline{Schritt 3:} Konstruiere eine geeignete Folge $N_k$ durch Induktion. Seien $N_0, \dots, N_k$ bereits konstruiert.\\
+Sei $n:=2^k=[\Q_p(a_k):\Q_p]$. Finde $N_{k+1}$ mit: Es gibt keine $\alpha_0, \dots, \alpha_n$ mit:
+\begin{itemize}
+\item $\alpha_0, \dots, \alpha_n \in \Z_p$
+\item Mindestens ein $\alpha_i \in \Z^\times_p$
+\item $\alpha_n\cdot a_k^n + \alpha_{n-1} a_k^{n-1} + \ldots + \alpha_0 \equiv
+0 \mod p^{n_{k+1}}$.
+\end{itemize}
+\underline{Beweis:} Lemma 11.2\\
+\underline{Schritt 4:} Zeige: $\{\a_n\}$ hat keinen Limes in $\overline{\Q_p}$.\\
+Annahme: $\exists \ a \in \overline{\Q_p}$ mit $a_n \to a \Rightarrow \ \exists \ m $ mit $\alpha_m a^m+\alpha_{m-1}a^{m-1}+\ldots+\alpha_0=0$ mit $\alpha_0, \ldots, \alpha_m$ haben Bewertung $\geq 0$ und mindestens ein $\alpha_j$ nicht durch $p$ teilbar.\\
+Wähle $k$ mit $2^k > m \Rightarrow a \equiv a_k \mod p^{N_{k+1}}$\\
+$\Rightarrow \alpha_m a_k^m + \alpha_{m-1} a_k^{m-1} + \ldots + \alpha_0 \equiv 0 \mod p^{N_{k+1}}$ \Lightning zu Schritt 3.
+\end{proof}
+
+\begin{Lem}
+Sei $a \in \overline{\Q_p}$ mit Minimalpolynom $f=f_\alpha$ über $\Q_p$ und $n:=\deg(f)$. Dann gibt es ein $N \in \N$ mit:
+\[h(a) \not \equiv 0 \text{ in } \Z_p/p^N\cdot \Z_p\]
+für alle $h \in \Z_p/p^N\Z_p[X]$ mit $\deg(h) \leq n-1$ und $p \not | h$.
+\end{Lem}
+
+\begin{proof}
+Übungsblatt.
+\end{proof}
+
+\begin{defi}
+Seien $\Omega_p:=\overline{\Q_p}$ der algebraische Abschluss von $\Q_p$ und $\C_p=\hat{\Omega_p}$ die Vervollständigung von $\Omega_p$ bezüglich $\overline{v_p}$. $\C_p$ heißt \underline{\textbf{Körper der komplexen $p$-adischen Zahlen}}.
+\end{defi}
+
+\begin{tikzcd}
+\hat{\overline{\Q_p}} \arrow[dash]{d} \arrow[draw=none]{r}[auto=false, sloped]{=:}&\C_p \arrow[dash]{d}\\
+\overline{\Q_p},\overline{v_p} \arrow[dash]{d} \arrow[draw=none]{r}[auto=false, sloped]{=:}&\Omega_p\\
+\Q_p,v_p
+\end{tikzcd}
+
+\begin{Satz}
+$\C_p$ ist algebraisch abgeschlossen
+\end{Satz}
+
+\begin{Prop}
+Sei $(K,v)$ ein bewerteter Körper mit Norm $|\cdot|$. Sei $g(X)=X^n+a_{n-1}X^{n-1}+\dots+a_0 \in K[X]$.\\
+\underline{Erinnerung:} $|g|\stackrel{Def.}{=} \max\{1,|a_{n-1}|, \dots, |a_0|\}$
+\begin{enumerate}[i)]
+\item $\alpha$ Nullstelle von $g \Rightarrow |\alpha| \leq |g|$ (\danger $g$ normiert).
+\item Ist $h(X)=X^n+b_{n-1}X^{n-1}+\dots + b_0 \in K[X]$ ein weiteres normiertes Polnom von Grad $n$, dann gibt es eine Nullstelle $\beta$ von $h(X)$ mit $|\beta-\alpha| \leq \sqrt[n]{|g-h|} \cdot |g|$.
+\end{enumerate}
+\end{Prop}
+
+\begin{proof}
+Sei $s:=|g| \geq 1$ und $v:= - \log s \Rightarrow$ für alle $i \in \{1, \dots, n\}$ gilt: $v(a_i) \geq v$.
+\begin{enumerate}[i)]
+\item Verwende das Newton-Polygon. Im Newton-Polygon sind die Steigungen monoton wachsend.  Die letzte Ecke im Newton-Polygon ist die Ecke $(n,0)$. Für die vorletzte Ecke $(x,y)$ gilt:\\
+$x \leq n-1, y \geq v=- \log|g|$. Also gilt für die Steigung in der letzten Kante: $m \leq \frac{-v}{1} \leq \log|g|$. Da alle anderen Steigungen $\leq m$ sind, gilt dann für eine beliebige Nullstelle $\alpha_i$ von $g$:
+\[|\alpha_i|=p^{-v(\alpha_i)}=p^{m_i} \leq p^m \leq p^{\log|g|}=|g|.\]
+Hierbei ist $m_i$ die Steigung der Kante des Newton-Polygons, die zu $\alpha_i$ gehört.
+\item Seien $\beta_1, \dots, \beta_n \in \overline{K}$ die Nullstellen von $h(X)$ mit Vielfachheiten, also $h(X)=(X-\beta_1) \cdot \ldots \cdot (X-\beta_n)$.
+\begin{align*}
+\prod_{i=1}^n |\alpha-\beta_i|&=|h(\alpha)|=|h(\alpha)-\underbrace{g(\alpha)}_{=0}|=|(h-g)(\alpha)|\\
+&=|(a_{n-1}-b_{n-1})\alpha^{n-1}+ \dots + (a_0-b_0)|\\
+& \leq \max\{|a_i-b_i|\cdot|\alpha_i| \ | \ i \in \{0, \dots, n-1\}\} =: (\star)
+\end{align*}
+Es gilt: $|a_i-b_i| \leq |g-h|$ und $|\alpha^i| \leq \begin{cases}
+|\alpha^n \leq |g|^n \ &, \ |\alpha| \geq 1\\
+1 \leq |g|^n \ &, \ |\alpha| \leq 1
+\end{cases}
+\Rightarrow (\star) \leq |g-h|\cdot |g|^n$\\
+$\Rightarrow$ Es gibt ein $\beta_i$ mit $|\alpha-\beta_i| \leq \sqrt[n]{|g-h|}\cdot |g|$
+\end{enumerate}
+\end{proof}
+
+\begin{proof}[von Satz 9]
+Sei $f(X)=X^n+a_{n-1}X^{n-1} + \dots + a_0 \in \C_p[X]$.\\
+Zeige: $f$ hat eine Nullstelle.\\
+Wähle für jedes $a_i$ eine Folge $a_{i,j}$ mit $a_{i,j} \in \overline{\Q_p}$ und $a_{i,j} \to a_i$.\\
+Sei $f_j:=X^n +a_{n-1,j} X^{n-1} + \dots + a_{0,j} \in \overline{Q_p}[X]$. Also gilt: $f_j \to f$.\\
+Konstruiere nun eine Folge $r_j$ mit folgenden Eigenschaften:
+\begin{enumerate}[(1)]
+\item $r_j$ ist Nullstelle von $f_j$
+\item $|r_{j+1}-r_j| leq \sqrt[n]{|f_{j+1}-f_j|} \cdot|f_j|$
+\end{enumerate}
+Existens folgt aus Prop. 11.4. Aus $f_j \to f$ folgt: $|f_j|$ ist beschränkt und $|f_{j+1}-f_j| \to 0 \Rightarrow r_j$ ist Cauchy-Folge $\Rightarrow \ \exists \ r \in \C_p$ mit $r_j \to r$.\\
+Dann gilt: $f(r)= \lim\limits_{j\to \infty} f_j(r)=\lim\limits_{j\to \infty}\lim\limits_{i\to \infty} f_j(r_i)$\\
+$\Rightarrow f$ hat eine Nullstelle.\\
+$\C_p$ ist algebraisch abgeschlossen.
+\end{proof}
+
+\begin{Bem}
+In Satz 9 haben wir nur verwendet, dass $\Q_p$ nicht-archimedisch+vollständig ist. Es gilt also allgemeiner:\\
+Sei $(K, |\cdot|)$ vollständiger Körper mit algebraischem Abschluss $\overline{K}$ und Vervollstndigung $\hat{\overline{K}}$, dann ist $\hat{\overline{K}}$ algebraisch abgeschlossen.
+\end{Bem}
+
+\chapter{Ein wenig Galois-Theorie}
+\section{Unendliche Galois-Theorie}
+\begin{defi}
+Für einen perfekten Körper $K$ heißt:
+\[G_K:=\Gal(\overline{K} | K) \text{ die \underline{\textbf{absolute Galois-Gruppe von $K$}}}\]
+\end{defi}
+
+\underline{Problem:} Für unendliche Körpererweiterungen gilt nicht der Hauptsatz der Galois-Theorie.
+
+\begin{Bsp}
+$K=\F_p, L=\overline{\F_p}$. Seien $\varphi : \overline{\F_p} \to \overline{F_p} \ , \ x \mapsto x^p $ (Frobenius-Homom.) und $H:= < \varphi >$.\\
+$\Rightarrow L^H=\{\alpha \in \overline{\F_p} \ | \ \varphi(\alpha)=\alpha\} = \{ \alpha \in \overline{\F_p} \ | \ \alpha^p = \alpha \} = \F_p = L^{G_{\F_p}}$.\\
+Es gilt also $H \subsetneq G_{\F_p}$ und $L^H=L^{G_{\F_p}}$.
+\end{Bsp}
+
+\begin{Err}[aus Algebra 1]
+Sei $L|K$ galoissche Körpererweiterung.\\
+\begin{tikzcd}
+\{\text{ UG von } \Gal(L|K)\} \arrow[r, bend right=15, swap, "\phi"]& \{\text{Zwischenkörper von } L|K\} \arrow[l, bend right=15, swap, "\psi"]\\
+H \arrow[r,mapsto] & L^H\\
+\Gal(L|E) & E \arrow[l, mapsto]
+\end{tikzcd}
+\end{Err}
+
+Algebra I $\Rightarrow \phi \circ \psi = id$\\
+Bsp 1.2 $\Rightarrow \psi \circ \phi \neq id.$
+
+\begin{Bem}
+Algebra I $\Rightarrow$ Erhalte Korrespondenz zwischen UG von endlichem Index und endlichen Körpererweiterungen von $K$.
+\end{Bem}
+
+\underline{Idee:} Verwende proendliche Komplettierung:\\
+$G:=\Gal(L|K) \Rightarrow \hat{G}= \{ (\sigma_N)_N \ | \ \sigma_N \in \G/N, N \subseteq M \Rightarrow p_{N,M}(\sigma_M)=\sigma_N\}$\\
+Hierbei durchläuft $N$ die Normalteiler von $G$ von endlichem Index und $p_{N,M}: G/M \to G/N$ ist die kanonische Projektion.
+
+\begin{Prop}
+Sei $G:=\Gal(L|K)$ für eine galoissche Körpererweiterung $L|K$. Dann gilt: $\hat{G} \cong G$.
+\end{Prop}

@@ -10,13 +10,13 @@ $f$ irreduzibel $\Rightarrow  a_0 \neq 0$. Kor. 9.10 $\Rightarrow 1=|f|=\max\{|a
 \underline{Fall 1:} $|a_n|<1$, d.h. $a_n \in \p_v \Rightarrow v(a_i)>0 \ \forall i \in \{1, \ldots, n\}$, d.h. $a_i \in \p_v \Rightarrow \overline{f}= \overline{a_0}$ in $\kappa[X] \Rightarrow$ Beh.\\
 \underline{Fall 2:} $|a_n|=1$, d.h. $a_n \in \O^\times$. Sei $L=Z(f)$ und $w$ die eindeutige Fortsetzung von $v$ auf $L$. Bem. 8.8 $\Rightarrow$
 \begin{itemize}
-\item Erhalte Homom. $\varphi: \Gal(L|K) \to \Gal(\kappa_w|\kappa_v).$
+\item Erhalte Homom. $\Gal(L|K) \to \Gal(\kappa_w|\kappa_v) , \sigma \mapsto \overline{\sigma}.$
 \item $\alpha$ Nullstelle von $f \Rightarrow \alpha \in \O_w=$ Bewertungsring zu $w$.
 \end{itemize}
 Sei $\mu:=$ Vielfachheit der Nullstelle $\alpha$ in $f$.
 \begin{align*}
 \Rightarrow f(X)=\prod_{\sigma\in \Gal(L|K)} (X-\sigma(\alpha))^\mu\\
-\Rightarrow \overline{f}(X)=\prod_{\sigma\in \Gal(L|K)} (X-\overline{\sigma}(\overline{\alpha)})^\mu \in \kappa_v[X]\\
+\Rightarrow \overline{f}(X)=\prod_{\sigma\in \Gal(L|K)} (X-\overline{\sigma}(\overline{\alpha}))^\mu \in \kappa_v[X]\\
 \end{align*}
 Insbesondere ist jede Nullstelle von $\overline{f}$ ein Konjugat von $\overline{\alpha}$ unter $\Gal(\kappa_w|\kappa_v)$. Sei $\overline{g}$ das Minimalpolynom von $\overline{\alpha}$ über $\kappa_v \Rightarrow \overline{g}$ teilt $\overline{f}$.
 
@@ -26,7 +26,7 @@ Schreibe $f=f_1 \cdot \ldots \cdot f_r$ mit $f_i$ irreduzibel über $K$. $1=|f| 
 $\OE \deg(\overline{f_1}), \dots, \deg(\overline{f_{r'}}) \neq 0$ und $\deg(\overline{f_{r'+1}})=\dots=\deg(\overline{f_r})=0.$\\
 Annahme: $\overline{f}=\overline{g}\overline{h}$ mit $\overline{g}, \overline{h}$ teilerfremd.\\
 $\stackrel{(1)}{\Rightarrow} \overline{g}=\overline{a} \cdot \prod_{i \in I} \overline{f_i}$ und $ \overline{h}=\overline{b} \cdot \prod_{j \in J} \overline{f_j}$ mit $I \dot{\bigcup} J = \{1, \dots, r'\}, \overline{a}, \overline{b} \in \kappa_w^\times$.\\
-Wähle Urbild $a$ von $\overline{a}$ in $\O_v^\times.$ Definiere $g_0:=a \cdot \prod_{i \in I} f_i$ und $h_0:= a^{-1}\cdot \prod_{j \in \{1, \dots, r\} \setminus I} f_j \Rightarrow f= g_0h_0$ und $\overline{g_0}=\overline{g}$ und $\overline{h_0}=\overline{h}$ (Verwende $\overline{f}=\underbrace{\overline{g}}_{=\overline{g_0}} \overline{h})$ und $\deg(g_0)=\deg(\overline{g}) \Rightarrow$ Hensels Lemma ist erfüllt.
+Wähle Urbild $a$ von $\overline{a}$ in $\O_v^\times.$ Definiere $g_0:=a \cdot \prod_{i \in I} f_i$ und $h_0:= a^{-1}\cdot \prod_{j \in \{1, \dots, r\} \setminus I} f_j \Rightarrow f= g_0h_0$ und $\overline{g_0}=\overline{g}$ und $\overline{h_0}=\overline{h}$ (verwende $\overline{f}=\underbrace{\overline{g}}_{=\overline{g_0}} \overline{h})$ und $\deg(g_0)=\deg(\overline{g}) \Rightarrow$ Hensels Lemma ist erfüllt.
 \end{enumerate}
 \end{proof}
 
@@ -36,7 +36,7 @@ in $L$: Bewertungsring $\O_w$ mit maximalem Ideal $\p_w$ und Restklannsenkörper
 in $K$: Bewertungsring $\O_v$ mit maximalem Ideal $\p_v$ und Restklannsenkörper $\kappa_v$.
 \[\begin{tikzcd}
 \p_w  \arrow[draw=none]{r}[auto=false, sloped]{\subset} & \O_w \arrow[draw=none]{r}[auto=false, sloped]{\subset} & L &w(L^\times)\\
-\p_v  \arrow[dash]{u} \arrow[draw=none]{r}[auto=false, sloped]{\subset} & \O_v \arrow[dash]{u} \arrow[draw=none]{r}[auto=false, sloped]{\subset} & K \arrow[dash]{u} & v(K^\times) \subseteq (\R,+) \arrow[dash]{u} 
+\p_v  \arrow[dash]{u} \arrow[draw=none]{r}[auto=false, sloped]{\subset} & \O_v \arrow[dash]{u} \arrow[draw=none]{r}[auto=false, sloped]{\subset} & K \arrow[dash]{u} & v(K^\times) \arrow[draw=none]{r}[auto=false, sloped]{\subset}eq  \arrow[dash]{u} & (\R,+) 
 \end{tikzcd}\]
 \todo{Bild}
 \danger $\O_v$ muss nicht noethersch sein und ist damit nicht immer Dedekindring. $\O_w$ muss nicht der ganze Abschluss von $\O_v$ sein.
@@ -55,7 +55,7 @@ Falls $v$ und $w$ diskrete Bewertungen sind, dann sind $\O_w$ und $\O_v$ diskret
 \end{Bem}
 
 \begin{Fakt}[\glqq Nakayama-Lemma \grqq]
-Seien $R$ kommutativer Ring mit 1, $M$ ein endlich erzeugter $R$-Modul, $\a$ Ideal in $R$ mit $\a \subseteq \mathrm{Rad(R)}=\cap_{m \in S} m \ (S:=\{m | m  $ist maximales Ideal in $ R\})$.\\
+Seien $R$ kommutativer Ring mit 1, $M$ ein endlich erzeugter $R$-Modul, $\a$ Ideal in $R$ mit $\a \subseteq \mathrm{Rad(R)}=\cap_{m \in S} m$ für $S:=\{m | m  $ ist maximales Ideal in $ R\}$.\\
 Dann gilt:
 \begin{enumerate}[i)]
 \item $\a M=M \Rightarrow M=0$

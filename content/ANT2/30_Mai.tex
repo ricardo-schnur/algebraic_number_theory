@@ -3,14 +3,14 @@
 
 \begin{proof}
 \begin{enumerate}[(1)]
-\item \OE $a_n=1$, denn bei Division durch $a_n$ wird das Newton-Polygon nur verschoben und die Nullstellen ändern sich nicht.
+\item \OE \ $a_n=1$, denn bei Division durch $a_n$ wird das Newton-Polygon nur verschoben und die Nullstellen ändern sich nicht.
 \item Seien nun $\alpha_1, \dots, \alpha_n$ die Nullstellen von $f$ in $L$ mit Vielfachheiten. Diese seien so sortiert, dass $w(\alpha_1) \leq w(\alpha_2) \leq \ldots \leq w(\alpha_n)$.\\
 Genauso seien: $w(\alpha_1) = w(\alpha_2)=\ldots = w(\alpha_{s_1})=m_1 \quad$ ($s_1$-mal die Bewertung $m_1$).\\
 $w(\alpha_{s_1+1}) = w(\alpha_{s_1+2})=\ldots = w(\alpha_{s_2})=m_2 $ usw.\\
 $w(\alpha_{s_t+1}) = w(\alpha_{s_t+2})=\ldots = w(\alpha_{s_{t+1}})=m_{t+1} $ mit $s_{t+1}=n$, $(s_{t+1}-s_t)$-mal Bewertung $m_{t+1}$\\
 mit $m_1 < m_2 < \dots < m_{t+1}$.
 \item \underline{Erinnerung (Algebra}:
-\[\prod_{c=1}^n (X-\alpha_i) = \sum_{d=0}^n (-1)^d (\alpha_1, \dots, \alpha_n) X^{n-d}\]
+\[\prod_{c=1}^n (X-\alpha_i) = \sum_{d=0}^n (-1)^d s_d (\alpha_1, \dots, \alpha_n) X^{n-d}\]
 mit $s_d(T_1, \dots, T_n)$ elementarsymmetrisches Polynom von Grad d
 \[s_d:=\sum_{(i_1, \dots, i_d)} T_{i_1} \cdot \ldots \cdot T_{i_d}\]
 das heißt:
@@ -29,7 +29,7 @@ v(a_{n-2})&=v(\sum_{(i,j)} \alpha_i \alpha_j) \geq \min \{w(\alpha_i \alpha_j) \
 &\dots\\
 v(a_{n-s_1})&=v(\sum_{(i_1,\dots, i_{s_1})} \alpha_{i_1} \dots \alpha_{i_{s_1}}) \stackrel{(*)}{\geq}\min \{w(\alpha_1 \dots \alpha_{s_1})\}=s_1 m_1\\
 \end{align*}
-Bei $(*)$ gilt sogar Gleichheit, da für alle anderen $s_1$-Tupel $(i_1, \dots, i_{s_1})$ gilt $w(\alpha_{i_1} \dots \alpha_{i_{s_1}})>w(\alpha_1 \dots \alpha_{s_1})$.\\
+Bei $(*)$ gilt sogar Gleichheit, da für alle anderen $s_1$-Tupel $(i_1, \dots, i_{s_1})$ gilt \linebreak $w(\alpha_{i_1} \dots \alpha_{i_{s_1}})>w(\alpha_1 \dots \alpha_{s_1})$.\\
 Sei $e_1=$ Strecke von $(n-s_1, v(a_{n-s_1}))$ bis $(n, v(a_n))$, dann hat $e_1$ die Steigung $-m_1$ und kombinatorische Länge $s_1$.\\
 Die Ecken von $c_1$ liegen in $S$. Alle Punkte $(i, v(a_i))$ mit $n>i>n-s_1$ liegen auf der Strecke $e_1$ oder darüber. Genauso
 \begin{align*}
@@ -45,14 +45,14 @@ Also $e_2=$ Strecke von $(n-s_2, v(a_{n-s_2}))$ nach $(n-s_1, v(a_{n-s_1}))$ hat
 \item Die Ecken von $e_i$ liegen in $S$
 \item Alle Punkte $j, v(a_j))$ in $S$ mit $n-s_i \leq j \leq n-{s_{i-1}}$ liegen auf oder oberhalb von $e_i$.
 \end{itemize}
-Schließlich ist wegen $m_1 < m_2 \dots < m_{t+1}$ der Bereich, der vom Kantenzug $e_1, \dots, e_{t+1})$ nach oben berandet wird konvex. Damit ist $(e_1, \dots , e_{t+1})$ das Newton-Polygon.
+Schließlich ist wegen $m_1 < m_2 < \dots < m_{t+1}$ der Bereich, der vom Kantenzug $(e_1, \dots, e_{t+1})$ nach oben berandet wird konvex. Damit ist $(e_1, \dots , e_{t+1})$ das Newton-Polygon.
 \end{enumerate}
 \end{proof}
 
 \begin{Bem}
 Sei $(K,v)$ bewerteter Körper und $L|K$ eine Körpererweiterung, auf die sich $v$ in eindeutiger Weise zu Bewertung $w$ fortsetzt.
 \begin{enumerate}[i)]
-\item Dann gilt für $\sigma in \Aut_K(L): w \circ \sigma = w$.\\
+\item Dann gilt für $\sigma \in \Aut_K(L): w \circ \sigma = w$.\\
 Es folgt insbesondere für den Bewertungsring $\O_w$ zu $w$ und das maximale Ideal $\p_w: \sigma(\O_w)=\O_w$ und $\sigma(\p_w)=\p_w$. Somit induziert $\sigma$ einen Automorphismus $\overline{\sigma}: \kappa_w \to \kappa_w$ auf dem Restklassenkörper $\kappa_w=\O_w/\p_w \Rightarrow$ Wir erhalten Homomorphismus $\Aut_K(L) \to \Gal(\kappa_w|\kappa_v)$ mit $\kappa_v$ Restklassenkörper zu $v$.
 \item Falls $L=Z(f)$ ist mit $f=a_nX^n+\dots+a_0 \in \O_v[X]$ für ein irreduzibles Polynom $f$ über dem Bewertungsring $\O_v$ zu $v$, dann liegen die Nullstellen $\alpha$ von $f$ in $\O_w$.
 \end{enumerate}
@@ -72,13 +72,14 @@ Dann gilt: $f_j \in K[X]$.
 \end{Prop}
 
 \begin{proof}
-Wiederum \OE $a_n=1$
+Wiederum \OE \ $a_n=1$
 \begin{enumerate}[(1)]
 \item Falls $f$ irreduzibel ist, dann sind alle Nullstellen $\alpha_1, \dots, \alpha_n$ von $f$ konjugiert durch $\Gal(L|K) \stackrel{Bem. 8.8}{\Longrightarrow} w(\alpha_1)=\dots=w(\alpha_n) \Rightarrow t+1=1 \Rightarrow f_j \in K[X]$.
 \item Sei $f$ nun beliebig. Wir machen Induktion nach $\deg(f)$:\\
 \glqq $n=1$ \grqq: \checkmark\\
 \glqq $n \to n+1$ \grqq: Sei $p(X) \in K[X]$ das Minimalpolynom von $\alpha_1$. Alle Nullstellen von $p$ haben die gleiche Bewertung $m_1 \Rightarrow p$ ist Teiler von $f_1$. Sei $g_1(X):= f_1(X)/p(X)$ und $g(X):=f(X)/p(X) \in K[X]$\\
-$\Rightarrow \deg(g) < \deg(f)$ und $g(X)=\underbrace{g_1(X)}_{m_1} \cdot \underbrace{f_2(X)}_{m_2} \cdot \ldots \cdot \underbrace{f_{t+1}(X)}_{m_{t+1}} \stackrel{I.V.}{\Rightarrow} g_1, f_2, \dots f_{t+1} \in K[X]$.
+$\Rightarrow \deg(g) < \deg(f)$ und $g(X)=\underbrace{g_1(X)}_{m_1} \cdot \underbrace{f_2(X)}_{m_2} \cdot \ldots \cdot \underbrace{f_{t+1}(X)}_{m_{t+1}}$\\
+$\stackrel{I.V.}{\Rightarrow} g_1, f_2, \dots f_{t+1} \in K[X]$.
 \end{enumerate}
 \end{proof}
 
@@ -88,7 +89,7 @@ Falls $f(X)=a_n X^n + a_{n-1}X^{n-1} + \dots + a_0$ irreduzibel, dann $|f| \stac
 \end{Kor}
 
 \begin{proof}
-Das Newton-Polygon besteht nur aus einer Kante mit den Eckpunkten $(0, v(_0))$ und $(n, v(a_n))$.
+Das Newton-Polygon besteht nur aus einer Kante mit den Eckpunkten $(0, v(a_0))$ und $(n, v(a_n))$.
 \end{proof}
 
 \begin{Prop}

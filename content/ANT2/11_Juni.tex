@@ -43,10 +43,10 @@
 \begin{proof}
 	\enquote{$\Rightarrow$} Folgt aus:
 	\[\begin{tikzcd}
-	& L' & \\
-	L' 
+	& L_1 L_2 & \\
+	L_1 
 	\arrow[hook]{ur}{\text{unverzweigt}}
-	& & L 
+	& & L_2 
 	\arrow[hook, swap]{ul}{\text{unverzweigt}}
 	\\
 	& K 
@@ -86,12 +86,12 @@
 	\overline{\alpha} \in \kappa_w; \, \text{$\overline{\alpha}$ ist separabel über $\kappa_v$}
 	\right\}
 	\end{align*}
-	der separable Abschluss von von $\kappa_v$ in $\kappa_w$.
+	der separable Abschluss von $\kappa_v$ in $\kappa_w$.
 \end{Prop}
 
 
 \begin{proof}
-	Die Inklusion $K\subset T \subset L$ induziert $\kappa_v \subset \kappa_{w_T} \subset \kappa_v$.
+	Die Inklusion $K\subset T \subset L$ induziert $\kappa_v \subset \kappa_{w_T} \subset \kappa_w$.
 	
 	\bigskip \enquote{$\subset$} Aus $T/K$ unverzweigt folgt $\kappa_{w_T}$ über $\kappa_v$ separabel.
 	
@@ -111,7 +111,7 @@
 	\bigskip
 	\textbf{(i)} $\ggT(n,p) = 1$:
 	
-	$X^n-1 \in \kappa_v[X]$ ist separabel, da $NX^[n-1] \neq 0$.
+	$X^n-1 \in \kappa_v[X]$ ist separabel, da $nX^{n-1} \neq 0$.
 	Also ist $\overline{f}$ separabel und damit folgt nach Beispiel 9.3 und Bemerkung 9.4, dass
 	\[ L/ K = \Q_p(\zeta) / \Q_p
 	\]
@@ -131,7 +131,7 @@
 	\]
 	ist. Daher ist $\zeta-1$ eine Nullstelle von $h(x) = \Phi(X+1)$ und $h(x) \in \O_v[X] = \Z_p[X]$ ist nach Eisenstein irreduzibel, denn:
 	
-	\textbf{(1)} $p$ ist prim in $\O_V = \Z_p$.
+	\textbf{(1)} $p$ ist prim in $\O_v = \Z_p$.
 	
 	\textbf{(2)} $a_0 = h(0) = \Phi(1) = p$ so, dass $p \, | \, a_0$ und $p^2 \not | \,a_0$.
 	
@@ -196,7 +196,7 @@
 	\bigskip \enquote{(iv)} Da $L/K$ unverzweigt ist, gilt $e=1$ nach Bemerkung 9.2. Somit gilt $\p_w = \p_v \O_w$.
 	Außerdem ist $\overline{1}, \overline{\zeta}, \dots, \overline{\zeta}^{f-1}$ eine Basis von $\kappa_w / \kappa_v$ und damit
 	\[ \O_w 
-	= \O_v[\zeta] + \_w
+	= \O_v[\zeta] + \p_w
 	= \O_v[\zeta] + \p_v\O_w.
 	\]
 	Nakayama liefert also $\O_w = \O_v[\zeta]$.
