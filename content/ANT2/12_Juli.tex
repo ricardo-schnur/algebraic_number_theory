@@ -4,20 +4,22 @@
 \begin{proof}
 Betrachte die Abbildung $\varphi: G \to \hat{G} \ , \ \sigma \mapsto p_N(\sigma)_N$ mit $p_N: G \to G/N$ ist kanonische Projektion.\\
 \underline{Vorüberlegung:} $E$ normaler Zwischenkörper von $L|K$ mit $E|K$ endlich\\
-$\Rightarrow N:=N_E:=\Gal(L|E)$ ist zugeh. Normalteiler von endlichem Index. $G/N= \Gal(L|K)/\Gal(L|E) \cong \Gal(E|K)$\\
-$\Rightarrow p_N: G \to G/N \cong \Gal(E,K) \ , \ \sigma \mapsto \sigma|E.$\\
+$\Rightarrow N:=N_E:=\Gal(L|E)$ ist zugeh. Normalteiler von endlichem Index.\\
+$G/N= \Gal(L|K)/\Gal(L|E) \cong \Gal(E|K)$\\
+$\Rightarrow p_N: G \to G/N \cong \Gal(E|K) \ , \ \sigma \mapsto \sigma|E.$\\
 \begin{enumerate}[(1)]
 \item \underline{Zeige:} $\varphi$ ist injektiv.\\
 $\varphi$ ist injektiv $\iff \bigcap \limits_{\substack{ N \trianglelefteq G,\\ [G:N] < \infty}} N = \{1\} \stackrel{Def.}{\iff} G$ ist \underline{\textbf{residuell endlich}}.\\
-$\sigma \in \cap N \Rightarrow$ Für $\alpha \in L$ und $E=Z(\alpha)$ gilt: $\sigma \in \Gal(L|E) \Rightarrow \sigma(\alpha)=\alpha \Rightarrow \sigma=id$.
-\item $\varphi$ ist surjektiv. Sei $(\sigma_N) \in \hat{G}. [\sigma_N \in G/N = \Gal(E_N|K)$ mit $E_N=L^N]$.\\
-Definiere $\sigma : L \to L$ durch: Für $\alpha \in L$ sei $E$ eine endliche Körpererweiterung von $K$ in $L$, die $\alpha$ enthält mit $N:= \Gal(L|E)$. Definiere $\sigma(\alpha):=\sigma_N(\alpha)$. Dies ergibt wohldefinierten Körperhomom., wg. Verträglichkeitsbedingung im Limes $\Rightarrow \sigma \in \Gal(L|K)$ und $\varphi(\sigma)=(\sigma_N)$.
+$\sigma \in \bigcap N \Rightarrow$ Für $\alpha \in L$ und $E=Z(\alpha)$ gilt: $\sigma \in \Gal(L|E) \Rightarrow \sigma(\alpha)=\alpha \Rightarrow \sigma=id$.
+\item $\varphi$ ist surjektiv. Sei $(\sigma_N) \in \hat{G}. (\text{mit } \sigma_N \in G/N = \Gal(E_N|K)$ mit $E_N=L^N)$.\\
+Definiere $\sigma : L \to L$ durch: Für $\alpha \in L$ sei $E$ eine endliche, normale Körpererweiterung von $K$ in $L$, die $\alpha$ enthält mit $N:= \Gal(L|E)$. Definiere $\sigma(\alpha):=\sigma_N(\alpha)$. Dies ergibt wohldefinierten Körperhomom. wegen Verträglichkeitsbedingung im Limes\\
+$\Rightarrow \sigma \in \Gal(L|K)$ und $\varphi(\sigma)=(\sigma_N)$.
 \end{enumerate}
 \end{proof}
 
 \begin{Bem}
 Damit trägt $\Gal(L|K)$ eine natürliche Topologie als proendliche Komplettierung. $T$ ist die kleinste Topologie, die alle Mengen $\sigma \cdot \Gal(L|E)$ mit $\sigma  \in \Gal(L|K)$ und $E$ endlicher Zwischenkörper von $L|K$ enthält. 
-\[\text{ (Induzierte Topologie von: \ } G \cong \hat{G} = \todo{projlim} G/N \subseteq \prod_N G/N \stackrel{p_N}{\to} G/N)\]
+\[\text{ (Induzierte Topologie von: \ } G \cong \hat{G} = \limproj G/N \subseteq \prod_N G/N \stackrel{p_N}{\to} G/N)\]
 Die Menge
 \[U_{(1)} := \{\Gal(L|E) \ | \ K \subseteq E \subseteq L \text{ und } E|K \text{ endlich und normal} \}\]
 ist Umgebungsbasis von $1=id$ und $\sigma \cdot U_{(1)}$ ist Umgebungsbasis von $\sigma$.
@@ -41,7 +43,7 @@ Für $N_1 \subseteq N_2$ sei
 \[A_{N_1, N_2} :=\{a=(a_N) \in \prod_N G/N \ | \ p_{N_2 N_1}(a_{N_1})=a_{N_2}\}.\]
 Dann ist 
 \[A_{N_1, N_2} = \bigcup \limits_{g \in G/N_2} (p_{N_2}^{-1}(g) \cap \bigcup \limits_{\substack{g' \in G/N_1,\\ p_{N_2, N_1}(g')=g}} p^{-1}_{N_1}(g'))\]
-abgeschlossen (endl. Vereinigungen und Urbilder von Punkten hier sind abgeschlossen) und
+abgeschlossen (endl. Vereinigungen und Urbilder von Punkten sind abgeschlossen) und
 \[\hat{G} = \bigcap \limits_{\substack{N_1 \subseteq N_2 ,\\ \text{NT von endl. Index}}} A_{N_1, N_2}\]
 ist dann ebenfalls abgeschlossen.
 \end{enumerate}
@@ -65,7 +67,7 @@ $L|K$ galoissche Körpererweiterung.
 
 \begin{proof}
 \begin{enumerate}[i)]
-\item folgt aus Bem. 2.1.6
+\item folgt aus Bem. 6.1.6
 \item $\Gal(L|F) = \bigcap \limits_{\substack{K \subseteq E \subseteq F,\\ [E:K] \leq \infty}} \Gal(L|E)$. Dann wende i) an.
 \end{enumerate}
 \end{proof}
@@ -83,13 +85,14 @@ Wir zeigen sogar: $H$ Untergruppe von $\Gal(L|K) \Rightarrow \Gal(L|L^H)=\overli
 \item Zeige: $\Gal(L|L^H) \subseteq \overline{H}$. Sei $\sigma \in \Gal(L|L^H)$.\\
 \underline{Idee:} Verwende: $\{\sigma \cdot \Gal(L|E) \ | \ E|K \text{ endliche Körpererweiterung mit } E \subseteq L \}$ ist Umgebungsbasis von $\sigma$.\\
 \underline{Zeige also:} $\forall K \subseteq E \subseteq L$ mit $E|K$ endlich + normal: $\sigma \cdot \Gal(L|E) \cap H \neq \emptyset.$
-%\begin{tikzcd}
-%&&L^H \cdot E&&\\
-%\\
-%L^H \arrow{rruu}{endlich} &&&& E \arrow[dashed]{lluu}\\
-%&&& \arrow[Rightarrow]{lu}\\
-%&&E \arrow[dashed]{lluu} \arrow{rruu}{endlich}
-%\end{tikzcd}
+\begin{tikzcd}
+&&L^H \cdot E&&\\
+&\ &\ &\ &\\
+L^H \arrow{rruu}{endlich} &&&& E \arrow[dash]{lluu}\\
+&&& \arrow[lluu, Rightarrow]&\\
+&&K \arrow[dash]{lluu} \arrow{rruu}{endlich}&&
+\end{tikzcd}
+
 Verwende weiter: $\exists \ F: L^H \subseteq F \subseteq L$ mit $F|L^H$ endlich und normal und $F \supseteq E$\\
 $\Rightarrow \Gal(L|F) \subseteq \Gal(L|E)$\\
 $\Rightarrow \{\sigma \cdot \Gal(L|F) \ | \ F|L^H \text{endlich + normal}\}$ ist ebenfalls Umgebungsbasis von $\sigma$.\\
@@ -102,12 +105,12 @@ $\Rightarrow L^{\overline{H}}=L^H.$
 Betrachte für $F$ wie oben die Abbildung
 \begin{align*}
 \varphi: &\overline{H} \to \Gal(F|L^H)\\
-&\tau \mapsto \tau|F
+&\tau \mapsto \tau|_F
 \end{align*}
 Für die Untergruppe $\Bild(\varphi) \subseteq \Gal(F |L^H)$ gilt:
 \[F^{\Bild(\varphi)} = L^H.\]
-Hauptsatz der Galois.Theorie für endliche Körpererweiterungen:
+Hauptsatz der Galois-Theorie für endliche Körpererweiterungen:
 \[\Bild(\varphi)=\Gal(F|L^H)\]
-Also ist $\varphi$ surjektiv: $\Rightarrow \exists \ \tau \in \overline{H}$ mit $\tau|_F = \sigma|_F \Rightarrow \sigma^{-1}\circ \tau \in \Gal(L|F) \Rightarrow \tau \in \sigma \cdot \Gal(L|F)$. Also: $\tau \in \overline{H} \cap \sigma \Gal(L|F)$.
+Also ist $\varphi$ surjektiv: $\Rightarrow \exists \ \tau \in \overline{H}$ mit $\tau|_F = \sigma|_F \Rightarrow \sigma^{-1}\circ \tau \in \Gal(L|F) \Rightarrow \tau \in \sigma \cdot \Gal(L|F)$. Also: $\tau \in \overline{H} \cap \sigma \cdot \Gal(L|F)$.
 \end{enumerate}
 \end{proof}

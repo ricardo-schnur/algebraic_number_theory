@@ -22,6 +22,10 @@
 	für alle $i=1,\dots,n$.
 \end{Prop}
 
+\begin{proof}
+Siehe Neukirch, II (3.4).
+\end{proof}
+
 \begin{Prop}
 	$G=\Gal(L/K)$ operiert transitiv auf 
 	\[ \M_v = \left\{
@@ -44,7 +48,6 @@
 	\]
 	sind disjunkt.
 	
-	Beweis: Siehe Neukirch, II (3.4).
 	
 	\bigskip
 	Der Approximationssatz (Proposition 2.2) angewendet auf $w_1,\dots, w_, w_1', \dots, w_s'$ und
@@ -81,7 +84,7 @@
 	\subset G.
 	\]
 	Nach Schritt 1 ist $X_E \neq \emptyset$. $X_E$ ist abgeschlossen, denn für $\sigma \not \in X_E$ gilt
-	\[ \sigma \in \Gal(L/E) \cap X_E = \emptyset
+	\[ \sigma \Gal(L/E) \cap X_E = \emptyset
 	\]
 	und damit ist
 	\[ \sigma \Gal(L/E) \subset G \bs X_E
@@ -90,11 +93,11 @@
 	
 	\bigskip
 	Noch zu zeigen: 
-	\[ \bigcap_{\substack{K \subset E\subset L \\ [E/K]< \infty}} \neq \emptyset
+	\[ \bigcap_{\substack{K \subset E\subset L \\ [E/K]< \infty}} X_E \neq \emptyset
 	\]
 	
 	Annahme: 
-	\[ \bigcap_{\substack{K \subset E\subset L \\ [E/K]< \infty}} = \emptyset
+	\[ \bigcap_{\substack{K \subset E\subset L \\ [E/K]< \infty}} X_E = \emptyset
 	\]
 	Da $G$ kompakt ist, existieren $E_1, \dots, E_M$ mit
 	\[ X_{E_1} \cap \cdots \cap X_{E_m} = \emptyset.
@@ -132,7 +135,7 @@
 	\begin{align*}
 	I_w 
 	=I_w(L/K)
-	&= \ker \left\{
+	&= \ker(\phi)= \left\{
 	\sigma \in G_w; \, \sigma(x) \equiv x \mod p_w \text{ für alle } x \in \O_w
 	\right\}
 	\end{align*}
@@ -146,7 +149,7 @@
 
 
 \begin{proof}
-	Sei $\sigma \in \overline{G_w}$, dem Abschluss von $\G_w$. Für alle Zwischenkörper $E$ von $L/K$ mit $E/K$ endlich existiert dann ein $\sigma_E \in G_w$ mit
+	Sei $\sigma \in \overline{G_w}$, dem Abschluss von $G_w$. Für alle Zwischenkörper $E$ von $L/K$ mit $E/K$ endlich existiert dann ein $\sigma_E \in G_w$ mit
 	$\sigma_E \in \sigma \Gal(L/E)$, d.h.
 	\[ \sigma_E|_E = \sigma|_E.
 	\]
@@ -170,9 +173,9 @@
 \end{Prop}
 
 \begin{proof}
-	\enquote{$\subset$} Da $\sigma \in G_w$ erhält $\sigma$ die von $w$ induzierte Norm $\abs{\cdot}_w$ so, dass $\sigma$ stetig ist.
+	\enquote{$\subset$} Da $\sigma \in G_w$, erhält $\sigma$ die von $w$ induzierte Norm $\abs{\cdot}_w$ so, dass $\sigma$ stetig ist.
 	
-	\bigskip \enquote{$\supset$} Sei $\sigma$ stetig. Dann gilt $\abs{x}_w <$, also ist $(x^n)$ eine Nullfolge. Damit ist auch $(\sigma(x)^n)$ eine Nullfolge, also
+	\bigskip \enquote{$\supset$} Sei $\sigma$ stetig. Sei $\abs{x}_w < 1$, also ist $(x^n)$ eine Nullfolge. Damit ist auch $(\sigma(x)^n)$ eine Nullfolge, also
 	$\abs{\sigma(x)}_w <1$ und damit
 	\[ \abs{x}_{w\circ \sigma} < 1.
 	\]
@@ -199,21 +202,21 @@
 	Beachte: Da $K_v$ und $L_w$ henselsch sind gilt
 	\[ \Gal(L_w/K_v)=G_{\hat{w}}(L_w/K_v).
 	\]
-	Also gilt $\sigma \in \Gal(L_w/K_v)$ und damit ist $\sigma$ stetig bezüglich der von $\hat{w}$ erzeugten Topologie und somit $\sigma|_ \in G_w(L/K)$.
+	Also gilt $\sigma \in \Gal(L_w/K_v)$ und damit ist $\sigma$ stetig bezüglich der von $\hat{w}$ erzeugten Topologie und somit $\sigma|_L \in G_w(L/K)$.
 	Insgesamt folgt
 	\[ \Bild (h) \subset G_w(L/K).
 	\]
 	Jede stetige Abbildung $L\to L$ lässt sich auf $L_w$ fortsetzen und zwar auf eindeutige Weise.
 	Daher ist
-	\[ h \colon \Gal(L_w/K_v) \to \Gal(L/K)
+	\[ h \colon \Gal(L_w/K_v) \to G_w(L/K)
 	\]
 	ein Isomorphismus.
 	
 	\bigskip \enquote{(iii)}
-	Nach Proposition I.5.2 gilt $\kappa_{\hat{w}} \cong \kappa_w$ und $\kappa_{\hat{v}} \cong \kappa_v$. Nach AZT1, Bemerung II.9.12 ist $\kappa_{\hat{w}} / \kappa_{\hat{v}}$ galoissch.
+	Nach Proposition I.5.2 gilt $\kappa_{\hat{w}} \cong \kappa_w$ und $\kappa_{\hat{v}} \cong \kappa_v$. Nach AZT1, Bemerkung II.9.12 ist $\kappa_{\hat{w}} / \kappa_{\hat{v}}$ galoissch.
 	
 	\bigskip \enquote{(ii)}
-	Betrachte folgendes Diagramm:
+	Betrachte folgendes kommutatives Diagramm:
 	\[ \begin{tikzcd}
 	\Gal(L_w/K_v)
 		\arrow{r}{h^{-1}}
