@@ -34,3 +34,8 @@
 \contentsline {section}{\numberline {5.7}Lokale K\IeC {\"o}rper}{110}{section.5.7}
 \contentsline {section}{\numberline {5.8}Henselsche K\IeC {\"o}rper}{122}{section.5.8}
 \contentsline {section}{\numberline {5.9}Unverzweigte und zahm-verzweigte Erweiterungen}{130}{section.5.9}
+\contentsline {section}{\numberline {5.10}Fortsetzungen von Bewertungen}{142}{section.5.10}
+\contentsline {section}{\numberline {5.11}Komplexe $p$-adische Zahlen}{148}{section.5.11}
+\contentsline {chapter}{\numberline {6}Ein wenig Galois-Theorie}{151}{chapter.6}
+\contentsline {section}{\numberline {6.1}Unendliche Galois-Theorie}{151}{section.6.1}
+\contentsline {section}{\numberline {6.2}Galois-Theorie f\IeC {\"u}r Bewertungen}{154}{section.6.2}

@@ -1,0 +1,308 @@
+% !TeX spellcheck = de_DE
+\rhead{16 Juli 2018}
+
+
+\section{Galois-Theorie für Bewertungen}
+
+
+\begin{setting}
+	In diesem Abschnitt sei $L/K$ eine Galois-Erweiterung, $G= \Gal(L/K)$ und $v$ eine Bewertung auf $K$. $G$ operiert auf
+	\[ \M_v = \left\{
+	w; \, \text{$w$ Bewertung auf $L$, $w/v$}
+	\right\}
+	\]
+	durch $\sigma \colon w \mapsto w \circ \sigma$.
+\end{setting}
+
+\begin{Prop}[Approximationssatz]
+	Seien $K$ ein Körper und $\abs{\cdot}_1, \dots, \abs{\cdot}_n$ paarweise nicht-äquivalente Normen auf $K$.
+	Sind $a_1,\dots, a_n \in K$ so existiert für jedes $\varepsilon>0$ ein $x \in K$ mit
+	\[ \abs{x-a_i}_i < \varepsilon
+	\]
+	für alle $i=1,\dots,n$.
+\end{Prop}
+
+\begin{Prop}
+	$G=\Gal(L/K)$ operiert transitiv auf 
+	\[ \M_v = \left\{
+	w; \, \text{$w$ Bewertung auf $L$, $w/v$}
+	\right\}.
+	\]
+\end{Prop}
+
+\begin{proof}
+	\textbf{Schritt 1:} Zeige die Behauptung für $L/K$ endlich.
+	
+	\bigskip
+	Annahme: Es existieren $w,w' \in \M_v$ die nicht in der gleichen Bahn liegen, d.h.
+	\[ Gw = \left\{  w\circ\sigma; \, \sigma \in G \right\}
+	= \left\{ w_1, \dots, w_r \right\}
+	\]
+	und
+	\[ Gw' = \left\{  w'\circ\sigma; \, \sigma \in G \right\}
+	= \left\{ w_1', \dots, w_s' \right\}
+	\]
+	sind disjunkt.
+	
+	Beweis: Siehe Neukirch, II (3.4).
+	
+	\bigskip
+	Der Approximationssatz (Proposition 2.2) angewendet auf $w_1,\dots, w_, w_1', \dots, w_s'$ und
+	$a_1= \cdots = a_r =0$, $a_{r+1} = \dots = a_{r+s} = b$ mit $\abs{b}>1$ liefert ein $x\in L$ mit
+	\[ \abs{x}_{w_i} < 1
+	\]
+	für $i=1,\dots, r$ und
+	\[ \abs{x}_{w_j'} > 1
+	\]
+	für $j=1,\dots, s$. Also gilt für alle $\sigma \in G$, dass
+	\[ \abs{\sigma(x)}_{w} <1
+	\quad \text{und} \quad
+	 \abs{\sigma(x)}_{w'} >1.
+	\]
+	Für $\alpha \in \Norm_{L/K} (x) = \prod_{\sigma \in G} \sigma(x)$ gilt:
+	\begin{align*}
+	\abs{\alpha}_v
+	&= \abs{\alpha}_w 
+	= \prod_{\sigma \in G} \abs{\sigma(x)}_w
+	<1 \\
+	\abs{\alpha}_v
+	&= \abs{\alpha}_{w'}
+	= \prod_{\sigma \in G} \abs{\sigma(x)}_{w'}
+	>1
+	\end{align*}
+	Dies ist ein Widerspruch, also besteht $\M_v$ nur aus einer Bahn.
+	
+	\bigskip \textbf{Schritt 2:} Die Behauptung gilt auch für unendliche Körpererweiterungen $L/K$.
+	
+	Seien $w,w' \in \M_v$. Für $K \subset E \subset L$ mit $E/K$ endlich und galoissch definiere
+	\[ X_E = \left\{
+	\sigma \in G; \, w\circ\sigma|_E = w'|_E
+	\right\}
+	\subset G.
+	\]
+	Nach Schritt 1 ist $X_E \neq \emptyset$. $X_E$ ist abgeschlossen, denn für $\sigma \not \in X_E$ gilt
+	\[ \sigma \in \Gal(L/E) \cap X_E = \emptyset
+	\]
+	und damit ist
+	\[ \sigma \Gal(L/E) \subset G \bs X_E
+	\]
+	so, dass $G \bs X_E$ offen ist.
+	
+	\bigskip
+	Noch zu zeigen: 
+	\[ \bigcap_{\substack{K \subset E\subset L \\ [E/K]< \infty}} \neq \emptyset
+	\]
+	
+	Annahme: 
+	\[ \bigcap_{\substack{K \subset E\subset L \\ [E/K]< \infty}} = \emptyset
+	\]
+	Da $G$ kompakt ist, existieren $E_1, \dots, E_M$ mit
+	\[ X_{E_1} \cap \cdots \cap X_{E_m} = \emptyset.
+	\]
+	Es gilt aber für
+	\[ E = E_1 \cdots E_M,
+	\]
+	dass $E/K$ endlich ist und 
+	\[ X_E = X_{E_1} \cap \cdots \cap X_{E_m} = \emptyset.
+	\]
+	Dies widerspricht Schritt 1.
+\end{proof}
+
+\begin{defi}
+	Die \textbf{Zerlegungsgruppe} von $w/v$ ist gegeben durch
+	\begin{align*}
+	G_w
+	=G_w(L/K)
+	&= \left\{ \sigma \in \Gal(L/K); \, w\circ\sigma = w \right\} \\
+	&= \Stab_{\Gal(L/K)}(w).
+	\end{align*}
+\end{defi}
+
+\begin{Bem}
+	Für $\sigma \in G_w$ gilt
+	\[ w(\sigma(\alpha)) = w(\alpha)
+	\]
+	für alle $\alpha \in L$ so, dass $\sigma(\O_w) = \O_w$ und $\sigma(p_w) = p_w$.
+	Dies liefert einen Homomorphismus
+	\[ \Phi \colon G_w \to \Gal(\kappa_w/\kappa_v).
+	\]
+\end{Bem}
+
+\begin{defi} Die Gruppe
+	\begin{align*}
+	I_w 
+	=I_w(L/K)
+	&= \ker \left\{
+	\sigma \in G_w; \, \sigma(x) \equiv x \mod p_w \text{ für alle } x \in \O_w
+	\right\}
+	\end{align*}
+	heißt \textbf{Trägheitsgruppe}.
+\end{defi}
+
+
+\begin{Prop}
+	$G_w$ und $I_w$ sind abgeschlossene Untergruppe von $\Gal(L/K)$.
+\end{Prop}
+
+
+\begin{proof}
+	Sei $\sigma \in \overline{G_w}$, dem Abschluss von $\G_w$. Für alle Zwischenkörper $E$ von $L/K$ mit $E/K$ endlich existiert dann ein $\sigma_E \in G_w$ mit
+	$\sigma_E \in \sigma \Gal(L/E)$, d.h.
+	\[ \sigma_E|_E = \sigma|_E.
+	\]
+	Also gilt, da $\sigma_E \in G_w$,
+	\[ w(\sigma(\alpha)) = w(\alpha)
+	\]
+	für alle $\alpha \in E$.
+	
+	\bigskip
+	Der Beweis für $I_w$ geht analog.
+\end{proof}
+
+\begin{Prop}
+	\begin{align*}
+	G_w
+	&=
+	\left\{ 
+	\sigma \in \Gal(L/K); \,\text{$\sigma$ ist stetig bezüglich der Topologie, die $w$ auf $L$ induziert}
+	\right\}
+	\end{align*}
+\end{Prop}
+
+\begin{proof}
+	\enquote{$\subset$} Da $\sigma \in G_w$ erhält $\sigma$ die von $w$ induzierte Norm $\abs{\cdot}_w$ so, dass $\sigma$ stetig ist.
+	
+	\bigskip \enquote{$\supset$} Sei $\sigma$ stetig. Dann gilt $\abs{x}_w <$, also ist $(x^n)$ eine Nullfolge. Damit ist auch $(\sigma(x)^n)$ eine Nullfolge, also
+	$\abs{\sigma(x)}_w <1$ und damit
+	\[ \abs{x}_{w\circ \sigma} < 1.
+	\]
+	Daraus folgt aus dem Beweis von I.1.9, dass $w$ und $w\circ\sigma$ äquivalent und damit als gemeinsame Fortsetzung von $v$ sogar gleich sind.
+\end{proof}
+
+
+\begin{Satz}
+	Sei $L/K$ eine galoissche Körpererweiterung, $v$ eine Bewertung auf $K$ und $w$ eine Fortsetzung auf $L$. Weiter seien $K_v$ und $L_w$ die jeweiligen Lokalisierungen mit den Bewertungen $\hat{v}$ beziehungsweise $\hat{w}$. Dann gilt
+	\begin{enumerate}[(i)]
+		\item $G_w(L/K) \cong \Gal(L_w/K_v)$
+		\item $I_w(L/K) \cong I(L_w/K_v)$
+		\item $\kappa_{\hat{w}} / \kappa_{\hat{v}}$ und $\kappa_w / \kappa_v$ sind galoissch mit
+		\[ \Gal \left( \kappa_{\hat{w}} / \kappa_{\hat{v}} \right)
+		\cong \Gal \left( \kappa_w / \kappa_v \right)
+		\]
+	\end{enumerate}
+\end{Satz}
+
+\begin{proof}
+	\enquote{(i)} Sei
+	\[ h \colon \Gal(L_w/K_v) \to \Gal(L/K), \, \sigma \mapsto \sigma|_L.
+	\]
+	Beachte: Da $K_v$ und $L_w$ henselsch sind gilt
+	\[ \Gal(L_w/K_v)=G_{\hat{w}}(L_w/K_v).
+	\]
+	Also gilt $\sigma \in \Gal(L_w/K_v)$ und damit ist $\sigma$ stetig bezüglich der von $\hat{w}$ erzeugten Topologie und somit $\sigma|_ \in G_w(L/K)$.
+	Insgesamt folgt
+	\[ \Bild (h) \subset G_w(L/K).
+	\]
+	Jede stetige Abbildung $L\to L$ lässt sich auf $L_w$ fortsetzen und zwar auf eindeutige Weise.
+	Daher ist
+	\[ h \colon \Gal(L_w/K_v) \to \Gal(L/K)
+	\]
+	ein Isomorphismus.
+	
+	\bigskip \enquote{(iii)}
+	Nach Proposition I.5.2 gilt $\kappa_{\hat{w}} \cong \kappa_w$ und $\kappa_{\hat{v}} \cong \kappa_v$. Nach AZT1, Bemerung II.9.12 ist $\kappa_{\hat{w}} / \kappa_{\hat{v}}$ galoissch.
+	
+	\bigskip \enquote{(ii)}
+	Betrachte folgendes Diagramm:
+	\[ \begin{tikzcd}
+	\Gal(L_w/K_v)
+		\arrow{r}{h^{-1}}
+		\arrow[swap]{r}{\cong}
+		\arrow{d}
+	& G_w(L/K)
+		\arrow{d}
+	\\
+	\Gal\left(  \kappa_{\hat{w}} / \kappa_{\hat{v}} \right)
+		\arrow[swap]{r}{\cong}
+	& \Gal(\kappa_w / \kappa_v)
+	\end{tikzcd}
+	\]
+	Damit $I(L_w/K_v) \cong I_w(L/K)$.
+\end{proof}
+
+\begin{Prop}
+	Sei nun $v$ eine diskrete Bewertung und $L/K$ eine endliche Körpererweiterung. Dann gilt:
+	\begin{enumerate}[(i)]
+		\item $1\to I_w(L/K)\to G_w \to \Gal(\kappa_w/\kappa_v) \to 1$ ist eine kurze exakte Sequenz.
+		\item $f(w/v) = \# \Gal(\kappa_w/\kappa_v)$ und $e(w/v) = I_w(L/K)$
+		\item Seien
+		\[ T_w = T_w(L/K) = L^{I_w(L/K)}
+		\]
+		der \textbf{Trägheiskörper} und
+		\[ Z_w=Z_w(L/K) = L^{G_w(L/K)}
+		\]
+		der \textbf{Zerlegungskörper}. Erhalte Körperkette
+		\[ K \subset Z_w \subset T_w \subset L
+		\]
+		mit maximal unverzweigtem Zwischenkörper $T_w/Z_w$ von $L/Z_w$.
+		\item Falls es auf $L$ nur genau eine Fortsetzung von $v$ gibt (z.B. falls $(K,v)$ henselsch ist), dann gilt $G_w(L/K) = \Gal(L/K)$ und $Z_w =K$.
+	\end{enumerate}
+\end{Prop}
+
+\begin{proof}
+	\enquote{(i)} Folgt aus Theorem 11 und AZT1, Bemerkung II.9.12.
+	
+	\bigskip \enquote{(ii)} Folgt aus
+	\begin{align*}
+	\G_w
+	&= \# \Gal(\kappa_w / \kappa_v) \cdot \# I_w(L/K)
+	=f(w/v) \cdot \#I_w(L/K)
+	\end{align*}
+	und
+	\begin{align*}
+	\G_w
+	&= \# \Gal(L_w / K_v) 
+	= e(\hat{w}/\hat{v}) f(\hat{w}/\hat{v}) 
+	= e(w/v) f(w/v). 
+	\end{align*}
+	
+	\bigskip \enquote{(iii)} Zeige die Behauptung zunächst für $K$ henselsch und somit $K=Z_w$:
+	
+	\bigskip \textbf{(1)} $ \Gal(T_w/K) \cong \Gal(L/K) / \Gal(L/T_w)
+	 \cong \Gal(L/K) / I_w(L/K) \cong \Gal(\kappa_w/\kappa_v)$
+	
+	\bigskip \textbf{(2)} Sei $M$ der maximal unverzweigte Zwischenkörper von $L/K$ und $w_M=w|_M$. $M/K$ ist normal, denn für $\sigma\in\Gal(L/K)$ gilt, dass $\sigma(M)$ ebenfalls unverzweigt ist und damit $\sigma(M)\subset M$. (i) angewendet auf $M/K$ ergibt:
+	\[ 1 \to I_{w_M}(M/K) \to \Gal(M/K) \to \Gal(\kappa_{w_M} / \kappa_v) \to 1
+	\]
+	Außerdem impliziert $M/K$ unverzweigt, dass
+	\[ \# I_{w_M}(M/K) = e(M/K) =1
+	\]
+	und somit gilt $\Gal(M/K) \cong \Gal (\kappa_{w_M} / \kappa_v)$.
+	
+	\bigskip \textbf{(3)} Aus (1) und (2) erhält man
+	\[ \Gal(L/T_w)=\Gal(L/M)= \ker \Phi = I_w(L/K).
+	\]
+	
+	\bigskip Sei nun möglicherweise $K$ nicht henselsch.
+	Da
+	\[ G_w = \{ \sigma \in \Gal(L/K); \, \sigma \text{ stetig} \}
+	\]
+	folgt, dass $ K_v = L_w^{\Gal(L_w/K_v)} $ die Vervollständigung von $Z_w = L^{\sigma_w}$ is und $T_{\hat{w}} = L_w^{G_{\hat{w}}(L_w/K_v)}$ die Vervollständigung von $T_w = L^{I_w(L/K)}$ ist.
+	Es gilt damit $e(T_w/Z_w)=e(T_{\hat{w}}/K_v) =1$. Außerdem gilt für den maximal unverzweigten Zwischenkörper $M$ von $T_w/Z_w$, dass $M/Z_w$ galoissch ist.
+	(i) angewendet auf $M/Z_w$ und $T_w/Z_v$ ergibt
+	\[ G_{w_M} \cong \Gal(\kappa_w/\kappa_v) \cong G_{w_\sigma}.
+	\]
+	Damit $M= T_w$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
