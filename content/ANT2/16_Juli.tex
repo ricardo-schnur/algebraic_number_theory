@@ -125,7 +125,7 @@ Siehe Neukirch, II (3.4).
 	Für $\sigma \in G_w$ gilt
 	\[ w(\sigma(\alpha)) = w(\alpha)
 	\]
-	für alle $\alpha \in L$ so, dass $\sigma(\O_w) = \O_w$ und $\sigma(p_w) = p_w$.
+	für alle $\alpha \in L$, also $\sigma(\O_w) = \O_w$ und $\sigma(p_w) = p_w$.
 	Dies liefert einen Homomorphismus
 	\[ \Phi \colon G_w \to \Gal(\kappa_w/\kappa_v).
 	\]
@@ -135,7 +135,7 @@ Siehe Neukirch, II (3.4).
 	\begin{align*}
 	I_w 
 	=I_w(L/K)
-	&= \ker(\phi)= \left\{
+	&= \ker(\Phi)= \left\{
 	\sigma \in G_w; \, \sigma(x) \equiv x \mod p_w \text{ für alle } x \in \O_w
 	\right\}
 	\end{align*}
@@ -187,7 +187,7 @@ Siehe Neukirch, II (3.4).
 	Sei $L/K$ eine galoissche Körpererweiterung, $v$ eine Bewertung auf $K$ und $w$ eine Fortsetzung auf $L$. Weiter seien $K_v$ und $L_w$ die jeweiligen Lokalisierungen mit den Bewertungen $\hat{v}$ beziehungsweise $\hat{w}$. Dann gilt
 	\begin{enumerate}[(i)]
 		\item $G_w(L/K) \cong \Gal(L_w/K_v)$
-		\item $I_w(L/K) \cong I(L_w/K_v)$
+		\item $I_w(L/K) \cong I_{\hat{w}}(L_w/K_v)$
 		\item $\kappa_{\hat{w}} / \kappa_{\hat{v}}$ und $\kappa_w / \kappa_v$ sind galoissch mit
 		\[ \Gal \left( \kappa_{\hat{w}} / \kappa_{\hat{v}} \right)
 		\cong \Gal \left( \kappa_w / \kappa_v \right)
@@ -202,7 +202,7 @@ Siehe Neukirch, II (3.4).
 	Beachte: Da $K_v$ und $L_w$ henselsch sind gilt
 	\[ \Gal(L_w/K_v)=G_{\hat{w}}(L_w/K_v).
 	\]
-	Also gilt $\sigma \in \Gal(L_w/K_v)$ und damit ist $\sigma$ stetig bezüglich der von $\hat{w}$ erzeugten Topologie und somit $\sigma|_L \in G_w(L/K)$.
+	Also gilt $\sigma \in G_{\hat{w}}(L_w/K_v)$ und damit ist $\sigma$ stetig bezüglich der von $\hat{w}$ erzeugten Topologie und somit $\sigma|_L \in G_w(L/K)$.
 	Insgesamt folgt
 	\[ \Bild (h) \subset G_w(L/K).
 	\]
@@ -216,7 +216,7 @@ Siehe Neukirch, II (3.4).
 	Nach Proposition I.5.2 gilt $\kappa_{\hat{w}} \cong \kappa_w$ und $\kappa_{\hat{v}} \cong \kappa_v$. Nach AZT1, Bemerkung II.9.12 ist $\kappa_{\hat{w}} / \kappa_{\hat{v}}$ galoissch.
 	
 	\bigskip \enquote{(ii)}
-	Betrachte folgendes kommutatives Diagramm:
+	Betrachte folgendes kommutative Diagramm:
 	\[ \begin{tikzcd}
 	\Gal(L_w/K_v)
 		\arrow{r}{h^{-1}}
@@ -257,13 +257,13 @@ Siehe Neukirch, II (3.4).
 	
 	\bigskip \enquote{(ii)} Folgt aus
 	\begin{align*}
-	\G_w
+	\# G_w
 	&= \# \Gal(\kappa_w / \kappa_v) \cdot \# I_w(L/K)
 	=f(w/v) \cdot \#I_w(L/K)
 	\end{align*}
 	und
 	\begin{align*}
-	\G_w
+	\# G_w
 	&= \# \Gal(L_w / K_v) 
 	= e(\hat{w}/\hat{v}) f(\hat{w}/\hat{v}) 
 	= e(w/v) f(w/v). 
