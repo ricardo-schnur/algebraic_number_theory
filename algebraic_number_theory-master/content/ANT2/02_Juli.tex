@@ -1,0 +1,163 @@
+\rhead{02 Juli 2018}
+
+\section{Fortsetzungen von Bewertungen}
+
+\underline{Ziel:} $(K,v)$ Körper mit Bewertung (nicht notwendigerweise Henselsch), $L|K$ algebraische Körpererweiterung.\\
+\underline{Frage:} Gibt es eine Fortsetzung $w$ von $v$ nach $L$ und wenn ja, wie viele?\\
+\underline{Idee:} Gehe über zu Vervollständigung:
+\begin{tikzcd}
+L \arrow[r, hook] & \overline{K} \arrow[r, hook] & (\overline{K_v}, \overline{v})\\
+(K,v) \arrow[u, hook, "alg."] \arrow[rr, hook]&& (K_v, \hat{v}) \arrow[u, hook, "alg."]
+\end{tikzcd}
+
+\begin{Not}
+Ab jetzt sei
+\begin{itemize}
+\item $(K,v)$ ein fest gewählter Körper.
+\item $(K_v, \hat{v})$ die Vervollständigung von $(K,v)$
+\item $\overline{K_v}$ der algebraische Abschluss von $K_v$ und
+\item $\overline{v}$ die eindeutige Fortsetzung von $\hat{v}$ auf $\overline{K_v}$
+\end{itemize}
+\end{Not}
+
+\begin{Prop}
+Sei $L|K$ eine algebraische Körpererweiterung $\Rightarrow v$ hat mindestens eine Fortsetzung $w$ auf $L$.
+\end{Prop}
+
+\begin{proof}
+Wähle Einbettung $\tau: L \hookrightarrow \overline{K_v}$. Diese existiert, da $L|K$ algebraisch ist. Dann ist:
+\[ w_\tau := \overline{v} \circ \tau \quad \text{ eine Bewertung auf } L\]
+\end{proof}
+
+\begin{Bem}
+In der Situation von Prop. 10.2 gilt:\\
+Ist $\sigma \in \Gal(\overline{K_v}|K_v)$ und $\tau':=\sigma \circ \tau$, dann ist $w_{\tau'}=w_\tau$.
+\end{Bem}
+
+\begin{proof}
+Eindeutigkeit im Fortsetzungssatz von Theorem 6 $\Rightarrow \overline{v} \circ \sigma = \overline{v}$
+$\Rightarrow w_{\tau'} = \overline{v} \circ \sigma \circ \tau = \overline{v} \circ \tau = w_\tau$.
+\end{proof}
+
+\begin{Prop}
+Sei $L|K$ endliche Körpererweiterung und $\tau: \L \hookrightarrow \overline{K_v}$ eine Einbettung. Sei $(\hat{L}, \hat{w}_\tau)$ die Vervollständigung von $(L, w_\tau)$ mit $w_\tau = \overline{v} \circ \tau$.
+
+Die Einbettung $\tau : L \hookrightarrow \overleftarrow{K_v}$ lässt sich fortsetzen zu $\hat{\tau}: \hat{L} \hookrightarrow \overline{K_v}$. Insbesondere gilt: $\hat{L}|K_v$ ist algebraisch.
+\end{Prop} 
+
+\begin{proof}
+\begin{tikzcd}
+&\hat{L} \arrow[d, dotted, "\hat{\tau}"] &\\
+(L, w_\tau) \arrow[r, hook, swap, "\tau"]  \arrow [ru, hook]& (\tau(L) \cdot K_v, \overline{v}) \arrow[draw=none]{r}[auto=false, sloped]{\subseteq}&(\overline{K_v}, \overline{v})\\
+\arrow[r, Rightarrow] & \ & \\
+(K,V) \arrow[uu, hook, "endl."] \arrow[r, hook] & (K_v, \hat{v}) \arrow[uu, hook,swap, "endl."]& 
+\end{tikzcd}
+
+
+Sei $E:= \tau(L) \cdot K_v$ das Kompositum von $L$ und $K_v$ in $\overline{K_v}$.\\
+$L|K$ endliche $\Rightarrow E|K_v$ endlich $\stackrel{Thm 6}{\Rightarrow} \hat{v}$ hat eindeutige Fortsetzung auf $E$ und ist bezüglich dieser vollständig. Die Bewertung $\overline{v}|_E$ ist eine solche. Außerdem gilt: $w_\tau = \overline{v} \circ \tau = \overline{v}|_E \circ \tau.$\\
+$\Rightarrow \tau : (L, w_\tau) \to (E, \overline{v}|_E)$ erhält die Norm und bildet in einen vollständigen Körper ab $\Rightarrow \tau $lässt sich fortsetzen zu $\hat{\tau}: \hat{L} \hookrightarrow E$ und zwar eindeutig.
+\end{proof}
+
+\begin{Prop}
+$L|K$ endliche Körpererweiterung, $w$ eine beliebige Fortsetzung von $v$. Dann gilt für die Vervollständigung $(\hat{L}, \hat{w})$:\\
+$\hat{L}|K_v$ ist endlich.
+\end{Prop}
+
+\begin{proof}
+\begin{tikzcd}
+L \arrow[r, hook] & L \cdot K_v \subseteq \hat{L}\\
+K \arrow[u, hook] \arrow[r, hook] &K_v \arrow[u, hook]
+\end{tikzcd}
+Sei $L \cdot K_v$ das Kompositum von $L$ und $K_v$ in $\hat{L} \Rightarrow L \cdot K_v | K_v$ ist endlich.\\
+Thm. 6 $\Rightarrow L \cdot K_v$ ist vollständig bezüglich $\hat{w}|_{L\cdot K_v} \Rightarrow L \cdot K_v = \hat{L}$.
+\end{proof}
+
+\begin{Bem}
+Für $L|K$ algebraisch stimmt die analoge Aussage in Prop. 10.5 nicht, d.h.: $L|K$ algebraisch $\not \Rightarrow \hat{L} | K_v$ algebraisch.
+\end{Bem}
+
+\begin*{Bsp}[ohne Beweis]
+$K=\Q_p$ und $L=\overline{\Q_p}$, aber $\hat{\overline{\Q_p}} | \Q_p$ ist nicht algebraisch ($\hat{\overline{\Q_p}} \neq \overline{\Q_p}$.
+\begin{tikzcd}
+\overline{Q_p} \arrow[r, hook] & \hat{\overline{\Q_p}}\\
+\Q_p \arrow[u, hook, "alg."] \arrow[r, hook, "id"]& \Q_p \arrow[u, hook, "\underline{nicht} \ alg."]
+\end{tikzcd}
+\end*{Bsp}
+
+\begin{defi}
+Sei $L|K$ algebraisch, $w$ Fortsetzung von $v$ auf $L$.\\
+$I:=\{(L', w') \ | \ L' \text{ ist endlicher Zwischenkörper von } L|K, w'= w|_{L'} \}$\\
+Notiere für $(L', w') \in I$ mit $(\hat{L}',\hat{w}')$ die Vervollständigung von $(L', w')$.\\
+Dann heißt $L_w:= \bigcup_{(L',w') \in I} \hat{L}'$ \underline{\emph{Lokalisierung von $L$ bezüglich $w$}} und ist mit der Bewertung $\hat{w}|_{L_w}$ versehen, die wir ebenfalls mit $\hat{w}$ bezeichnen.\\
+\end{defi}
+
+Beachte: $L_1' \subseteq L_2'$ induziert Einbettung $\hat{L}_1' \hookrightarrow \hat{L}_2'$. Mit Standardtrick erhalte, dass $L_w$ ein Körper ist. Insbesondere: $L|K$ endlich $\Rightarrow L_w$ ist Vervollständigung von $(L,w)$.
+
+\begin{Prop}
+$L|K$ algebraisch $\Rightarrow L_w | K_v$ algebraisch.
+\end{Prop}
+
+\begin{proof}
+folgt aus Prop 10.5 und Def. 10.7
+\end{proof}
+
+\begin{Prop}
+Betrachte Körperkette $K \subseteq L \subseteq \overline{K_v}$.\\
+Sei $L$ versehen mit der Bewertung $w:=\overline{v}|_L$. Dann gilt:
+\begin{enumerate}[i)]
+\item $L_w \cong L \cdot K_v$
+\item $L K_v$ ist der Abschluss von $L$ in $\overline{K_v}$
+\end{enumerate}
+\end{Prop}
+
+\begin{proof}
+\begin{enumerate}[i)]
+\item Für $L|K$ endlich wie in Prop. 10.4. Für $L|K$ unendlich:
+\begin{enumerate}[(1)]
+\item Erhalte Morphismus $\sigma: L_w \hookrightarrow L \cdot K_v$ durch \glqq Zusammensetzen\grqq der Morphismen $\sigma': L'_{w'} \hookrightarrow L' \cdot K_v$ für die endlichen Körpererweiterungen $L'|K$.
+\item $\Bild(\sigma)$ enthält $K_v$ und $L \Rightarrow \Bild(\sigma) \supseteq K_v \cdot L \Rightarrow \sigma$ ist Isomorphismus zwischen $L_w$ und $K_v \cdot L$.
+\end{enumerate}
+\item folgt aus i), da $L$ dicht in $L_w$.
+\end{enumerate}
+\end{proof}
+
+\begin{Satz}
+Sei $L|K$ algebraische Körpererweiterung. Dann gilt:
+\begin{enumerate}[i)]
+\item $v$ hat eine Fortsetzung $w$ auf $L$, die aber nicht eindeutig sein muss.
+\item Für jede Fortsetzung $w$ gilt: $w=w_\tau:=\overline{v} \circ \tau$ für eine Einbettung $\tau: L \hookrightarrow \overline{K}_v$.
+\item $w_\tau = w_{\tau'} \iff \tau$ und $\tau'$ sind konjugiert über $K_v$, d.h.: $\exists \ \sigma \in \Gal(\overline{K}_v | K_v)$ mit $\tau'=\sigma \circ \tau$.
+\end{enumerate}
+\end{Satz}
+
+\begin{proof}
+\begin{enumerate}[i)]
+\item Prop. 10.2
+\item Sei $(L_w, \hat{w})$ die Lokalisierung von $(L,w)$. Wähle $K_v$-Einbettung $\hat{\tau}: L_w \hookrightarrow \overline{K}_v$\\
+$\Rightarrow$ Erhalte folgendes Diagramm:
+\[\begin{tikzcd}
+(L,w) \arrow[r, hook] & (L_w, \hat{w}) \arrow[r, hook, "\hat{\tau}"] & (\overline{K}_v, \overline{v})\\
+(K,v) \arrow[u, hook, "alg."] \arrow[r, hook] &(K_v, \hat{v}) \arrow[u, hook, "alg."] \arrow[ru, hook]
+\end{tikzcd}\]
+Thm. 6 $\Rightarrow \hat{w}= \overline{v} \circ \hat{\tau}$ Sei $\tau := \hat{\tau}|_L \Rightarrow w = \overline{v} \circ \tau \stackrel{Def.}{=} w_\tau$.
+\item \glqq $\Leftarrow$\grqq : s. Bem 10.3\\
+\glqq $\Rightarrow$\grqq : Sei $w_\tau = w_{\tau'}$. Betrachte das folgende Diagramm
+\[
+\begin{tikzcd}
+(\overline{K}_v, \overline{v}) && (\overline{K}_v, \overline{v}) \arrow[ll,swap, "\overline{\sigma}"]\\
+L_2 K_v \arrow[draw=none]{u}[auto=false, sloped]{\subseteq} && L_1 K_v \arrow[draw=none]{u}[auto=false, sloped]{\subseteq} \arrow[ll,swap, "\hat{\sigma}"]\\
+L_2:=\tau'(L) \arrow[draw=none]{u}[auto=false, sloped]{\subseteq} & L \arrow[l, "\tau'"]\arrow[r, "\tau"] & L_1:=\tau(L) \arrow[draw=none]{u}[auto=false, sloped]{\subseteq} \arrow[ll, bend right=15, swap, "\sigma=\tau' \circ \tau^{-1}"]\\
+&(K,v) \arrow[u, hook]&
+\end{tikzcd}
+\]
+Sei $L_1 := \tau(L)$ und $L_2:=\tau'(L)$ Prop 10.9 $\Rightarrow L_1$ liegt dicht in $L_1 \cdot K_V \cong (L_1)_{\overline{v}|_{L_1}}$ und $L_2 \cdot K_V \cong (L_2)_{\overline{v}|_{L_2}}$.\\
+$\overline{v}  \circ \tau = \overline{v} \circ \tau' \Rightarrow \sigma$ erhält die Bewertung, i.e. $\overline{v}(\sigma(\alpha)) = \overline{v}(\alpha)$.\\
+$\Rightarrow \sigma$ hat Fortsetzung $\hat{\sigma}: L_1 K_v \to L_2 K_v$, denn:\\
+$x \in L_1 K_v \cong (L_1)_{\overline{v}|_{L_1}} \Rightarrow \exists
+ $ endl. Zwischenkörper $L'$ von $L_1 |K$ mit $x \in L'_{w'}$, wobei $w'=\overline{v}|_{L'}$.\\
+ Wähle Folge $x_n$ in $L'$ mit $x_n \to x$. Insbesondere: $x_n$ ist Cauchy-Folge. Da $\sigma$ die Bewertung erhält, ist auch $\sigma(x_n)$ Cauchy-Folge. Da $\sigma(x_n)$ in $\sigma(L')$ und $\sigma(L')$ ist endlicher Zwischenkörper von $L_2 | K$, folgt: $\sigma(x_n)$ hat Limes $x'$ in $L_2 K_v$. Definiere $\hat{\sigma}(x):=x'$.\\
+ Beachte: $\hat{\sigma}$ ist $K_v$-Homomorphismus\\
+ $\Rightarrow \hat{\sigma}$ setzt sich fort zu $\overline{\sigma}: \overline{K_v} \to \overline{K_v}$ mit $\overline{\sigma} \in \Gal(\overline{K_v} | K_v)$. Nach Konstruktion gilt: $\overline{\sigma} \circ \tau = \sigma \circ \tau = \tau'$.
+\end{enumerate}
+\end{proof}

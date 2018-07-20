@@ -1,0 +1,185 @@
+\rhead{14 Mai 2018}
+
+\begin{Not}
+Das Bild von $x \in K^\times$ unter dem Isomorphismus aus Proposition 5.7.7 notieren wir als
+\[ \left( \Pi^{v(x)}, w(x), \langle x \rangle  \right) \in (\Pi) \times \mu_{q-1} \times U^{(1)}.
+\]
+Es gilt also $ x = \Pi^{v(x)} \cdot w(x) \cdot \langle x \rangle$.
+
+\textbf{Achtung:} $w(x)$ und $\langle x \rangle$ hängen von dem gewählten $\Pi$ ab.
+\end{Not}
+
+\begin{Bem}
+Der Isomorphismus 
+\[ h \colon K^\times \to (\Pi) \times \mu_{q-1} \times U^{(1)},
+ \colon x \mapsto \left( \Pi^{v(x)}, w(x), \langle x \rangle  \right)
+\]
+ist ein Homöomorphismus, wobei $(\Pi) \cong \Z$ und $\mu_{q-1} \cong \Z /(q-1)\Z$ die diskrete Topologie erhalten und $U^{(1)}$ die Topologie von $K$ erbt.
+\end{Bem}
+
+\begin{proof}
+$h$ ist stetig. Wegen $x_n \to x$ mit $x \neq 0$ gilt $v(x_n) = v(x)$ für $n$ groß genug, genauso für $w(x_n) = w(x)$. Dann gilt:
+\[ \langle x_n \rangle 
+= \frac{x_n}{\Pi^{v(x_n)}w(x_n)}
+= \frac{x_n}{\Pi^{v(x)}w(x)}
+\to  \frac{x}{\Pi^{v(x)}w(x_n)}
+= \langle x \rangle.
+\]
+Außerdem ist offensichtlich $h^{-1} \colon \left( \Pi^k, w , \alpha \right) \mapsto \Pi^k w \alpha$ stetig.
+\end{proof}
+
+\begin{defi}
+$K$ heißt \textbf{$p$-adischer Zahlkörper} falls $K$ eine endliche Erweiterung von $\Q_p$ ist.
+Dies ist genau dann der Fall, wenn $K$ ein lokaler Körper mit $\ch K=0$ ist und $\ch \kappa = p$  für den Restklassenkörper $\kappa$ gilt.
+\end{defi}
+
+
+\begin{Bem}
+Sei $K/\Q_p$ ein $p$-adischer Zahlkörper. Notiere wie immer $\hat{\O} , \hat{\p}, \hat{\Pi}, \hat{\kappa}$ für $K$ und $\O, \p, \Pi, \kappa$ für $\Q_p$. Dann gilt
+$\p \hat{\O} = \hat{\p}^e$ mit $e \in \N$ und somit $\Pi\hat{\O} = \hat{\Pi}^e \hat{\O}$.
+Wählen wir nun $\hat{v}$ als diskrete Bewertung auf $K$ die normiert ist, das heißt $\hat{v}( K^ \times) = \Z$ und $\hat{v} (\hat{\Pi}) =1$, dann ist $\hat{v}(\Q_p^\times) = e\Z$ und $\hat{v}(\Pi) = e$.
+Somit gilt $\hat{v}|_{\Q_p} = ev_p$, wobei $v_p$ die $p$-adische Bewertung auf $\Q_p$ ist.
+Ab jetzt verwenden wir für $p$-adische Zahlkörper $K$ dies als Notation. Insbesondere:
+\begin{itemize}
+\item $\hat{v}$ is normierte Bewertung auf $K$
+\item $v_p$ ist die $p$-adische Bewertung auf $\Q_p$, beziehungsweise ihr Lift auf $K$
+\end{itemize}
+\end{Bem}
+
+\begin{Prop}
+Sei $K$ ein $p$-adischer Zahlkörper und $\hat{v}$ normiert.
+\begin{enumerate}[(i)]
+\item Wir erhalten einen wohldefinierten, stetigen Gruppenhomomorphismus
+\[ \log \colon U^{(1)} \to (K,+) , \, 1+x \mapsto x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots .
+\]
+\item $\log$ lässt sich auf eindeutige Weise zu einem stetigen Gruppenhomomorphismus
+\[ \log \colon K^\times \to (K,+)
+\]
+fortsetzen so, dass $\log p = 0$ gilt.
+\end{enumerate}
+\end{Prop}
+
+
+\begin{proof}
+\enquote{(i)} \textbf{(1)} Zeige: $\sum_{k=1}^{\infty} (-1)^{k-1} \frac{x^k}{k}$ ist eine Cauchyfolge für $x\in\p$.
+
+\bigskip Verwende:
+\begin{itemize}
+\item $x \in \hat{\p}$ und damit $v_p(x)>0$ so, dass $c= p^{v_p(x)} >1$ und $v_p(x) = \frac{\log c}{\log p}$
+\item $p^{v_p(k)} \leq k$ für alle $k \in \N$, denn $k = u p^{v_p(k)}$ mit $(p,u) = 1$, also
+	$v_p(k) \leq \frac{\log k}{\log p}$
+\end{itemize}
+Damit:
+\begin{align*}
+v_p \left( \frac{x^k}{k} \right)
+&= kv_p(x) - v_p(k)
+\geq k \frac{\log c}{\log p} - \frac{\log k}{\log p}
+= \frac{\log \frac{c^k}{k}}{\log p}
+\xrightarrow{k\to \infty} \infty
+\end{align*}
+\textbf{(2)} Rechne nach, dass für die formalen Potenzreihen gilt
+\[ \log [(1+x)(1+y)] = \log (1+x) + \log (1+y).
+\]
+
+\bigskip \textbf{(3)} Zeige: $\log$ ist stetig.
+
+\bigskip \textbf{Allgemeiner:} Sei $K$ ein nicht-archimedischer Körper mit diskreter Bewertung $v$. Sei $\sum_{k \geq 0} a_k x^k$ eine Potenzreihe mit $a_k \in K$. Diese konvergiere auf einer Untergruppe $\D$ von $(K,+)$. Dann ist
+\[ \D \to K, \, x \mapsto \sum_{k \geq 0} a_k x^k
+\]
+stetig.
+
+\begin{proof}
+Ist $a = v(x-x_n)>0$, so gilt $x = x_n + \Pi^a u$ mit $u \in \O$. Also
+$x^k = x_n^k + \Pi^a \cdot r$ so, dass 
+\[ v\left( x^k - x_n^k \right) \geq v\left( x - x_n \right).
+\]
+Sei nun $(x_n)$ eine Folge mit $x_n \to x$. Dann gilt
+\begin{align*}
+v \left( \sum_{k \geq 0} a_k x^k - \sum_{k \geq 0} a_k x_n^k  \right)
+&= v \left( \sum_{k \geq 0} a_k \left(x^k - x_n^k\right)  \right) \\
+&\geq \min \left\{ v(a_k) + v\left( x^k - x_n^k \right) \, | \, k \geq 0 \right\} \\
+&\geq \min \left\{ v(a_k) + v\left( x - x_n \right) \, | \, k \geq 0 \right\} \\
+&=\min \left\{ v\left( a_k \left(x - x_n \right)\right) \, | \, k \geq 0 \right\} \\
+&\xrightarrow{n \to \infty} \infty,
+\end{align*}
+da $\sum_{k \geq 0} a_k (x-x_n)^k$ konvergent.
+\end{proof}
+
+\enquote{(ii)} Definiere für $x \in K^\times$ mit $ x = \Pi^{v(x)} \cdot w(x) \cdot \langle x \rangle$ wie in Notation 5.7.8
+\[ \log x = \hat{v}(x) \log \hat{\Pi} + \log \langle x \rangle,
+\]
+wobei
+\[ \log \hat{\Pi} = - \frac{1}{e} \log \langle p \rangle.
+\]
+Dann gilt
+\begin{align*}
+\log p
+&= e \log \hat{\Pi} + \log \langle p \rangle 
+= 0.
+\end{align*}
+Nach Konstruktion und Bemerkung 7.9 folgt, dass $\log$ ein stetiger Gruppenhomomorphismus ist und $\log$ auf $U^{(1)}$ fortsetzt.
+
+\bigskip Zeige noch: Die Fortsetzung ist eindeutig.
+
+Sei $h\colon K^\times \to K$ eine Fortsetzung von $\log \colon U^{(1)} \to K$ mit $h(p)=0$.
+
+\textbf{(1)} Für $w \in \mu_{q-1}$ gilt $w^{q-1} = 1$, also
+\[ (q-1)h(w) = h(1) = 0.
+\]
+\textbf{(2)} $h(\Pi) = - \log (\langle p \rangle)$ muss gelten damit $h(p) = 0$.
+
+\textbf{(3)} Für $x\in K^x$ mit $x=\hat{\Pi}^{v(x)}w(x) \langle x \rangle$ muss $h$ wie oben definiert sein.
+\end{proof}
+
+
+\begin{Prop}
+Sei wiederum $K/\Q_p$ ein $p$-adischer Zahlkörper mit $\hat{\O}, \hat{p}, \hat{\kappa}, \O, \p, \kappa$ wie sonst und mit $\p\hat{\O} = \hat{\p}^e$. Seien $n > \frac{e}{p-1}$ und notiere $U^{(n)} = 1 + \hat{p}^n $. Dann erhalten wir zueinander inverse Isomorphismen
+\[ \exp \colon \hat{\p}^n  \to U^{(n)} \qquad \text{und} \qquad 
+\log \colon   U^{(n)} \to \hat{\p}^n,
+\]
+wobei 
+\[ \exp(x) = 1+ x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots
+\]
+und $\log$ wie in Proposition 5.7.12.
+\end{Prop}
+
+\begin{Lem}
+Seien $v_p$ die $p$-adische Bewertung auf $\Q$ und $k \in \N$ mit $k >1$. Dann gilt
+\[ v_p(k) \leq \frac{k-1}{p-1}.
+\]
+\end{Lem}
+
+\begin{proof}
+Für $v_p(k) = 0$ stimmt die Behauptung. Sei also $a= v_p(k) >0$ und schreibe $k = p^a k_0$ mit $(p,k_0)=1$. Dann gilt
+\begin{align*}
+\frac{v_p(k)}{k-1}
+&= \frac{1}{p^ak_0-1}
+\leq \frac{a}{p^a-1}
+= \frac{1}{p-1}  \frac{a}{p^{a-1}+ \cdots + p +1}
+\leq \frac{1}{p-1}
+\end{align*}
+und somit folgt die Behauptung.
+\end{proof}
+
+\begin{Lem}
+Sei $n\in\N$ mit $n = \sum_{i=0}^{r} a_ip^i$, wobei $0 \leq a_i < p$. Dann gilt
+\[ v_p(n!)
+= \frac{1}{p-1} \sum_{i=0}^{r} a_i \left( p^i-1 \right)
+= \frac{1}{p-1} (n-t_n),
+\]
+wobei $t_n = a_0 + a_1 + \cdots + a_r$.
+\end{Lem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

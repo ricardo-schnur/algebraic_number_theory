@@ -1,0 +1,154 @@
+% !TeX spellcheck = de_DE
+\rhead{23 Mai 2018}
+
+
+\begin{Prop}
+	Seien $K$ ein $p$-adischer Zahlkörper mit Restklassenkörper $\hat{\kappa}$, $d =[K:\Q_p]$ und $q=\# \hat{\kappa}$. Dann gilt für ein $k\in \N$, dass
+	\[ U^{(1)} \cong \Z_p^d \oplus \Z /k\Z.
+	\]
+	Hierbei steht $\cong$ für die Isomorphie von $\Z_p$-Moduln.
+\end{Prop}
+
+
+\begin{proof}
+	Sei $e\in\N$ mit $\p \hat{\O} = \hat{\p}^e$ und wähle $n>\frac{e}{p-1}$.
+	Nach 7.13 ist
+	\[ \log \colon \left( U^{(n)} , \cdot \right) \to \left( \hat{\p}^n, + \right)
+	\]
+	ein topologischer Isomorphismus von $\Z_p$-Moduln. 
+	
+	\bigskip \textbf{(1)} Nach AZT1 (2.2.12) hat $\hat{\O}$ eine Ganzheitsbasis $\alpha_1,\dots,\alpha_d$ über $\O = \Z_p$. Es folgt
+	\[ \hat{\O} \cong \Z_p \alpha_1 \oplus \cdots \oplus \Z_p \alpha_d \cong \Z_p^d
+	\]
+	so, dass
+	\[ \U^{(n)} \cong \hat{\p}^n  \cong \hat{\Pi}^n \O \cong \hat{\O} \cong \Z_p^d.
+	\]
+	
+	\bigskip \textbf{(2)} $[\U^{(1)}:\U^{(n)}]$ ist endlich, also liefert der Hauptsatz über endlich erzeugte Moduln über Hauptidealringen, dass $\U^{(1)} \cong \U^{(n)} \oplus T$, wobei
+	\[ T = \left\{
+	1+x \in \U^{(1)}; \, (1+x)^z = 1 \text{ für ein } z \in \Z_p
+	\right\}
+	\]
+	der Torsionsmodul ist. $T$ ist eine endliche Untergruppe von $K^\times$ und damit zyklisch.
+\end{proof}
+
+\begin{Prop}
+	Seien $K$ ein lokaler Körper mit $\ch K = p>0$, also $K$ endliche Erweiterung von $\F_p((t))$.
+	Dann gilt
+	\[ U^{(1)} \cong \Z_p^\N.
+	\]
+	Hierbei steht $\cong$ für die Isomorphie von $\Z_p$-Moduln.
+\end{Prop}
+
+\begin{Vorüberlegung}
+	Sei $K$ ein Körper mit nicht-archimedischer Bewertung $v$. Dann gilt für $a,b \in \O^\times$:
+	\[ \frac{a}{b} \in U^{(n)} = 1 +\p^n \qquad \Leftrightarrow \qquad a-b \in \p^n
+	\]
+\end{Vorüberlegung}
+
+\begin{proof} Es gilt:
+	\begin{align*}
+	\frac{a}{b} \in U^{(n)}
+	&\iff \frac{a}{b} - 1 \in \p^n 
+	\Leftrightarrow \frac{a-b}{b} \in\p^n
+	\Leftrightarrow a-b\in\p^n
+	\end{align*}
+\end{proof}
+
+
+\begin{proof}[Proof (Proposition 5.7.20)]
+	Nach dem Beweis von Satz 6 gilt $K \cong \F_q((t))$.
+	Wähle Basis $x_1,\dots,x_f$ von $\F_q / \F_p$.
+	
+	\bigskip \textbf{(1)} Definiere stetigen $Z_p$-Modulhomomorphismus für $n\in\N$ mit $\ggT(n,p) =1 $ durch
+	\[ g_n \colon \Z_p^f \to U^{(n)}, \, (\alpha_1,\dots,\alpha_f) \mapsto
+	\prod_{i=1}^{f} \left( 1+ x_it^n \right)^{\alpha_i}.
+	\]
+	
+	\bigskip \textbf{(2)} Zeige die folgenden drei Eigenschaften für $g_n$:
+	\begin{enumerate}[(A)]
+		\item Sei $m=p^sn$, dann gilt $g_n \left( p^s \Z_p^f \right) \subset U^{(m)} = 1 + \p^m$.
+		\item $U^{(m)} =  g_n \left( p^s \Z_p^f \right) \cdot U^{(m+1)}$, also
+				$U^{(m)} =  g_n \left( p \Z_p^f \right) + \hat{\p}^{(m+1)}$
+		\item$g_n\left( p^s\beta \right) \in U^{(m+1)}$ genau dann, wenn $\beta \in p \Z_p^f$.
+	\end{enumerate}
+	Beweis der Eigenschaften:
+	\begin{enumerate}[(A)]
+		\item Seien $\beta = (\beta_1, \dots, \beta_f) \in \Z_p^f$ und $\alpha=(\alpha_1,\dots, \alpha_f) = p^s\beta$. Dann gilt
+		\begin{align*}
+		g_n(\beta)
+		&=\prod_{i=1}^{f} (1+x_it^n)^{\beta_i}
+		= 1 + \underbrace{(\overline{\beta}_1 x_1 + \dots + \overline{\beta}_f x_f)}_{=x} t^n \mod \hat{\p}^{n+1}.
+		\end{align*}
+		Hierbei ist $\overline{\beta}_i$ das Bild von $\beta_i$ in $\F_p$. Es folgt, da $\ch K = p$,
+		\begin{align*}
+		g_n(\alpha)
+		&= g_n(p^s\beta)
+		= \left( g_n(\beta) \right)^{p^s}
+		\equiv 1 + x^{p^s} t^m \mod \p^{m+1},
+		\end{align*}
+		und damit $g_n(\alpha) \in U^{(m)}$.
+		
+		\item $\alpha$ durchläuft $p^s\Z_p^f$, d.h. $\beta$ durchläuft $\Z_p^f$. Also durchläuft $x$ $\F_q$ und somit $x^{p^s}$ ebenfalls $\F_q$. Somit durchläuft $g_n(\alpha)$ genau $U^{(m)} / U^{(m+1)}$.
+		
+		\item $g_n(\alpha) \in U^{(m+1)} \Leftrightarrow 1+x^{p^s} t^m \equiv 1 \mod \hat{\p}^{m+1} \Leftrightarrow x = 0 \text{ in } \F_q 
+		\Leftrightarrow \beta \in p \Z_p^f$
+	\end{enumerate}
+	
+	\bigskip \textbf{(3)} Definiere den stetigen $\Z_p$-Modulhomomorphismus
+	\[ g \colon A = \prod_{\stackrel{n \in \N}{(n,p) = 1}} \Z_p^f \to U^{(1)}, \,
+		\left( \alpha^{(n)} \right)_n \mapsto 
+			\prod_{\stackrel{n \in \N}{(n,p) = 1}} g_n \left( \alpha^{(n)} \right).
+	\]
+	Dieser ist wohldefiniert, denn $ g_n \left( \alpha^{(n)} \right) \in U^{(n)}$ so, dass nach Vorüberlegung $7.21$ die endlichen Teilprodukte von $\prod g_n \left( \alpha^{(n)} \right)$ eine Cauchy-Folge bilden.
+	
+	\bigskip \textbf{(4)} Zeige: Das Bild von $g$  ist dicht in $U^{(1)}$.
+	
+	\bigskip Es gilt $g_n(\Z_p^f) \subset g(A)$. Nach (B) existiert zu $m\geq 1$ und $\varepsilon \in U^{(m)}$ ein $\alpha \in A$ mit $\varepsilon = g(\alpha) \varepsilon'$, wobei $\varepsilon' \in U^{(m+1)}$. Sei nun $ z = \sum_{n \geq 0} c_n t^n$ $(c_n \in \F_p, c_0 = 1)$ in $U^{(1)}$.
+	Dann gilt $z = g \left( \alpha^{(1)} \right) \varepsilon^{(2)}$ mit einem $\alpha^{(1)} \in A$ und $\varepsilon^{(2)} \in U^{(2)}$.   Induktiv finde  $\varepsilon^{(k)} = g \left( \alpha^{(k)} \right) \varepsilon^{(k+1)}$ mit einem $\alpha^{(k)} \in A$ und $\varepsilon^{(k+1)} \in U^{(k+1)}$.  
+	Wir erhalten also eine Folge $\varepsilon^{(2)}, \varepsilon^{(3)}, \dots$ mit $\varepsilon^{(k)} \in U^{(k)}$ und $\alpha^{(1)}, \alpha^{(2)}, \dots$ in $A$ so, dass
+	\[ z = g \left( \alpha^{(1)} + \cdots + \alpha^{(n)} \right) \varepsilon^{n+1}.
+	\]
+	Es folgt $g \left( \alpha^{(1)} + \cdots + \alpha^{(n)} \right) \to z$ für $n\to\infty$.
+	
+	\bigskip \textbf{(5)} Zeige:$g$ ist surjektiv.
+	
+	\bigskip $A$ is kompakt und $g$ ist stetig, also ist $g(A)$ abgeschlossen in $U^{(1)}$. Aus (4) folgt also $g(A) =U^{(1)}$.
+	
+	\bigskip \textbf{(6)} Zeige: $g$ ist injektiv.
+	
+	\bigskip Sei $I = \{ n \in \N; \, \ggT(n,p) = 1 \}$ und sei $\left(\alpha^{(n)}\right)_{n\in I} \in A$ mit $\alpha^{(n)} \neq 0$ für ein $n \in I$.
+	Für jedes $n \in I$ definiere $m_n \in \N \cup \{ \infty \}$ wie folgt: Falls $\alpha^{(n)} \neq 0$  schreibe 
+	$\alpha_n = p^s \beta_n$ mit $\beta_n \in \Z_p^f \bs p \Z_p^f$. Dann sei $m_n = m = np^s$.
+	Falls $\alpha^{(n)} = 0$ setze $m_n = \infty$.
+	
+	\bigskip Beachte: $n_1, n_2 \in I$ mit $n_1 \neq n_2$ und $\alpha^{(n_1)} \neq 0 \neq  \alpha^{(n_2)}$ impliziert $m_{n_1} \neq m_{n_2}$.
+	
+	\bigskip Wähle nun $n \in I$ mit $m_n$ minimal. Dann gilt:
+	\begin{enumerate}[(1)]
+		\item $g_n\left( \alpha^{(n)} \right) \in U^{(m_n)} \bs U^{(m_n+1)}$
+		\item Für $n' \neq n$ gilt entweder $\alpha^{(n')} = 0$ und somit $g_{n'} \left( \alpha^{(n')}\right) = 1 $ oder $g_{n'} \left( \alpha^{(n')}\right) \in U^{(m_{n'})} \subset U^{m_n+1}$.
+	\end{enumerate}
+	Es folgt $g(\alpha) \equiv g_n \left( \alpha^{(n)}\right) \mod U^{m_n+1} \not \equiv 1 \mod U^{m_n+1}$, also $g(\alpha) \neq 1$.
+\end{proof}
+
+\begin{Satz}
+	Sei $K$ ein lokaler Körper. Dann gilt
+	\[ K^\times \cong \Z \oplus \Z / (q-1) \Z \oplus \Z_p^d \oplus \Z / k\Z,
+	\]
+	falls $\ch K = 0$ mit $[K:\Q_p] = d$, $q = \#\hat{\kappa}$ und $p = \ch \hat{\kappa}$, oder
+	\[ K^\times \cong \Z \oplus \Z / (q-1) \Z \oplus \Z_p^\N,
+	\]
+	falls $\ch K = p$ und $q = \#\hat{\kappa}$.
+\end{Satz}
+
+\begin{proof}
+	Folgt aus Proposition 7.19 und Proposition 7.20.
+\end{proof}
+
+
+
+
+
+
+

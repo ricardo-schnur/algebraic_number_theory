@@ -1,0 +1,180 @@
+% !TeX spellcheck = de_DE
+\rhead{20 Juni 2018}
+
+
+\begin{Prop}
+	\begin{enumerate}[(i)]
+		\item Seien $L/K$ und $K'/K$ Körpererweiterungen im algebraischen Abschluss von $K$ und $L'=LK'$.Ist $L/K$ zahm verzweigt, so auch $L'/K'$.
+		\item Ist $K\subset L \subset L'$ eine Kette von Körpererweiterungen, so gilt:
+		\[ L'/K \text{ zahm verzweigt} \qquad \Leftrightarrow \qquad L'/L \text{ und } L/K \text{ zahm verzweigt}
+		\]
+	\end{enumerate}
+\end{Prop}
+
+\begin{proof}
+	\enquote{(i)} Seien $T$ und $T'$ die maximal unverzweigten Zwischenkörper von $L/K$ und $L'/K'$.
+	Erhalte folgendes Diagramm:
+	\[ \begin{tikzcd}
+	L
+	\arrow[hook]{r}
+	& L'
+	\\
+	T
+	\arrow[hook, dotted]{r}	
+	\arrow[hook]{u}
+	& T'
+	\arrow[hook]{u}
+	\\
+	K
+	\arrow[hook]{u}{\text{unverzweigt}}
+	\arrow[hook]{r}
+	& K'
+	\arrow[hook]{u}
+	\end{tikzcd}
+	\]
+	Nach Proposition 9.5 ist $TK'$ unverzweigt über $K'$, also
+	\[ T \subset TK' \subset T',
+	\]
+	da $T'$ der maximale unverzweigte Zwischenkörper von $L'/K'$ ist.
+	Da $L/K$ zahm verzweigt ist, gibt es nach Proposition 9.19 Elemente $a_1, \dots, a_r \in T$ und nicht durch $p$ teilbare $m_1, \dots, m_r \in \N$ so, dass
+	\[ L = T \left( \sqrt[m_1]{a_1}, \dots, \sqrt[m_r]{a_r} \right).
+	\]
+	Also gilt 
+	\[ L'=LK' = T'\left( \sqrt[m_1]{a_1}, \dots, \sqrt[m_r]{a_r} \right).
+	\]
+	und damit ist $L'/K'$ zahm verzweigt nach Proposition 9.19.
+	
+	\bigskip \enquote{(ii)} Übungsaufgabe.
+\end{proof}
+
+\begin{Kor}
+	Das Kompositum von zahm verzweigten Körpererweiterungen ist zahm verzweigt.
+\end{Kor}
+
+
+\begin{proof}
+	Folgt aus Proposition 9.20.
+\end{proof}
+
+\begin{Bemdef}
+	Seien $L/K$ eine algebraische Körpererweiterung und
+	\[ R = \left\{ E; \, E \text{ ist Zwischenkörper von $L/K$ mit $E/K$ zahm verzweigt}  \right\}.
+	\]
+	Dann hat $R$ ein bezüglich Inklusion maximales Element $V=V(L/K)$. Dieses heißt der \textbf{maximal zahm verzweigte Zwischenkörper von $L/K$}. $V$ enthält jeden zahm verzweigten Zwischenkörper.
+\end{Bemdef}
+
+
+\begin{defi}
+	Sei $W=W(L/K)= w(L^\times) / v(K^\times)$ der Quotient der Wertegruppen. Seien
+	\[ W^{[p]} = \left\{ g \in W; \, \ord(g) \text{ ist endlich und wird nicht von $p$ geteilt}   \right\}
+	\]
+	und
+	\[ w(L^\times)^{(p)} = \left\{  w \in w(L^\times); \, \text{ es gibt ein $n\in\N$ mit $nw \in v(K^\times)$ und $p\not| \, n$} \right\}
+	\]
+	das Urbild von $W^{[p]}$ in $w(L^\times)$.
+\end{defi}
+
+\begin{Prop}
+	Sei $V=V(L/K)$ der maximal zahm verzweigte Zwischenkörper von $L/K$. Dann ist 
+	$w(V^\times)=w(L^\times)^{(p)}$ und $W(V/K) = W(L/K)^{[p]}$.
+\end{Prop}
+
+\begin{proof}
+	Ohne Einschränkung sei $L/K$ endlich. Sei $T=T(L/K)$ der maximal unverzweigte Zwischenkörper. Es gilt $\kappa_V = \kappa_T$ und daher $f(V/T)=1$. Nach Proposition 9.19 ist, da $e(T/K)=1$,
+	\[ [V:T] = e(V/T) = e(V/K),
+	\]
+	und $[V:T]$ ist nicht durch $p$ teilbar.
+	
+	\bigskip \enquote{$\subset$} Sei $w \in w(V^\times)$. Für das Bild $\overline{w}$ von $w$ in
+	$W(V/K)= w(L^\times) / v(K^\times)$ gilt $\ord(\overline{w})$ teilt
+	\[ \# W(V/K) = e(V/K) = [V:T],
+	\]
+	was nicht durch $p$ teilbar ist. Also ist $w \in w(L^\times)^{(p)}$.
+	
+	\bigskip \enquote{$\supset$} Sei $w \in w(L^\times)^{(p)}$. Wie im Beweis von Proposition 9.19 folgt die Existenz von $\alpha = \sqrt[m]{a} \in L$ mit $a\in K$, $\ggT(m,p) = 1$ und $w(\alpha) = w$. Da $K\left( \sqrt[m]{a} \right)$ zahm verzweigt ist gilt $\alpha \in V^\times$ und somit $w\in w(V^\times)$.
+\end{proof}
+
+
+\begin{Kor}
+	Seien $L/K$ eine algebraische Körpererweiterung, $T=T(L/K)$ und $V=V(L/K)$. Dann gilt:
+	\begin{enumerate}[(i)]
+		\item $K \subset T \subset V \subset L$
+		\item $\kappa_v \subset \kappa_{w_T} = \kappa_{w_V} \subset \kappa_w$
+		
+		Hierbei ist $\kappa_{w_T}$ der separable Abschluss von $\kappa_v$ in $\kappa_w$ und 
+		$[\kappa_{w_T}: \kappa_v] = [T:K]$.
+		\item $v(K^\times) = w(T^\times) \subset w(V^\times) 
+		= w(L^\times)^{(p)} \subset w(L^\times)$
+		\item Falls $L/K$ endlich ist und $e=e(L/K)=e'p^a$ mit $\ggT(e',p)=1$, dann ist $[V:T] = e'$.
+	\end{enumerate}
+\end{Kor}
+
+\begin{proof}
+	\enquote{(i), (ii), (iii)} Klar.
+	
+	\bigskip \enquote{(iv)} Nach Proposition 9.19 gilt
+	\[ [V:T] = e(V/T)f(V/T) = \#W(V/T).
+	\]
+	Weiter gilt
+	\[ W(V/T)=W(V/K)=W(L/K)^{[p]}.
+	\]
+	Die Gruppe $G=W(V/K)$ hat $e'p^a$ Elemente. Damit gilt nach dem Hauptsatz für endliche abelsche Gruppen $G=G_1 \times G_2$ mit $\# G_1 = p^a$ und $\# G_2 =e'$.
+	Also ist $G_2 =G^{[p]}$ und damit $[V:T] = e'$.
+\end{proof}
+
+\begin{defi}
+	\begin{enumerate}[(i)]
+		\item $L/K$ heißt \textbf{wild verzweigt} falls $L \neq V(L/K)$.
+		\item $L/K$ heißt \textbf{rein verzweigt} falls $T(L/K) = K$.		
+	\end{enumerate}
+\end{defi}
+
+\begin{Bsp}
+	Seien $K=\Q_p$ und $L=\Q_p\left( \zeta_{p^k} \right)$ mit $ \zeta_{p^k} $ ist $p^k$-te primitive Einheitswurzel. Nach Proposition 9.12 gilt:
+	\begin{itemize}
+		\item $[\Q_p\left( \zeta_{p^k} \right):\Q_p] = \varphi(p^k) = p^{k-1}(p-1)$
+		\item $e=e(L/K)=[L:K]=p^{k-1}(p-1)$
+		\item $f=1$
+	\end{itemize}
+	Insbesondere:
+	\begin{enumerate}[(i)]
+		\item $T=T(L/K)=\Q_p$ und somit ist $\Q_p\left( \zeta_{p^k} \right) / \Q_p$ rein verzweigt.
+		\item $\Q_p\left( \zeta_{p^k} \right)/\Q_p$ ist zahm verzweigt genau dann, wenn $k = 1$,
+		denn $p \not| \, [\Q_p\left( \zeta_{p^k} \right):T]$ genau dann, wenn $k=1$ und in diesem Fall ist $\kappa_w / \kappa_v$ separabel nach Beispiel 9.3 mit $\alpha = \zeta_{p^k} -1$.
+	\end{enumerate}
+	Bestimmung von $V=V \left(  \Q_p\left( \zeta_{p^k} \right)/\Q_p  \right)$:
+	
+	Sei $\zeta_p = \left( \zeta_{p^k} \right)^{p^{k-1}}$ und somit primitive $p$-te Einheitswurzel.
+	Nach (ii) ist $\Q_p\left( \zeta_p \right)/\Q_p$ zahm verzweigter Zwischenkörper von $\Q_p\left( \zeta_{p^k} \right)/\Q_p$. Nach Korollar 9.25 ist
+	\[ [V:\Q_p] = p-1
+	\]
+	und damit $V=\Q_P(\zeta_p)$.
+\end{Bsp}
+
+
+\begin{Bsp}
+	Seien $n=p^kn'$ mit $\ggT(p,n')=1$, $K=\Q_p$, $L=\Q_p(\zeta_n)$, $\zeta_{n'} = \zeta_n^{p^k}$, $\zeta_p = \zeta_n^{n'p^{k-1}}$ und $\zeta_{p^n} = \zeta_n^{n'}$. Erhalte für die Verzweigungskette aus Korollar 9.25:
+	\[ K = \Q_p \subsetneq T=T(L/K) = \Q_p(\zeta_{n'}) \subsetneq V=V(L/K)=T(\zeta_p)
+	\subset \Q_p(\zeta_n) = L
+	\]
+\end{Bsp}
+
+\begin{proof}
+	Nach Beispiel 9.13 gilt $\Q_p(\zeta_{n'}) = T(L/K)$ und 
+	\[ [\Q_p(\zeta_n):T] = [\Q_p\left( \zeta_{p^k} \right) : \Q_p ]
+	= \varphi(p^k) = p^{k-1}(p-1).
+	\]
+	Es gilt
+	\[ e(\Q_p(\zeta_n)/\Q_p) = e(\Q_p(\zeta_n) / \Q_p( \zeta_{p^k}) e( \Q_p( \zeta_{p^k} )/ Q_p )
+	= e(\Q_p( \zeta_{p^k} )/ \Q_p)
+	= p^{k-1}(p-1)
+	\]
+	und daraus folgt $[V:T] = p-1$.
+	Außerdem folgt 
+	$T(\zeta_p) /t$ zahm
+	aus Proposition 9.20 und Beispiel 9.27.
+	Da alle relevanten Körpererweiterungen galoissch  sind folgt
+	\[ [T(\zeta_p):T] = [\Q_p(\zeta_p): \Q_p] = p-1
+	\]
+	und somit $V=T(\zeta_p)$.
+\end{proof}

@@ -1,0 +1,190 @@
+\rhead{22 November 2017}
+
+\begin{Bsp*}
+Let $e_j =(0, \dots, 1,\dots, 0)$.
+Note that we have
+$\langle e_{\varphi_i} , e_{\varphi_i} \rangle = 1$
+and
+$\langle e_{\sigma_j} , e_{\varphi_j} \rangle = 2$, such that
+ $\langle \frac{e_{\sigma_j}}{\sqrt{2}} , \frac{e_{\sigma_j}}{\sqrt{2}} \rangle = 1$.
+ Hence
+\[\left\{ e_{\varphi_1}, \dots, e_{\varphi_r}, \frac{e_{\sigma_1}}{\sqrt{2}}, \frac{e_{\overline{\sigma_1}}}{\sqrt{2}}, \dots
+\right\}
+\]
+ is an orthonormal basis. Using the correspondence 
+ \[ X \subset K_\R \leftrightarrow f(X) \subset \R^{r+2s}
+ \]
+ we thus define
+\[ \volcan X = \volcan f(X) = 2^s \volLeb f(X.)
+\]
+\end{Bsp*}
+
+\begin{Prop}
+If $I \neq 0$ is an $\O_k$-ideal then $\Gamma = j(I)$ is a complete lattice in $K_\R$.
+Its fundamental domain has volume
+\[ \vol \Gamma = \vol \phi = \sqrt{\abs{d_k}} \cdot [\O_k\colon I].
+\]
+\end{Prop}
+
+\begin{proof}
+Choose $\alpha_i$ such that $I=\alpha_1\Z +\dots + \alpha_n\Z$. Then 
+$\Gamma = j(I) = j(\alpha_1)\Z +\dots + j(\alpha_n)\Z$. Define
+\[ A = \left( j(\alpha_1), \dots, j(\alpha_n) \right)^T = \begin{pmatrix}
+\tau_1(\alpha_1) & \cdots & \tau_n(\alpha_1) \\
+\vdots & \ddots & \vdots \\
+\tau_1(\alpha_n) & \cdots & \tau_n(\alpha_n) \\
+\end{pmatrix}
+\]
+such that
+\[ \vol\phi = \abs{\det A} = \sqrt{\abs{d_k}} \cdot [\O_k\colon I].
+\]
+Furthermore,
+\[d(I) = d(\alpha_1, \dots, \alpha_n) = \abs{\det A}^2 = d(\O_k) \cdot [\O_k\colon I]^2,
+\]
+with $[\O_k\colon I] = \abs{\det M}$ for the change of basis $M$ from $\O_k$ to $I$.
+\end{proof}
+
+
+\begin{Satz}
+Let $I\neq 0$ be an ideal in $\O_k$. Let $(c_\tau)_\tau$ be a collection of real number such that $c_\tau >0$, $c_\tau = c_{\overline{\tau}}$ and
+\[ \prod_\tau c_\tau > \left(\frac{2}{\pi}\right)^s \sqrt{\abs{d_k}} \cdot [\O_k\colon a].
+\]
+Then there exists $a \in I\bs\{0\}$ such that
+\[ \abs{\tau(a)} < c_\tau
+\]
+for all $\tau \in \Hom(K,\C)$.
+\end{Satz}
+
+\begin{proof}
+Consider the convex, central symmetric set
+\[ X = \left\{ (x_\tau) \in K_\R \, | \, \abs{x_\tau} < c_\tau \text{ for all } \tau
+\right\}
+\]
+and let $f \colon K_\R \to \R^n$, $n=r+2s$, as in Proposition 5.1. Notice that for $x \in X$ we have $f(x) = \left( x_{\varphi_1}, \dots, x_{\varphi_r}, a_1, b_1, \dots, a_s, b_s\right)$ with $\abs{x_{\varphi_i}} < c_{\varphi_i}$ and $a_j^2+b_j^2 < c_{\sigma_j}^2$. Hence
+\[ \volcan X = 2^s \volLeb f(X)
+=2^s \left( \, \prod_{i=1}^r 2 c_{\varphi_i}  \right) \left(\, \prod_{j=1}^s \pi c_{\sigma_j}^2  \right)
+=2^{r+s} \pi^s \prod_\tau c_\tau,
+\]
+and thus, by Proposition 5.2,
+\begin{align*}
+2^n \vol \Gamma 
+&= 2^{r+2s} \sqrt{\abs{d_k}} \cdot [\O_k\colon I] \\
+&= 2^{r+s} \pi^s \left[\left(\frac{2}{\pi}\right)^s \sqrt{\abs{d_k}} \cdot [\O_k\colon a]\right] \\
+&< 2^{r+s} \pi^s \prod_\tau c_\tau \\
+&\volcan X.
+\end{align*}
+Consequently, by Minkowski's theorem, there exists $j(a) \in \Gamma \bs \{0\}$ with $j(a) \in X$ and $\abs{\tau(a)} < c_\tau$ for all $\tau$.
+\end{proof}
+
+
+\section*{Multiplicative Minkowsky theory}
+Define
+\[ j \colon K^* \hookrightarrow K_\C* = \prod_\tau \C^*, \,
+a \mapsto \left(\tau(a)\right)_\tau
+\]
+and
+\[ \Norm \colon K_\C^* \to \C^*, \, \left(x_\tau\right) \mapsto \prod_\tau x_\tau.
+\]
+Denote the composition of these maps by $\NormKQ = N \circ j$. Furthermore, consider
+\[ l \colon \C^* \to \R, \, z \mapsto \log\abs{z}
+\]
+and its extension
+\[ l \colon K_\C^* \to \prod_\tau \R, \, \left(x_\tau\right) \mapsto\left( 
+\log\abs{x_{\tau_1}}, \dots, \log\abs{x_{\tau_n}}\right).
+\]
+All in all, we have
+\[\begin{tikzcd}
+K^*
+	\arrow[hook]{r}{j}
+	\arrow[swap]{d}{\NormKQ}
+&K_\C^*
+	\arrow[]{r}{l}
+	\arrow[]{d}{\Norm}
+&\prod_\tau \R
+	\arrow[]{d}{\Tr} 
+\\
+\Q^*
+	\arrow[swap, hook]{r}{i}
+&\C^*
+	\arrow[swap]{r}{l}
+&\R\\
+\end{tikzcd}
+\]
+with 
+\[ \left[\prod_\tau \R\right]^+ 
+= \prod_{\varphi_i} \R \times \prod_{\sigma_j} \left[\R\times\R\right]^+ 
+\xrightarrow{\cong} R^{r+s},
+\]
+where the isomorphism is given by
+\[ \left( x_{\varphi_1}, \dots, x_{\varphi_r}, x_{\sigma_1}, x_{\overline{\sigma_1}}, \dots, x_{\sigma_s}, x_{\overline{\sigma_s}} \right) \mapsto 
+\left( x_{\varphi_1}, \dots, x_{\varphi_r}, 2 x_{\sigma_1}, \dots, 2x_{\sigma_s} \right),
+\]
+and we have
+\[ K_\R \to \R^{r+s}, \, \left(x_\tau\right) \mapsto
+\left( \log\abs{x_{\varphi_1}}, \dots, \log\abs{x_{\varphi_r}}, \log\abs{x_{\sigma_1}}^2, \dots, \log\abs{x_{\sigma_s}}^2  \right).
+\]
+
+
+
+
+\section{The class number}
+Let $n=[K:\Q]$, denote by $J_K$ the group of fractional ideals of $K$, by $P_k$ its subgroup of principal ideals and by $\Cl_k = J_k / P_k$ the ideal class group.
+Define the \textbf{absolute norm} of an ideal $I \subset \O_k$ by
+\[ n(I) = [\O_k : I].
+\]
+For $I=(\alpha)$, we have $n(I) =\NormKQ(\alpha)$. If $O_k = w_1\Z+ \dots + w_n \Z$ and $I = \alpha w_1\Z + \dots + \alpha w_n \Z$ we have 
+\[ \alpha w_i = \sum_j a_{ij} w_j
+\]
+for some matrix $A=(a_{ij})$ such that $\NormKQ(\alpha) = \abs{\det A} =[\O_k:I]$.
+
+\begin{Prop}
+If $I = P_1^{\nu_1} \cdots P_r^{\nu_r}$ then $n(I) =n(P_1)^{\nu_1} \cdots n(P_r)^{\nu_r}$.
+\end{Prop}
+
+\begin{proof}By the Chinese remainder theorem,
+\[ \O_k / I \cong \left( \O_k / P_1^{\nu_1} \right) \oplus \cdots \oplus \left( \O_k / P_r^{\nu_r} \right),
+\]
+such that
+\[n(I) = [\O_k:I]
+=\prod_j \left[ \O_k \colon P_j^{\nu_j}  \right]
+=\prod_j n(P_j)^{\nu_j}.
+\]
+
+\textbf{Claim:} $P \supsetneq P^2 \supsetneq \cdots \supsetneq P^\nu $
+and $P^i / P^{i+1}$ is a $(\O_k / P)$-vector space of dimension $1$
+
+\textbf{Proof of Claim:}
+Let $a \in P^i / P^{i+1}$. Then we have
+\[ P^i \supset J=(a) +P^{i+1} \supsetneq P^{i+1}
+\]
+and
+\[ \O_k \supset J' = JP^{-i} \supsetneq P = P^{i+1}P^{-i}.
+\]
+Since $J' | P$ we have $J=P^i$ and thus $[a] \in P^i /P^{i+1}$ is a basis.
+
+\bigskip
+Now, the Claim yields
+\[ n(P^\nu) 
+= \left[\O_k\colon P^\nu\right]
+= \left[\O_k\colon P\right]  \left[P\colon P^2\right] \cdots \left[P^{\nu-1}\colon P^\nu\right]
+n(P)^\nu.
+\]
+\end{proof}
+
+In particular, for integral ideals $I, J$ we have $n(IJ)=n(I)n(J)$ such that we can extend $n$ to $J_k$ by
+\[n \colon J_k \to \R_+^*, \,
+I = P_1^{\nu_1} \cdots P_r^{\nu_r} \mapsto n(I)= n(P_1)^{\nu_1} \cdots n(P_r)^{\nu_r}.
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+

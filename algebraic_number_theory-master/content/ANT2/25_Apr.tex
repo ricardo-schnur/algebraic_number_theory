@@ -1,0 +1,188 @@
+\rhead{25 April 2018}
+
+
+\begin{proof}
+$p^r_{m,n} \colon \O / \p^n \rightarrow \O/ \p^m$ sei die natürliche Projektion für $m\leq n$
+und 
+\[ h_n \colon \mathcal{L} = \limproj_{n\in\N} \O/\p^n \to \O/\p^n
+\]
+die Projektionsabbildung des Limes.
+\begin{itemize} 
+\item[(1)] Definiere eine Abbildung $\Phi \colon \hat{\O} \to\mathcal{L}$:
+	
+		Verwende den Isomorphismus $\alpha_n \colon \hat{\O}/ \hat{\p}^n \to \O / \p^n$ aus Proposition 5.5.2 und definiere 
+		\[ \Phi_n \colon \hat{\O} \to \O / \p^n, \, x \mapsto \alpha_n \left(  x \mod \hat{\p}^n \right).
+		\]
+		Dann ist $\Phi_n$ ein Ringhomomorphismus und die $\{ \Phi_n \}$ passen zusammen mit den Projektionen $p_{m,n}$.
+		
+		\bigskip Zeige noch: $\Phi_n$ ist stetig
+		
+		Sei $U \subset \O/\p^n$ und $V=\Phi_n^{-1}(U)$, Es gilt $\ker \Phi_n = \hat{p}^n$. Für $x\in V$ und $\varepsilon_n = q^{-n}$ ist dann
+		\begin{align*}
+			K_{\varepsilon_n}(x) 
+			&= \{ y \in \hat{\O} \,|\, \abs{y-x}< \varepsilon_n  \} \\
+			&= \{ y \in \hat{\O} \,|\, \hat{v}(y-x) > n  \} \\
+			&= x+ \hat{\p}^{n+1}.
+		\end{align*}
+		Folglich gilt $\Phi(n)( K_{\varepsilon_n}(x)  ) = \{x\}$ und daher $K_{\varepsilon_n}(x)  \subset V$. Also ist $V$ offen.
+		Nach der Definition von projektivem Limes induziert $\{\Phi_n \}$ also einen stetigen Ringhomomorphismus  $\Phi \colon \hat{\O} \to\mathcal{L}$.
+\item[(2)] $\Phi$ ist injektiv:
+\begin{align*}
+\Phi(x) = 0
+&\Leftrightarrow \Phi_n(x) = 0 \text{ für alle } n \in \N \\
+&\Leftrightarrow x \mod \hat{\p}^n  \text{ für alle } n \in \N \\
+&\Leftrightarrow x=0
+\end{align*} 
+\item[(3)] $\Phi$ ist surjektiv:
+
+Sei $s=(\overline{s_n}) \in \mathcal{L}$, also $p^r_{n,m}(\overline{s_m}) = \overline{s_n}$ für $n\leq m$. Wähle für jedes $\overline{s_n}$ ein Urbild $s_n \in \O$. Es gilt also $s_m-s_n \in \p^n$ für $m\geq n$. Also ist $(s_n)$ eine Cauchy-Folge und es existiert $x=\lim_n s_n \in \hat{\O}$.
+Dann gilt $\Phi(x)=s$, denn:
+
+Es gilt für alle $m\geq n$, dass $s_n \equiv s_m \mod \p^n$. Wegen $s_n\to x$ existiert $k_0$ mit $v(x-s_n) \geq n$. Wähle $k\geq k_0,n$, dann gilt
+\[ x \equiv s_k \equiv s_n \mod \hat{\p}^n
+\]
+und damit $\Phi_n(x)= \overline{s_n}$ so, dass $\Phi(x)=s$.
+\item[(3)] $\Phi$ ist offen, d.h. für alle $U\subset \hat{\O}$ offen ist $\Phi(U)$ offen:
+
+Da $(\hat{\O},+)$ eine topologische Gruppe ist, genügt es, dies für alle $U$ einer Umgebungsbasis von $\O$ zu überprüfen und
+\[ \B = \{ K_{q^{-1}}(0) \,|\, n \in \N_0\}
+= \{ \hat{\p}^n \,|\, n \in \N \}
+\]
+ist eine Umgebungsbasis von $0$. Für $\hat{\p}^n \in \B$ gilt:
+\begin{align*}
+\Phi(\hat{\p}^n)
+&= \{ (\overline{s_k}) \in \mathcal{L} \,|\, \overline{s_k}=0 \text{ für } k\leq n  \} \\
+&= h_n^{-1} ( \{0\}) \text{ offen in } \mathcal{L}
+\end{align*}
+Somit ist $\Phi$ offen.
+\end{itemize}
+\end{proof}
+
+
+\begin{Bem}
+Die Mengen
+\[ U_n = \{0\} \times \cdots \times \{0\} \times \O / \p^{n+1} \times \cdots
+\]
+als offene Teilmengen von $\mathcal{L} = \limproj_{n\in\N} \O/\p^n$ bilden eine Umgebungsbasis der $0$.
+\end{Bem}
+
+
+\begin{Bem}
+Der Homomorphismus 
+\[ \O^\times \to \left( \O / \p^n \right)^\times, \, u \mapsto u \mod \p^n 
+\]
+hat als Kern $U^{(n)} = 1+\p^n$ und ist surjektiv. Somit ist $U^{(n)}$ eine Untergruppe von $\O^\times$ und
+\[ \O^\times / U^{(n)} \cong \left( \O / \p^n \right)^\times.
+\]
+\end{Bem}
+
+\begin{Kor}
+Als topologische Gruppen gilt
+\[ \hat{O}^\times = \limproj_{n\in\N} \O^\times / U^{(n)} .
+\]
+\end{Kor}
+
+\begin{proof}
+Der Isomorphismus $\Phi \colon \hat{\O} \limproj_{n\in\N} \O/\p^n$ schränkt sich ein zu einem Isomorphismus $\hat{O}^\times \to \left(  \limproj_{n\in\N} \O/\p^n\right)^\times$. Damit folgt
+\begin{align*}
+\left(  \limproj_{n\in\N} \O/\p^n\right)^\times
+&\cong  \limproj_{n\in\N} \left(  \O/\p^n\right)^\times
+\cong \limproj_{n\in\N} \O^\times / U^{(n)} .
+\end{align*}
+\end{proof}
+
+\begin{Kor}
+$\Z_p \cong \limproj_{n\in\N}  \Z/p^n\Z$
+\end{Kor}
+
+
+\textbf{Ziel:} Wähle zu jedem $x\in\Z_p$ eine eindeutige Folge $(s_n)$ in $\Z$ mit $s_n\to x$ und zwar so, dass $v(s_{n+1}-s_n)> n$, d.h.
+\[ s_{n+1} = s_n + a_{n} p^n. 
+\]
+Damit hat $s_{n+1}$ die Form
+\[ s_{n+1} = a_0 +a_1p + a_2p^2 + \cdots a_np^n.
+\]
+
+\bigskip\textbf{Idee:} Wenn wir $a_i \in \{ 0,1, \dots, p-1 \}$ fordern, dann geht das auf eindeutige Weise.
+
+
+\begin{Prop}
+Sei $R\subset\O$ ein Repräsentantensystem für $\kappa = \O / \p$ mit $0\in R$.
+\begin{enumerate}[(i)]
+\item Für alle $x\in\hat{\O}$ existiert eine eindeutige Folge $(a_n)_{n\in\N_0}$ in $R$ mit
+\[ x \equiv s_{n} = a_0 +a_1\Pi + a_2\Pi^2 + \cdots a_{n-1}\Pi^{n-1} \mod \hat{\p}^n
+\]
+für alle $n\in\N$ und es gilt $s_n \to x$ bezüglich $\abs{\cdot}$.
+\item Für $x\in\hat{K}^\times$ existiert eine analoge Folge mit
+\[  s_{n} = a_m\Pi^m +a_{m+1}\Pi^{m+1} +  \cdots a_{n}\Pi^{n} 
+\]
+für $n\geq m$ so, dass $s_n \equiv x \mod \hat{p}^n$ und $s_n \to x$. Hierbei ist $m=v(x)$.
+\end{enumerate}
+\end{Prop}
+
+\begin{proof}
+\enquote{(i)} Nach Proposition 5.5.2 existiert ein eindeutiges $a_0 \in R$ mit $a_0\equiv x \mod \hat{p}^n$. Definiere $a_n$ rekursiv wie folgt:
+
+Es gilt bereits $x \equiv s_{n} = a_0 +a_1\Pi + a_2\Pi^2 + \cdots a_{n-1}\Pi^{n-1} \mod \hat{\p}^n$. Dann ist
+\[ x-s_n = u_n \Pi^n
+\]
+für ein $u_n \in \hat{\O}$. Nach Proposition 5.5.2 lässt sich $u_n$ schreiben als
+\[ a_n + r\Pi
+\]
+mit eindeutigem $a_n\in R$ und einem $r \in \hat{\O}$. Also
+\begin{align*}
+x  
+&= a_0 +a_1\Pi + a_2\Pi^2 + \cdots a_{n-1}\Pi^{n-1}+ u_n \Pi^n \\
+&= a_0 +a_1\Pi + a_2\Pi^2 + \cdots a_{n-1}\Pi^{n-1}  + a_n \Pi^n +r \Pi^{n+1}.
+\end{align*}
+Also leistet $a_n$ das Gewünschte, d.h.
+\[ x \equiv a_0 +a_1\Pi + a_2\Pi^2 + \cdots a_{n}\Pi^{n} = s_{n+1} \mod \hat{\p}^{n+1}.
+\]Schließlich $v(x-s_n) \geq n+1$ und damit $s_n \to x$.
+
+\bigskip\enquote{(ii)} Sei $x\in\hat{K}$. Dann ist $x=u\Pi^m$ mit einem $u\in\O^\times$ und $m=v(x)$.
+Erhalte aus (i) eine Folge $(a_n')$ für $u$ mit
+\[ a_0' + a_1'\Pi + \cdots a_n'\Pi^n \to u.
+\]
+Wegen $u\in\O^\times$ ist $a_0' \neq 0$. Erhalte also
+\[ \Pi^m \left(a_0' + a_1'\Pi + \cdots a_n'\Pi^n  \right) \to x
+\]
+und setzte $a_n = a_{n+m}'$. Dann leistet $(a_n)$ das Gewünschte.
+\end{proof}
+
+
+\begin{Bsp}
+Sei $K=\Q$ mit $p$-adischer Norm $\abs{\cdot}_p$.
+\[\begin{array}{ccccc}
+\hat{K} & & \limproj \Z /p^n \Z & & \{0, \dots, p-1  \}^{N_0} \\
+-1 & \leftrightarrow & (p-1, p-1, p-1, \dots) & \leftrightarrow & p-1 + (p-1)p +(p-1)p^2 + \cdots
+\end{array}
+\]
+\end{Bsp}
+
+\begin{Kor}
+Es gilt
+\begin{align*}
+\Z_p 
+&= \{ a_0 + a_1p +a_2p^2 + \cdots \,|\, a_i \in \{0,\dots,p-1\}  \} \\
+&=\{0, \dots, p-1  \}^{N_0}
+\end{align*}
+und
+\begin{align*}
+\Q_p 
+&= \{ a_mp^m + a_{m-1}p^{m-1}+ a_{m-2}p^{m-2}  + \cdots \,|\, m \in \Z,  a_i \in \{0,\dots,p-1\}, a_m \neq 0  \} \\
+&=\Quot(\Z_p).
+\end{align*}
+Addition und Multiplikation ergibt sich wie bei Potenzreihen beziehungsweise Laurentreihen.
+\end{Kor}
+
+
+\begin{Bsp}
+Seien $K=k(T) = \Quot+(k[T])$ und
+\[ v \colon K \to \Z\cup \{\infty \}, \, \frac{p}{q} \mapsto \deg(p) - \deg(q).
+\]
+Weiter sei $\O = k[T] \supset \p = (T)$ und $\Pi = T$. Dann ist
+$\hat{\O} = k[[T]]$ der Ring der Potenzreihen und $\hat{K} = k((T))$ der Körper der Laurentreihen.
+\end{Bsp}
+
+
+

@@ -1,0 +1,136 @@
+% !TeX spellcheck = de_DE
+\rhead{13 Juni 2018}
+
+
+\begin{Prop}
+	Sei $\zeta$ eine primitive $p^m$-te Einheitswurzel.
+	\begin{enumerate}[(i)]
+		\item $\Q_p(\zeta)/\Q_p$ ist rein verzweigt vom Grad $\varphi(p^m) = p^m - p^{m-1}$.
+		\item $\Gal (\Q_p(\zeta)/\Q_p) \cong \left( \Z / p^m \Z \right)^\times$
+		\item $\Z_p[\zeta]$ ist der Bewertungsring von $\Q_p(\zeta)$.
+		\item $1-\zeta$ ist ein Primelement im Bewertungsring.
+		\item $\Q_p$ selbst ist schon der maximal unverzweigte Zwischenkörper von $\Q_p(\zeta) / \Q_p$.
+	\end{enumerate}
+\end{Prop}
+
+
+\begin{proof}
+	\enquote{(i)} Siehe Beispiel 9.10.
+	
+	\bigskip \enquote{(ii)} Betrachte den Homomorphismus
+	\[ h \colon \Gal (\Q_p(\zeta)/\Q_p) \to \left( \Z / p^m \Z \right)^\times, \, \sigma \mapsto n(\sigma)
+	\]
+	mit $\sigma(\zeta) = \zeta^{n(\sigma)}$. Dieser ist injektiv. Wegen
+	\[ \# \Gal (\Q_p(\zeta)/\Q_p) = [\Q_p(\zeta):\Q_p] 
+	=\varphi(p^m) = \# \left( \Z / p^m \Z \right)^\times
+	\]
+	ist $h$ auch surjektiv.
+	
+	\bigskip \enquote{(iii)} Analog zum Beweis von 8.16.
+	
+	\bigskip \enquote{(iv)} $1-\zeta$ ist Primelement da
+	\[ w(1-\zeta) = \frac{1}{[\Q_p(\zeta):\Q_p]},
+	\]
+	vergleiche Beispiel 9.10.
+	
+	\bigskip \enquote{(v)} Sei $T$ der maximal unverzweigte Zwischenkörper von $\Q_p(\zeta) / \Q_p$ mit Bewertung $w_T$. Dann gilt
+	\[ e(w/v) = e(w/w_T)e(w_T/v)=e(w/w_T).
+	\]
+	Andererseits ist $e(w/v) = [\Q_p(\zeta):\Q_p]$ und $e(w/w_T) \leq [\Q_p(\zeta):T]$.
+	Somit gilt $T=\Q_p$.
+\end{proof}
+
+
+\begin{Bsp}
+	Sei $\zeta_n$ eine $n$-te Einheitswurzel mit $n=n'p^k$ mit $\ggT(n',p) = 1$.
+	Dann ist für die Körpererweiterung $\Q_p(\zeta_n) / \Q_p$ die maximal unverzweigte Zwischenerweiterung $T=\Q_p(\zeta_{n'})$ mit $\zeta_{n'} = (\zeta_n)^{p^k}$.
+\end{Bsp}
+
+\begin{proof}
+	Setze $\zeta_{p^k} = (\zeta_n)^{n'}$. Es gilt:
+	\begin{align*}
+	\Q_p(\zeta_{n'}) \cdot \Q_p(\zeta_{p^k}) &= \Q_p(\zeta_n) \\
+	\Q_p(\zeta_{n'}) \cap \Q_p(\zeta_{p^k}) &= \Q_p
+	\end{align*}
+	Aus der Algebra folgt
+	\begin{align*}
+	\Gal\left( \Q_p(\zeta_n) / \Q_p(\zeta_{n'}) \right)
+	\cong \Gal\left( \Q_p(\zeta_{p^k}) / \Q \right).
+	\end{align*}
+	Nach Proposition 9.11 ist $\Q_p(\zeta_{n'}) / \Q_p$ unverzweigt, also $T\supset \Q_p(\zeta_{n'})$.
+	Wäre $T \neq \Q_p(\zeta_{n'})$, so wäre $\Gal(\Q_p(\zeta_n)/T)$ eine echte Untergruppe von $\Gal\left( \Q_p(\zeta_n) / \Q_p(\zeta_{n'})  \right)$ und induziert eine echte Untergruppe von $\Gal\left( \Q_p(\zeta_{p^k}) / \Q_p \right)$. Diese entspricht einem echten Zwischenkörper $E$ von $\Q_p(\zeta_{p^k}) / \Q_p)$, und zwar dem Körper $T' = T \cap \Q_p(\zeta_{p^k})$. Damit ist $T'/\Q_p$ unverzweigt nach Proposition 9.5.
+	Dies widerspricht Proposition 9.12.
+\end{proof}
+
+\begin{defi}
+	Sei $(L,w)/(K,v)$ eine algebraische Körpererweiterung und $T$ der maximal unverzweigte Zwischenkörper. $L/K$ heißt \textbf{zahm verzweigt}, falls
+	\begin{enumerate}[(i)]
+		\item $\kappa_w/\kappa_v$ ist separabel, und
+		\item $[L:T]$ ist nicht durch $p$ teilbar, falls $L/T$ endlich, beziehungsweise
+		$[L':T]$ ist nicht durch $p$ teilbar für alle endlichen Zwischenkörper $L'$ von $L/T$,
+		falls $L/T$ unendlich.
+	\end{enumerate}
+\end{defi}
+
+
+\begin{Bem}
+	In der Situation von Definition 9.14 gilt:
+	\begin{enumerate}[(i)]
+		\item Ist $L/K$ zahm verzweigt, so gilt $\kappa_w=\kappa_{w_T}$.
+		\item $L/K$ ist zahm verzweigt genau dann, wenn $L/T$ zahm verzweigt ist.
+	\end{enumerate}
+\end{Bem}
+
+\begin{proof}
+	\enquote{(i)} Folgt aus Proposition 9.9.
+	
+	\bigskip \enquote{(ii)} Da $\kappa_{w_T} / \kappa_v$ separabel ist gilt:
+	\[ \kappa_w / \kappa_{w_T} \text{ separabel } \Leftrightarrow \kappa_w / \kappa_v \text{ separabel}
+	\]
+	Die zweite Bedingung in der Definition von zahm verzweigt \enquote{lebt} nur über $T$.
+\end{proof}
+
+\begin{Bsp}
+	Sei $L=K(\sqrt[m]{a})$ für ein $a\in K$ und $m\in\N$ mit $\ggT(m,p) = 1$.
+	Dann ist $L/K$ zahm verzweigt.
+\end{Bsp}
+
+\begin{proof}
+	Folgt aus Proposition 9.17.
+\end{proof}
+
+\begin{Prop}
+	Sei für $K$ der Restklassenkörper $\kappa_v$ separabel abgeschlossen. Dann gilt für $L=K(\sqrt[m]{a})$ mit $a\in K$ und $\ggT(m,p) = 1$:
+	\begin{enumerate}[(i)]
+		\item $f=[\kappa_w : \kappa_v] = 1$, $[L:K]$ ist ein Teiler von $m$ und $[L:K] = e$
+		\item Insbesondere gilt: $L/K$ ist zahm verzweigt und $[L:K] = ef$ und $L/K$ ist nicht unverzweigt, falls $L\neq K$.
+	\end{enumerate}
+\end{Prop}
+
+\begin{proof}
+	\enquote{(ii)} Folgt aus (i)
+	
+	\bigskip \enquote{(i)} Sei $\alpha = \sqrt[m]{a}$, Ohne Einschränkung sei $\alpha \neq 0$.
+	Dann zerfällt $X^m-1$ über $\kappa_v$ in Linearfaktoren und wegen Hensel auch über $\O_v$.
+	Das heißt $K^\times$ enthält die Gruppe der $m$-ten Einheitswurzeln $\mu_m$.
+	Also ist $L/K$ Galloissch, da $X^m-a$ separabel ist.
+	Nach der Algebra ist $\Gal(L/K)$ daher zyklisch und $L=K(\sqrt[m']{a'})$ mit $a'\in K$ und $m'$ ein Teiler von $m$. Insbesondere ist $[L:K] = m'$ ein Teiler von $m$ und damit teilerfremd zu $p$.
+	Sei nun $\alpha' = \sqrt[m']{a'}$ und $n$ die Ordnung vom Bild von $w(\alpha')$ in 
+	$w(L^\times) / w(K^\times)$. Dann:
+	\begin{enumerate}[(i)]
+		\item $n$ teilt $e= \# w(L^\times) / w(K^\times)$.
+		\item $w(\alpha'^n) = nw(\alpha') \in v(K^\times)$, also gibt es $b\in K^\times$ mit
+		$w(\alpha'^n) = v(b)$.
+		\item $n$ teilt $m'$, da $\alpha'^m = a' \in K^\times$. Also $m'=dn$ mit $d\in\N$.
+		\item $v(a')=v(\alpha'^{m'}) = m'w(\alpha') = dnw(\alpha') = dw(\alpha'^n)
+		=dv(b)=v(b^d)$ und somit $a'=b^d \varepsilon$ mit $\varepsilon\in\O_v^\times$.
+	\end{enumerate}
+	Da $\kappa_v$ separabel abgeschlossen ist, liefert das Lemma von Hensel, dass $X^{m'}-\varepsilon$ eine Nullstelle $\varepsilon_1$ hat, also $\varepsilon_1^d = \varepsilon$.
+	Ersetze $b$ durch $b \varepsilon_1$ und erhalte damit $a' = \alpha^{m'} = b^d$ mit $b\in K^\times$ und $d = \frac{m'}{n}$.
+	Also ist $\alpha$ Nullstelle von $X^n-b$.
+	Da $[L:K] = m'$ folgt $n=m'$ und $d=1$.
+	
+	\bigskip Insgesamt: $e \geq n = m' = [L:K] \geq ef$
+	
+	Es folgt: $f=1$, $e=[L:K]$ und $ef = [L:K]$
+\end{proof}

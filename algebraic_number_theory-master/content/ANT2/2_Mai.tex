@@ -1,0 +1,112 @@
+\rhead{2 Mai 2018}
+
+\begin{proof}[von Satz 4]
+Wähle $g_0, h_0 \in \O[X]$ mit $proj(g_0)=\bar{g}, proj(h_0)=\bar{h}, \deg(g_0)=\deg(\bar{g})=:m, \deg(h_0)=\deg(\bar{h})=:m'$.
+
+Dann gilt insbesondere $m+m'=\deg(\bar{f})\leq \deg(f)=:d$.\\
+\underline{Verwende:} $(1) \bar{g}, \bar{h}$ sind teilerfremd $\Rightarrow \exists \ a,b, \in \O[X]$ mit $1 \equiv ag_0+bh_0 \mod p$. Also $ag_0+bh_0-1 \in p$.\\
+$(2) f\equiv g_0h_0 \mod p$, also $f-g_0h_0 \in p$. Wähle $\Pi$ als Koeffizient von $ag_0+bh_0-1$, $f-g_0h_0$, sodass $\nu(\Pi)$ minimal ist.\\
+$\Rightarrow \Pi \in P$ und $ag_0+bh_0-1$ und $f-g_0h_0$ sind beide durch $\Pi$ teilbar.\\
+\underline{Ansatz:}
+$g:=g_0+s_1 \Pi + s_2 \P^2+ \dots$\\
+$h:=h_0+t_1 \Pi + t_2 \P^2+ \dots$
+\begin{enumerate}[(1)]
+\item $g_nh_n \equiv f \mod \Pi^{n+1}$
+\item $\deg(g_n)=\deg(g_0)=m$
+\end{enumerate}
+Bestimme $s_n$ und $t_n$ rekursiv:\\
+Es gilt: $\Pi|f-g_0h_0 \Rightarrow f \equiv g_0 h_0 \mod \Pi$\\
+Außerdem: $\deg(g_0)=m$ und damit liegt der Leitkoeffizient nicht in $p$ und ist somit eine Einheit.\\
+Sei nun $g_{n-1}, h_{n-1}$ wie gewünscht gegeben.
+Es gilt für $g_n=g_{n-1}+s_n\Pi^n$ und $h_n=h_{n-1}+t_n\Pi^n$:\\
+$g_n h_n \equiv g_{n-1} h_{n-1}+(s_n h_{n-1}+t_n g_{n-1})\Pi^n \mod \Pi^{n+1}$ und $f- g_{n-1}h_{n-1}=f_n\Pi^n$.
+Also ist $f \equiv g_nh_n \mod \Pi^{n+1} \iff g_{n-1}h_{n-1}+f_n\Pi^n \equiv g_{n-1}h_{n-1} + (s_n h_{n-1}+t_n g_{n-1}) \Pi^n \mod \Pi^{n+1} \iff f_n \equiv s_n h_{n-1} + t_n g_{n-1}\mod \Pi$
+Verwende $f_n =f_n \cdot 1 \equiv f_n(ag_0 +bh_0) \mod \Pi$ und $g_{n-1} \equiv g_0$ und $h_{n-1} \equiv h_0 \mod \Pi$.\\
+Also $(\star) \iff \underbrace{f_n a}_{\hat t_n} g_0 + \underbrace{f_n b}_{\hat h_n} h_0 \equiv s_n h_0 + t_n g_0 \mod \Pi$.
+Definiere $s_n$ als Rest von $f_n b$ beim Teilen durch $g_0$ d.h. $f_n b = qg_0 ü s_n$ mit $q \in \O[X]$ und $\deg(s_n) <m$ und $t'_n:= f_n a + qh_0$ bzw. das Polynom das aus $t'_n$ entsteht, wenn alle durch $\Pi$ teilbaren Koeffizienten von $t'_n$ auf $0$ gesetzt werden.
+Insgesamt: $g_n:=g_{n-1} + s_n \Pi^n, h_n:=h_{n-1}+t_n\Pi^n \equiv h_{n-1} +\hat{t}_n \Pi^n \mod \Pi^{n+1}$ mit $s_n, t_n$ wie oben gewählt. $\Rightarrow$
+\begin{enumerate}[(1)]
+\item $f \equiv g_n h_n \mod \Pi^{n+1}$
+\item $\deg(g_n)=\deg(g_{n-1})$, da $\deg(s_n)<m$ und der Leitkoeffizient von $g_n=$Leitkoeff. von $g_{n-1}$.
+\end{enumerate}
+\end{proof}
+
+\begin{Bsp}
+$K=\Q_p, \O=\Z_p, \Pot=p\Z_p, \kappa = \Z_p/\Pot=\F_p, f(X)=X^{p-1}-1 \in \O[X], \bar{f}(X)=X^{p-1} -1 \in \F_p[X]=(X-1)(X-2)\cdot \dots \cdot (X-(p-1))$\\
+Lemma von Hensel $\Rightarrow f$ hat $p-1$ Nullstellen $\Rightarrow \Z_p$ enthält die $(p-1)$-ten Einheitswurzeln.
+\end{Bsp}
+
+\begin{Kor}
+Seien $(K, |\cdot|)$ wieder vollständig+nicht-archimedisch, $f(X)=a_nX^n+a_{n-1}X^{n-1} + \dots + a_0 \in K[X]$ irreduzibel. Dann gilt $|f|=max\{|a_0|, |a_n|\}$. Insbesondere: $f$ normiert und $a_0 \in \O \Rightarrow f \in \O[X]$.
+\end{Kor}
+
+\begin{proof}
+Multipliziere $f$ mit geeignetem $\alpha \in K \Rightarrow \OE f \in \O[X]$ und $|f|=1$.\\
+Sei $r \in \{0, \dots, n\}$ minimal mit $|a_r|=1 \Rightarrow f(X)\equiv a_nX^n+\dots+a_rX^r \equiv X^r(a_nX^{n-r}+ \dots +a_r) \mod p$.\\
+Annahme: $0 < r< n$. Hensels Lemma $\Rightarrow f$ ist nicht irreduzibel \Lightning.
+\end{proof}
+
+\begin{Lem}
+Seien $K$ vollständig + nicht-archimedisch, $L/K$ endliche $KE$ und $\hO$ der ganze Abschluss von $\O$ in $L$.
+\[\begin{tikzcd}
+\hO \arrow[r, hookrightarrow] & L\\
+\O \arrow[u, dash] \arrow[r, hookrightarrow] & K \arrow[u, dash]
+\end{tikzcd}\]
+Dann gilt:
+\[\hO=\{\alpha \in L \ | \ N_{L/K}(\alpha) \in \O\}\]
+\end{Lem}
+
+\begin{proof}
+\glqq $\subseteq$ \grqq gilt auch für nicht vollständige Körper $K$ [s. AZT 1, II.2.7].\\
+\glqq $\supseteq$ \grqq Folgt aus Kor. 6.5 wie folgt:\\
+$\alpha \in L^\times$ mit $N_{L/K}(\alpha) \in \O$. Sei $f(X)=X^d+a_{d-1} X^{d-1}+\dots+a_0 \in K[X]$ Minimalpolynom von $\alpha \Rightarrow N_{K(\alpha)/K}(\alpha)=(-1)^da_0 \in \O$.\\
+$\Rightarrow N_{L/K}(\alpha)$ ist Potenz von $(-1)^d a_0$ und damit in $\O$.\\
+$\stackrel{Kor.}{\Rightarrow} f(X) \in \O[X]$ und damit $\alpha \in \hO$.
+\end{proof}
+
+\begin{Bsp}
+$K=\Q, L=\Q(\sqrt{17}), f(X)=X^2+\frac{1}{2}X-1$ hat die Nullstellen $x_{1/2}=-\frac{1}{4} \pm \frac{1}{4} \sqrt{17}, \alpha=x_1 \Rightarrow N_{L/K}(\alpha)=-1$.\\
+\underline{Aber:} $\alpha \not \in $ ganzem Abschluss von $\Z$ in $L$.
+\end{Bsp} 
+
+\begin{Satz}[FORTSETZUNG VON NORMEN]
+Sei $(K, |\cdot|)$ vollständig. Dann hat $|\cdot|$ auf jeder algebraischen KE $L/K$ eine eindeutige Norm-Fortsetzung.\\
+Falls $L/K$ endlich, ist diese definiert durch $|\alpha|:=\sqrt[n]{|N_{L/K}(\alpha)|}$ und ist vollständig, wobei $[L:K]=n$.
+\end{Satz}
+
+\begin{Prop}
+Seien:
+\begin{itemize}
+\item $(K, |\cdot|)$ ein vollständig normierter Körper.
+\item $V$ ein $n$-dimensionaler $K-VR$ mit einer Norm $||\cdot||_1$
+\item $\{v_1, \dots, v_n\}$ Basis von $V$.
+\end{itemize}
+Dann ist $\phi: K^n \to V, (a_1, \dots, a_n) \mapsto a_1 v_1 + \dots + a_nv_n$ ein Homöomorphismus. Insbesondere ist damit $V$ vollständig bezüglich der von $|| \cdot ||_1$ induzierten Topologie.
+\end{Prop}
+
+\begin{proof}
+Definiere die Norm $||\cdot||_2$ auf $V$ wie folgt: $||a_1 v_1+ \dots + a_nv_n||:=\max\{|a_1|, \dots, |a_n|\}$.\\
+Zeige noch: $||\cdot ||_1$ und $||\cdot ||_2$ definieren dieselbe Topoogie auf $V$. Dann folgt die Behauptung.\\
+Zeige dazu: $\exists\rho, \rho' >0$ mit $\rho ||x||_2 \leq ||x||_1 \leq \rho'||x||_2 \forall x \in V$.
+\begin{enumerate}[(1)]
+\item Für $x=a_1 v_1+ \dots, +a_n v_n$ gilt: $||x||_1 \leq |a_1| ||v_1||_1+ \dots + |a_n| ||v_n||_1 \leq ||x||_2 \underbrace{(||v_1||_1+ \dots + ||v_n||_1)}_{=:\rho'}$
+\end{enumerate}
+\item Existenz von $\rho$ via vollständiger Induktion über $n$:\\
+\begin{align*}
+n=1: &||x||_2=||x_1v_1||_2=|x_1|\\
+&||x||_1=|x_1| ||v_1||_1 \Rightarrow \rho:=||v_1||_1 \text{ tut es.}
+\end{align*}
+\glqq $n-1 \to n $\grqq: $V_i:= Kv_1 \oplus KV_2 \oplus \dots \oplus Kv_{i-1} \oplus Kv_{i+1} \oplus \dots \oplus Kv_n$
+also: $V=V_i \oplus Kv_i$\\
+\begin{align*}
+\text{Induktionsvoraussetzung:} &\Rightarrow (V_i, ||\cdot ||_1) \text{ ist vollständig } \Rightarrow V_i \text{ ist abgeschlossen in }(V, ||\cdot ||_1)\\
+&\Rightarrow V_i +v_i \text{ ist abgeschlossen.}\\
+&\Rightarrow \bigcup_{i=1}^n V_i +v_i \text{ ist abgeschlossen und enthält nicht } 0.\\
+&\Rightarrow \exists \rho > 0 \text{ mit } K_\rho(0) \cap \bigcup_{i=i}^n V_i+v_i = \emptyset\\
+&\Rightarrow \forall i \in \{1, \dots, n\}: ||w_i+v_i||_1 \geq \rho \forall w_i \in V_i
+\end{align*}
+Also: Für $x=a_iv_1 + \dots + a_nv_n \neq 0$ gilt:
+Sei $r : |a_r|=\max\{|a_1|, \dots, |a_n|\}=||x||_2>0$\\
+$\Rightarrow ||a_r^{-1} x||_1 = ||\underbrace{\frac{a_1}{a_r}v_1 + \dots + \frac{a_n}{a_r}v_n}_{\in v_r+V_r}||_1 \geq \rho$\\
+$\Rightarrow ||x||_1 \geq |a_r| \rho =\rho ||x||_2.$
+\end{proof}

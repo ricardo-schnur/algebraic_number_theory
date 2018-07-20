@@ -1,0 +1,224 @@
+\rhead{09 April 2018}
+
+\chapter{Bewertungstheorie}
+\section{Normierte Körper}
+
+\begin{defi}
+Eine \textbf{Norm} auf einem Körper $K$ ist eine Funktion
+$\abs{\cdot} \colon K \to \R_{\geq 0}$ mit:
+\begin{enumerate}[(i)]
+\item $\abs{x} \geq 0$ und $\abs{x} = 0 \Leftrightarrow x = 0$
+\item $\abs{xy} = \abs{x} \abs{y}$
+\item $\abs{x+y} \leq \abs{x} + \abs{y}$
+\end{enumerate}
+\end{defi}
+
+\begin{Bem}
+\begin{enumerate}[(i)]
+\item $\abs{1} = \abs{-1} = 1$ ud $\abs{-x} = \abs{x}$
+\item $\abs{\cdot} \colon K \to \R_{\geq 0}$ mit $\abs{0} = 0$ und $\abs{x} = 1$ für $x\neq 0$ is eine Norm und heißt \textbf{triviale Norm}.
+\end{enumerate}
+\end{Bem}
+
+Ab jetzt: $K$ immmer ein Körper
+
+\begin{Bem}
+Jede Norm definiert eine Metrik auf $K$ durch $d(x,y) = \abs{x-y}$.
+\end{Bem}
+
+\begin{Bem}
+Jede Metrik auf einer Menge $X$ definiert eine Topologie auf $X$ durch:
+\[ U \subset X \text{ offen } \Leftrightarrow \text{ für alle }  x \in U \text{ existiert } \varepsilon > 0
+\text{ mit } K_\varepsilon(x) \subset U \]
+Hier: $K_\varepsilon(x) = \left\{ y \in X \, | \, d(x,y) < \varepsilon  \right\}$
+\end{Bem}
+
+\begin{recall*}
+Für eine Menge $X$ heißt $T \subset \Pot(X)$ \textbf{Topologie} falls
+\begin{enumerate}[(i)]
+\item $\emptyset, X \in T$,
+\item $U, V \in T$ impliziert $U \cap V \in T$,
+\item $U_i \in T$ für alle $i \in I$ impliziert $\bigcup_{i \in I} U_i \in T$.
+\end{enumerate}
+\end{recall*}
+
+
+\begin{Bem}
+Seien $X$ eine Menge, $d$ eine Metrik auf $X$ und $T$ die induzierte Topologie. Dann hängt Konvergenz von Punktfolgen nur von der Topologie ab.
+
+\bigskip
+Genauer: Für eine Folge von Punkten $x_n \in X$ und $x \in X$ gilt:
+
+$x_n \xrightarrow{n \to \infty} x \Leftrightarrow$  Für alle $U \in T$ mit $x \in U$ ein $N \in \N$ existiert mit $x_n \in U$ für alle $n \geq N$.
+\end{Bem}
+
+\begin{proof}
+\enquote{$\Rightarrow$} Zu $U \in T$ existiert $ r>0$ mit $K_r(x) \subset U$. Wähle $N \in \N$ mit $d(x_n,x) < r$ für alle $n\geq N$. Dann ist $x_n \in K_r(x) \subset U$ für alle $N \geq N$.
+
+\bigskip \enquote{$\Leftarrow$} Sei $\varepsilon > 0$. Wähle $U = K_\varepsilon(x)$. Da $U$ offen ist, existiert $N \in \N$ mit $x_n \in U$ für alle $n\geq N$. Also ist $d(x_n,x) < \varepsilon$ für alle $N\geq N$.
+\end{proof}
+
+
+\begin{defi}
+Zwei Normen $\abs{\cdot}_1$ und $\abs{\cdot}_2$ auf $K$ heißen \textbf{äquivalent}, $\abs{\cdot}_1 \sim \abs{\cdot}_2$, wenn sie die selbe Topologie auf $K$ induzieren.
+\end{defi}
+
+
+\begin{Prop}
+$\abs{\cdot}_1$ und $\abs{\cdot}_2$ sind äquivalent genau dann, wenn ein $s > 0$ existiert mit $\abs{\cdot}_2 = \abs{\cdot}_1^s$.
+\end{Prop}
+
+\begin{Lem}
+Falls $\abs{\cdot}_1$ und $\abs{\cdot}_2$ äquivalent sind, dann gilt:
+\[ \abs{x}_1 < 1 \quad \Leftrightarrow \quad \abs{x}_2 < 1
+\]
+\end{Lem}
+
+\begin{proof}
+Seien $d_1$ und $d_2$ die zugehörigen Metriken.
+\[ \abs{x}_1 < 1 
+\quad \Leftrightarrow \quad  \abs{x}_1^n \xrightarrow{n \to \infty}
+\quad \Leftrightarrow \quad x^n \xrightarrow{n \to \infty}_{d_1} 0
+\quad \Leftrightarrow \quad x^n \xrightarrow{n \to \infty}_{d_2} 0
+\quad \Leftrightarrow \quad \abs{x}_2 < 1 
+\]
+\end{proof}
+
+\begin{Lem}
+Sei $\abs{\cdot}_1$ eine nicht-triviale Metrik. Dann gilt:
+
+Es gibt $s \in \R$ mit $\abs{\cdot}_2 = \abs{\cdot}_1^s$ genau dann, wenn
+für alle $x,y \in K^\times$ gilt, dass
+\[\log \abs{x}_1 \log \abs{y}_2 = \log \abs{x}_2 \log \abs{y}_1.
+\]
+In diesem Fall ist $s = \frac{\log \abs{x}_2}{\log \abs{x}_1}$, falls $x \in K^\times$ mit $\abs{x}_1 \neq 1$.
+\end{Lem}
+
+
+\begin{proof}
+\enquote{$\Rightarrow$}
+$\log \abs{x}_1 \log \abs{y}_2 = s \log \abs{x}_1 \log \abs{y}_1 = \log \abs{x}_2 \log \abs{y}_1$
+	
+\bigskip \enquote{$\Leftarrow$} 
+Wähle $x\in K^\times$ mit $\abs{x}_1 \neq 1$ und setze $s = \frac{\log \abs{x}_2}{\log \abs{x}_1}$.
+Dann gilt für alle $y \in K^\times$:
+\begin{align*}
+\log \abs{y} _2 = \frac{\log \abs{x}_2}{\log \abs{x}_1} \log \abs{y} _1
+= s \log \abs{y}_1
+\end{align*}
+\end{proof}
+
+
+\begin{proof}[Proof of Proposition 5.1.7]
+\enquote{$\Leftarrow$}  Die Kreisscheiben um $x$ mit Radius $\varepsilon$ bzgl. $\abs{\cdot}_1$ sind genau die Kreisscheiben um $x$ mit Radius $\varepsilon^s$ bzgl. $\abs{\cdot}_2$.
+Daher erhalten wir die selben Topologien.
+
+\bigskip \enquote{$\Rightarrow$} 
+Ohne Einschränkung sei $\abs{\cdot}_1$ nicht-trivial. Wähle $x\in K^\times$ mit $\abs{x} \neq 1$.
+Sei nun $y \in K^\times$ und definiere $\alpha = \frac{\log \abs{y}_1}{\log \abs{x}_1}$ so, dass
+$\abs{y}_1 = \abs{x}_1^\alpha$.
+
+\bigskip
+\textbf{(1)} Zeige: $\abs{y}_2 \leq \abs{x}_2^\alpha$
+
+Wähle Folge $\frac{m_i}{n_i} \in \Q$ mit $\frac{m_i}{n_i} \xrightarrow{i} \alpha$ und $\frac{m_i}{n_i} \geq \alpha$ für alle $i$. Dann gilt:
+\begin{align*}
+\abs{y}_1
+= \abs{x}_1^\alpha
+\leq \abs{x}_1^{\frac{m_i}{n_i}}
+&\Leftrightarrow \abs{y}_1^{n_i}
+\leq \abs{x}_1^{m_i} \\
+&\Leftrightarrow \abs{\frac{y^{n_i}}{x^{m_i}}}_1 \leq 1 \\
+&\Leftrightarrow \abs{\frac{y^{n_i}}{x^{m_i}}}_2 \leq 1 \\
+&\Leftrightarrow \abs{y}_2
+\leq \abs{x}_2^{\frac{m_i}{n_i}}
+\end{align*}
+Mit $i \longrightarrow \infty$ erhalte $\abs{y_2} \leq \abs{x}_2^\alpha$.
+
+\bigskip \textbf{(2)} Erhalte analog $\abs{y}_2 \geq \abs{x}_2^\alpha$ durch Folge $\frac{m_i}{n_i} \in \Q$ mit $\frac{m_i}{n_i} \xrightarrow{i} \alpha$ und $\frac{m_i}{n_i} \leq \alpha$ für alle $i$.
+
+\bigskip Insgesamt: $\abs{y}_2 = \abs{x}_2^\alpha$
+
+\bigskip Es gilt also
+\[ \log \abs{y}_2 = \alpha \log \abs{x}_2
+= \frac{\log \abs{y}_1}{\log \abs{x}_1} \log \abs{x}_2.
+\]
+Verwende Lemma 5.1.9 und erhalte für alle $y,y' \in K^\times$, dass
+\[ \log \abs{y}_1 \log \abs{y'}_2
+= \log \abs{y}_1 \frac{\log \abs{y'}_1}{\log \abs{x}_1} \log \abs{x}_2
+= \log \abs{y}_2 \log \abs{y'}_1.
+\]
+Lemma 5.1.9 liefert nun $\abs{\cdot}_2 = \abs{\cdot}_1^s$ mit
+$s = \frac{\log \abs{x}_2}{\log \abs{x}_1} >0$ nach Lemma 5.1.8.
+\end{proof}
+
+\begin{Bem}
+Für beliebige $s>0$ gilt \textbf{nicht}: $\abs{\cdot}_1$ Norm $\Rightarrow$ $\abs{\cdot}_2^s$ Norm 
+\end{Bem}
+
+\begin{Bsp}
+Die \textbf{Betrags-Norm} auf $\Q$ ist definiert durch
+\[ \abs{\cdot} \colon \Q \to \R_{\geq 0}, \ q\mapsto \abs{q} = \begin{cases}
+q, &\mbox{} q \geq 0, \\
+-q, &\mbox{} q \leq 0.
+\end{cases}
+\]
+\end{Bsp}
+
+\begin{recall*}
+$v_\p \colon \Q \to \Z \cup \{\infty \}$ p-adische Bewertung:
+\begin{itemize}
+\item Für $z \in \Z$ gilt: $v_p(z) = h \Leftrightarrow z =ap^h$ mit $\ggT(a,p)=1$
+\item Für $q = \frac{x}{y} \in \Q^\times$ mit $x,y \in \Z$ gilt: $v_p(q) = v_p(x)-v_p(y)$
+\item $v_p(0) = \infty$
+\end{itemize}
+
+\textbf{Es gilt:} $v_p$ ist \textbf{diskrete Bewertung}:
+\begin{enumerate}[(i)]
+\item $v_p(x) = \infty\Leftrightarrow x = 0$
+\item $v_p(xy) = v_p(x) + v_p(y)$
+\item $v_p(x+y) \geq \min \left\{ v_p(x), v_p(y) \right\}$
+\end{enumerate}
+\end{recall*}
+
+\begin{Bem}
+Definiere $\abs{\cdot}_p \colon Q \to \R_{\geq 0}$ durch $\abs{0}_p = 0$ und 
+$\abs{x}_p = p^{-v_p(x)}$ für $x \neq 0$. Dann ist $\abs{\cdot}_p$ eine Norm, die \textbf{p-adische Norm}.
+\end{Bem}
+
+
+\begin{proof}
+(i) und (ii) in Definition 5.1.1 folgen aus (i) und (ii) in Beispiel 5.1.12.
+(iii) in Definition 5.1.1 folgt aus (iii) in Beispiel 5.1.12: Für $x,y \neq 0$ gilt:
+\begin{align*}
+\abs{x+y}_p
+&= p^{-v_p(x+y)} \\
+&\leq p^{- \min \left\{ v_p(x), v_p(y) \right\}} \\
+&= p^{\max \left\{ -v_p(x), -v_p(y) \right\}} \\
+&=\max\left\{ \abs{x}_p, \abs{y}_p \right\} \\
+&\leq \abs{x}_p + \abs{y}_p \\
+\end{align*}
+\end{proof}
+
+\begin{Bem}
+\begin{enumerate}[(i)]
+\item Es gilt sogar die \textbf{verschärfte Dreiecksungleichung}:
+\[ \abs{x+y}_p \leq \max\left\{ \abs{x}_p, \abs{y}_p \right\}
+\text{ für alle } x,y \in K
+\]
+\item Für $z \in \Z$ gilt 
+\[ \abs{z}_p = \abs{ 1+ \cdots +1}_p \leq \abs{1}_p = 1.
+\]
+\item Die Norm $\abs{\cdot}$ auf $\Q$ definiert durch $\abs{x} = q^{-v_p(x)}$ mit beliebigem $q>1$ ist äquivalent zu $\abs{\cdot}_p$.
+\end{enumerate}
+\end{Bem}
+
+\begin{Bsp}
+\begin{enumerate}[(i)]
+\item $\abs{1}_p = \abs{2}_p  = \abs{11}_p =1$
+\item $\abs{5}_p = \frac{1}{5}$, $\abs{100}_p = \frac{1}{25}$
+\item $\abs{\frac{1}{5}}_p = 5$, $\abs{\frac{1}{25}}_p = 25$
+\end{enumerate}	
+\end{Bsp}
+
+

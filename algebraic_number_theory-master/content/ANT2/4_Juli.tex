@@ -1,0 +1,121 @@
+\rhead{4. Juli 2018}
+
+\begin{Bem}
+$L=K(\alpha)$ mit $f_\alpha=$ Minimalpolynom von $\alpha$ über $K$. Zerlege $f_\alpha(X)=\prod_{i=1}^r f_i(X)^{m_i}$ mit $f_i \in K_v[X]$ irred., paarweise teilerfremd
+\begin{align*}
+\Rightarrow \{\tau: K(\alpha) \hookrightarrow K_v \ | \ K \text{ Homom. }\} &\stackrel{1-1}{\longleftrightarrow} \{\beta \in \overline{K_v} \ | \ f_\alpha(\beta)=0\}\\
+\tau & \longmapsto \tau(\alpha) = \beta_\tau\\
+\tau_\beta \text{ mit } \tau_\beta(\alpha)=\beta &\longmapsfrom \beta
+\end{align*}
+und $\tau$ ist konjugiert zu $\overline{\tau} \iff \beta_\tau$ und $\beta_{\overline{\tau}}$ sind Nullstellen vom selben Faktor $f_i \in K_v[X]$.
+\end{Bem}
+
+\begin{Kor}
+$L=K(\alpha) \Rightarrow$ erhalte Bijektion:
+\[ \{w \ | \ w \text{ ist Fortsetzung von } v\} \leftrightarrow \{f_1, \dots, f_r\}\]
+mit Minimalpolynom $f_\alpha = \prod_{i=1}^r f_i^{m_i}$ mit $f_i \in K_v[X]$ irreduzibel, paarweise teilerfremd.
+\end{Kor}
+
+\begin{Bsp}
+$K=\Q, L=\Q(\sqrt{5}) \Rightarrow f_\alpha=X^2-5$
+\begin{enumerate}[i)]
+\item $p=11: f_\alpha = X^2-5=(X-\alpha_1)(X+\alpha_1)$ über $\Q_{11}[X] \Rightarrow 2 $ Fortsetzungen.
+\item $p=7: f_\alpha=X^2-5$ ist irred. über $\Q_7[X] \Rightarrow 1 $ Fortsetzung.
+\end{enumerate}
+\end{Bsp}
+
+\begin{Bem}
+Sei $L|K$ endliche Erweiterung und $w$ eine Fortsetzung von $v$ auf $L$. Dann induziert $(L \hookrightarrow L_w$ und $K_v \hookrightarrow L_w)$ einen Hom. $\varphi : L \otimes_K K_v \to L_w \ , \ a \otimes b \mapsto a \cdot b$.\\
+\underline{Beachte:}
+\begin{itemize}
+\item $\varphi_w$ ist $K_v$-VR-Hom.
+\item $L \otimes_K K_v$ ist $K_v$-Alg. via $(a \otimes b)(a' \otimes b')=(aa' \otimes bb')$
+\item $\varphi$ ist $K_v$-Algebren-Hom.
+\end{itemize}
+\end{Bem}
+
+\begin{Prop}
+$L|K$ separabel und endlich $\Rightarrow$
+\[\varphi: L \otimes K_v \to \prod_{w|v} L_w \ , \ a \otimes b \mapsto (\varphi_w(a\otimes b))_{w|v}\]
+ist Isomorphismus. Hierbei $w|v \iff w$ ist Fortsetzung von $v$ auf $L$.
+\end{Prop}
+
+\begin{proof}
+$L|K$ separabel $\Rightarrow L=K(\alpha)$ für ein $\alpha \in L$. Sei $f=f_\alpha$ Minimalpol. von $\alpha$ über $K$.\\
+Kor. 10.11 $\Rightarrow f=\prod_{w|v} f_w$ mit irred. und pw. teilerfremden $f_w \in K_v[X]$. Für jedes $w$ wähle Einbettung $h_w : L_w \hookrightarrow \overline{K_v}$ (geht, da $L_w|K_v$ alg.). Sei $\alpha_w = h_w(\alpha)$. Identifiziere ab jetzt $L_w$ mit $h_w(L_w) \subseteq \overline{K_v}$.\\
+$\Rightarrow L_w = K_v(\alpha_w)$ und $f_w$ ist Minimalpolynom von $\alpha_w$ über $K_v$. Erhalte folgendes kommutatives Diagramm:
+\[\begin{tikzcd}[column sep = large]
+K_v[X]/(f) \arrow{r}[swap]{\psi_1}{\text{Iso. vom CRS}} \arrow{d}{\psi_2}[swap]{x \mapsto \alpha \otimes 1} & \prod_{w|v} K_v[X]/(f_w) \arrow{d}[swap]{\psi_3}{x \mapsto (\alpha_w)_{w|v}}\\
+L\otimes_K K_v \arrow{r}{\varphi=\prod \varphi_w} & \prod_{w|v} L_w
+\end{tikzcd}
+\]
+mit \begin{itemize}
+\item $\psi_2(x)=\alpha \otimes 1$
+\item $\psi_3(x)=(\alpha_w)_{w|v}$
+\item $\psi_1$ Iso von chin. Restsatz
+\end{itemize}
+Beachte: $\varphi(\psi_2(X))=(\alpha_w)_{w|v}$ und $\psi_3 \circ \psi_1(X)=\psi_3((X \mod f_w)_{w|v})=(\alpha_w)_{w|v} \Rightarrow$ Diagramm kommutiert.\\
+Es gilt:
+\begin{itemize}
+\item $\psi_1$ ist Iso. nach chinesischem Restsatz
+\item $\psi_2$ ist Iso., da $K[X]/(f) \to L=K(\alpha)$ Iso.
+\item $\psi_3$ ist Iso., da $K_v[X]/(f_w) \to K_v(\alpha_w)=L_w$ Iso.
+\end{itemize}
+$\Rightarrow \varphi$ ist Iso.
+\end{proof}
+
+\begin{Kor}
+$L|K$ separabel (und endlich). Dann gilt:
+\begin{enumerate}[i)]
+\item $[L:K]=\sum\limits_{w|v} [L_w:K_v]$
+\item $N_{L|K}(x)=\prod\limits_{w|v} N_{L_w/K_v}(x) \ \forall \ x \in \L$
+\item $\Tr_{L|K}(x)= \sum\limits_{w|v} \Tr_{L_w|K_v}(x)$
+\end{enumerate}
+\end{Kor}
+
+\begin{proof}
+\begin{enumerate}[i)]
+\item $[L:K]=\dim_K(L)=\dim_{K_v}(L \otimes_K K_v) \stackrel{Prop. 10.14}{=\joinrel=} \sum\limits_{w|v} [L_w:K_v]$
+\item [ii)+ iii)] Betrachte die lineare Abbildung:
+\[
+\begin{tikzcd}
+L_x: & L \otimes_K K_v \arrow[r] \arrow[draw=none]{d}[auto=false, sloped]{\cong} & L \otimes_K K_v, \arrow[draw=none]{d}[auto=false, sloped]{\cong} & a \otimes b \arrow[r, mapsto] & x(a \otimes b)=(x\cdot a) \otimes b \\
+&\prod_{w|v} L_w \arrow[r] & \prod_{w|v} L_w, & (y_w)_{w|v} \arrow[r, mapsto] & (x \cdot y_w)_{w|v}
+\end{tikzcd}
+\]
+$L_x$ wird induziert von lin. Abb. $L \to L \ , \ y \mapsto x \cdot y$\\
+$\Rightarrow$ beide Abb. haben das gleiche char. Polyn.\\
+$\Rightarrow$ char. Polynom über $L|K$ = char. Polynom über $L \otimes K_v / K_v$\\
+$\Rightarrow$ Behauptung
+\end{enumerate}
+\end{proof}
+
+\begin{Bem}
+Alle Aussagen aus diesem Abschnitt gelten auch für archimedische Normen, wenn man überall mit der Norm statt der Bewertung rechnet.
+\end{Bem}
+
+\underline{Ab jetzt:} brauchen wir nicht archimedisch
+
+\begin{defi}
+Sei $L|K$ Körpererweiterung mit $w$ Fortsetzung von $v$.
+\begin{enumerate}[i)]
+\item $e_w:=[w(L^\times):v(K^\times)]$ heißt \underline{\textbf{Verzweigungsindex}}
+\item $f_w:=[\kappa_w:\kappa_v]$ heißt \underline{\textbf{Trägheitsgrad}} mit $\kappa_w, \kappa_v$ Restklassenkörper für $(L,w), (K,v)$.
+\end{enumerate}
+\end{defi}
+
+\begin{Kor}
+$L|K$ separabel und $v$ diskret. Dann gilt:
+\[ [L:K] = \sum_{w|v} e_w f_w. \]
+\end{Kor}
+
+\begin{proof}
+folgt aus Gradformel für Henselsche Körper + Kor. 10.15.
+\end{proof}
+
+\section{Komplexe $p$-adische Zahlen}
+Sei $\overline{Q_p}$ der alg. Abschluss von $\Q_p$ von $\overline{v_p}$ die eindeutige Fortsetzung von $v_p$ auf $\Q_p$.
+
+\begin{Prop}
+$(\overline{Q}_p,\overline{v_p})$ ist nicht vollständig.
+\end{Prop}

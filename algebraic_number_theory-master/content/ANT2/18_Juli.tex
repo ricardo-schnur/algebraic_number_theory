@@ -1,0 +1,189 @@
+\rhead{18 Juli 2018}
+
+\begin{Bem}
+$L|K$ endliche Körpererweiterung und $v,w$ diskrete Bewertungen auf $K$ bzw. $L$ mit $w|v$
+\[
+\begin{tikzcd}
+p \O = \mathcal{P}_1^{e_1} \cdot \ldots \cdot \mathcal{P}_k^{e_k} \arrow[draw=none, auto=false, sloped, r, "\subseteq"] & \O_w & (L,w)\\
+p\cdot \Z \arrow[dash, u] & \O_{v_p} \arrow[dash, u] & (\Q=K,v_p) \arrow[dash, u]
+\end{tikzcd}
+\]
+\begin{align*}
+\mathcal{P}_1:&=\{x \in \O \ | \ w(x) >0\}=\mathcal{P}_w \cap \O\\
+e(w|v_p)&=e((L,w)|(\Q,v_p))=e_1\\
+S_K&=\{p \ | \ p \text{ Primzahl mit } \exists \text{ Bewertung } w \text{ auf } L \text{ mit } w|v_p \text{ und } e(w|v_p)>1\}\\
+&=\{p \ | \ p \text{ Primzahl mit } \exists \text{ Primideal } \hP \text{ über } p \Z \text{ mit } e(\hP|\mathcal{P})>1\}
+\end{align*}
+$S_K$ ist eine endliche Menge (s. AZT I).
+\end{Bem}
+
+\section{Der Satz von Kronecker und Weber als Beispiel für Lokal-Global-Prinzip}
+\underline{Quelle:} Skript von Burde, Abschnitt 9 und 10\\
+\begin{Err}
+$\zeta_n \in \overline{\Q}$ primitive $n$-te Einheitswurzel.\\
+Dann gilt: $\Gal(\Q(\zeta_n)|\Q) \cong (\Z/n\Z)^\times \leftarrow $ abelsch
+\end{Err}
+
+\underline{Folgerung:} $K$ Zwischenkörper von $\Q(\zeta_n)|\Q$, dann ist $K|\Q$ galoissch und $\Gal(K|\Q)$ abelsch.
+
+\begin{defi}
+Eine Körpererweiterung $L|K$ heißt \textbf{\underline{abelsch}} $:\iff L|K$ galoissch und $\Gal(L|K)$ abelsch.
+\end{defi}
+
+\begin{Satz}[Kronecker, Weber]
+Sei $K|\Q$ eine endliche abelsche Körpererweiterung. Dann gibt es eine $n$-te Einheitswurzel $\zeta_n$ mit $K \subseteq \Q(\zeta_n)$.
+\end{Satz}
+
+\begin{Satz}[lokal Version von Satz 12]
+Sei $p$ Primzahl und $K|\Q_p$ endliche abelsche Körpererweiterung. Dann gibt es eine primitive $n$-te Einheitswurzel $\zeta_n \in \overline{Q_p}$ mit $K \subseteq \Q_p(\zeta_n)$.
+\end{Satz}
+
+\underline{Ab jetzt:} $\mathbb{P} = \{p \in \N \ | \ p \text{ prim } \},$\\
+$v_p=p$-adische Bewertung auf $\Q$\\
+$w|v_p :\iff w|_{\Q} =v_p$
+
+\begin{Prop}
+$K$ Zahlkörper und $K|\Q$ unverzweigt über allen $p$\\
+(d.h. $e(w|v_p)=1 \ \forall \ p \in \mathbb{P}$ und $\forall w $ Bewertung auf $K$ mit $w|v_p$). Dann ist $K=\Q$.
+\end{Prop}
+
+\begin{proof}
+später.
+\end{proof}
+
+\underline{Beh.:} Satz 13 $\Rightarrow$ Satz 12
+\begin{proof}
+Sei $K|\Q$ endliche abelsche Körpererweiterung. Finde $\zeta_n \in \Q$ mit $K \subseteq \Q(\zeta_n)$.\\
+\underline{Schritt 1:} Finde das \glqq richtige\grqq \ $n$.\\
+Sei wie oben $S:=S_K:=\{p \in \mathbb{P} \ | \ \exists \text{ Bewertung } w \text{ auf } K \text{ mit } w|v_p \text{ und } e(w|v_p)>1\}$ ($S$ ist endlich!).\\
+Für $p \in \mathbb{P}$ definiere die Zahlen $e_p$ und $n_p$ wie folgt:
+\begin{itemize}
+\item Wähle Fortsetzung $w_p$ auf $K$ von der Bewertung $v_p$ auf $\Q$.
+\item Sei $K_{w_p}$ die Vervollständigung
+\begin{align*}
+\rightarrow &\Gal(K_{w_p} | \Q_p) \hookrightarrow \Gal(K | \Q)\\
+\Rightarrow &\Gal(K_{w_p}|\Q_p) \text{ abelsch}\\
+\stackrel{\text{Satz } 13}{\Longrightarrow} &\exists \ n_p \in \N \text{ mit } K_{w_p} \subseteq \Q_p(\zeta_{n_p})
+\end{align*}
+\end{itemize}
+Schreibe $n_p=k_p\cdot p^{e_p}$ mit $\ggT(k_p,p)=1$.\\
+Definiere nun $n:=\prod_{p \in S} p^{e_p}$. Sei $L:=K(\zeta_n)$.\\
+\underline{Ziel:} Zeige $L=\Q(\zeta_n)$\\
+Für $p \in \mathbb{P}$ wähle $w_L$ eine Bewertung auf $L$ mit $w_L|v_p$.\\
+\underline{Schritt 2:} Zeige $p \not \in S \Rightarrow e(w_L |v_p)=1$
+\[
+\begin{tikzcd}
+& (L,w_L) & & & (L_{w_L}, \hat{w_L})\\
+(K,w_K) \arrow[dash, ru] && (\Q(\zeta_n),\overline{w}) \arrow[dash, lu] \arrow{r}{ \text{Vervoll-}}[swap]{\text{ständigung}} & (K_{w_K}, \hat{w_K}) \arrow[dash, ru] && (\Q_p(\zeta_n), \hat{\overline{w}}) \arrow[dash, lu, swap, "unverzweigt"]\\
+& (\Q,v_p) \arrow[dash, lu, "unverzweigt"] \arrow[dash, ru] &&&(\Q_p, \hat{v_p}) \arrow[dash, lu, "unverzweigt"] \arrow[dash, ru, swap, "unverzweigt"]
+\end{tikzcd}
+\]
+Seien $w_K:=w_L|_K, \overline{w}:=w_L|_{\Q(\zeta_n)}$. Bilde die Vervollständigung wie oben abgebildet. Dann gilt:
+\begin{itemize}
+\item $e(\hat{w_K} | \hat{v_p}) = e(w_K|v_p)=1$, da $p \not \in S$. Prop I.9.5 $\Rightarrow e(\hat{w_L} | \hat{\overline{w}})=1$
+\item Bsp. I.9.10 $\stackrel{\ggT(n,p)=1}{\Rightarrow} e(\hat{\overline{w}}| \hat{v_p})=1 \stackrel{I.9.5}{\Rightarrow} e(\hat{w_L} | \hat{v_p})=1$
+\end{itemize}
+Also: $e(w_L|v_p)=e(\hat{w_L} | \hat{v_p})=1$.\\
+\underline{Schritt 3:} Zeige: $p \in S \Rightarrow e(w_L|v_p) \leq \varphi(p^{e_p})$\\
+$L_{w_L} = K_{w_K} \cdot \Q_p(\zeta_n) \subseteq \Q_p(\zeta_{n_p}, \zeta_n)=\Q_p(\zeta_{k_p \cdot n})$.\\
+Bsp I.9.13 $\Rightarrow e(\Q_p(\zeta_{k_p n} ) | \Q_p)=\varphi(p^{e_p}) \Rightarrow e(w_L|v_p)=e(\hat{w_L} | \hat{v_p}) \leq \varphi(p^{e_p})$.\\
+Sei $I_p:=I(L_{w_L} | \Q_p)$ die Trägheitsgruppe $\Rightarrow \#I_p = e(\hat{w_L} | \hat{v_p}) \leq \varphi(p^{e_p})$\\
+\underline{Schritt 4:} $I:=$ Erzeugnis aller $I_p (p \in S)$ in $\Gal(L|\Q)$\\
+\underline{Zeige:} $\# I \leq [\Q(\zeta_n):\Q]$\\
+\underline{Beachte:} \begin{align*}
+&(L|\Q) \hookrightarrow \Gal(K|\Q)\times \Gal(\Q(\zeta_n)|\Q)\\
+\Rightarrow &\Gal(L|\Q) \text{ abelsch}\\
+\Rightarrow &I \text{ abelsch }\\
+\Rightarrow &|I| \leq \prod_{p \in S} |I_p| \leq \prod_{P \in S} \varphi(p^{e_p})=\varphi(n)\\
+\Rightarrow \text{Beh.}&
+\end{align*}
+\underline{Schritt 5:} Zeige: $I=\Gal(L|\Q)$.\\
+$L^I|\Q$ ist unverzweigt über allen $v_p$, denn:\\
+\underline{Annahme:} $\exists \ w_I$ auf $L^I$ mit $w_I | v_p$ und $e(w_I|v_p)>1 \stackrel{\text{Schritt 2}}{\Rightarrow} p \in S$.\\
+Vervollständigen von $L^I | \Q$ ergibt $L_{w_I}^{I_p} | \Q_p (!)$.\\
+Da $I_p=$ Trägheitsgruppe von $L_{w_L}|\Q_p$, folgt: $e(w_I|v_p)=e(\hat{w_I} | \hat{v_p})\stackrel{Prop. 2.9}{=} 1$ \Lightning.\\
+Prop. 3.3. $\Rightarrow L^I=\Q$ und $\Gal(L|\Q)=I$.\\
+\underline{Schritt 6:} Zeige: $L=\Q(\zeta_n)$.\\
+Es gilt: $\Q(\zeta_n) \subseteq L$ und $[L:\Q]=\# \Gal(L|\Q)=\# I \leq \varphi(n)=[\Q(\zeta_n):\Q] \Rightarrow$ Beh.
+\end{proof}
+
+\section{Kronecker-Weber über $\Q_p$}
+
+\underline{Hier:} $p$-adischer Zahlkörper L $: \iff L$ endliche Körpererweiterung von $\Q_p$.\\
+globale Notation: $\O_L, P_L, e(L|K)$.
+
+\begin{Lem}
+$L|K$ endliche Körpererweiterung von $p$-adischem Körper die unverzweigt ist\\
+$\Rightarrow L=K(\zeta_{q-1})$ mit $q=p^n, n=[\kappa_L:\kappa_K]$.
+\end{Lem}
+
+\begin{proof}
+S. [Burde, Lemma 9.3.1]
+\end{proof}
+
+\begin{Bem}
+Vgl. Blatt 8, A2.
+\end{Bem}
+
+Prop. 3.3 folgt aus Lemma 4.1
+
+\begin{Lem}
+$L|K$ endliche Körpererweiterung von $p$-adischen Zahlkörper, die zahm verzweigt und total verzweigt ist (d.h. $f(L|K)=1$). Dann gilt: $\exists \ \pi \in K$ mit $P_k=<\pi>$ und $L=K(\sqrt[e]{\pi})$.
+\end{Lem}
+
+\begin{proof}
+s. [Burde, Lemma 9.3.2]
+\end{proof}
+
+\begin{Bem}
+Nahe dran an Bew. zu Prop. I.9.19
+\end{Bem}
+
+\begin{Lem}
+$\Q_p(\zeta_p)|\Q_p$ ist total verzweigt, $e=[\Q_p(\zeta_p):\Q_p)=p-1$ und $\Q_p(\zeta_p)=\Q_p(\sqrt[p-1]{-p})$.
+\end{Lem}
+
+\begin{proof}
+Bsp. I.9.11+[Burde, Lemma 9.3.3]
+\end{proof}
+
+\underline{Beweisidee von Satz 13:}\\
+Sei $K|\Q_p$ endliche abelsche Körpererweiterung.\\
+$\Rightarrow \Gal(K|\Q_p) \cong G_1 \times \dots \times G_k$ mit $G_i$ zyklisch von Primzahlpotenzordnung.\\
+$\Rightarrow K=K^{G_1} \cdot \dots \cdot K^{G_k}$\\
+$\Rightarrow$ Es genügt die Beh. für zyklische Gruppen von Primzahlpotenordnung zu zeigen.
+
+\underline{Ab jetzt:} $\Gal(K|\Q_p) \cong \Z/q^r \Z$ mit $q \in \mathbb{P}$.\\
+Wir betrachten nur dne Fall $q \neq p$. (Für $q=p$ siehe [Burde, Abschnitt 9]).
+Sei $T$ der maximal unverzweigte Zischenkörper von $K|\Q_p$.
+\begin{enumerate}[(1)]
+\item $T|\Q_p$ unverzweigt $\Rightarrow T=\Q_p(\zeta_n)$ für ein $n \in \N$ nach Lemma 4.1
+\item $K$ total und zahm verzweigt über $T$:
+\begin{itemize}
+\item $e(K|T)=e(K|\Q_p)=\#I(K|\Q_p)=[K:T] \Rightarrow K|T$ ist total verzweigt
+\item $[K:T]$ teilt $\# \Gal(K|\Q_p)=q^r \stackrel{p \neq q}{\Longrightarrow}$ zahm verzweigt.
+\end{itemize}
+Lemma 4.2 $\Rightarrow \exists \ \pi \in \O_T$ mit $K=T(\sqrt[e]{\pi}$ und $<\pi> \in \P_T$\\
+Ab jetzt: $e:=e(K | \Q_p)$.
+\item $T|\Q_p$ unverzw. $\Rightarrow \pi \cdot \O_T = p \cdot \O_t \Rightarrow \pi = -p \cdot u$ mit $u \in \O^\times_T$.
+\item $T(\sqrt[e]{u}|T$ ist unverzweigt:\\
+Für $f(X)=Xê-u \in \O_T[X]$ ist das Bild von $\overline{f}(X) \in \kappa[X]$ separabel $\stackrel{\text{ Bsp. I.9.3}}{\Longrightarrow}$ Beh.\\
+3 $\Rightarrow T(\sqrt[e]{u}|\Q_p$ ist unverzweigt\\
+Lemma 4.1+Bsp. I.9.11 $\Rightarrow \Gal(T(\sqrt[e]{u})|\Q_p)$ ist zyklisch, also insbesondere abelsch.
+\item $K(\sqrt[e]{u}:=K\cdot T(\sqrt[e]{u})$ und $K|\Q_p, T(\sqrt[e]{u}) |\Q_p$ abeschle Körpererweiterungen.\\
+$\Rightarrow K(\sqrt[e]{u}|\Q_p$ ist abelsche Körpererweiterung\\
+$-p=\frac{\pi}{u} \Rightarrow\Q_p(\sqrt[e]{-p})=\Q_p(\frac{\sqrt[e]{\pi}}{\sqrt[e]{u}}) \subseteq K(\sqrt[e]{u})$\\
+$\Rightarrow \Q_p(\sqrt[e]{-p}) | \Q_p$ ist abelsch\\
+$\Rightarrow \Q_p(\sqrt[e]{p})$ enthält alle $e$-ten Einheitswurzeln. Also $\Q_p \subseteq \Q_p(\zeta_e) \subseteq \Q_p(\sqrt[e]{-p}) \hfill (\star)$
+\item In $(\star)$ gilt: (A) $\ggT(e,p)=1 \Rightarrow \Q_p(\zeta_e) | \Q_p$ unverzweigt $\Rightarrow e(\Q_p(\zeta_e)|\Q_p)=1$\\
+(B) $w(\sqrt[e]{-p})=\frac{1}{e} \Rightarrow e(\Q_p(\sqrt[e]{-p})|\Q_p) \geq e$\\
+$[\Q_p(\sqrt[e]{-p}):\Q_p] = e(\Q_p(\sqrt[e]{-p}|\Q_p)=E$ und die Körpererweiterung ist total verzweigt.\\
+(A)+(B) $\Rightarrow \Q_p(\zeta_e)=\Q_p \Rightarrow e$ teilt $p-1$.
+\item \begin{itemize}
+\item $K\stackrel{(2)}{=} T(\sqrt[e]{\pi} \stackrel{(3)}{=} T(\sqrt[e]{-pu} \subseteq T(\sqrt[e]{-p}, \sqrt[e]{u})$
+\item $(4) \Rightarrow T(\sqrt[e]{u}|T$ unverzweigt $\stackrel{\text{Lemma 4.1}}{\Longrightarrow} T(\sqrt[e]{u})=T(\zeta_m)$ für ein $m$
+\item $e|p-1 \Rightarrow \Q_p(\sqrt[e]{-p}) \subseteq \Q_p(\sqrt[p-1]{-p})\stackrel{\text{Lemma 4.3}}{=} \Q_p$
+\item $(1) \Rightarrow T=\Q_p(\zeta_n)$
+\end{itemize}
+\} $\Rightarrow K \subseteq T(\sqrt[e]{-p}, \sqrt[e]{u}) \subseteq \Q_p(\zeta_n, \zeta_p, \zeta_m) \subseteq \Q_p(\zeta_{m\cdot n \cdot p})$.
+\end{enumerate}
